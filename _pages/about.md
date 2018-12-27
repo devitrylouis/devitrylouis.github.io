@@ -32,6 +32,27 @@ I will list in the tables below models and tools I understood in-depth and used 
 | Clustering 👫 | Avanced RNNs 📘 |  |
 | Dimension Reduction 🔎 | Generative Adversial Networks 🎭 |  |
 
+| Vision | Audio | Natural Language Processing |
+|:---------------------------:|:-------------------------------:|:-------------------------------:|
+| Image-formation model  | Introduction | Language model |
+| Feature Extraction, Saliency, Edge Detection | Transforms | Words Representation |
+| Computational Photography | Chroma | Tagging and NER |
+| Optical Flow | Spectral features | Parsing |
+| 3D Modeling | Tonnetz | Mining User Generated Content |
+| Segmentation & Grouping | MFCC | Machine Translation and Natural Language Generation  |
+| Object Detection/ Recognition | WaveNet | Machine Reading |
+| Tracking | Generative Adversial Networks 🎭 | Dialogue |
+
+
+| Artificial Intelligence | Reinforcement Learning | Decision Modelling |
+|:---------------------------:|:-------------------------------:|:-------------------------------:|
+| Problem solving | Introduction ✅ | Multicriteria decisions |
+| Adversial search | MDP and bandits ➿ | Voting and social choice theory |
+| Constrained search | Dynamic Programming 💻 | Aggregations functions |
+| Expert systems | Prediction | Aggregations procedures |
+| Game implementation | Control | Preference elicitation |
+|  | Deep Reinforcement Learning | Portfolio decision analysis |
+
 | Network science | Big data |
 |:---------------------------:|:-------------------------------:|
 | [Graph theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) | Basics ✅ |
@@ -40,7 +61,7 @@ I will list in the tables below models and tools I understood in-depth and used 
 | [Barabási-Albert Model 📏](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) | Spark ✒️ |
 
 
-What can I do?
+My projects in a nutshell
 ------
 * Predict Estimated Time Arrival and delays of truck deliveries
 * Improve predictive power for consumer behavior in the retail industry
