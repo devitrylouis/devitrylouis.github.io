@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "AI student and engineer"
 excerpt: "About me"
 author_profile: true
 redirect_from:
@@ -8,31 +8,19 @@ redirect_from:
   - /about.html
 ---
 
-Hello World!
-
-Getting started
+Artificial Intelligence student
 ======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right.
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
+I have been learning AI hands on for more than two years. I began my journey with a strong Mathematics background to from EPFL. At KTH in Sweden, I followed introductory courses to Statistical Learning and Data Science. After my Bachelor, I choosed to have a gap year to put my learnings into practive and get familiar with the business environment. I learnt to build sound Macine Learning pipelines, from raw data to performant and scalable models. However, when it came to develop and implement state of the art methods in various domains, my theoretical background was lacking. I thus decided to go back to school to learn advance AI at Centrale Paris. I am furthermore very interested in entrepreneurship.
 
-Site-wide configuration
+What have I learnt?
 ------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header.
+I will list in the tables below models and tools I understood in-depth and used on real data sets.
 
-Create content & metadata
+
+What can I do?
 ------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. [CV page](https://academicpages.github.io/cv)
+I will list past projects I worked on.
 
-**Markdown generator**
-
-I have also created [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the academicpages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
-
-How to edit your site's GitHub repository
-
+Hire me for your research project!
 ------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+If you are doing great work on a project needing Artificial Intelligence to move forward, shoot me an e-mail. I would gladly discuss it with you. From startups to pure research, I am interested in a wide range of opportunities.
