@@ -15,6 +15,7 @@ I have been learning AI hands on for more than two years. I began my journey wit
 What have I learnt?
 ------
 I will list in the tables below models and tools I understood in-depth and used on real data sets.
+
 |                 Machine Learning                 |               Deep Learning               |
 |:------------------------------------------------:|:-----------------------------------------:|
 |   Linear regression :chart_with_upwards_trend:   |     Multi-Layer Perceptron :computer:     |
