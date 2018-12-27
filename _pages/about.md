@@ -15,6 +15,15 @@ I have been learning AI hands on for more than two years. I began my journey wit
 What have I learnt?
 ------
 I will list in the tables below models and tools I understood in-depth and used on real data sets.
+|                 Machine Learning                 |               Deep Learning               |
+|:------------------------------------------------:|:-----------------------------------------:|
+|   Linear regression :chart_with_upwards_trend:   |     Multi-Layer Perceptron :computer:     |
+|          Logistic Regression :bar_chart:         |           Embeddings :black_nib:          |
+| Probabilistic classifiers and LDA :crystal_ball: |                CNN :stars:                |
+|    Support Vector Machine :arrow_upper_right:    |          Auto-Encoder :hourglass:         |
+|        Tree-based Methods :evergreen_tree:       |            RNN/LSTM :clock130:            |
+|                Clustering :dolls:                |          Avanced RNNs :blue_book:         |
+|          Dimension Reduction :mag_right:         | Generative Adversial Networks :trollface: |
 
 What can I do?
 ------
