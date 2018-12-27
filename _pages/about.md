@@ -20,12 +20,25 @@ What have I learnt?
 ------
 I will list in the tables below models and tools I understood in-depth and used on real data sets.
 
-| Machine Learning | Deep Learning |
+| Machine Learning | Deep Learning | Optimization |
+|:---------------------------:|:-------------------------------:|:-------------------------------:|
+| [Linear regression 📈](https://devitrylouis.github.io/posts/2018/11/linear-regression/) | Basics ✅ | Basics ✅ |
+| [Logistic Regression 📊](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) | Useful layers ➿ | Unconstrained ➿ |
+| [Probabilistic classifiers 🔮](https://devitrylouis.github.io/posts/2018/10/probabilistic) | Multi-Layer Perceptron 💻 | Constrained 💻 |
+| [LDA 📏](https://devitrylouis.github.io/posts/2018/10/lda) | Embeddings ✒️ |  |
+| [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) | CNN 🌄 |  |
+| Support Vector Machine ↗️ | Auto-Encoder ⏳ |  |
+| Tree-based Methods 🌲 | RNN/LSTM 🕧 |  |
+| Clustering 👫 | Avanced RNNs 📘 |  |
+| Dimension Reduction 🔎 | Generative Adversial Networks 🎭 |  |
+
+| Network science | Optimization |
 |:---------------------------:|:-------------------------------:|
-| [Linear regression 📈](https://devitrylouis.github.io/posts/2018/11/linear-regression/) | Basics ✅ |
-| [Logistic Regression 📊](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) | Multi-Layer Perceptron 💻 |
-| [Probabilistic classifiers 🔮](https://devitrylouis.github.io/posts/2018/10/probabilistic) | Embeddings ✒️ |
-| [LDA 📏](https://devitrylouis.github.io/posts/2018/10/lda) | CNN 🌄 |
+| [Grapg theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) | Basics ✅ |
+| [Random Network 📊](https://devitrylouis.github.io/posts/2018/11/random_network/) | Useful layers ➿ |
+| [Scale-free property 🔮](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) | Multi-Layer Perceptron 💻 |
+| [Barabási-Albert Model 📏](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) | Embeddings ✒️ |
+| [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) | CNN 🌄 |
 | Support Vector Machine ↗️ | Auto-Encoder ⏳ |
 | Tree-based Methods 🌲 | RNN/LSTM 🕧 |
 | Clustering 👫 | Avanced RNNs 📘 |
