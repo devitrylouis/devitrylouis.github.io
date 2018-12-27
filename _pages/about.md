@@ -42,7 +42,10 @@ I will list in the tables below models and tools I understood in-depth and used 
 
 What can I do?
 ------
-I will list past projects I worked on.
+* Predict Estimated Time Arrival and delays of truck deliveries
+* Improve predictive power for consumer behavior in the retail industry
+* Identify the genre of a song (from raw audio)
+* Infer social circles on social networks
 
 Hire me for your research project!
 ------
