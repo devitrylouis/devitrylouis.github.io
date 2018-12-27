@@ -22,10 +22,10 @@ I will list in the tables below models and tools I understood in-depth and used 
 
 | Machine Learning | Deep Learning |
 |:---------------------------:|:-------------------------------:|
-| [Linear regression 📈](https://devitrylouis.github.io/posts/2018/11/linear-regession/) | Basics ✅ |
+| [Linear regression 📈](https://devitrylouis.github.io/posts/2018/11/linear-regression/) | Basics ✅ |
 | [Logistic Regression 📊](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) | Multi-Layer Perceptron 💻 |
-| Probabilistic classifiers 🔮 | Embeddings ✒️ |
-| LDA 📏 | CNN 🌄 |
+| [Probabilistic classifiers 🔮](https://devitrylouis.github.io/posts/2018/10/probabilistic) | Embeddings ✒️ |
+| [LDA 📏](https://devitrylouis.github.io/posts/2018/10/lda) | CNN 🌄 |
 | Support Vector Machine ↗️ | Auto-Encoder ⏳ |
 | Tree-based Methods 🌲 | RNN/LSTM 🕧 |
 | Clustering 👫 | Avanced RNNs 📘 |
