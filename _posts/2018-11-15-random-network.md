@@ -1,11 +1,9 @@
 ---
 title: 'The Random Network Model'
-date: 2013-08-14
+date: 2018-11-15
 permalink: /posts/2018/11/random_network/
 tags:
-  - cool posts
-  - category1
-  - category2
+  - Network Science
 ---
 
 Network science aims to build models that reproduce the properties of real networks. As most encountered networks are irregular alnd look like they were spun randomly.

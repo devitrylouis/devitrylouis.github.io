@@ -1,14 +1,11 @@
 ---
 title: 'Graph theory'
-date: 2012-08-14
+date: 2018-08-14
 permalink: /posts/2018/11/graph_theory/
 tags:
-  - cool posts
-  - category1
-  - category2
+  - Network science
+  - Basics
 ---
-
-## Introduction
 
 Networks greatly impact the properties of a system in many forms. Graph theory - a branch of Mathematics - is fundamental to grasp and represent networks. From degrees to degree distributions, from paths to distances and learn to distinguish weighted, directed and bipartite networks.
 
