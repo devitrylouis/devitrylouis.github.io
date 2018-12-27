@@ -22,7 +22,7 @@ I will list in the tables below models and tools I understood in-depth and used 
 
 | Machine Learning | Deep Learning |
 |:-----------------------------------:|:-------------------------------:|
-| Linear regression 📈 | Multi-Layer Perceptron 💻 |
+| [Linear regression](https://devitrylouis.github.io/posts/2018/11/lda/) 📈 | Multi-Layer Perceptron 💻 |
 | Logistic Regression 📊 | Embeddings ✒️ |
 | Probabilistic classifiers and LDA 🔮 | CNN 🌄 |
 | Support Vector Machine ↗️ | Auto-Encoder ⏳ |
