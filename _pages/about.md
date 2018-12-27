@@ -10,7 +10,11 @@ redirect_from:
 
 My story
 ------
-I have been learning AI hands on for more than two years. I began my journey with a strong Mathematics background to from EPFL. At KTH in Sweden, I followed introductory courses to Statistical Learning and Data Science. After my Bachelor, I choosed to have a gap year to put my learnings into practive and get familiar with the business environment. I learnt to build sound Macine Learning pipelines, from raw data to performant and scalable models. However, when it came to develop and implement state of the art methods in various domains, my theoretical background was lacking. I thus decided to go back to school to learn advance AI at Centrale Paris. I am furthermore very interested in entrepreneurship.
+I have been learning AI hands on for more than two years. I began my journey with a strong Mathematics background to from EPFL. At KTH in Sweden, I followed introductory courses to Statistical Learning and Data Science.
+
+After my Bachelor, I choosed to have a gap year to put my learnings into practice and get familiar with the business environment. I learnt to build sound Macine Learning pipelines, from raw data to performant and scalable models.
+
+However, when it came to develop and implement state of the art methods in various domains, my theoretical background was lacking. I thus decided to go back to school to learn advance AI at Centrale Paris (graduation in 2019). I am furthermore very interested in entrepreneurship.
 
 What have I learnt?
 ------
