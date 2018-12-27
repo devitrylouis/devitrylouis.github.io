@@ -56,6 +56,8 @@ Skills
   * French (native language)
   * English (fluent)
   * Spanish (conversant)
+
+Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
