@@ -35,7 +35,7 @@ I will list in the tables below models and tools I understood in-depth and used 
 | Network science | Big data |
 |:---------------------------:|:-------------------------------:|
 | [Graph theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) | Basics ✅ |
-| [Random Network 📊](https://devitrylouis.github.io/posts/2018/11/random_network/) | Map Reduce ➿ |
+| [Random Network 📊](https://devitrylouis.github.io/posts/2018/11/random_network/) | [Map Reduce ➿](https://devitrylouis.github.io/posts/2018/11/map-reduce/) |
 | [Scale-free property 🔮](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) | Hadoop 💻 |
 | [Barabási-Albert Model 📏](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) | Spark ✒️ |
 
