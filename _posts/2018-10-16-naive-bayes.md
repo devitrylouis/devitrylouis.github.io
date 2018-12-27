@@ -5,8 +5,6 @@ permalink: /posts/2018/11/naive-bayes/
 tags:
   - Machine Learning
 ---
-# Naïve Bayes
-
 <b>TL; DR:</b> Generative Learning Algorithm for discrete valued input.
 
 <b>Example (text classification):</b> We represent an email via a feature vector whose length is equal to the number of words in the dictionary. Specifically, if an email contains the $i$-th word of the dictionary, then we will set $x_{i} = 1$; otherwise, we let $x_{i} = 0$

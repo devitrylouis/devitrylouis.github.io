@@ -5,7 +5,6 @@ permalink: /posts/2018/11/random_network/
 tags:
   - Network Science
 ---
-
 Network science aims to build models that reproduce the properties of real networks. As most encountered networks are irregular alnd look like they were spun randomly.
 
 Assumption: Creating a random network boils down to placing the links randomly between the nodes.

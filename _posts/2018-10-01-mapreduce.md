@@ -5,10 +5,7 @@ permalink: /posts/2018/11/map-reduce/
 tags:
   - Big Data
 ---
-# MapReduce
-
-## What is MapReduce?
-
+MapReduce is:
 1. <b>A simple programming model for processing huge data sets in a distributed way.</b>
 2. A framework that runs these programs on clusters of commodity servers, automatically handling the details of distributed computing :
     - Division of labor.

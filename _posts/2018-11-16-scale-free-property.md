@@ -5,7 +5,6 @@ permalink: /posts/2018/11/scale-free-property/
 tags:
   - Network science
 ---
-
 Hubs are encountered in most real networks. They represent a signature of a deeper organizing principle that we call the scale-free property.
 
 Intrinsically linked to the degree distribution of real networks, which allows us to uncover and characterize scale-free network and further - from communities to spreading processes.

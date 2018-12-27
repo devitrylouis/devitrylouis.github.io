@@ -5,11 +5,9 @@ permalink: /posts/2018/11/probabilistic/
 tags:
   - Machine Learning
 ---
-# Generative Learning algorithms
+<b>Discriminative learning algorithms</b> Algorithms that try to learn $p(y|x)$ directly (such as logistic regression), or algorithms that try to learn mappings directly from the space of inputs X to the labels {0, 1}, (such as the perceptron algorithm).
 
-<b>Discriminative learning algorithms</b> Algorithms that try to learn p(y|x) directly (such as logistic regression), or algorithms that try to learn mappings directly from the space of inputs X to the labels {0, 1}, (such as the perceptron algorithm).
-
-<b>Generative learning algorithms:</b> Algorithms that instead try to model p(x|y) (and p(y)).
+<b>Generative learning algorithms:</b> Algorithms that instead try to model $p(x|y)$ (and $p(y)$).
 
 <b>Bayes:</b> After modeling the <i>class priors</i> $p(y)$ and $p(x|y)$, our algorithm, we can then use Bayes rule to derive the posterior distribution on y$ given $x$
 

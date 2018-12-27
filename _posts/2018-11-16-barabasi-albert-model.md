@@ -5,7 +5,6 @@ permalink: /posts/2018/11/barabasi-albert-model/
 tags:
   - Network science
 ---
-
 Hubs represent the most striking difference between a random and a scale-free network.
 
 <b>Goal</b>: The very existence of these hubs and the related scale-free topology raises two fundamental questions:
