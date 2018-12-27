@@ -1,5 +1,5 @@
 ---
-title: 'Graph theory'
+title: 'Introduction to optimization'
 date: 2018-10-01
 permalink: /posts/2018/11/basics-optimization/
 tags:
@@ -7,7 +7,7 @@ tags:
   - Basics
 ---
 
-Gentle introduction to the convexity, derivatives and taxonomy of probelms in optimization.
+Gentle introduction to the convexity, derivatives and taxonomy of problems in optimization.
 
 # Basic definitions
 
@@ -47,21 +47,7 @@ To do this, the diagonal of H is the $x_{i}^{2}$ and the other are $1/2$ the int
 
 # Gradient and Hessian matrix
 
-## Gradient and function in Matlab
-
-Let's consider
-
-$$
-f(x, y) = (y - cos(2x)-\frac{x^{2}}{10})^{2} + exp(\frac{x^{2}+ y^{2}}{100})
-$$
-
-modeled by the below code in matlab.
-
-```mathematica
-function output = f(x,y)
-output = (y-cos(2*x)-0.1*x.^2).^2+exp((x.^2 + y.^2)/(100));
-end
-```
+## Gradient
 
 <b>Definition: (Gradient)</b> The gradient of our objective function is:
 
@@ -73,6 +59,7 @@ $$
 \end{pmatrix} \in \mathbb{R}
 $$
 
+<i>Note:</i> Intuitively, it is the direction in which the function increases.
 
 ## Hessian matrix
 
@@ -93,7 +80,7 @@ $$\mathbf H = \begin{bmatrix}
 
 <b>Eigenvectors of M:</b> are vectors that do not change direction when multiplied with $M$
 
-</b>Eigenvalues represent the change in length of the eigenvector when multiplied with $M$ . In other words
+<b>Eigenvalues</b> represent the change in length of the eigenvector when multiplied with $M$ . In other words
 
 $$M \cdot v_{i} = \lambda_{i} v_{i}$$
 
