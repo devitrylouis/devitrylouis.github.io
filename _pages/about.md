@@ -18,13 +18,13 @@ I will list in the tables below models and tools I understood in-depth and used 
 
 |                 Machine Learning                 |               Deep Learning               |
 |:------------------------------------------------:|:-----------------------------------------:|
-|   Linear regression :chart_with_upwards_trend:   |     Multi-Layer Perceptron :computer:     |
-|          Logistic Regression :bar_chart:         |           Embeddings :black_nib:          |
-| Probabilistic classifiers and LDA :crystal_ball: |                CNN :stars:                |
-|    Support Vector Machine :arrow_upper_right:    |          Auto-Encoder :hourglass:         |
-|        Tree-based Methods :evergreen_tree:       |            RNN/LSTM :clock130:            |
-|                Clustering :dolls:                |          Avanced RNNs :blue_book:         |
-|          Dimension Reduction :mag_right:         | Generative Adversial Networks :trollface: |
+| Linear regression :chart_with_upwards_trend:     | Multi-Layer Perceptron :computer:         |
+| Logistic Regression :bar_chart:                  | Embeddings :black_nib:                    |
+| Probabilistic classifiers and LDA :crystal_ball: | CNN :stars:                               |
+| Support Vector Machine :arrow_upper_right:       | Auto-Encoder :hourglass:                  |
+| Tree-based Methods :evergreen_tree:              | RNN/LSTM :clock130:                       |
+| Clustering :dolls:                               | Avanced RNNs :blue_book:                  |
+| Dimension Reduction :mag_right:                  | Generative Adversial Networks :trollface: |
 
 What can I do?
 ------
