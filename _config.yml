@@ -81,7 +81,7 @@ analytics:
 author:
   name             : "Louis de Vitry"
   avatar           : "profile.png"
-  bio              : "Artificial Intelligence engineer"
+  bio              : "Mathematics and computer science enthusiast"
   location         : "Paris"
   employer         :
   email            : "louisdevitry@gmail.com"
@@ -104,7 +104,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : 
+  twitter          :
   vine             :
   weibo            :
   xing             :
