@@ -23,8 +23,8 @@ I will list in the tables below models and tools I understood in-depth and used 
 | Machine Learning | Deep Learning | Optimization |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | [Linear regression 📈](https://devitrylouis.github.io/posts/2018/11/linear-regression/) | [Multi-Layer Perceptron 💻](https://devitrylouis.github.io/posts/2018/11/basics-dl/) | [Basics ✅](https://devitrylouis.github.io/posts/2018/11/basics-optimization/) |
-| [Logistic Regression 📊](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) | Basics  ✅ | [Unconstrained ➿](https://devitrylouis.github.io/posts/2018/11/unconstrained-optimization/) |
-| [Probabilistic classifiers 🔮](https://devitrylouis.github.io/posts/2018/10/probabilistic) | Useful layers ➿ | [Constrained 💻](https://devitrylouis.github.io/posts/2018/11/constrained-optimization/) |
+| [Logistic Regression 📊](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) | Basics  ✅ | [Unconstrained 🌀](https://devitrylouis.github.io/posts/2018/11/unconstrained-optimization/) |
+| [Probabilistic classifiers 🔮](https://devitrylouis.github.io/posts/2018/10/probabilistic) | Useful layers ➿ | [Constrained 📐](https://devitrylouis.github.io/posts/2018/11/constrained-optimization/) |
 | [LDA 📏](https://devitrylouis.github.io/posts/2018/10/lda) | Embeddings ✒️ |  |
 | [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) | CNN 🌄 |  |
 | Support Vector Machine ↗️ | Auto-Encoder ⏳ |  |
