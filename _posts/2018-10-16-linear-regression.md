@@ -1,7 +1,7 @@
 ---
 title: 'Linear Regression'
 date: 2018-10-16
-permalink: /posts/2018/11/lda/
+permalink: /posts/2018/11/linear-regression/
 tags:
   - Machine Learning
 ---

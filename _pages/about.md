@@ -21,10 +21,11 @@ What have I learnt?
 I will list in the tables below models and tools I understood in-depth and used on real data sets.
 
 | Machine Learning | Deep Learning |
-|:-----------------------------------:|:-------------------------------:|
-| [Linear regression](https://devitrylouis.github.io/posts/2018/11/lda/) 📈 | Multi-Layer Perceptron 💻 |
-| Logistic Regression 📊 | Embeddings ✒️ |
-| Probabilistic classifiers and LDA 🔮 | CNN 🌄 |
+|:---------------------------:|:-------------------------------:|
+| [Linear regression 📈](https://devitrylouis.github.io/posts/2018/11/linear-regession/) | Basics ✅ |
+| [Logistic Regression 📊](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) | Multi-Layer Perceptron 💻 |
+| Probabilistic classifiers 🔮 | Embeddings ✒️ |
+| LDA 📏 | CNN 🌄 |
 | Support Vector Machine ↗️ | Auto-Encoder ⏳ |
 | Tree-based Methods 🌲 | RNN/LSTM 🕧 |
 | Clustering 👫 | Avanced RNNs 📘 |
