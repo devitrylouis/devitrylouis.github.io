@@ -1,15 +1,11 @@
 ---
-title: "Paper Title Number 1"
+title: "Music Genre Recognition using Machine Learning"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+permalink: /publication/2018-12-14-music-genre-recognition
+excerpt: 'This research aim is two-fold: give an overview of the feature extraction techniques to deal with raw music and benchmark conventional Machine Learning algorithms to classify the genre of the song. We achieve an accuracy of 58% with Extreme Gradient Boosting Classifier. This work is based on the small FMA dataset.'
+date: 2018-12-14
+paperurl: 'http://academicpages.github.io/files/paper_music.pdf'
+citation: 'Ayush K. Rai, Louis de Vitry, Alami C. Mohamed (2018)'
 ---
-This paper is about the number 1. The number 2 is left for future work.
 
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
-
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+[Download paper here](http://academicpages.github.io/files/paper_music.pdf)
