@@ -22,9 +22,9 @@ I will list in the tables below models and tools I understood in-depth and used 
 
 | Machine Learning | Deep Learning | Optimization |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
-| [Linear regression 📈](https://devitrylouis.github.io/posts/2018/11/linear-regression/) | Basics ✅ | Basics ✅ |
-| [Logistic Regression 📊](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) | Useful layers ➿ | Unconstrained ➿ |
-| [Probabilistic classifiers 🔮](https://devitrylouis.github.io/posts/2018/10/probabilistic) | Multi-Layer Perceptron 💻 | Constrained 💻 |
+| [Linear regression 📈](https://devitrylouis.github.io/posts/2018/11/linear-regression/) | Basics ✅ | [Basics ✅](https://devitrylouis.github.io/posts/2018/11/basics-optimization/) |
+| [Logistic Regression 📊](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) | Useful layers ➿ | [Unconstrained ➿](https://devitrylouis.github.io/posts/2018/11/unconstrained-optimization/) |
+| [Probabilistic classifiers 🔮](https://devitrylouis.github.io/posts/2018/10/probabilistic) | Multi-Layer Perceptron 💻 | [Constrained 💻](https://devitrylouis.github.io/posts/2018/11/constrained-optimization/) |
 | [LDA 📏](https://devitrylouis.github.io/posts/2018/10/lda) | Embeddings ✒️ |  |
 | [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) | CNN 🌄 |  |
 | Support Vector Machine ↗️ | Auto-Encoder ⏳ |  |
@@ -32,17 +32,13 @@ I will list in the tables below models and tools I understood in-depth and used 
 | Clustering 👫 | Avanced RNNs 📘 |  |
 | Dimension Reduction 🔎 | Generative Adversial Networks 🎭 |  |
 
-| Network science | Optimization |
+| Network science | Big data |
 |:---------------------------:|:-------------------------------:|
-| [Grapg theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) | Basics ✅ |
-| [Random Network 📊](https://devitrylouis.github.io/posts/2018/11/random_network/) | Useful layers ➿ |
-| [Scale-free property 🔮](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) | Multi-Layer Perceptron 💻 |
-| [Barabási-Albert Model 📏](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) | Embeddings ✒️ |
-| [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) | CNN 🌄 |
-| Support Vector Machine ↗️ | Auto-Encoder ⏳ |
-| Tree-based Methods 🌲 | RNN/LSTM 🕧 |
-| Clustering 👫 | Avanced RNNs 📘 |
-| Dimension Reduction 🔎 | Generative Adversial Networks 🎭 |
+| [Graph theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) | Basics ✅ |
+| [Random Network 📊](https://devitrylouis.github.io/posts/2018/11/random_network/) | Map Reduce ➿ |
+| [Scale-free property 🔮](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) | Hadoop 💻 |
+| [Barabási-Albert Model 📏](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) | Spark ✒️ |
+
 
 What can I do?
 ------
