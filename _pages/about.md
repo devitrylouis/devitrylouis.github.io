@@ -13,12 +13,12 @@ Birdeye view of my knowledge 📚
 
 | Machine Learning | Deep Learning | Tools |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
-| [Expected risk minimization](https://devitrylouis.github.io/posts/2018/11/basics-ml/) | [Multi-Layer Perceptron](https://devitrylouis.github.io/posts/2018/11/mlp/) 💻| [Optimization basics](https://devitrylouis.github.io/posts/2018/11/basics-optimization/) ✅ |
-| [Linear regression](https://devitrylouis.github.io/posts/2018/11/linear-regression/) 📈 | Optimization | [Unconstrained optimization 🌀](https://devitrylouis.github.io/posts/2018/11/unconstrained-optimization/) |
-| [Logistic Regression](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) 📊 | [Basics ✅](https://devitrylouis.github.io/posts/2018/11/basics-dl/) | [Constrained optimization](https://devitrylouis.github.io/posts/2018/11/constrained-optimization/) 📐 |
-| [Probabilistic classifiers](https://devitrylouis.github.io/posts/2018/10/probabilistic) 🔮 | Useful layers ➿|  |
+| [Expected risk minimization](https://devitrylouis.github.io/posts/2018/11/basics-ml/) 🎯 | [Multi-Layer Perceptron](https://devitrylouis.github.io/posts/2018/11/mlp/) 💻| [Optimization basics](https://devitrylouis.github.io/posts/2018/11/basics-optimization/) ✅ |
+| [Linear regression](https://devitrylouis.github.io/posts/2018/11/linear-regression/) 📈 | Optimizing DL Models ⭐️ | [Unconstrained optimization](https://devitrylouis.github.io/posts/2018/11/unconstrained-optimization/) 🌀 |
+| [Logistic Regression](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) 📊 | [Basics](https://devitrylouis.github.io/posts/2018/11/basics-dl/) ✅ | [Constrained optimization](https://devitrylouis.github.io/posts/2018/11/constrained-optimization/) 📐 |
+| [Probabilistic classifiers](https://devitrylouis.github.io/posts/2018/10/probabilistic) 🔮 | Useful tricks and layers ➿ |  |
 | [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | Embeddings ✒️ | Anomaly detection |
-| [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) | CNN 🌄 | Anomaly detection time series |
+| [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) 🔠 | CNN 🌄 | Anomaly detection time series |
 | Support Vector Machine ↗️ | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ | Feature engineering for music |
 | Tree-based Methods 🌲 | RNN/LSTM 🕧 | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) |
 | Clustering 👫 | Avanced RNNs 📘 | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) |
