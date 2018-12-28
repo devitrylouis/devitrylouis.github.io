@@ -1,0 +1,96 @@
+---
+title: 'Basics of Deep Learning'
+date: 2018-12-01
+permalink: /posts/2018/11/basics-dl/
+tags:
+  - Deep Learning
+  - Basics
+---
+
+# Activation functions
+
+|  | Logistic sigmoid | Hyperbolic Tangent | ReLU |
+|-------------|:------------------------------:|:-------------------------:|:----------------------:|
+| Definition | $g(z) = \frac{1}{1 + exp(-z)}$ | $g(z) = tanh(z)$ | $g(z) = max (0, z)$ |
+| Saturation | Saturation | Saturation | No saturation |
+| Usefullness | First activation function | First activation function | Works well in practice |
+| At 0 |  | $\approx id$ | Non differentiable |
+
+<b>Generalizations of ReLU:</b> perform sometimes better.
+- <u>Absolute value rectification:</u> $g(z) = \mid z \mid$ useful for features invariant to polarity change.
+- <u>Leaky ReLU:</u> $g(z) = \text{max}(0, z) + \alpha \text{ min}(0, z)$ with $\alpha \approx 0.001$ fixed
+- <u>Parametric ReLU (PReLU):</u> $g(z) = \text{max}(0, z) + \alpha \text{ min}(0, z)$ where $\alpha$ is learned
+
+# Loss Function
+
+## Negative log-likelihood
+
+<b>Key idea:</b> Maximizing the likelihood / minimizing the negative log-likelihood:
+
+$$
+J(\theta) = - \mathbb{E}_{(x, y) \sim p_{data}} \text{log} p_{model}(y\mid x)
+$$
+
+where:
+- $x$: network input
+- $y$: $x$'s label / expected value for $x$
+- $p_{data}$ is the distribution of $(x, y)$ for a training set.
+- $p_{model}(y \mid x):$ how we compute the probability for a value $y$ from the network output for $x$
+
+<i>Note:</i> Negative log-likelihood = cross-entropy between the training data and the model distributions.
+
+## Mean Squared Error
+
+If we choose $p_{model}(y\mid x) = \mathcal{N}(y; f(x, \theta), I)$, the negaive log-likelihood becomes:
+
+$$
+J(\theta) = - \mathbb{E}_{(x, y) \sim p_{data}} \mid\mid y-f(x;\theta) \mid\mid^{2}
+$$
+
+<i>Keras:</i> Final layer should be linear:
+
+```python
+model.add(Dense(n)) # no activation function
+model.compile(loss = 'mean_squared_error', optimizer = ..)
+```
+
+## Categorical cross-entropy
+
+<b>Context (Multi-class classification)</b> $y$ can take integer values in $[0, n[$
+
+$$
+J(\theta) = - \frac{1}{\mid \mathcal{T} \mid} \sum_{(x, i)\in \mathcal{T}} \text{log} p_{model}(y=i \mid x)
+$$
+
+<b>Goal:</b> Find $p$ with $p_{i} = p_{model}(y = i \mid x)$ such that $p_{i} \in [0, 1]$ and $\sum p_{i} = 1$
+
+<b>Softmax</b> is a soft binarization of "maximum values returns 1, other values return 0". Namely:
+
+$$p_{i} = \text{softmax}(z)_{i} = \frac{exp(z_{i})}{\sum exp(z_{j})}$$
+
+The loss function thus becomes:
+
+$$
+J(\theta) = - \frac{1}{\mid \mathcal{T} \mid} \sum_{(x, i)\in \mathcal{T}} \text{log } \text{softmax}(z(x))_{i}
+$$
+
+<u>Intuition:</u>
+1. Squashes a vector of size $n$ between $0$ and $1$.
+2. Normalization $\Rightarrow$ sum of this whole vector equates $1$.
+3. Output of the softmax are the probabilities that the sample belongs to a certain class.
+
+<i>Keras:</i>
+
+```python
+from keras.utils import np_utils
+y_train = np_utils.to_categorical(y_train, nb_classes)
+model.add(Dense(n, activation = 'softmax'))
+model.compile(loss = 'categorical_crossentropy', optimizer = ..)
+model.fit(X_train, Y_train, .. )
+```
+
+# Generalization
+
+We want to perform well on new, previously unseen inputs (generalization). Therefore, the quantity we truly want to minimize is the test error. More details about how to handle this can be found [here](https://devitrylouis.github.io/posts/2018/11/basics-ml/).
+
+------
