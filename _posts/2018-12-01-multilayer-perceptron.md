@@ -68,5 +68,15 @@ where $\mathcal{T}$ is the training set (features $x$ and expected output $d$).
 - Do NOT use a least-squares loss function for classification problems!
 - There are no closed-form solution so we use gradient descent.
 
+## The Topology of the Functions Learned by Feedforward Networks 
+
+<b>Universal Approximation Theorem [Hornik et al, 1989; Cybenko, 1989](http://zmjones.com/static/statistical-learning/hornik-nn-1991.pdf)</b>
+
+<i>Any continuous function can be approximated by a two-layer network (with ReLU activation).</i>
+
+The function learned by a Deep Neural Network with the ReLU operator is:
+- Piecewise affine
+- Continuous
+- Equations of the final regions are correlated, in a complex way
 
 ------
