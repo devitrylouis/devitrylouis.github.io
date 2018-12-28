@@ -18,22 +18,17 @@ Birdeye view of my education 📚
 | [Probabilistic classifiers](https://devitrylouis.github.io/posts/2018/10/probabilistic) 🔮 | Useful layers ➿| [Constrained optimization](https://devitrylouis.github.io/posts/2018/11/constrained-optimization/) 📐 |
 | [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | Embeddings ✒️ | Anomaly detection |
 | [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) | CNN 🌄 | Anomaly detection time series |
-| Support Vector Machine ↗️ | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ |  |
+| Support Vector Machine ↗️ | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ | Feature engineering for music |
 | Tree-based Methods 🌲 | RNN/LSTM 🕧 |  |
 | Clustering 👫 | Avanced RNNs 📘 |  |
 | Dimension Reduction 🔎 | Generative Adversial Networks 🎭 |  |
 
-| Vision | Audio | Natural Language Processing |
-|:---------------------------:|:-------------------------------:|:-------------------------------:|
-| Image-formation model  | Introduction | Language model |
-| Feature Extraction, Saliency, Edge Detection | Transforms | Words Representation |
-| Computational Photography | Chroma | Tagging and NER |
-| Optical Flow | Spectral features | Parsing |
-| 3D Modeling | Tonnetz | Mining User Generated Content |
-| Segmentation & Grouping | MFCC | Machine Translation and Natural Language Generation  |
-| Object Detection/ Recognition | WaveNet | Machine Reading |
-| Tracking | Generative Adversial Networks 🎭 | Dialogue |
-
+| Network science | Big data |
+|:---------------------------:|:-------------------------------:|
+| [Graph theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) | Basics ✅ |
+| [Random Network](https://devitrylouis.github.io/posts/2018/11/random_network/) | [Map Reduce](https://devitrylouis.github.io/posts/2018/11/map-reduce/) |
+| [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) | Hadoop |
+| [Barabási-Albert Model](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) | Spark |
 
 | Artificial Intelligence | Reinforcement Learning | Decision Modelling |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
@@ -44,12 +39,16 @@ Birdeye view of my education 📚
 | Expert systems | Control | Preference elicitation |
 | Game implementation | Deep Reinforcement Learning | Portfolio decision analysis |
 
-| Network science | Big data |
-|:---------------------------:|:-------------------------------:|
-| [Graph theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) | Basics ✅ |
-| [Random Network](https://devitrylouis.github.io/posts/2018/11/random_network/) | [Map Reduce](https://devitrylouis.github.io/posts/2018/11/map-reduce/) |
-| [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) | Hadoop |
-| [Barabási-Albert Model](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) | Spark |
+| Vision | Natural Language Processing |
+|:---------------------------:|:-------------------------------:|:-------------------------------:|
+| Image-formation model  | Language model |
+| Feature Extraction, Saliency, Edge Detection | Words Representation |
+| Computational Photography | Tagging and NER |
+| Optical Flow | Parsing |
+| 3D Modeling | Mining User Generated Content |
+| Segmentation & Grouping | Machine Translation and Natural Language Generation  |
+| Object Detection/ Recognition | Machine Reading |
+| Tracking | Dialogue |
 
 My projects in a nutshell
 ------
