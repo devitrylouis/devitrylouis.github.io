@@ -1,7 +1,7 @@
 ---
 title: 'Multi-Layer Perceptron'
 date: 2018-12-01
-permalink: /posts/2018/11/basics-dl/
+permalink: /posts/2018/11/mlp/
 tags:
   - Deep Learning
   - Basics
