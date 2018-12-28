@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Birdeye view of my education 📚
+Birdeye view of my knowledge 📚
 ------
 
 | Machine Learning | Deep Learning | Tools |
@@ -19,7 +19,7 @@ Birdeye view of my education 📚
 | [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | Embeddings ✒️ | Anomaly detection |
 | [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) | CNN 🌄 | Anomaly detection time series |
 | Support Vector Machine ↗️ | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ | Feature engineering for music |
-| Tree-based Methods 🌲 | RNN/LSTM 🕧 |  |
+| Tree-based Methods 🌲 | RNN/LSTM 🕧 | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) |
 | Clustering 👫 | Avanced RNNs 📘 |  |
 | Dimension Reduction 🔎 | Generative Adversial Networks 🎭 |  |
 
