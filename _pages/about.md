@@ -38,7 +38,7 @@ Birdeye view of my education 📚
 | Artificial Intelligence | Reinforcement Learning | Decision Modelling |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | [Problem solving](https://devitrylouis.github.io/posts/2018/11/problem-solving-ai/) | Introduction ✅ | Multicriteria decisions |
-| Agents | MDP and bandits ➿ | Voting and social choice theory |
+| [Agents](https://devitrylouis.github.io/posts/2018/11/problem-solving-ai/) | MDP and bandits ➿ | Voting and social choice theory |
 | Adversial search | Dynamic Programming 💻 | Aggregations functions |
 | Constrained search | Prediction | Aggregations procedures |
 | Expert systems | Control | Preference elicitation |
