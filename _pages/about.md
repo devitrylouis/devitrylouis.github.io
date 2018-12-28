@@ -20,7 +20,7 @@ Birdeye view of my knowledge 📚
 | [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | Embeddings ✒️ | Anomaly detection |
 | [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) 🔠 | CNN 🌄 | Anomaly detection time series |
 | Support Vector Machine ↗️ | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ | Feature engineering for music |
-| Tree-based Methods 🌲 | RNN/LSTM 🕧 | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) |
+| [Decision trees](https://devitrylouis.github.io/posts/2018/11/decision-trees/) 🌲 | RNN/LSTM 🕧 | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) |
 | Clustering 👫 | Avanced RNNs 📘 | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) |
 | Dimension Reduction 🔎 | Generative Adversial Networks 🎭 |  |
 
