@@ -18,7 +18,7 @@ Birdeye view of my education 📚
 | [Probabilistic classifiers](https://devitrylouis.github.io/posts/2018/10/probabilistic) 🔮 | Useful layers ➿| [Constrained optimization](https://devitrylouis.github.io/posts/2018/11/constrained-optimization/) 📐 |
 | [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | Embeddings ✒️ |  |
 | [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) | CNN 🌄 |  |
-| Support Vector Machine ↗️ | Auto-Encoder ⏳ |  |
+| Support Vector Machine ↗️ | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ |  |
 | Tree-based Methods 🌲 | RNN/LSTM 🕧 |  |
 | Clustering 👫 | Avanced RNNs 📘 |  |
 | Dimension Reduction 🔎 | Generative Adversial Networks 🎭 |  |
