@@ -10,38 +10,33 @@ First-order methods: gradient descent and variants.
 
 # Local Minima
 
-Convex optimization => The problem can be reduced to finding a local minimum.
+## Neural networks are not convex
 
-When optimizing a convex function, we know that we have reached a good solution if we ﬁnd a critical point of any kind.
+In the setting of convex optimization,the problem can be reduced to finding a local minimum. Furthermore, we know that we have reached a good solution if we ﬁnd a critical point of any kind.
 
-Nearly all (Extreme ML) Neural Nets are not convex, but guaranteed to have an extremely large number of local minima.
-Not that problematic
+However nearly all Neural Networks are not convex, and are guaranteed to have an extremely large number of local minima. This is not that problematic because of the following reasonning.
 
-- Model identiﬁability = model has a suﬃciently large training set that can rule out all but one setting of the model’s parameters.
+## Model identiﬁability
 
-- Models with latent variables are often not identiﬁable because we can obtain equivalent models by exchanging latent variables with each other.
+<b>Definition</b> model has a suﬃciently large training set that can rule out all but one setting of the model’s parameters.
 
-If we have m layers with n units each, then there are $n!^{m}$ ways of arranging the hidde n units. This kind of non identiﬁability is known as weight space symmetry.
+<i>Note</i> models with latent variables are often not identiﬁable because we can obtain equivalent models by exchanging latent variables with each other.
 
-In addition to <b>weight space symmetry</b>, many kinds of neural networks have additional causes of non identiﬁability. For example, in any rectiﬁed linear or maxout network, we can scale all the incoming weights and biases of a unit by $\alpha$ if we also scale all its outgoing weights by 1/α.
+<b>Sources of non-identiﬁability:</b>
+- <u>Weight space symmetry:</u> If we have $m$ layers with $n$ units each, then there are $n!^{m}$ ways of arranging the hidde $n$ units.
+- <u>Scaling weights:</u> Rectiﬁed linear or maxout network, we can scale all the incoming weights and biases of a unit by $\alpha$ if we also scale all its outgoing weights by $1/\alpha$. This means that—if the cost function does not include terms such as weight decay that depend directly on the weights rather than the models' outputs — every local minimum of a rectiﬁed linear or maxout network lies on an $(m\times n)$-dimensional hyperbola of equivalent local minima.
 
-This means that—if the cost function does not include terms such as weight decay that depend directly on the weights rather than the models’ outputs — every local minimum of a rectiﬁed linear or maxout network lies on an (m ×n)-dimensional hyperbola of equivalent local minima. These model identiﬁability issues mean that a neural network cost function can have an extremely large or even uncountably inﬁnite amount of local minima. However, all these local minima arising from nonidentiﬁability are equivalent to each other in cost function value. As a result, these local minima are not a problematic form of non convexity. Local minima can be problematic if they have high cost in comparison to the global minimum. One can construct small neural networks, even without hidden units, that have local minima with higher cost than the global minimum.
+<b>Consequence:</b> neural network cost function can have an extremely large or even uncountably inﬁnite amount of local minima. However, all these local minima arising from non-identiﬁability are equivalent to each other in cost function value.
 
-Local minima with high costs => Problematic for gradient-based optimization algorithms
+<i>Note:</i> Local minima with high costs are nonetheless problematic for gradient-based optimization algorithms.
 
-Open questions:
-- Neural Netw have many local minima of high cost?
-
+<i>Open questions:</i>
+- Neural Network have many local minima of high cost?
 - Do optimization algorithms encounter?
 
-Today, experts suspect that,for suﬃciently large neural networks, most local minima have a low cost function value, and that it is not important to ﬁnd a true global minimum rather than to ﬁnd a point in parameter space that has low but not minimal cost
+Today, experts suspect that, for suﬃciently large neural networks, most local minima have a low cost function value, and that it is not important to ﬁnd a true global minimum rather than to ﬁnd a point in parameter space that has low but not minimal cost.
 
-TEST to RULE OUT loacl minima:
-- Plotting the norm of the gradient over time.
-    - Norm of the gradient does not shrink to insigniﬁcant size => the problem is neither local minima nor any other kind of critical point.
-    - In high-dimensional spaces, positively establishing that local minima are the problem can be very diﬃcult. Many structures other than local minima also have small gradients!
-
-# Topology
+## Plateaus, Saddle Points and Other Flat Regions
 
 <b>Saddle Points:</b> In high dimensions, saddle points are more likely than local minima as some eigenvalues are positive, some are negative.
 
@@ -49,9 +44,8 @@ For $\theta^{*}$ to be a local minimum, we need:
 - \mid\mid \frac{\partial J}{\partial \theta} (\theta^{*}) \mid\mid = 0
 - All eigenvalues of $\frac{\partial^{2}J}{\partial \theta^{2}}(\theta^{*})$ are positive
 
-For random functions in n dimensions, the probability for all the eigenvalues to be all negative is $1 / n$.
+<b>Consequence:</b> For random functions in n dimensions, the probability for all the eigenvalues to be all negative is $1 / n$.
 
-# Plateaus, Saddle Points and Other Flat Regions
 
 High-dimensional non convex functions, local minima (and maxima) are in fact rare compared to another kind of point with zero gradient (saddlepoint)
 
@@ -81,7 +75,6 @@ For more informations on the Hessian, go [here](/posts/2018/11/basics-optimizati
 
 Ill-conditioning of the Hessian Matrix is a major problem met when optimizing convex functions (believed to be present in neural network training problems)
 
-
 ### Math
 
 Recall from equation 4.9 that a second-order Taylor series expansion of the cost function predicts that a gradient descent step of $−\epsilon g$ will add
@@ -100,10 +93,16 @@ to the cost. Ill-conditioning of the gradient becomes a problem when $\frac{1}{2
 - One can monitor the squared gradient norm $g^{T}g$ and the $g^{T}Hg$ term.
     - The gradient norm does not shrink signiﬁcantly throughout learning, but the $g^{T}Hg$ term grows by more than an order of magnitude.
 
+
+
 ### Note for deep learning
 
 Some of the techniques used to combat it in other contexts are less applicable to neural networks (Newton’s method is good for requires signiﬁcant modiﬁcations before it can be applied to neural networks).
 
+<b>Test to rule out local minima:</b>
+- Plotting the norm of the gradient over time.
+    * Norm of the gradient does not shrink to insigniﬁcant size => the problem is neither local minima nor any other kind of critical point.
+    * In high-dimensional spaces, positively establishing that local minima are the problem can be very diﬃcult. Many structures other than local minima also have small gradients!
 
 
 ------
