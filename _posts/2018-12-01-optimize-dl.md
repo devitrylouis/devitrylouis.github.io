@@ -36,7 +36,7 @@ However nearly all Neural Networks are not convex, and are guaranteed to have an
 
 Today, experts suspect that, for suﬃciently large neural networks, most local minima have a low cost function value, and that it is not important to ﬁnd a true global minimum rather than to ﬁnd a point in parameter space that has low but not minimal cost.
 
-## Plateaus, Saddle Points and Other Flat Regions
+## Flat Regions in random high-dimensional functions
 
 <b>Saddle Points:</b> In high dimensional, non-convex situations, saddle points are more likely than local minima as some Hessian's eigenvalues are positive and some are negative.
 
@@ -49,12 +49,10 @@ For $\theta^{*}$ to be a local minimum, we need:
 2. An amazing property of many random functions is that the eigenvalues of the Hessian become more likely to be positive as we reach regions of lower cost.
 3. It also means that local minima are much more likely to have low cost than high cost. Critical points with high cost are far more likely to be saddle points. Critical points with extremely high cost are more likely to be local maxima.
 
-This happens for many classes of random functions.
+## Flat Regions in neural networks
 
-Does it happen for neural networks?
-- Baldi and Hornik (1989) showed theoretically that shallow [autoencoders](https://devitrylouis.github.io/posts/2018/11/autoencoder/) with no nonlinearities have global minima and saddle points but no local minima with higher cost than the global minimum.
-
-They observed without proof that these results extend to deeper networks without non-linearities. The output of such networks is a linear function of their input, but they are usefulto study as a model of nonlinear neural networks because their loss function isa non-convex function of their parameters. Such networks are essentially just multiple matrices composed together. Saxe et al. (2013) provided exact solutions to the complete learning dynamics in such networks and showed that learning in these models captures many of the qualitative features observed in the training ofdeep models with nonlinear activation functions. Dauphin et al. (2014) showed experimentally that real neural networks also have loss functions that contain very many high-cost saddle points.
+This happens for many classes of random functions. Does it happen for neural networks?
+- Baldi and Hornik (1989) showed theoretically that shallow [autoencoders](https://devitrylouis.github.io/posts/2018/11/autoencoder/) with no nonlinearities have global minima and saddle points but no local minima with higher cost than the global minimum. These results extend to deeper networks without non-linearities (empirically). The output of such networks is a linear function of their input, but they are usefulto study as a model of nonlinear neural networks because their loss function isa non-convex function of their parameters. Such networks are essentially just multiple matrices composed together. Saxe et al. (2013) provided exact solutions to the complete learning dynamics in such networks and showed that learning in these models captures many of the qualitative features observed in the training ofdeep models with nonlinear activation functions. Dauphin et al. (2014) showed experimentally that real neural networks also have loss functions that contain very many high-cost saddle points.
 
 Choromanska et al. (2014) provided additional theoretical arguments, showing that another class of high-dimensional randomfunctions related to neural networks does so as well.What are the implications of the proliferation of saddle points for trainingalgorithms? For ﬁrst-order optimization, algorithms that use only gradient infor-mation, the situation is unclear. The gradient can often become very small near asaddle point. On the other hand, gradient descent empirically seems able to escapesaddle points in many cases. Goodfellow et al. (2015) provided visualizations ofseveral learning trajectories of state-of-the-art neural networks, with an examplegiven in ﬁgure 8.2. These visualizations show a ﬂattening of the cost function neara prominent saddle point, where the weights are all zero, but they also show thegradient descent trajectory rapidly escaping this region. Goodfellow et al. (2015)283
 
@@ -62,7 +60,21 @@ For more informations on the Hessian, go [here](/posts/2018/11/basics-optimizati
 
 # Gradient descent
 
+We use gradient descent to minimize the error with respect to the parameters $\theta$, namely $ \text{min}_{\theta} J(\theta)$ with the following iterates:
+
+$$
+\theta \leftarrow \theta - \lambda \frac{\partial J}{\partial \theta}
+$$
+
+where $\lambda$ is the learning rate:
+
+![Different learning rates](https://imaddabbura.github.io/img/gradient_descent_algorithms/learning_rate.PNG)
+
 ## Back propagation
+
+Backpropagation is shorthand for "the backward propagation of errors," since an error is computed at the output and distributed backwards throughout the network’s layers.[2] It is commonly used to train deep neural networks.
+
+Backpropagation is a generalization of the delta rule to multi-layered feedforward networks, made possible by using the chain rule to iteratively compute gradients for each layer.
 
 ## Stochastic Gradient Descent
 
