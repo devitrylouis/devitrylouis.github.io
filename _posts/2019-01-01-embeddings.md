@@ -1,5 +1,5 @@
 ---
-title: 'Optimizing Deep Learning'
+title: 'Word embeddings'
 date: 2018-12-01
 permalink: /posts/2019/01/embeddings/
 tags:
@@ -15,8 +15,8 @@ Most recently, embeddings have been learned with neural networks. However, they 
 
 <b>Example: Convnet encoder</b>
 
-1) Train your ConvNet on a large supervised image-classification task (ImageNet)
-2) Encode your image with the ConvNet -> image embedding
+- Train your ConvNet on a large supervised image-classification task (ImageNet)
+- Encode your image with the ConvNet with the hidden layer between convolutional neural network  and fully connected network.
 
 <b>Usefullness:</b>
 - We can compute the <u>learned similarity distance</u> to find similar images.

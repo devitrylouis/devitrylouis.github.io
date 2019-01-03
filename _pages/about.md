@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "AI student and engineer"
+title: "Artificial Intelligence engineer and entrepreneur"
 excerpt: "About me"
 author_profile: true
 redirect_from:
@@ -8,8 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Birdeye view of my knowledge 📚
-------
+Here is an artcile collections I wrote during my master. It covers the basics of Machine Learning and Deep Learning, along with tools and domain specific articles (time series, music...).
 
 | Machine Learning | Deep Learning | Tools |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
