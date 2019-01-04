@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Artificial Intelligence engineer and entrepreneur"
+title: "Artificial Intelligence engineer and aspiring entrepreneur"
 excerpt: "About me"
 author_profile: true
 redirect_from:

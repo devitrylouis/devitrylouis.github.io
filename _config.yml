@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "fr-FR"
-title                    : "Louis de Vitry"
+title                    : "AI from scratch"
 title_separator          : "-"
 name                     : &name "de Vitry"
 description              : &description "AI engineer"
