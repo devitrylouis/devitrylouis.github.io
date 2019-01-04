@@ -4,6 +4,7 @@ date: 2018-11-16
 permalink: /posts/2019/01/link-prediction/
 tags:
   - Network science
+comments: true
 ---
 
 # Link prediction
@@ -112,6 +113,12 @@ $$
 #### Random Walk-based Methods
 
 Consider a random walk on $G_{old}$ that starts at $x$ and iteratively moves to a neighbor of $x$ chosen uniformly at random from $\Gamma(x)$.
+
+<u>Hitting time:</u> $H_{x,y}$ (from $x$ to $y$): the expected number of steps it takes for the random walk starting at $x$ to reach $$
+$$c(x, y) = - H_{x,y}$$
+
+<u>Commute time:</u> $Comm(x, y)$ (from $x$ to $y$): the expected number of steps to travel from $x$ to $y$ and from $y$ to $x$
+$$c(x, y) = - (H_{x,y} + H_{y,x})$$
 
 ### SimRank
 
