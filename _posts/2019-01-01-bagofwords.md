@@ -82,5 +82,10 @@ The goal in the next articles is to capture more structure by framing the input 
 
 <b>Sources:</b>
 - [TF-IDF website](http://www.tfidf.com/)
-
+- K. Sparck Jones. "A statistical interpretation of term specificity and its application in retrieval". Journal of Documentation, 28 (1). 1972.
+- G. Salton and Edward Fox and Wu Harry Wu. "Extended Boolean information retrieval". Communications of the ACM, 26 (11). 1983.
+- G. Salton and M. J. McGill. "Introduction to modern information retrieval". 1983
+- G. Salton and C. Buckley. "Term-weighting approaches in automatic text retrieval". Information Processing & Management, 24 (5). 1988.
+- H. Wu and R. Luk and K. Wong and K. Kwok. "Interpreting TF-IDF term weights as making relevance decisions". ACM Transactions on Information Systems, 26 (3). 2008.
+- 
 ------
