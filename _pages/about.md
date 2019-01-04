@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Here is an artcile collections I wrote during my master. It covers the basics of Machine Learning and Deep Learning, along with tools and domain specific articles (time series, music...).
+Here is a collection of articles I wrote during the last year. It is a summary of my personal projects and research as well on lecture notes and online content. It covers the basics of Machine Learning and Deep Learning, along with tools and domain specific articles (time series, NLP, visual computing, network science, music...).
 
 | Machine Learning | Deep Learning | Tools |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
