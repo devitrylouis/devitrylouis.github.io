@@ -96,5 +96,4 @@ W^{*} = \text{argmin}_{W \in O_{d}(\mathcal{R})} \mid\mid WX-Y\mid\mid_{F} = UV^
 <b>Sources:</b>
 - [Blog post by Chris McCormick](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
 - Mikolov et al. (2013) – Exploiting Similarities among Languages for Machine Translation for more details.
-
 ------
