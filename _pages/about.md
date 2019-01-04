@@ -19,10 +19,11 @@ Here is a collection of articles I wrote during the last year. It is a summary o
 | [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | [Word embeddings](https://devitrylouis.github.io/posts/2019/01/embeddings/) ✒️ | Anomaly detection |
 | Dimension Reduction 🔎 | [Bag-of-Words](https://devitrylouis.github.io/posts/2019/01/bag-of-words/) ✒️ | Anomaly detection time series|
 | [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) 🔠 | CNN 🌄 | Feature engineering for music |
-| Support Vector Machine ↗️ | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) |
-| [Decision trees](https://devitrylouis.github.io/posts/2018/11/decision-trees/) 🌲 | RNN/LSTM 🕧 |  |
-| Clustering 👫 | Avanced RNNs 📘 |  |
-|  | Generative Adversial Networks 🎭 |  |
+| [Decision trees](https://devitrylouis.github.io/posts/2018/11/decision-trees/) 🌲 | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) |
+| Ensemble methods 🌲🌳 | RNN/LSTM 🕧 |  |
+| Support Vector Machine ↗️ | Avanced RNNs 📘 |  |
+| Clustering 👫 | Generative Adversial Networks 🎭 |  |
+
 
 | Network science | Big data |
 |:---------------------------:|:-------------------------------:|
