@@ -172,13 +172,19 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
+  category:
+    output: true
   portfolio:
     output: true
     permalink: /:collection/:path/
 
-
-# Defaults
 defaults:
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
+
   # _posts
   - scope:
       path: ""
@@ -225,7 +231,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/ # 
+permalink: /:categories/:title/ #
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
 timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
