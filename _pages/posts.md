@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: 'Knowledge'
+title: 'posts'
 date: 2018-12-01
 permalink: /posts/
 ---
