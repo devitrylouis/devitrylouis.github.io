@@ -179,12 +179,6 @@ collections:
     permalink: /:collection/:path/
 
 defaults:
-  - scope:
-      path: ""
-      type: category
-    values:
-      layout: "category"
-
   # _posts
   - scope:
       path: ""
