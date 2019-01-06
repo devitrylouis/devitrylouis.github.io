@@ -69,9 +69,12 @@ Let $\Gamma(x)$ be the set of neighbors of $x$ in G_{old}.
 $$c(x, y) = \mid \Gamma(x) \cap \Gamma(y) \mid$$
 
 <u>Jaccard coefficient:</u> The probability that both $x$ and $y$
-have common neighbors:$c(x, y) = \frac{\mid \Gamma(x) \cap \Gamma(y) \mid}{\mid \Gamma(x) \cup \Gamma(y) \mid}$
+have common neighbors:
 
-<u>Adamic/Adar:</u> Assigns large weights to common neighbors $z$ of $x$ and $y$ which themselves have few neighbors (weight rare features more heavily) $$c(x, y) = \sum_{z\in\Gamma(x) \cap \Gamma(y)} \frac{1}{\text{log}\mid\Gamma(z)\mid}$$
+$$c(x, y) = \frac{\mid \Gamma(x) \cap \Gamma(y) \mid}{\mid \Gamma(x) \cup \Gamma(y) \mid}$$
+
+<u>Adamic/Adar:</u> Assigns large weights to common neighbors $z$ of $x$ and $y$ which themselves have few neighbors (weight rare features more heavily)
+$$c(x, y) = \sum_{z\in\Gamma(x) \cap \Gamma(y)} \frac{1}{\text{log}\mid\Gamma(z)\mid}$$
 
 <u>Preferential attachment:</u> Based on the intuition that the probability that a new edge has node $x$ as its endpoint is proportional to $|\Gamma(x)|$, i.e., nodes prefer to form ties with 'popular' nodes:
 $$ c(x, y) = \mid\Gamma(x)\mid\cdot\mid\Gamma(y)\mid $$
@@ -85,14 +88,13 @@ $$ c(x, y) = \mid\Gamma(x)\mid\cdot\mid\Gamma(y)\mid $$
 <b>Intuition:</b> The “closer” two nodes are in the network, the more likely is to be linked in the future
 
 <u>Shortest Path-Based:</u>
-$$c(x, y) = - d(x, y)
-$$
+$$c(x, y) = - d(x, y)$$
 
 <i>In practice:</i> (?)
 Some further normalization may needed
 If there are more than $n$ pairs of nodes at the shortest path length $l$, order them at random
 
-<u>\text{Katz}_{\beta} measure:</u> We denote by $l$ the set of all paths of length $l$ from $x$ to $y$
+<u>$\text{Katz}_{\beta}$ measure:</u> We denote by $l$ the set of all paths of length $l$ from $x$ to $y$
 $$
 c(x, y) = \sum_{l=1}^{\infty}\beta^{l}\cdot\mid\text{paths}_{x, y}^{\langle l \rangle}\mid
 $$
