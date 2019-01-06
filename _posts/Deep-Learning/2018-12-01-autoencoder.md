@@ -1,7 +1,7 @@
 ---
 title: 'Auto-encoder'
 date: 2018-12-01
-permalink: /posts/2018/11/autoencoder/
+permalink: /posts/Deep-Learning/autoencoder
 tags:
   - Deep Learning
   - Basics
