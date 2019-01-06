@@ -74,6 +74,70 @@ $$
 w_{queen} \approx w_{woman} + (w_{king} - w_{man})
 $$
 
+# Code
+
+Usually it boils down to [download](https://fasttext.cc/docs/en/english-vectors.html) already trained word2vec. If you wish to build a custom and robust word2vec, you can go to [here](https://code.google.com/archive/p/word2vec/). In plain python, we can build one by:
+
+<b>Import the basics
+```python
+import io
+import os
+import numpy as np
+
+path_data = "data/"
+
+class Word2vec():
+    """
+    Rudimental implementation of Word2Vec. This class can read a pre-trained *.vec and
+    perform cosine similarity and k-most similar. It deals with external words
+    missing from the pre-trained model.
+    """
+    def __init__(self, fname, max_words=100000):
+        self.load_wordvec(fname, max_words)
+        self.embeddings = np.array(self.word2vec.values())
+
+    def load_wordvec(self, fname, max_words):
+        self.word2vec = {}
+        with io.open(fname, encoding='utf-8') as f:
+            next(f)
+            for i, line in enumerate(f):
+                word, vec = line.split(' ', 1)
+                self.word2vec[word] = np.fromstring(vec, sep=' ')
+                if i == (max_words - 1):
+                    break
+        print('Loaded %s pretrained word vectors' % (len(self.word2vec)))
+
+    def most_similar(self, w, K = 5):
+        # Cosine similarity for every words.
+        similarities = {k : self.cosine_similarity(w, k) for k, v in self.word2vec.items()}
+        # Return the k-th element of the sorted dictionary
+        return(sorted(similarities, key=similarities.get, reverse=True)[-K:])
+
+    def cosine_similarity(self, u, v):
+        # Compute the dot product of each word and normalize
+        dot_product = np.dot(self.word2vec[u], self.word2vec[v])
+        normalizer = np.linalg.norm(self.word2vec[u]) * np.linalg.norm(self.word2vec[v])
+        return dot_product/float(normalizer)
+
+    def assign_w2v(self, word):
+        # Deal with external word not present.
+        try:
+            return(self.word2vec[word])
+        except KeyError:
+            return(None)
+
+# Instanciate Word2vec with our data and the max nb of words
+w2v = Word2vec(os.path.join(path_data, 'crawl-300d-200k.vec'), max_words = 200000)
+
+# Similarity scoring
+for u, v in zip(('cat', 'dog', 'dogs', 'Paris', 'Germany'), ('dog', 'pet', 'cats', 'France', 'Berlin')):
+    print(u, v, w2v.cosine_similarity(u, v))
+
+# Most similar words
+for u in ['cat', 'dog', 'dogs', 'Paris', 'Germany']:
+    print(w2v.most_similar(u))
+```
+
 # Variants and extensions of word2vec
 
 ## « FastText »

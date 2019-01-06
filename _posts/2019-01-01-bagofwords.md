@@ -58,9 +58,77 @@ which is the total number of documents divided by the number of documents with t
 
 ## Transfer Learning – pretrained word vectors
 
-1. Learn word embeddings on a huge unsupervised corpus (e.g. Wikipedia)
-2. Embed documents using the (weighted) average of word embeddings
-3. Learn a classifier (Logistic Regression, SVM, Random Forest, MLP)
+<u>1. Learn word embeddings on a huge unsupervised corpus (e.g. Wikipedia)</u>
+
+To deal with word2vec, refer to [this post](https://devitrylouis.github.io/posts/2019/01/embeddings/) (code included).
+
+<u>2. Embed documents using the (weighted) average of word embeddings</u>
+
+```python
+class BoV():
+    def __init__(self, w2v, sentences):
+        self.w2v = w2v
+        self.encode(sentences)
+
+    def encode(self, sentences):
+        # Compute IDFs and set list of embeddings
+        self.idfs = s2v.build_idf(sentences)
+        sentemb_idf = []
+
+        # Sequential encoding
+        for sent in sentences:
+            # Split and filter the sentences
+            splitted_sent = sent.split(' ')
+            splitted_sent = filter(bool, splitted_sent)
+
+            # Word2vec
+            embeddings = map(lambda x: w2v.assign_w2v(x), splitted_sent)
+            dict_embeddings = dict(zip(splitted_sent, embeddings))
+
+            # There are words in sentences missing in word2vec files
+            # The next lines of code take care of this by removing useless keys
+            valid_embeddings = {k:v for k, v in dict_embeddings.iteritems() if v is not None}
+            valid_idfs = {k:v for k,v in idfs.iteritems() if k in valid_embeddings.keys()}
+            list_embeddings = list(valid_embeddings.values())
+            array_idfs = np.array(valid_idfs.values())
+
+            # Handling error for empty sentences
+            if len(list_embeddings) in [0] or list_embeddings is None:
+                sentemb_idf.append(None)
+            else:
+                # Idf-weighted mean of word vectors
+                sentemb_idf.append(np.average(np.vstack(list_embeddings), weights = array_idfs, axis = 0))
+
+        self.embeddings_idf = dict(zip(sentences, sentemb_idf))
+
+    def most_similar(self, s, sentences, idf=False, K=5):
+        # Get most similar sentences and **print** them
+        similarities = {s: self.score(s, sent, idf) for sent in sentences}
+        print(sorted(similarities, key=similarities.get, reverse=True)[-K:])
+
+    def cosine_similarity(self, s, r, idf=False):
+        # Cosine similarity
+        dot_product = np.dot(self.embeddings_idf[s], self.embeddings_idf[r])
+        normalizer = np.linalg.norm(self.embeddings_idf[s]) * np.linalg.norm(self.embeddings_idf[r])
+        return(dot_product/float(normalizer))
+
+    def build_idf(self, sentences):
+        # Build the idf dictionary: associate each word to its idf value
+        idf = {}
+        idf = dict.fromkeys(set(' '.join(sentences).split()), 1)
+
+        # Iterate other words in all sentences (suboptimal)
+        for sent in sentences:
+            for w in sent.split(' '):
+                if w != "":
+                    idf[w] += 1
+
+        idfs = {k:max(1, np.log10(len(sentences) / float(v))) for k, v in idf.items()}
+
+        return idfs
+```
+
+<u>3. Learn a classifier (Logistic Regression, SVM, Random Forest, MLP)</u>
 
 <b>Note:</b> This can work because in high dimension, the average of word vectors is a vector that is close to all its components (preservation of the information of each word).
 

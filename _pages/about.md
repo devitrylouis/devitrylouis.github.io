@@ -18,10 +18,10 @@ Some of them are very much a work in progress. I update those on a daily basis (
 | [Linear regression](https://devitrylouis.github.io/posts/2018/11/linear-regression/) 📈 | [Optimizing DL Models](https://devitrylouis.github.io/posts/2018/11/optimize-dl/) ⭐️ | [Unconstrained optimization](https://devitrylouis.github.io/posts/2018/11/unconstrained-optimization/) 🌀 |
 | [Logistic Regression](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) 📊 | [Basics](https://devitrylouis.github.io/posts/2018/11/basics-dl/) ✅ | [Constrained optimization](https://devitrylouis.github.io/posts/2018/11/constrained-optimization/) 📐 |
 | [Probabilistic classifiers](https://devitrylouis.github.io/posts/2018/10/probabilistic) 🔮 | Useful tricks and layers ➿ | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) 💠 |
-| [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | [Word embeddings](https://devitrylouis.github.io/posts/2019/01/embeddings/) ✒️ | Anomaly detection |
-| Dimension Reduction 🔎 | [Bag-of-Words](https://devitrylouis.github.io/posts/2019/01/bag-of-words/) ✒️ | Anomaly detection time series|
-| [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) 🔠 | CNN 🌄 | Feature engineering for music |
-| [Decision trees](https://devitrylouis.github.io/posts/2018/11/decision-trees/) 🌲 | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) |
+| [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | [Word embeddings](https://devitrylouis.github.io/posts/2019/01/embeddings/) ✒️ | Anomaly detection ❗️ |
+| Dimension Reduction 🔎 | [Bag-of-Words](https://devitrylouis.github.io/posts/2019/01/bag-of-words/) ✒️ | Anomaly detection time series 🕜❗️|
+| [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) 🔠 | CNN 🌄 | Feature engineering for music 🎼 |
+| [Decision trees](https://devitrylouis.github.io/posts/2018/11/decision-trees/) 🌲 | [Auto-Encoder](https://devitrylouis.github.io/posts/2018/11/autoencoder/) ⏳ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) 💈 |
 | Ensemble methods 🌲🌳 | RNN/LSTM 🕧 |  |
 | Support Vector Machine ↗️ | Avanced RNNs 📘 |  |
 | Clustering 👫 | Generative Adversial Networks 🎭 |  |

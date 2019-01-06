@@ -120,18 +120,100 @@ $$c(x, y) = - H_{x,y}$$
 <u>Commute time:</u> $Comm(x, y)$ (from $x$ to $y$): the expected number of steps to travel from $x$ to $y$ and from $y$ to $x$
 $$c(x, y) = - (H_{x,y} + H_{y,x})$$
 
-### SimRank
+<b>Implementation notes:</b>
+- <u>Periodically reset the walk:</u> The hitting time and commute time measures are sensitive to parts
+of the graph far away from $x$ and $y$
+– Random walk on $G_{old}$ that starts at $x$ and has a probability $\alpha$ of
+returning to $x$ at each step.
+
+<b>Rooted (Personalized) PageRank</b>
+– Starts from $x$
+– With probability $(1 – \alpha)$ moves to a random neighbor
+– With probability $\alpha$ returns to $x$!
+
+$$c(x, y) = stationary probability of y in a rooted PageRank$$
+
+### SimRank [Jeh and Widom ‘02]
+
+<b>Intuition:</b> Two objects are similar, if they are related to similar objects
+
+<b>Similarity measure:</b> Expresses the average similarity between neighbors of $x$ and neighbors of $y$. It is defined recursively.
+
+$$
+sim(x, y) = \frac{\gamma}{\mid\Gamma(x)\mid\cdot\mid\Gamma(y)\mid}\sum_{a\in\Gamma(x)}\sum_{b\in\Gamma(y)} sim_{0}(a, b)
+$$
+
+with the computation being:
+
+$$
+\begin{cases}
+1 \text{ if a = b} \\
+0 \text{otherwise }
+\end{cases}
+$$
 
 ## Evaluation
-### Evaluation and results
-### How to Evaluate the Prediction?
-### Evaluation: Baseline Predictor
-### Relative Average Performance
 
-## Additional Materiam
+<b>Big question:</b> How to Evaluate the Prediction?
+
+### Method
+
+First, we notive that each link predictor $p$ outputs a ranked list $L_{p}$ of pairs in $V \times V − E_{old}$ predicted new edges in decreasing order of confidence. Here we focus on Core of the graph (degree $k>3$), thus
+
+$$E_{new}^{*} = E_{new} \cap (Core \times Core)$$
+
+Evaluation method: size of intersection of
+    * The first $n$ edge predictions from $L_{p}$ that are in $Core × Core$
+    and
+    * The actual set $E_{new}$!
+
+How many of the (relevant) top-$n$ predictions are correct (precision?)
+
+### Baseline Predictor
+
+Prediction accuracy will be measured in terms of relative improvement
+over a random predictor!
+– Why? First application was in co-authorship networks
+– Many collaborations form (or fail to form) for reasons outside the scope of
+the networks
+– The raw accuracy (in the unsupervised case) is very low
+
+<b>Random Predictor:</b> randomly selects pairs of authors who did not
+collaborate (i.e., there is no edge) in the training interval
+– Probability that a random prediction is correct:
+
+\frac{\mid E_{new}\mid}{\binom{\mid Core \mid}{2} - \mid E_{old} \mid}
+
+<i>In practice:</i>
+- Random predictions are correct with prob. between 0.15% (cond-mat) to 0.48% (astro-physics).
+- Relative Average Performance between various predictors ($\text{Katz}_{\beta}$) and the random predictor.
+
 ### Discussion and Extensions
+
+| Improve performance | Improve efficiency |
+|:-------------------------------:|:-------------------------:|
+| Weights more recent links | Approximates the distance |
+| Use additional informations | Restrict core size |
+| Use measures as features for ML |  |
+
+### Supervised Link prediction
+
+Similarity measure can be used as features for the binary classification task of finding missing edge ($0$ or $1$).
+The same “similarity” measures can be used as features for supervised link prediction
+
+<b>In practice:</i>
+– <u>Train / test split</u> with time (see above)
+– Use <u>ROC curve</u> (false positive rate vs. true positive rate) to evaluate the predictions
+– <u>Weak point:</u> have to deal with class imbalance!
+
 ### Features
-### Experimental Results
+
+
+
+### Code
+- [networkx](https://networkx.github.io/documentation/networkx-1.10/reference/algorithms.link_prediction.html)
+- [LPmade: Link Prediction Made Easy](https://www3.nd.edu/~dial/software/)
+- look at http://igraph.org/python/doc/igraph.Graph-class.html for feature ideas
 
 # Supervised random walks for link prediction
 ## Motivation
