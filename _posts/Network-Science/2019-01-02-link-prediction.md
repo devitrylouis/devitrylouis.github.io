@@ -63,7 +63,7 @@ We should use some form of similarity or node proximity of $x$ and $y$ based sol
 
 <b>Intuition:</b> The larger the overlap of the neighbors of two nodes, the more likely the nodes to be linked in the future.
 
-Let $\Gamma(x)$ be the set of neighbors of $x$ in G_{old}.
+Let $\Gamma(x)$ be the set of neighbors of $x$ in $G_{old}$.
 
 <u>Common neighbors:</u> Number of common neighbors
 $$c(x, y) = \mid \Gamma(x) \cap \Gamma(y) \mid$$
