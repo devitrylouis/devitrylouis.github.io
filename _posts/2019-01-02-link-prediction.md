@@ -95,8 +95,7 @@ Some further normalization may needed
 If there are more than $n$ pairs of nodes at the shortest path length $l$, order them at random
 
 <u>$\text{Katz}_{\beta}$ measure:</u> We denote by $l$ the set of all paths of length $l$ from $x$ to $y$
-$$
-c(x, y) = \sum_{l=1}^{\infty}\beta^{l}\cdot\mid\text{paths}_{x, y}^{\langle l \rangle}\mid
+$$c(x, y) = \sum_{l=1}^{\infty}\beta^{l}\cdot\mid\text{paths}_{x, y}^{\langle l \rangle}\mid
 $$
 
 <i>Note:</i> The measure can be expressed with the adjacency matrix because $\beta^{l}\cdot\mid\text{paths}_{x, y}^{\langle l \rangle}\mid = \beta^{l} A_{xy}^{l}$
