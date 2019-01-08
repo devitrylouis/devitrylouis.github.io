@@ -1,6 +1,6 @@
 ---
 title: 'Link prediction'
-date: 2018-11-16
+date: 2019-01-01
 permalink: /posts/2019/01/link-prediction/
 tags:
   - Network science
