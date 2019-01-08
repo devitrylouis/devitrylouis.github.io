@@ -106,9 +106,9 @@ where:
 
 <b>Complexity: </b> $\mathcal{O}(m^{2}n)$ (or $\mathcal{O}(n^{3})$ in sparse graphs)
 
-<b>Evaluating</b>
-– The output of the algorithm is in the form of a dendrogram (stop the algorithm at some point)!
-– Use modularity as a criterion to cut the dendrogram and terminate the algorithm ($Q ~= 0.3-0.7$ indicates good partitions)
+<b>Evaluation</b>
+- The output of the algorithm is in the form of a dendrogram (stop the algorithm at some point)!
+- Use modularity as a criterion to cut the dendrogram and terminate the algorithm ($Q ~= 0.3-0.7$ indicates good partitions)
 
 # Modularity optimization
 
@@ -117,8 +117,8 @@ As stated earlier, high values of modularity indicate good quality of partitions
 <b>Goal:</b> Find the partition that corresponds to the maximum value of modularity
 
 <b>Modularity maximization problem</b>
-– Computational difficult problem [Brandes et al. ‘06]
-– Approximation techniques and heuristics
+- Computational difficult problem [Brandes et al. ‘06]
+- Approximation techniques and heuristics
 
 <b>Four main categories of techniques</b>
 1. Greedy techniques
@@ -130,24 +130,24 @@ As stated earlier, high values of modularity indicate good quality of partitions
 
 ### Newman’s algorithm [Newman ’04]
 
-TL; DR: It is an agglomerative (bottom-up) hierarchical clustering algorithm who works by repeatedly joining pairs of communities that achieve the greatest
+<b>TL; DR:</b> It is an agglomerative (bottom-up) hierarchical clustering algorithm who works by repeatedly joining pairs of communities that achieve the greatest
 increase of modularity (dendrogram representation).
 
 <b>Algorithm:</b>
 1. Initially, each node of the graph belongs to its own cluster (n)
 2. Repeatedly, join communities in pairs by adding edges
-  a. At each step, choose the pairs that achieve the greatest increase (or minimum decrease) of modularity
-  b. Consider only pairs of communities between which there exist edges (merging communities that do not share edges, it can never improve modularity)
+    * At each step, choose the pairs that achieve the greatest increase (or minimum decrease) of modularity
+    * Consider only pairs of communities between which there exist edges (merging communities that do not share edges, it can never improve modularity)
 
 <b>Complexity:</b> $\mathcal{0}((m+n) n)$ (or $\mathcal{0}(n^{2})$ in sparse graphs)
 
 ### Variants
 
-Many variants - such as Clauset, Newman and Moore) - use the <u>key idea</u> of <u>sparsity</u>. More specifically, they use a <b>max-heap</b>:
+Many variants, such as Clauset, Newman and Moore, use the <u>key idea</u> of <u>sparsity</u>. More specifically, they use a <b>max-heap</b>:
   - A sparse matrix for storing the variations of modularity $\Delta Q_{i,j}$ after joining two communities $i, j$
   - A max-heap data structure for the largest element of each row of matrix $\Delta Q_{i,j}$ (fast update time and constant time for finndmax() operation)
 
-<u>Complexity:</u> $\mathcal{0}(m d logn)$, $d$ is the depth of the dendrogram describing the performed partitions (the community structure). And $\mathcal{0}(n log^{2} n)$ for sparse graphs as $d \approx log n$.
+<u>Complexity:</u> $\mathcal{0}(m\cdot d \cdot  log(n))$, $d$ is the depth of the dendrogram describing the performed partitions (the community structure). And $\mathcal{0}(n\cdot  log^{2}(n))$ for sparse graphs as $d \approx log(n)$.
 
 ### Spectral Optimization
 
@@ -155,7 +155,7 @@ Many variants - such as Clauset, Newman and Moore) - use the <u>key idea</u> of 
 
 <b>Goal:</b> Assign the nodes into two communities, $X$ and $Y$
 
-Let $s$ is the indicator variable for nodes in $X$ ($+1$) or in $Y$ ($-1$). Then we obtain:
+If we let $s$ is the indicator variable for nodes in $X$ ($+1$) or in $Y$ ($-1$), the modularity becomes:
 
 $$
 Q = \frac{1}{4m}s^{T}B^{T}
@@ -171,22 +171,22 @@ $$
 Q = \frac{1}{4m}\sum_{i=1}^{n} \lambda_{i}(u_{i}^{T} \cdot s)^{2}
 $$
 
-where $λ_{i}$ is the eigenvalue of $B$ corresponding to eigenvector $u_{i}$.
+where $\lambda_{i}$ is the eigenvalue of $B$ corresponding to eigenvector $u_{i}$.
 
 Once this is done, we can optimize by:
-- Pick $s$ that is parallel to $u_{1}$!
+- Pick $s$ that is parallel to $u_{1}$
 - Maximize $u_{1}\cdot s$, i.e., the projection of $s$ along vector $u_{1}$
 
 <b>Spectral modularity optimization algorithm</b>
-1. Consider the eigenvector u_{1} of B corresponding to the largest eigenvalue
+1. Consider the eigenvector $u_{1}$ of B corresponding to the largest eigenvalue
 2. Assign the nodes of the graph in one of the two communities $X$ ($s_{i}  = +1$) and $Y$ ($s_{i}  = -1$) based on the signs of the corresponding components of the eigenvector.
 
 <b>Working with more than two partitions</b>
-1. Iteratively, divide the produced partitions into two parts
-2. If at any step the split does not contribute to the modularity, leave the corresponding subgraph as is
-3. End when the entire graph cannot be splitted into no further divisible subgraphs
+1. Iteratively, divide the produced partitions into two parts.
+2. If at any step the split does not contribute to the modularity, leave the corresponding subgraph as is.
+3. End when the entire graph cannot be splitted into no further divisible subgraphs.
 
-<b>Complexity:<b> $\mathcal{O}(n^{2} log n)$ for sparse graphs
+<b>Complexity:<b> $\mathcal{O}(n^{2}\cdot log (n))$ for sparse graphs
 
 #### Faster Modularity Optimization?
 
@@ -196,36 +196,38 @@ The algorithm performs multiple passes, each with two phases:
 1. Modularity Optimization
 2. Community Aggregation
 
-<b>Louvain</b>
-Start with a weighted network where all nodes are in their own communities (i.e., n communities)
+#### Louvain method
+
+<u>Initialization</u>
+Start with a weighted network where all nodes are in their own communities (i.e., $n$ communities).
 
 <u>First phase (Modularity Optimization)</u>
 
-1. For each node $v_{i}$
-  – For all neighbors $v_{j}$ of $v_{i}$
-      * Compute the modularity gain if $v_{i}$ is removed from its community and placed in the community of $v_{j}$!
-  – Find the community with the maximum modularity gain
-  – If the maximum gain is positive, remove $v_{i}$ from its community, and place it in that community
-  - If no positive gain, keep the same communities
+For each node $v_{i}$
+- For all neighbors $v_{j}$ of $v_{i}$: Compute the modularity gain if $v_{i}$ is removed from its community and placed in the community of $v_{j}$.
+- Find the community with the maximum modularity gain.
+- If the maximum gain is positive, remove $v_{i}$ from its community, and place it in that community.
+- If no positive gain, keep the same communities.
 
-2.Repeat until no node changes its community
+
+Repeat until no node changes its community
 
 <u>Second phase (Community Aggregation):</u> Build a new network!
-– Nodes are the communities
-– Edges are the edges between nodes in the corresponding communities (weights are sum of the weights)
-– Self-loops represent edges within the community
+- Nodes are the communities
+- Edges are the edges between nodes in the corresponding communities (weights are sum of the weights)
+- Self-loops represent edges within the community
 
 <b>In practice:<b>
 - The algorithm creates hierarchies of communities
 - Typically, less than $10$ passes are enough
-- <u>Complexity:</u> $\mathcal{O}(n logn)$
+- <u>Complexity:</u> $\mathcal{O}(n\cdot log(n))$
 
 <b>Extensions of Modularity:</b> Modularity has been extended in several directions
-– Weighted graphs [Newman ‘04]
-– Bipartite graphs [Guimera et al ‘07] !
-– Directed graphs [Arenas et al. ‘07], [Leicht and Newman ‘08]!
-– Overlapping community detection [Nicosia et al. ‘09]!
-– Modifications in the configuration model – local definition of modularity [Muff et al. ‘05]!
+- Weighted graphs [Newman ‘04]
+- Bipartite graphs [Guimera et al ‘07] !
+- Directed graphs [Arenas et al. ‘07], [Leicht and Newman ‘08]!
+- Overlapping community detection [Nicosia et al. ‘09]!
+- Modifications in the configuration model – local definition of modularity [Muff et al. ‘05]!
 
 <b>Resolution Limit of Modularity:</b>
 The method of modularity optimization may not detect communities with relatively small size, which depends on the total number of edges in the graph
