@@ -6,7 +6,7 @@ tags:
   - Network science
 ---
 
-The notion of community structure captures the tendency of nodes to be organized into modules (communities, clusters, groups) – Members within a community are more similar among each other
+The notion of community structure captures the tendency of nodes to be organized into modules (communities, clusters, groups) – members within a community are more similar among each other.
 
 Typically, the communities in graphs correspond to densely connected entities, i.e. set of nodes which display better connections between its members, than to the rest of the network.
 
@@ -16,11 +16,12 @@ Typically, the communities in graphs correspond to densely connected entities, i
 
 ## Definition
 
-The property of community structure is difficult to be defined
-– There is no universal definition of the problem
-– It depends heavily on the application domain and the properties of the graph under consideration
+The property of community structure is difficult to be defined:
 
-Most widely used notion/definition of communities is based on the number of edges within a group (density) compared to the number of edges between different groups.
+- There is no universal definition of the problem
+- It depends heavily on the application domain and the properties of the graph under consideration
+
+The most widely used notion/definition of communities is based on the number of edges within a group (density) compared to the number of edges between different groups.
 
 A community corresponds to a group of nodes with more intracluster edges than inter-clusters edges
 
@@ -32,27 +33,24 @@ A community corresponds to a group of nodes with more intracluster edges than in
 
 In this section, we give an overview of techniques which aim to automatically find such densely connected groups of nodes such that detected clusters would then correspond to real groups.
 
-### How to Evaluate the Quality of Communities
+### Evaluate the quality of communities
 
-<b>Typically, two criterias are used:</b>
-– Internal connectivity (intra-community edges)
-– External connectivity (inter-community edges)
+<b>Classical approach:</b>
+- Internal connectivity (intra-community edges)
+- External connectivity (inter-community edges)
 
-<u>Question:</u> Is there any other way to distinguish groups of nodes with good community structure?
+<b>Use random networks neutral communities:</b>
+Contrary to real networks, random networks are not expected to present inherent community structure. Therefore, an analysis of the differences between the two might reveal some patterns.
 
-As random graphs are not expected to present inherent community structure, a first idea is to compare the number of edges that lie within a community to the expected one in case of random graphs with the same degree distribution. This is called modularity.
+To measure this phenomenon, we compare the number of edges that lie within a community to the expected one in case of random graphs with the same degree distribution. This is called modularity.
 
 $$
-\sum_{c \in C} \text{#} \{ \text{ edges in community c}\} - \text{#} \{ \text{ edges in community c}\}
+Q = \sum_{c \in C} \text{#} \{ \text{ edges } \in c\} - \text{#} \{ \text{ expexted edges } \in c\}
 $$
+
+The modularity function $Q$ is a a measure for assessing the strength of communities.
 
 ### Modularity
-
-Modularity function $Q$ is a a measure for assessing the strength of communities:
-
-$$
-Q = \sum_{c \in C}(\text{#} \{ \text{ edges in c} \})
-$$
 
 <b>Expected number of edges of a random network?</b>
 For a random graph models (with the same degree distribution), the probability $P_{ij}$ of an edge between nodes $i$ and $j$ with degrees $k_{i}$ and $k_{j}$ respectively is:
@@ -70,32 +68,31 @@ Q = \frac{1}{2m}\sum_{i, j}(A_{ij} - P_{i, j})\delta (C_{i}, C_{j})
 $$
 
 where:
-– $A$ is the adjacency matrix
+- $A$ is the adjacency matrix
 - $P_{ij}$ is defined above
-– $m$ is the number of edges in the graph
-– $C_{i}$ is the community of node $i$
-– $\delta$ is the Kronecker function: $1$ if both nodes $i$ and $j$ belong to the same community ($C_{i} = C_{j}$), $0$ otherwise.
+- $m$ is the number of edges in the graph
+- $C_{i}$ is the community of node $i$
+- $\delta$ is the Kronecker function ($1$ if both nodes $i$ and $j$ belong to the same community ($C_{i} = C_{j}$), $0$ otherwise).
 
 ### Properties
 
 <b>Good communities:</b> Larger modularity $Q$ indicates better communities (more than random intra-cluster density)
-– The community structure is better if the number of internal edges exceed the expected number
-– $Q$ in the range of $0.3 - 0.7$ means significant community structure
+- The community structure is better if the number of internal edges exceed the expected number of edges.
+- $Q$ in the range of $0.3 - 0.7$ means significant community structure
 - Modularity value is always $-1 < Q < 1$!
 
 <b>Negative values:<b>
-– E.g., if each node is a community itself
-– No partitions with positive modularity à No community structure
-– Partitions with large negative modularity à Existence of subgraphs with small internal number of edges and large number of inter-community edges
+- If each node is a community itself
+- No partitions with positive modularity means the absence of community structure.
+- Partitions with large negative modularity implies the existence of subgraphs with small internal number of edges and large number of inter-community edges.
 
 <b>Related work:</b> [Newman and Girvan ‘04], [Newman ‘06], [Fortunato ‘10]
 
-<b>Applications</b>
-Modularity can be applied:
-– As quality function in clustering algorithms
-– As evaluation measure for comparison of different partitions or algorithms
-– As criterion for reducing the size of a graph (Size reduction preserving modularity [Arenas et al. ‘07])!
-– As a community detection algorithm itself: Modularity optimization!
+<b>Applications</b> Modularity can be applied to a variety of tasks:
+- As quality function in clustering algorithms
+- As evaluation measure for comparison of different partitions or algorithms
+- As criterion for reducing the size of a graph (Size reduction preserving modularity [Arenas et al. ‘07])!
+- As a community detection algorithm itself: Modularity optimization!
 
 ### Girvan-Newman’s Method
 
@@ -220,8 +217,18 @@ Start with a weighted network where all nodes are in their own communities (i.e.
 
 <b>In practice:<b>
 - The algorithm creates hierarchies of communities
-- Typically, less than 10 passes are enough
-- <u>Complexity:</u> \mathcal{O}(n logn)
+- Typically, less than $10$ passes are enough
+- <u>Complexity:</u> $\mathcal{O}(n logn)$
+
+<b>Extensions of Modularity:</b> Modularity has been extended in several directions
+– Weighted graphs [Newman ‘04]
+– Bipartite graphs [Guimera et al ‘07] !
+– Directed graphs [Arenas et al. ‘07], [Leicht and Newman ‘08]!
+– Overlapping community detection [Nicosia et al. ‘09]!
+– Modifications in the configuration model – local definition of modularity [Muff et al. ‘05]!
+
+<b>Resolution Limit of Modularity:</b>
+The method of modularity optimization may not detect communities with relatively small size, which depends on the total number of edges in the graph
 
 # Community structure
 
