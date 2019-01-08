@@ -7,8 +7,6 @@ tags:
 comments: true
 ---
 
-# Link prediction
-
 In this lecture, we learn the basics of how to perform unsupervised link prediction and supervised ling prediction. We will overview the following techniques:
 
 <b>Motivation</b>
