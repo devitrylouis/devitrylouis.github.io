@@ -224,14 +224,14 @@ The same “similarity” measures can be used as features for supervised link p
 ## Supervised Random Walks
 ## SRW: Prediction
 ## Personalized PageRank
-The Optimization Problem
-Making Constraints “Soft”
-Solving the Problem: Intuition
-Data: Facebook
-Experimental Setting
-Experimental Results – Facebook (1/2)
+## The Optimization Problem
+## Making Constraints “Soft”
+## Solving the Problem: Intuition
+## Data: Facebook
+## Experimental Setting
+## Experimental Results – Facebook (1/2)
 
-Experimental Results - Co-Authorship
+## Experimental Results - Co-Authorship
 
 Arxiv Hep-Ph collaboration network
 – Poor performance of unsupervised methods
