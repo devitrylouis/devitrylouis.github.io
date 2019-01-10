@@ -234,4 +234,8 @@ Arxiv Hep-Ph collaboration network
 – Poor performance of unsupervised methods
 – SRW gives a boost of 25%
 
+## Thanking notes
+
+This material is heavily based on lecture notes given by [Fragkiskos D. Malliaros](http://fragkiskos.me/), who was my professor on Network Science Analytics at Centrale. If you wish to dive deeper into this topic, I advise you to check his [website](http://fragkiskos.me/).
+
 ------
