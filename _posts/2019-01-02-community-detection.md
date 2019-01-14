@@ -259,7 +259,12 @@ $$
 
 
 
-
+| Similarity measure | Formula |
+|:-------------------:|:-------------------------------------------------------------------------------------------------------------------------------:|
+| Precision | $\frac{\mid C \cap \hat{C}}{C}$ |
+| Recall | $\frac{\mid \hat{C} \cap C}{\hat{C}}$ |
+| F-measure | $2\frac{\text{precision}(C, \hat{C})\cdot \text{recall}(C, \hat{C})}{\text{precision}(C, \hat{C}) + \text{recall}(C, \hat{C})}$ |
+| Balanced Error Rate | $\frac{1}{2}(\frac{\mid C \backslash \hat{C}\mid}{\mid C \mid} + \frac{\mid \hat{C} \backslash C\mid}{\mid \hat{C} \mid})$ |
 
 
 
