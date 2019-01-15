@@ -29,10 +29,10 @@ Some of them are very much a work in progress. I update those on a daily basis (
 
 | Network science | Big data |
 |:---------------------------:|:-------------------------------:|
-| [Graph theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) ♻️| Basics ✅ |
-| [Random Network](https://devitrylouis.github.io/posts/2018/11/random_network/) 🌐| [Map Reduce](https://devitrylouis.github.io/posts/2018/11/map-reduce/) |
-| [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) ❤️| Hadoop |
-| [Barabási-Albert Model](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) 🌌 | Spark |
+| [Graph theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) ♻️| [Map Reduce](https://devitrylouis.github.io/posts/2018/11/map-reduce/) ✅ |
+| [Random Network](https://devitrylouis.github.io/posts/2018/11/random_network/) 🌐| [Hadoop](/posts/2019/01/hadoop/) |
+| [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) ❤️| [Spark introduction](/posts/2019/01/spark-introduction/) |
+| [Barabási-Albert Model](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) 🌌 | PySpark |
 | [Community detection](https://devitrylouis.github.io/posts/2019/01/community-detection/) 👪| Spark |
 | [Link prediction](https://devitrylouis.github.io/posts/2019/01/link-prediction/) 🌿 | Spark |
 

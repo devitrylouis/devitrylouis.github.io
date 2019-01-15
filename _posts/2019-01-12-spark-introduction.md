@@ -38,12 +38,11 @@ At the core of Spark is the idea of a Resilient Distributed Dataset (RDD), which
 - Transformations are basically a recipe to follow.
 - Actions actually perform what the recipe says to do and returns something back.
 
-
-
 When discussing Spark syntax you will see RDD versus DataFrame syntax show up.
 With the release of Spark 2.0, Spark is moving towards a DataFrame based syntax, but keep in mind that the way files are being distributed can still be thought of as RDDs, it is just the typed out syntax that is changing
 
 ## Spark DataFrames
+
 When discussing Spark syntax you will see RDD versus DataFrame syntax show up.
 With the release of Spark 2.0, Spark is moving towards a DataFrame based syntax, but keep in mind that the way files are being distributed can still be thought of as RDDs, it is just the typed out syntax that is changing
 
