@@ -1,7 +1,7 @@
 ---
 title: 'Utility  theory'
 date: 2018-12-01
-permalink: /posts/2018/11/utility-theory/
+permalink: /posts/2019/01/utility-theory/
 tags:
   - Decision Modeling
 ---
