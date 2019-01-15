@@ -30,7 +30,7 @@ In any case, there is no guarantee (beforehand) that the training (with such arc
 Depth simplifies the approximation/estimation task:
 - Why deep: examples of depth vs. layer size compromises with explicit bounds
   - [Why does deep and cheap learning work so well? Henry W. Lin, Max Tegmark, David Rolnick, 2016] : multiplication of n input variables : binary tree ~ log n multiplication nodes, while flat requires sum_{all 2^n configurations} (approximating a multiplication node by 4 neurons, of any smooth [developable]  activation function)
-  - [Representation Benefits of Deep Feedforward Networks, Matus Telgarsky, 2015] : example: function = 2^m consecutive small triangles /\/\/\/\/\/\ = ( /\ ) o^m (composed m times with itself) ==> representable with a thin deep network. In a flat network: 2 layers require provably 2^{m/2} nodes, sqrt(m) layers requier 2^sqrt(m) nodes, etc.
+  - [Representation Benefits of Deep Feedforward Networks, Matus Telgarsky, 2015] : example: function = 2^m consecutive small triangles /\/\/\/\/\/\ = ( /\ ) $o^m$ (composed m times with itself) ==> representable with a thin deep network. In a flat network: 2 layers require provably 2^{m/2} nodes, sqrt(m) layers requier 2^sqrt(m) nodes, etc.
   - Mhaskar, Poggio, Liao, 2016 : architecture suitability for function estimation: Theorem: if function to estimare = computational tree of input variables, then required number of samples to learn a similar-shaped network: d instead of exp d
   - deep is sufficient: [ResNet with one-neuron hidden layers is a Universal Approximator, Hongzhou Lin, Stefanie Jegelka, NIPS 2018]
 
