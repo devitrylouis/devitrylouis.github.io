@@ -30,6 +30,7 @@ In this blogpost, we will overview the fundamental role of Dynamic Programing in
 #### The need of a Markov Decision Process
 
 Mathematically speaking, a planning task consists in estimating $\pi^{*}$ or $v^{*}$ from a Markov Decision Process $\mathcal{X}$, defined by:
+
 $$
 \mathcal{X} = (\mathcal{S},\text{ } \mathcal{A}, \text{ }p(r, s' \mid s, a), \text{ }\gamma)
 $$
