@@ -194,12 +194,12 @@ $$
 
 ![prism](https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/A-dreamstime_1601578_t5w61h.jpg)
 
-The <u>2D Fourier transform</u> is very similar than in the 1D case, excepts there are now two distinct axes on which the integral / sum operate. We define the FT pairs $(F, f)$:
+The <u>2D Fourier transform</u> is very similar than in the 1D case, excepts there are now two distinct axes on which the integral / sum operate. We define the FT pairs $(F, f)$ as:
 
 $$
 \begin{align}
 F(u, v) &= \sum_{x = -\infty}^{\infty}\sum_{y = -\infty}^{\infty} f(x, y) e^{-2\pi i (ux+vy)}\\
-f(x, y) &= \sum_{u = -\infty}^{\infty}\sum_{v = -\infty}^{\infty} F(u, v)\ e^{2\pi i(ux+vy)}
+f(x, y) &= \sum_{u = -\infty}^{\infty}\sum_{v = -\infty}^{\infty} F(u, v) e^{2\pi i(ux+vy)}
 \end{align}
 $$
 
