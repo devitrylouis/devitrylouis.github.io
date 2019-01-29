@@ -16,7 +16,7 @@ In signal processing, three problems are common and are themselves enough to mot
 
 <b>1. What is the output of this filter when its input is $x(t)$? </b>
 
-The answer is given by $x(t) * h(t)$, where $h(t)$ is a signal called the <u>impulse response</u> of the filter, and * is the convolution operation. Mathematically, the <u>convolution</u> is an operation on two functions ($f$ and $g$) which produce a third function $f * g$ that expresses how the shape of one is modified by the other. In the 1D space:
+The answer is given by $x(t) * h(t)$, where $h(t)$ is a signal called the <u>impulse response</u> of the filter, and $*$ is the convolution operation. Mathematically, the <u>convolution</u> is an operation on two functions ($f$ and $g$) which produce a third function $f * g$ that expresses how the shape of one is modified by the other. In the 1D space:
 
 $$
 (f * g)(x) = \int_{-\infty}^{\infty} f(u)g(x-u)du
