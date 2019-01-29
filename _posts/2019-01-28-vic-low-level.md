@@ -198,8 +198,8 @@ The <u>2D Fourier transform</u> is very similar than in the 1D case, excepts the
 
 $$
 \begin{align}
-F(u, v) &= \sum_{-\infty}^{\infty}\sum_{-\infty}^{\infty} f(x, y)\ e^{-2\pi i (ux+vy)} dxdy\\
-f(x, y) &= \sum_{-\infty}^{\infty}\sum_{-\infty}^{\infty} F(u, v)\ e^{2\pi i(ux+vy)}dudv
+F(u, v) &= \sum_{x = -\infty}^{\infty}\sum_{y = -\infty}^{\infty} f(x, y) e^{-2\pi i (ux+vy)}\\
+f(x, y) &= \sum_{u = -\infty}^{\infty}\sum_{v = -\infty}^{\infty} F(u, v)\ e^{2\pi i(ux+vy)}
 \end{align}
 $$
 
