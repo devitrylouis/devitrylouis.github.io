@@ -6,31 +6,20 @@ tags:
   - Visual computing
 ---
 
-Images are finite and with compact support, so they behave well mathematically and most properties hold for them.
+The goal of this article is to provide a Mathematical framework for the model of images. Specifically, we will recall the use of some operators (convolutions, correlation and cross-correlation) in signal processing. Then, we will define two approaches for expressing our image into a desirable signal, namely the Dirac delta function and the 2D Fourier transform.
 
+This framework is motivated by the fact that images are finite and with compact support, so they behave well mathematically and most properties hold for them.
 
-
-- Linear Filtering
-    * Convolutions
-    * Fourier
-    * Linear Filters
-- Non-Linear Filtering
-    * Median Filter
-    * Bilateral Filter
-    * Non-Local-Mean
-- Morphological Filtering
-    * More recent literature
-
-## Reminder: Convolution, correlation and autocorrelation
+## Reminder: convolution, correlation and autocorrelation
 
 In signal processing, three problems are common:
 
 <b>1. What is the output of this filter when its input is $x(t)$? </b>
 
-The answer is given by $x(t)*h(t)$, where $h(t)$ is a signal called the <u>impulse response</u> of the filter, and $*$ is the convolution operation. Mathematically, the <u>convolution</u> is an operation on two functions ($f$ and $g$) which produce a third function $f*g$ that expresses how the shape of one is modified by the other. In the 1D space:
+The answer is given by $x(t) \text{*} h(t)$, where $h(t)$ is a signal called the <u>impulse response</u> of the filter, and $*$ is the convolution operation. Mathematically, the <u>convolution</u> is an operation on two functions ($f$ and $g$) which produce a third function $f*g$ that expresses how the shape of one is modified by the other. In the 1D space:
 
 $$
-(f*g)(x) = \int_{-\infty}^{\infty} f(u)g(x-u)du
+(f * g)(x) = \int_{-\infty}^{\infty} f(u)g(x-u)du
 $$
 
 <b>2. Given a noisy signal $y(t)$, is the signal $x(t)$ somehow present in $y(t)$? </b>
@@ -259,4 +248,8 @@ ADD IMAGE OF THE BASE
 - [Lecture notes](https://www.cc.gatech.edu/~afb/classes/CS4495-Fall2014/slides/CS4495-Frequency.pdf)
 - [Lecture notes](https://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm)
 - https://dsp.stackexchange.com/questions/23325/compare-phase-and-magnitude-spectrum-results-of-2-images
+
+<b>Questions:</b>
+- Is the Dirac delta function used today in state of the art?
+- Is it a specific case of the Fourier transform?
 ------

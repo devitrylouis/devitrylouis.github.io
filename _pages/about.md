@@ -8,9 +8,14 @@ redirect_from:
   - /about.html
 ---
 
-Here is a collection of articles I wrote during the last year. It is a summary of my personal projects and research as well as on lecture notes and online content. It covers the basics of Machine Learning and Deep Learning, along with tools and domain specific articles (time series, NLP, visual computing, network science, music...). If possible and time permits, I will add Python code to code the algorithms from scratch or close to it; I am not trying to reinvent the wheel 😉.
+Here is a collection of articles / notes to myself I wrote since the beginning of 2019. For each article, I aim to give a clear and intuitive explanation of the concept of interest along with its underlying Mathematics. 
 
-Some of them are very much a work in progress. I update those on a daily basis (so stay tuned 📣). The articles that will be finished in the upcoming month are listed below:
+Furthermore, I add
+, while providing code samples ()
+
+It is a summary of personal projects, research, as well as on lecture notes and online content. It covers the basics of Machine Learning and Deep Learning, along with tools and domain specific articles (time series, NLP, visual computing, network science, music...). If possible and time permits, I will add Python code to code the algorithms from scratch or close to it; I am not trying to reinvent the wheel 😉.
+
+Some of them are very much a work in progress. I update those on a daily basis (so stay tuned 📣). The articles that will be finished in the upcoming months are listed below:
 
 | Machine Learning | Deep Learning | Tools |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
