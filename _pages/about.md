@@ -48,7 +48,7 @@ Some of them are very much a work in progress. I update those on a daily basis (
 
 | Vision | Natural Language Processing |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
-| Image-formation model  | Language model |
+| [Image-formation model](/posts/2019/01/vic-low-level/)  | Language model |
 | Feature Extraction, Saliency, Edge Detection | Words Representation |
 | Computational Photography | Tagging and NER |
 | Optical Flow | Parsing |
