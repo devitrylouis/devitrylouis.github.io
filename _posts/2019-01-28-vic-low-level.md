@@ -1,5 +1,5 @@
 ---
-title: 'Low-level vision'
+title: 'Low-level vision framework'
 date: 2018-12-01
 permalink: /posts/2019/01/vic-low-level/
 tags:
@@ -10,16 +10,18 @@ The goal of this article is to provide a Mathematical framework for the model of
 
 This framework is motivated by the fact that images are finite and with compact support, so they behave well mathematically and most properties hold for them.
 
+#### Why we only use sum and not int
+
 ## Convolution, correlation and autocorrelation
 
 In signal processing, three problems are common and are themselves enough to motivate this reminder:
 
 <b>1. What is the output of this filter when its input is $x(t)$? </b>
 
-The answer is given by $x(t) * h(t)$, where $h(t)$ is a signal called the <u>impulse response</u> of the filter, and $*$ is the convolution operation. Mathematically, the <u>convolution</u> is an operation on two functions ($f$ and $g$) which produce a third function $f * g$ that expresses how the shape of one is modified by the other. In the 1D space:
+The answer is given by $x(t) * h(t)$, where $h(t)$ is a signal called the <u>impulse response</u> of the filter, and $*$ is the convolution operation. Mathematically, the <u>convolution</u> is an operation on two functions ($f$ and $g$) which produce a third function $f * g$ that expresses how the shape of one is modified by the other. For <u>1D signal</u>, we the convolution is defined as:
 
 $$
-(f * g)(x) = \int_{-\infty}^{\infty} f(u)g(x-u)du
+(f * g)(x) = \sum_{-\infty}^{\infty} f(u)g(x-u)du
 $$
 
 <b>2. Given a noisy signal $y(t)$, is the signal $x(t)$ somehow present in $y(t)$? </b>
@@ -27,7 +29,7 @@ $$
 In other words, is $y(t)$ of the form $x(t)+n(t)$, where $n(t)$ is noise? The answer can be found by the <u>correlation</u> of $y(t)$ and $x(t)$. If the correlation is large for a given time delay $τ$, then we may be confident in saying that the answer is yes. In 1D, the continuous correlation is defined as:
 
 $$
-(f\otimes g)(x) = \int_{-\infty}^{\infty} f(u)g(x+u)du
+(f\otimes g)(x) = \sum_{-\infty}^{\infty} f(u)g(x+u)du
 $$
 
 <b>3. Is there any periodicity / repeating patterns in a noisy signal $y(t)$?</b>
@@ -35,23 +37,23 @@ $$
 Autocorrelation, also known as serial correlation, is the correlation of a signal with a delayed copy of itself as a function of delay. Informally, it is the similarity between observations as a function of the time lag between them. The analysis of autocorrelation is a mathematical tool for finding repeating patterns, such as the presence of a periodic signal obscured by noise.
 
 $$
-(f\otimes f)(x) = \int_{-\infty}^{\infty} f(u)f(x+u)du
+(f\otimes f)(x) = \sum_{-\infty}^{\infty} f(u)f(x+u)du
 $$
 
 To summarize, here is an illustration of these operation inner workings:
 
 ![convolution_correlation](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Comparison_convolution_correlation.svg/400px-Comparison_convolution_correlation.svg.png)
 
-<i>Note:</i> Note that when the signals involved are symmetric, convolution and cross-correlation become the same operation; this case is also very common in some areas of DSP.
+<i>Note:</i> Note that when the signals involved are symmetric, convolution and cross-correlation become the same operation; this case is also very common in some areas of visual computing.
 
-#### Properties
+### Properties
 
 The convolution and the correlation satisfy the following set of properties:
 
 <b>Linearity:</b>
-- $f*(g+h) = f*g + f*h$
-- $(f+g)*h = f*h + g*h$
-- $\lambda (f*g) = (\lambda f)*g = f*(\lambda g)$
+- $f * (g+h) = f * g + f * h$
+- $(f+g) * h = f * h + g * h$
+- $\lambda (f * g) = (\lambda f) * g = f * (\lambda g)$
 
 <b>Associativity:</b>
 $$(f*g)*h = f*(g*h)$$
@@ -59,31 +61,27 @@ $$(f*g)*h = f*(g*h)$$
 <b>Commutativity:</b> Works only for convolution
 $$f*g = g*f$$
 
+### Note: 2D convolution
+
 ## $L^{2}(\mathbb{R})$ space
 
 Now that we have defined the operators above, we will dive in their properties with respect to the <u>space of functions</u> they handle, namely:
 
-$$
-L^{2}(\mathbb{R}) = \{ f:\mathbb{R}\mapsto \mathbb{R}: \mid\mid f \mid\mid_{\mathcal{L}_{2}} < \infty \}
-$$
+$$ L^{2}(\mathbb{R}) = \{ f:\mathbb{R}\mapsto \mathbb{R} \text{ such that } \mid\mid f \mid\mid_{\mathcal{L}_{2}} < \infty \} $$
 
 where the $\mid\mid \cdot \mid\mid_{\mathcal{L}_{2}}$ is the norm corresponding to the following <u>dot product</u>:
 
 $$
-\langle f \mid g\rangle = \int_{-\infty}^{-\infty} f(x)g(x)dx
+\langle f \mid g\rangle = \sum_{-\infty}^{-\infty} f(x)g(x)dx
 $$
 
-• If we have a basis set for images, could perhaps be useful for
-analysis – especially for linear systems because we could
-consider each basis component independently.
-
 Most notably, we are interested in finding convenient basis of the space, for which there are two main approaches:
-- <u>Spatial basis</u> with Dirac Delta
-- <u>Frequency basis</u> with Fourier transform
+- <u>Spatial basis</u> which is suited for pixel like input and is built upon the Dirac Delta delta function.
+- <u>Frequency basis</u> brought by the 2D Fourier transform, this basis has several advantages (frequency instead of space).
 
 
 
-#### Dirac delta
+### Dirac delta
 
 In vision computing, Dirac delta helps measure the device's response to as simple an input as possible (i.e. a pixel):
 
@@ -98,7 +96,7 @@ $$
 \end{cases}
 $$
 
-Although it can be rigorously defined as a measure (thereby satisfying $\int_{-\infty}^{\infty}\delta(x)dx=1$), no such function exists. It is nonetheless very useful for approximating functions whose graphical representation is in the shape of a narrow spear:
+Although it can be rigorously defined as a measure (thereby satisfying $\sum_{-\infty}^{\infty}\delta(x)dx=1$), no such function exists. It is nonetheless very useful for approximating functions whose graphical representation is in the shape of a narrow spear:
 
 
 ![Dirac distribution](https://upload.wikimedia.org/wikipedia/commons/b/b4/Dirac_function_approximation.gif)
@@ -117,7 +115,7 @@ $$f\approx \sum_{x}f(x)\delta_{x}$$
 
 (NOT CLEAR YET FOR THE BASIS - SEE TRANSLATION ALSO)
 
-#### Fourier transform
+### Fourier transform
 The Fourier Transform is an important image processing tool which is used to decompose an image into its sine and cosine components. The output of the transformation represents the image in the Fourier or frequency domain, while the input image is the spatial domain equivalent. In the Fourier domain image, each point represents a particular frequency contained in the spatial domain image.
 
 The Fourier Transform is used in a wide range of applications, such as image analysis, image filtering, image reconstruction and image compression.
@@ -125,7 +123,7 @@ The Fourier Transform is used in a wide range of applications, such as image ana
 The Fourier transform of $f:\mathbb{R}\mapsto\mathbb{R}$ is defined as:
 
 $$
-\mathcal{F}(f)(\omega) = \hat{f}(\omega) = \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
+\mathcal{F}(f)(\omega) = \hat{f}(\omega) = \sum_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
 $$
 
 where $e^{ix}$ is given by Euler's formula $e^{ix} = cos(x) + i\cdot sin(x)$.
@@ -135,7 +133,7 @@ The convolution theorem states that $\mathcal{F}(f*g)(\omega) = \hat{f}(\omega)\
 Notice that the eigenvectors of the convolution operator are the functions $e_{\omega}:x\mapsto e^{i\omega x}$ since:
 
 $$
-(f*e_{\omega})(x) = \int_{-\infty}^{\infty} f(u)e^{i\omega (x-u)}du = e^{i\omega x} \int_{-\infty}^{\infty} f(u)e^{-i\omega u}du = e^{i\omega x}\hat{f}\omega
+(f*e_{\omega})(x) = \sum_{-\infty}^{\infty} f(u)e^{i\omega (x-u)}du = e^{i\omega x} \sum_{-\infty}^{\infty} f(u)e^{-i\omega u}du = e^{i\omega x}\hat{f}\omega
 $$
 
 #### Frequency basis – layman’s terms
@@ -143,7 +141,7 @@ $$
 Fourier transform is invertible (under certain conditions), with its inverse given by:
 
 $$
-f(x)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\hat{f}(\omega) e^{i\omega x}d\omega
+f(x)=\frac{1}{2\pi}\sum_{-\infty}^{\infty}\hat{f}(\omega) e^{i\omega x}d\omega
 $$
 
 Then, intuitively we can think of the set of complex exponential, as the basis of the $L_{2}(\mathbb{R})$ space (not precise notation!)
@@ -200,9 +198,8 @@ The <u>2D Fourier transform</u> is very similar than in the 1D case, excepts the
 
 $$
 \begin{align}
-F(u, v) &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f(x, y)\ e^{-2\pi i (ux+vy)} dxdy\\
-
-f(x, y) &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} F(u, v)\ e^{2\pi i(ux+vy)}dudv
+F(u, v) &= \sum_{-\infty}^{\infty}\sum_{-\infty}^{\infty} f(x, y)\ e^{-2\pi i (ux+vy)} dxdy\\
+f(x, y) &= \sum_{-\infty}^{\infty}\sum_{-\infty}^{\infty} F(u, v)\ e^{2\pi i(ux+vy)}dudv
 \end{align}
 $$
 
