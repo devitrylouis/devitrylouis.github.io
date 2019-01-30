@@ -6,9 +6,9 @@ tags:
   - Visual computing
 ---
 
-The goal of this article is to provide a Mathematical framework for the model of images. Specifically, we will recall the use of some operators (convolutions, correlation and cross-correlation) in signal processing. Then, we will define two approaches for expressing our image into a desirable signal, namely the Dirac delta function and the 2D Fourier transform. In the process, we will define in-depth the 2D Fourier transform and define a
+These notes provide a Mathematical framework for the model of images. Specifically, we will review the use of some operators (convolutions, correlation and cross-correlation) in signal processing.
 
-Most notably, we are interested in finding convenient basis of the space, for which there are two main approaches:
+Then, we will define two approaches for expressing our image into a desirable signal:
 - <u>Spatial basis</u> which is suited for pixel like input and is built upon the Dirac Delta delta function.
 - <u>Frequency basis</u> brought by the 2D Fourier transform, this basis has several advantages (frequency instead of space).
 
@@ -24,7 +24,7 @@ Three common problems in signal processing are important enough to motivate this
 
 <b>1. For an input signal $f$, what is the output of a filter with impulse response $g(t)$? </b>
 
-The answer is given by the convolution $f(t) * g(t)$. Mathematically, the <u>convolution</u> is an <u>operation</u> on two functions $f$ and $g$ which produce a third function $f * g$ that <b>expresses how the shape of one is modified by the other</b>.
+The answer is given by the convolution $f(t) * g(t)$. Mathematically, the <u>convolution</u> is an <u>operation</u> on two functions $f$ and $g$ which produce a third function $f * g$ that <u>expresses how the shape of one is modified by the other</u>.
 
 $$
 (f * g)(x) = \int_{-\infty}^{\infty} f(u)g(x-u)du
@@ -32,7 +32,7 @@ $$
 
 <b>2. Given a noisy signal $f(t)$, is the signal $g(t)$ somehow present in $f(t)$? </b>
 
-In other words, is $f(t)$ of the form $g(t)+n(t)$, with $n(t)$ is noise? The answer can be found by the <u>correlation</u> of $f(t)$ and $g(t)$. If the <b>correlation is large</b>, then we may be confident in saying that <b>the answer is yes</b>.
+In other words, is $f(t)$ of the form $g(t)+n(t)$, with $n(t)$ is noise? The answer can be found by the <u>correlation</u> of $f(t)$ and $g(t)$. If the <u>correlation is large</u>, then we may be confident in saying that <u>the answer is yes</u>.
 
 $$
 (f\otimes g)(x) = \int_{-\infty}^{\infty} f(u)g(x+u)du
@@ -40,7 +40,7 @@ $$
 
 <b>3. Is there any periodicity / repeating patterns in a noisy signal $f(t)$?</b>
 
-<u>Autocorrelation</u>, also known as serial correlation, is the <u>correlation of a signal</u> with a <u>delayed copy of itself</u> as a <u>function of the delay</u>. Informally, it is the similarity between observations as a function of the time lag $x$ between them. The analysis of autocorrelation is a mathematical tool for <b>finding repeating patterns</b>, such as the <b>presence of a periodic signal obscured by noise</b>.
+<u>Autocorrelation</u>, also known as serial correlation, is the <u>correlation of a signal</u> with a <u>delayed copy of itself</u> as a <u>function of the delay</u>. Informally, it is the similarity between observations as a function of the time lag $x$ between them. The analysis of autocorrelation is a mathematical tool for <u>finding repeating patterns</u>, such as the <u>presence of a periodic signal obscured by noise</u>.
 
 $$
 (f\otimes f)(x) = \int_{-\infty}^{\infty} f(u)f(x+u)du
@@ -181,17 +181,17 @@ $$f\approx \sum_{x}f(x)\delta_{x}$$
 
 (NOT CLEAR YET FOR THE BASIS - SEE TRANSLATION ALSO)
 
-### Fourier transforms
-
-![prism](https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/A-dreamstime_1601578_t5w61h.jpg)
+### 2D Fourier transforms
 
 The <u>2D Fourier transform</u> is very similar than in the 1D case, excepts there are now two distinct axes on which the integral / sum operate. We define the FT pairs $(F, f)$ as:
 
 $$
-\begin{align}
-F(u, v) &= \sum_{x = -\infty}^{\infty}\sum_{y = -\infty}^{\infty} f(x, y) e^{-2\pi i (ux+vy)}\\
-f(x, y) &= \sum_{u = -\infty}^{\infty}\sum_{v = -\infty}^{\infty} F(u, v) e^{2\pi i(ux+vy)}
-\end{align}
+F(u, v) = \sum_{x = -\infty}^{\infty}\sum_{y = -\infty}^{\infty} f(x, y) e^{-2\pi i (ux+vy)}
+$$
+
+and
+$$
+f(x, y) = \sum_{u = -\infty}^{\infty}\sum_{v = -\infty}^{\infty} F(u, v) e^{2\pi i(ux+vy)}
 $$
 
 where $u$ and $v$ are the <u>spatial frequencies</u>.  In general <u>complex</u>, we write $F(u, v)$ as:
@@ -220,12 +220,13 @@ $$
 
 ## Sources
 
+- [Lecture notes of Maria Vakalopoulou](http://cvn.centralesupelec.fr/~mariavak/) who is doing fantastic research in computer vision at the CVN.
 - [Difference convolution correlation](https://dsp.stackexchange.com/questions/27451/the-difference-between-convolution-and-cross-correlation-from-a-signal-analysis)
 - [Dirac delta](http://www.med.harvard.edu/jpnm/physics/didactics/improc/intro/delta.html)
 - [Dirac distribution](https://en.wikipedia.org/wiki/Dirac_delta_function)
 - [Lecture notes](https://www.cc.gatech.edu/~afb/classes/CS4495-Fall2014/slides/CS4495-Frequency.pdf)
 - [Lecture notes](https://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm)
-- https://dsp.stackexchange.com/questions/23325/compare-phase-and-magnitude-spectrum-results-of-2-images
+- [Phase and magnitude](https://dsp.stackexchange.com/questions/23325/compare-phase-and-magnitude-spectrum-results-of-2-images)
 
 <b>Questions:</b>
 - Is the Dirac delta function used today in state of the art?
