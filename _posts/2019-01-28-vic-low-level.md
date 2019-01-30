@@ -14,52 +14,46 @@ This framework is motivated by the fact that images are finite and with compact 
 
 ## Convolution, correlation and autocorrelation
 
-In signal processing, three problems are common and are themselves enough to motivate this reminder:
+Three common problems in signal processing are important enough to motivate this reminder:
 
-<b>1. What is the output of this filter when its input is $x(t)$? </b>
+<b>1. For an input signal $f$, what is the output of a filter with impulse response $g(t)$? </b>
 
-The answer is given by $x(t) * h(t)$, where $h(t)$ is a signal called the <u>impulse response</u> of the filter, and $*$ is the convolution operation. Mathematically, the <u>convolution</u> is an operation on two functions ($f$ and $g$) which produce a third function $f * g$ that expresses how the shape of one is modified by the other. For <u>1D signal</u>, we the convolution is defined as:
-
+The answer is given by the convolution $f(t) * g(t)$. Mathematically, the <u>convolution</u> is an <u>operation</u> on two functions $f$ and $g$ which produce a third function $f * g$ that <b>expresses how the shape of one is modified by the other</b>.
 $$
-(f * g)(x) = \sum_{-\infty}^{\infty} f(u)g(x-u)du
-$$
-
-<b>2. Given a noisy signal $y(t)$, is the signal $x(t)$ somehow present in $y(t)$? </b>
-
-In other words, is $y(t)$ of the form $x(t)+n(t)$, where $n(t)$ is noise? The answer can be found by the <u>correlation</u> of $y(t)$ and $x(t)$. If the correlation is large for a given time delay $τ$, then we may be confident in saying that the answer is yes. In 1D, the continuous correlation is defined as:
-
-$$
-(f\otimes g)(x) = \sum_{-\infty}^{\infty} f(u)g(x+u)du
+(f * g)(x) = \int_{-\infty}^{\infty} f(u)g(x-u)du
 $$
 
-<b>3. Is there any periodicity / repeating patterns in a noisy signal $y(t)$?</b>
+<b>2. Given a noisy signal $f(t)$, is the signal $g(t)$ somehow present in $f(t)$? </b>
 
-Autocorrelation, also known as serial correlation, is the correlation of a signal with a delayed copy of itself as a function of delay. Informally, it is the similarity between observations as a function of the time lag between them. The analysis of autocorrelation is a mathematical tool for finding repeating patterns, such as the presence of a periodic signal obscured by noise.
+In other words, is $f(t)$ of the form $g(t)+n(t)$, with $n(t)$ is noise? The answer can be found by the <u>correlation</u> of $f(t)$ and $g(t)$. If the <b>correlation is large</b>, then we may be confident in saying that <b>the answer is yes</b>.
+$$
+(f\otimes g)(x) = \int_{-\infty}^{\infty} f(u)g(x+u)du
+$$
+
+<b>3. Is there any periodicity / repeating patterns in a noisy signal $f(t)$?</b>
+
+<u>Autocorrelation</u>, also known as serial correlation, is the <u>correlation of a signal</u> with a <u>delayed copy of itself</u> as a <u>function of the delay</u>. Informally, it is the similarity between observations as a function of the time lag between them. The analysis of autocorrelation is a mathematical tool for <b>finding repeating patterns</b>, such as the <b>presence of a periodic signal obscured by noise</b>.
 
 $$
-(f\otimes f)(x) = \sum_{-\infty}^{\infty} f(u)f(x+u)du
+(f\otimes f)(x) = \int_{-\infty}^{\infty} f(u)f(x+u)du
 $$
 
-To summarize, here is an illustration of these operation inner workings:
+These operations are convenient to deal with because of its inherent properties:
+
+| Linearity | Associativity |
+|:-----------------------------------------------------:|:--------------------------------:|
+| $f * (g+h) = f * g + f * h$ | $(f*g)*h = f*(g*h)$ |
+| $(f+g) * h = f * h + g * h$ | <b>Commutativity (convolution only)</b> |
+| $\lambda (f * g) = (\lambda f) * g = f * (\lambda g)$ | $f*g = g*f$ |
+
+To get a more intuitive feeling about how these operation work, I suggest seeing this illustration in detail:
 
 ![convolution_correlation](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Comparison_convolution_correlation.svg/400px-Comparison_convolution_correlation.svg.png)
 
-<i>Note:</i> Note that when the signals involved are symmetric, convolution and cross-correlation become the same operation; this case is also very common in some areas of visual computing.
 
-### Properties
+## Discrete image
 
-The convolution and the correlation satisfy the following set of properties:
-
-<b>Linearity:</b>
-- $f * (g+h) = f * g + f * h$
-- $(f+g) * h = f * h + g * h$
-- $\lambda (f * g) = (\lambda f) * g = f * (\lambda g)$
-
-<b>Associativity:</b>
-$$(f*g)*h = f*(g*h)$$
-
-<b>Commutativity:</b> Works only for convolution
-$$f*g = g*f$$
+The digital image being finite, we can restrict ourseleves to the discrete case.
 
 ### Note: 2D convolution
 
@@ -116,6 +110,7 @@ $$f\approx \sum_{x}f(x)\delta_{x}$$
 (NOT CLEAR YET FOR THE BASIS - SEE TRANSLATION ALSO)
 
 ### Fourier transform
+
 The Fourier Transform is an important image processing tool which is used to decompose an image into its sine and cosine components. The output of the transformation represents the image in the Fourier or frequency domain, while the input image is the spatial domain equivalent. In the Fourier domain image, each point represents a particular frequency contained in the spatial domain image.
 
 The Fourier Transform is used in a wide range of applications, such as image analysis, image filtering, image reconstruction and image compression.
@@ -128,7 +123,8 @@ $$
 
 where $e^{ix}$ is given by Euler's formula $e^{ix} = cos(x) + i\cdot sin(x)$.
 
-The convolution theorem states that $\mathcal{F}(f*g)(\omega) = \hat{f}(\omega)\hat{g}(\omega)$
+The <b>convolution theorem</b> states that
+$$\mathcal{F}(f*g)(\omega) = \hat{f}(\omega)\hat{g}(\omega)$$
 
 Notice that the eigenvectors of the convolution operator are the functions $e_{\omega}:x\mapsto e^{i\omega x}$ since:
 
@@ -234,8 +230,6 @@ Then the maximas are the sets of equally spaced parallel lines with normal $u$ a
 
 ADD IMAGE OF THE BASE
 
-## The Convolution Theorem
-• Applications to spatial filtering
 
 ## Sources
 
@@ -249,4 +243,6 @@ ADD IMAGE OF THE BASE
 <b>Questions:</b>
 - Is the Dirac delta function used today in state of the art?
 - Is it a specific case of the Fourier transform?
+
+
 ------
