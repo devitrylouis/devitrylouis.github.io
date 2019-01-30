@@ -25,6 +25,7 @@ Three common problems in signal processing are important enough to motivate this
 <b>1. For an input signal $f$, what is the output of a filter with impulse response $g(t)$? </b>
 
 The answer is given by the convolution $f(t) * g(t)$. Mathematically, the <u>convolution</u> is an <u>operation</u> on two functions $f$ and $g$ which produce a third function $f * g$ that <b>expresses how the shape of one is modified by the other</b>.
+
 $$
 (f * g)(x) = \int_{-\infty}^{\infty} f(u)g(x-u)du
 $$
@@ -32,6 +33,7 @@ $$
 <b>2. Given a noisy signal $f(t)$, is the signal $g(t)$ somehow present in $f(t)$? </b>
 
 In other words, is $f(t)$ of the form $g(t)+n(t)$, with $n(t)$ is noise? The answer can be found by the <u>correlation</u> of $f(t)$ and $g(t)$. If the <b>correlation is large</b>, then we may be confident in saying that <b>the answer is yes</b>.
+
 $$
 (f\otimes g)(x) = \int_{-\infty}^{\infty} f(u)g(x+u)du
 $$
@@ -50,7 +52,7 @@ These operations are convenient to deal with because of its inherent properties:
 |:-----------------------------------------------------:|:--------------------------------:|
 | $f * (g+h) = f * g + f * h$ | $(f * g) * h = f * (g * h)$ |
 | $(f+g) * h = f * h + g * h$ | <b>Commutativity (convolution only)</b> |
-| $\lambda (f * g) = (\lambda f) * g = f * (\lambda g)$ | $f*g = g*f$ |
+| $\lambda (f * g) = (\lambda f) * g = f * (\lambda g)$ | $f * g = g * f$ |
 
 We will use these operations in 2D. The principles To understand how these operation work, I suggest seeing this illustration in detail:
 
@@ -135,29 +137,19 @@ This discrete representation is actually rather convenient, because <b>images ar
 
 Without loss of generality, we consider $T=1$ to lighten the equations.
 
-
-
-
-
 ## Fourier transform of an image
 
 The Fourier Transform is an <b>important image processing tool</b> which is used to <u>decompose an image into its sine and cosine components</u>.
 
-The output of the transformation represents the image in the frequency domain, while the input image is the spatial domain equivalent. In the Fourier domain image, each point represents a particular frequency contained in the spatial domain image:
+The <u>output</u> of the transformation represents the <u>image in the frequency domain</u>, while the <u>input image</u> is the <u>spatial domain</u> equivalent. In the Fourier domain image, each point represents a particular frequency contained in the spatial domain image:
 
 ![Image](/images/fourier_transform_image.png)
 
-The Fourier Transform is used in a wide range of applications, such as image analysis, image filtering, image reconstruction and image compression.
+The Fourier Transform is used in a wide range of applications, such as <b>image analysis</b>, <b>image filtering</b>, <b>image reconstruction</b> and <b>image compression</b>.
 
+### Spatial basis: Dirac delta
 
-
-
-
-
-
-### Dirac delta
-
-In vision computing, Dirac delta helps measure the device's response to as simple an input as possible (i.e. a pixel):
+In vision computing, <u>Dirac delta</u> helps <u>measure</u> the device's response to <u>as simple an input as possible</u> (i.e. a pixel):
 
 ![Image](/images/dirac_function.png)
 
@@ -189,11 +181,7 @@ $$f\approx \sum_{x}f(x)\delta_{x}$$
 
 (NOT CLEAR YET FOR THE BASIS - SEE TRANSLATION ALSO)
 
-
-
-
-
-## Fourier transforms and spatial frequencies in 2D
+### Fourier transforms
 
 ![prism](https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/A-dreamstime_1601578_t5w61h.jpg)
 
@@ -214,29 +202,21 @@ with:
 - <u>Magnitude spectrum:</u> $\mid F(u,v)\mid$ tells you how strong are the harmonics in an image
 - <u>Phase angle spectrum: </u> $arctan(\frac{F_{I}}{F_{R}})$ phase spectrum tells where this harmonic lies in space.
 
-<u>Conjugacy:</u>
-<u>Symmetry:</u>
+### Frequency basis
 
-<b>Sinusoidal waves:</b> In 1D the Fourier transform is based on a decomposition into functions:
-
-$$
-e^{2\pi i(ux+vy)} = cos(2\pi(ux+vy)) + i sin(2\pi(ux+vy))
-$$
-
-The real and imaginary terms are sinusoids on the $x-y$ plance. The maxima and of $cos(2\pi(ux+vy))$ occur when:
+Just like in the 1D discrete case, we can construct a true frequency basis, composed of "sinusoidal waves" (each with fixed $u, v$):
 
 $$
-2\pi (ux+vy) = 2\pi \textbf{u}\cdot \textbf{x} = n\pi
+e^{2\pi i(ux+vy)} = cos(2\pi(ux+vy)) + i\cdot sin(2\pi(ux+vy))
 $$
 
-Then the maximas are the sets of equally spaced parallel lines with normal $u$ and wave-length $\frac{1}{\sqrt{u^{2} + v^{2}}}$
+<i>Note:</i> The term sinusoidal waves is used because the real and imaginary terms are sinusoids on the $x-y$ plane. To get this right, consider the following argument:
 
-<b>Meaning:</b> To get some sense of what basis elements look like, we plot a basis element --- or rather, its real part --- as a function of $x$, $y$ for some fixed $u$, $v$. We get a function that is constant when $(ux+vy)$ is constant. The magnitude of the vector $(u, v)$ gives a frequency, and its direction gives an orientation. The function is a sinusoid with this frequency along the direction, and constant perpendicular to the direction.
+<b>Basis shape?</b> For a given $\textbf{u} = (u, v)$, the maxima $\textbf{x} = (x, y)$ of the real part occur when $2\pi \textbf{u}\cdot \textbf{x} = n\pi$. This imply that the maximas are sets of equally spaced parallel lines with normal $u$ and wave-length $\frac{1}{\sqrt{u^{2} + v^{2}}}$
 
-![Image](/images/fourier_2D.png)
+<b>Meaning:</b> To get some sense of what basis elements look like, we plot some basis element - or rather, their real part - as a function of $x$, $y$ for some fixed $u$, $v$. We get a function that is constant when $(ux+vy)$ is constant. The magnitude of the vector $(u, v)$ gives a frequency, and its direction gives an orientation. The function is a sinusoid with this frequency along the direction, and constant perpendicular to the direction.
 
-ADD IMAGE OF THE BASE
-
+![Image](/images/fourier_2D_basis.png)
 
 ## Sources
 
