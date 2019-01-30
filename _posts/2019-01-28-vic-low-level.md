@@ -8,11 +8,17 @@ tags:
 
 The goal of this article is to provide a Mathematical framework for the model of images. Specifically, we will recall the use of some operators (convolutions, correlation and cross-correlation) in signal processing. Then, we will define two approaches for expressing our image into a desirable signal, namely the Dirac delta function and the 2D Fourier transform. In the process, we will define in-depth the 2D Fourier transform and define a
 
+Most notably, we are interested in finding convenient basis of the space, for which there are two main approaches:
+- <u>Spatial basis</u> which is suited for pixel like input and is built upon the Dirac Delta delta function.
+- <u>Frequency basis</u> brought by the 2D Fourier transform, this basis has several advantages (frequency instead of space).
+
 This framework is motivated by the fact that images are finite and with compact support, so they behave well mathematically and most properties hold for them.
 
-#### Why we only use sum and not int
+## Mathematical reminder - the 1D case
 
-## Convolution, correlation and autocorrelation
+In this section, we will review some mathematical concepts (convolution-like operations, $L_{2}$ space) and we will see why we can restrict ourselves to a discrete context.
+
+### Convolution, correlation, autocorrelation
 
 Three common problems in signal processing are important enough to motivate this reminder:
 
@@ -32,7 +38,7 @@ $$
 
 <b>3. Is there any periodicity / repeating patterns in a noisy signal $f(t)$?</b>
 
-<u>Autocorrelation</u>, also known as serial correlation, is the <u>correlation of a signal</u> with a <u>delayed copy of itself</u> as a <u>function of the delay</u>. Informally, it is the similarity between observations as a function of the time lag between them. The analysis of autocorrelation is a mathematical tool for <b>finding repeating patterns</b>, such as the <b>presence of a periodic signal obscured by noise</b>.
+<u>Autocorrelation</u>, also known as serial correlation, is the <u>correlation of a signal</u> with a <u>delayed copy of itself</u> as a <u>function of the delay</u>. Informally, it is the similarity between observations as a function of the time lag $x$ between them. The analysis of autocorrelation is a mathematical tool for <b>finding repeating patterns</b>, such as the <b>presence of a periodic signal obscured by noise</b>.
 
 $$
 (f\otimes f)(x) = \int_{-\infty}^{\infty} f(u)f(x+u)du
@@ -42,22 +48,13 @@ These operations are convenient to deal with because of its inherent properties:
 
 | Linearity | Associativity |
 |:-----------------------------------------------------:|:--------------------------------:|
-| $f * (g+h) = f * g + f * h$ | $(f*g)*h = f*(g*h)$ |
+| $f * (g+h) = f * g + f * h$ | $(f * g) * h = f * (g * h)$ |
 | $(f+g) * h = f * h + g * h$ | <b>Commutativity (convolution only)</b> |
 | $\lambda (f * g) = (\lambda f) * g = f * (\lambda g)$ | $f*g = g*f$ |
 
-To get a more intuitive feeling about how these operation work, I suggest seeing this illustration in detail:
+We will use these operations in 2D. The principles To understand how these operation work, I suggest seeing this illustration in detail:
 
 ![convolution_correlation](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Comparison_convolution_correlation.svg/400px-Comparison_convolution_correlation.svg.png)
-
-
-## Discrete image
-
-The digital image being finite, we can restrict ourseleves to the discrete case.
-
-### Note: 2D convolution
-
-## $L^{2}(\mathbb{R})$ space
 
 Now that we have defined the operators above, we will dive in their properties with respect to the <u>space of functions</u> they handle, namely:
 
@@ -66,12 +63,95 @@ $$ L^{2}(\mathbb{R}) = \{ f:\mathbb{R}\mapsto \mathbb{R} \text{ such that } \mid
 where the $\mid\mid \cdot \mid\mid_{\mathcal{L}_{2}}$ is the norm corresponding to the following <u>dot product</u>:
 
 $$
-\langle f \mid g\rangle = \sum_{-\infty}^{-\infty} f(x)g(x)dx
+\langle f ,\ g\rangle = \int_{-\infty}^{-\infty} f(x)g(x)dx
 $$
 
-Most notably, we are interested in finding convenient basis of the space, for which there are two main approaches:
-- <u>Spatial basis</u> which is suited for pixel like input and is built upon the Dirac Delta delta function.
-- <u>Frequency basis</u> brought by the 2D Fourier transform, this basis has several advantages (frequency instead of space).
+### Fourier transform and the convolution theorem
+
+The [Fourier transform](https://en.wikipedia.org/wiki/Fourier_transform) is very popular when it comes to dealing with signal because it provides a "bridge" <u>between time</u> and <u>frequency domain</u>.
+
+![Image](/images/time_freq.png)
+
+It is furthermore empowered by the <b>convolution theorem</b>, which states that this "bridge" <b>preserves the convolution operation</b>:
+
+$$\mathcal{F}(f*g)(\omega) = \hat{f}(\omega)\hat{g}(\omega), \text{ for } f, g \in L_{2}(\mathbb{R}) $$
+
+where the Fourier transform of $f:\mathbb{R}\mapsto\mathbb{R}$ is defined as:
+
+$$
+\mathcal{F}(f)(\omega) = \hat{f}(\omega) = \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx \text{ , with }e^{ix} = cos(x) + i\cdot sin(x)
+$$
+
+### A frequency basis
+
+Notice that the <b>eigenvectors</b> of the <b>convolution operator</b> are the functions $e_{\omega}:x\mapsto e^{i\omega x}$ since:
+
+$$
+\begin{align}
+(f*e_{\omega})(x) &= \int_{-\infty}^{\infty} f(u)e^{i\omega (x-u)}du \\
+&= e^{i\omega x} \int_{-\infty}^{\infty} f(u)e^{-i\omega u}du \\
+&= e^{i\omega x}\hat{f}(\omega)\\
+\end{align}
+$$
+
+Since the <u>Fourier transform</u> is <u>invertible</u> (under certain conditions), with its inverse given by:
+
+$$
+f(x)=\frac{1}{2\pi}\sum_{-\infty}^{\infty}\hat{f}(\omega) e^{i\omega x}d\omega
+$$
+
+we can think of the set of complex exponential, as some basis of the $L_{2}(\mathbb{R})$ space:
+
+$$
+f\approx \sum_{\omega}\hat{f}(\omega)e_{\omega}
+$$
+
+<i>Note:</i> The equation above is not rigorous for the continuous case.
+
+However, if we consider finite signals of length $N$
+
+$$
+\hat{f}(k) = \sum_{n=0}^{N}f(n) e^{-\frac{2\pi i}{N}kn}
+$$
+
+it turns out that it satisfies the <u>same properties</u> than its <u>continuous couterpart</u>, but can additionally provide a <b>true basis for discrete signals</b>:
+$$
+f = \sum_{n=0}^{N}\hat{f}(k)e_{k}(n), \ \text{with } e_{k}(n) = e^{\frac{2\pi i}{N}kn}
+$$
+
+### From continuous to discrete
+
+As <u>computers</u> are fundamentally <u>limited to discrete representation</u>, we <u>sample</u> real life <u>continuous signals</u> with a certain time period $T$ (the frequency is $1/T$):
+
+$$
+f_{T}(x) = T\sum_{n=-\infty}^{\infty}f(nT)\delta_{nT}(x)
+$$
+
+Consequently, the higher the period, the closer our discrete representation is from the real signal:
+
+$$f(x) = lim_{T\rightarrow 0} f_{T}(x)$$
+
+This discrete representation is actually rather convenient, because <b>images are finite</b> and with <b>compact support</b>. It is notably <b>suited</b> for <b>padding zones, wrap, clamp and mirrors</b>.
+
+Without loss of generality, we consider $T=1$ to lighten the equations.
+
+
+
+
+
+## Fourier transform of an image
+
+The Fourier Transform is an <b>important image processing tool</b> which is used to <u>decompose an image into its sine and cosine components</u>.
+
+The output of the transformation represents the image in the frequency domain, while the input image is the spatial domain equivalent. In the Fourier domain image, each point represents a particular frequency contained in the spatial domain image:
+
+![Image](/images/fourier_transform_image.png)
+
+The Fourier Transform is used in a wide range of applications, such as image analysis, image filtering, image reconstruction and image compression.
+
+
+
+
 
 
 
@@ -109,80 +189,7 @@ $$f\approx \sum_{x}f(x)\delta_{x}$$
 
 (NOT CLEAR YET FOR THE BASIS - SEE TRANSLATION ALSO)
 
-### Fourier transform
 
-The Fourier Transform is an important image processing tool which is used to decompose an image into its sine and cosine components. The output of the transformation represents the image in the Fourier or frequency domain, while the input image is the spatial domain equivalent. In the Fourier domain image, each point represents a particular frequency contained in the spatial domain image.
-
-The Fourier Transform is used in a wide range of applications, such as image analysis, image filtering, image reconstruction and image compression.
-
-The Fourier transform of $f:\mathbb{R}\mapsto\mathbb{R}$ is defined as:
-
-$$
-\mathcal{F}(f)(\omega) = \hat{f}(\omega) = \sum_{-\infty}^{\infty}f(x)e^{-i\omega x}dx
-$$
-
-where $e^{ix}$ is given by Euler's formula $e^{ix} = cos(x) + i\cdot sin(x)$.
-
-The <b>convolution theorem</b> states that
-$$\mathcal{F}(f*g)(\omega) = \hat{f}(\omega)\hat{g}(\omega)$$
-
-Notice that the eigenvectors of the convolution operator are the functions $e_{\omega}:x\mapsto e^{i\omega x}$ since:
-
-$$
-(f*e_{\omega})(x) = \sum_{-\infty}^{\infty} f(u)e^{i\omega (x-u)}du = e^{i\omega x} \sum_{-\infty}^{\infty} f(u)e^{-i\omega u}du = e^{i\omega x}\hat{f}\omega
-$$
-
-#### Frequency basis – layman’s terms
-
-Fourier transform is invertible (under certain conditions), with its inverse given by:
-
-$$
-f(x)=\frac{1}{2\pi}\sum_{-\infty}^{\infty}\hat{f}(\omega) e^{i\omega x}d\omega
-$$
-
-Then, intuitively we can think of the set of complex exponential, as the basis of the $L_{2}(\mathbb{R})$ space (not precise notation!)
-
-$$
-f\approx \sum_{\omega}\hat{f}(\omega)e_{\omega}
-$$
-
-#### From continuous to discrete
-
-How to deal with real life continuous signals in digital computers (inherently discrete representation)
-
-We sample the signal with a certain time period T (the frequency is 1/T)
-
-$$
-f_{d}(x) = T\sum_{n=-\infty}^{\infty}f(nT)\delta_{nT}(x)
-$$
-
-Intuitively: $f(x) = lim_{T\rightarrow 0} f_{d}(x)$
-
-Without loss of generality from now on we consider $T=1$
-
-#### Finite signals and convolutions
-
-The signal is not defined infinitely
-
-• Padding: zero, wrap (circular), clamp, mirror
-
-For Fourier circular is used to have periodicity but we will not pay attention to this(WTF).
-
-#### Discrete Fourier Transform
-
-• Finite signals of length N
-
-$$
-\hat{f}(k) = \sum_{n=0}^{N}f(n) e^{-\frac{2\pi i}{N}kn}
-$$
-
-Similar properties as in continuous (convolution theorem)
-
-We have a true basis for discrete signals
-
-$$
-f = \sum_{n=0}^{N}\hat{f}(k)e_{k}, \ \text{with } e_{k}(n) = e^{\frac{2\pi i}{N}kn}
-$$
 
 
 
