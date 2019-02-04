@@ -60,7 +60,7 @@ We will use these operations in 2D. The principles To understand how these opera
 
 Now that we have defined the operators above, we will dive in their properties with respect to the <u>space of functions</u> they handle, namely:
 
-$$ L^{2}(\mathbb{R}) = \{ f:\mathbb{R}\mapsto \mathbb{R} \text{ such that } \mid\mid f \mid\mid_{\mathcal{L}_{2}} < \infty \} $$
+$$L^{2}(\mathbb{R}) = \{ f:\mathbb{R}\mapsto\mathbb{R} \text{ such that } \mid\mid f \mid\mid_{L_{2}} < \infty \}$$
 
 where the $\mid\mid \cdot \mid\mid_{\mathcal{L}_{2}}$ is the norm corresponding to the following <u>dot product</u>:
 
