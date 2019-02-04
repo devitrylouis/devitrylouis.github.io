@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Here is a collection of articles / notes to myself I wrote since the beginning of 2019. For each article, I aim to give a clear and intuitive explanation of the concept of interest along with its underlying Mathematics. 
+Here is a collection of articles / notes to myself I wrote since the beginning of 2019. For each article, I aim to give a clear and intuitive explanation of the concept of interest along with its underlying Mathematics.
 
 Furthermore, I add
 , while providing code samples ()
@@ -54,7 +54,7 @@ Some of them are very much a work in progress. I update those on a daily basis (
 | Vision | Natural Language Processing |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | [Image-formation model](/posts/2019/01/vic-low-level/)  | Language model |
-| Feature Extraction, Saliency, Edge Detection | Words Representation |
+| [Filtering](/posts/2019/01/vic-filters/) | Words Representation |
 | Computational Photography | Tagging and NER |
 | Optical Flow | Parsing |
 | 3D Modeling | Mining User Generated Content |
