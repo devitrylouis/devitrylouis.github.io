@@ -8,9 +8,9 @@ tags:
 
 This blogpost is the first one of a series, whose aim is to both introduce what is Decision Modeling and build the corresponding mathematical framework. Decisions model are very important - particularly in business - as they reduce stress and deal with uncertainty. Supported by ever increasing amounts of data and sophisticated algorithms, their growing power have captured plenty of C-suite attention in the recent years. From very accurate predictions to guiding knotty optimization choices, decisions models are essential and worthy of interest.
 
-## Introduction
+## 1. Introduction
 
-### Uncertainty
+### 1.1. Uncertainty
 
 In many decision situations, a part of the informations is not known in advance and to a various degree:
 - <i>Deterministic situations:</i> Data are known in advance (classical O.R., Lin. Prog., Graph theory, ...),
@@ -22,7 +22,7 @@ As a palliative, we introduce in this blogpost the fundamental principles of uti
 
 > Utility theory bases its beliefs upon individuals’ preferences. It is a theory postulated in neo-classical economics to explain behavior of individuals based on the premise people can consistently rank order their choices depending upon their preferences.
 
-### A criteria for choice under uncertainty
+### 1.2. criteria for choice under uncertainty
 
 Before giving some criterions used to deal with uncertainty, let's model our problem with:
 - <u>States of nature</u>: $\Theta = \{ \theta_{1}, ..., \theta_{n} \}$
@@ -41,7 +41,7 @@ Once this matrix is computed, we make use of the following criterions:
 
 where $regret(d_{i}, \theta_{j})$ is the regret of decision $d_{i}$ for the state of nature $\theta_{j}$, i.e. the difference of outcome between the best decision for $\theta_{j}$ and $r(d_{i}, \theta_{j})$.
 
-## Comparing lotteries
+## 2. Comparing lotteries
 
 Utility theory is a cornerstone of decision modelling and was introduced by [Von Neuman, Morgenstern 1947]. It stipulates that one should manage the risk by constructing lotteries: a distribution of outcome evaluated by their utility.
 
@@ -50,7 +50,7 @@ The goal of this section is to address the properties of such lotteries. To do s
 2. Define the utility function and state its important properties
 3. Describe how the utility function is related to risk
 
-### The von Neumann–Morgenstern axioms
+### 2.1. The von Neumann–Morgenstern axioms
 
 Utility theory is grounded on the following set of axioms, which aims to define a rational decision maker.
 
@@ -64,7 +64,7 @@ Utility theory is grounded on the following set of axioms, which aims to define 
 
 Some of these assumptions are stronger than others (3. and 4.) and are therefore inapplicable for a given problem. Nonetheless, if the first two axioms are valid, we say that there is a weak order on the lotteries.
 
-### Utility function
+### 2.2. Utility function
 
 The lotteries introduced above are rather abstract. A practical way to compare two lotteries A and B (i.e. figure out if $A\succeq B$) is to make use of the expected utility.
 
@@ -75,7 +75,7 @@ Under the aforementionned axioms, one can show that there exists a function $u$ 
 
 $$ L\succeq L' \Leftrightarrow u(L) > u(L') $$
 
-### Utility function and risk
+### 2.3. Utility function and risk
 
 A utility function $u:X \mapsto \mathbb{R}$ maps possible outcomes to a utility (the higher the better), so that the following is satisfied:
 - Scaling: for $X = [x, x^{ * }]$, $u$ must verify $u(x) = 0$ and $u(x^{ * }) = 1$
@@ -96,7 +96,7 @@ The risk-aversion means that $u(L_{\text{known}}) > u(L_{\text{unknown}})$ and t
 
 $$RC(L_{\text{unknown}}) = u(L_{\text{known}}) > u(L_{\text{unknown}})$$
 
-## Elicitation of utility functions
+## 3. Elicitation of utility functions
 
 Utility or preference elicitation is a process of assessing preferences and the attitude to risk of a decision maker or, more precisely, utility functions. During this stage, the decision analyst asks various queries in an attempt to model a utility function, specific for the decision maker's preferences.
 
@@ -105,7 +105,7 @@ Utility or preference elicitation is a process of assessing preferences and the 
 | 50/50 lottery technique | $u(x) = (\frac{x-x^{ * }}{x^{ * }-x^{ ** }})^{\alpha},\alpha > 0$ |
 | Probability lottery technique | $u(x)=1-e^{-\frac{x}{p}},p>0$ |
 
-### Point-wise techniques
+### 3.1. Point-wise techniques
 
 In order to derive a utility function to represent the decision maker's attitude to risk, first we need to rank all the outcomes from the best to the worst and assign a utility of $1$ to the best and $0$ to the worst. According to von Neumann and Morgestern theory, the main idea is to have the decision maker stating preferences over lotteries, or gambles; then utilities are calculated reasoning backwards. In other words, if we find two gambles that are equally attractive, we can equalize the expected utilities. In this way, if two utilities are known, also the third will be known.
 
@@ -143,7 +143,7 @@ To find <b>more points to $u$</b>, we repeat this with different values for ques
 
 The framework is identical to the one above except that this time, $y$ is fixed and $p$ is to determine where $L = (\{a, b\}, \{1-p, p\})$. To find $p$, we proceed similarly than above.
 
-### Analytic techniques : with different analytic forms
+### 3.2. Analytic techniques
 
 The basic principle of analytical techniques is the following:
 1. Postulate a parametric form for the utility function. The two must common are listed in the table below:
@@ -156,7 +156,7 @@ The basic principle of analytical techniques is the following:
 2. Pose questions aiming at setting the values for the parameters
 of the parametric form. The proceeding is very similar to the point-wise technique.
 
-## Limits of utility theory
+## 4. Limits of utility theory
 
 Despite the great properties presented in this blogpost, some issues arise:
 - <b>Which criterion?</b> It is difficult to justify a decision criterion based on expected value for single shot decisions.
@@ -166,11 +166,13 @@ Despite the great properties presented in this blogpost, some issues arise:
 - Risk prone for losses
 - Risk-proneness is stronger in losses that risk-aversion in gains
 
+Some techniques exist to mitigate this issues. They will be presented in the upcoming blogpost.
+
 # Sources
 
 This blogpost is heavily inspired from Vincent Mousseau lectures, my professor at Centrale-Supélec.
 
-Beside, the following ressources were very useful:
+Beside, the following ressources proved useful:
 
 - [Utility](https://en.wikipedia.org/wiki/Utility)
 - [Blogpost risk](https://saylordotorg.github.io/text_risk-management-for-enterprises-and-individuals/s07-03-choice-under-uncertainty-expec.html)
