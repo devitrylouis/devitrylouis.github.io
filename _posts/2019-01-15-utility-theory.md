@@ -68,8 +68,7 @@ Some of these assumptions are stronger than others (3. and 4.) and are therefore
 
 The lotteries introduced above are rather abstract. A practical way to compare two lotteries A and B (i.e. figure out if $A\succeq B$) is to make use of the expected utility.
 
-> <u>Expected utility:</u> The utility of a lottery $L$ is the expected utility of its outcomes:
-> $$u(L) = \sum_{i = 1}^{n} p_{i}u(x_{i})$$
+> <u>Expected utility:</u> The utility of a lottery $L$ is the expected utility of its outcomes: $$u(L) = \sum_{i = 1}^{n} p_{i}u(x_{i})$$
 > where $u$ is the utility function.
 
 Under the aforementionned axioms, one can show that there exists a function $u$ representing the decision model preferences and this function is unique up to an affine transformation $(\alpha u + \beta)$. This function is useful because it satisfy:
@@ -79,7 +78,7 @@ $$ L\succeq L' \Leftrightarrow u(L) > u(L') $$
 ### Utility function and risk
 
 A utility function $u:X \mapsto \mathbb{R}$ maps possible outcomes to a utility (the higher the better), so that the following is satisfied:
-- Scaling: for $X = [x, x^{*}]$, $u$ must verify $u(x) = 0$ and $u(x^{*}) = 1$
+- Scaling: for $X = [x, x^{ * }]$, $u$ must verify $u(x) = 0$ and $u(x^{ * }) = 1$
 - Monotonically increasing: $x < y \Leftrightarrow u(x) < u(y)$
 
 As it turns out, depending on the "mindset" of the decision model (is he risk averse or risk prone), the utility function will ahbor different shapes. Specifically, a decision model is said to be risk averse if he prefers any expected outcome of a sure lottery $L_{\text{known}}$ to $L_{\text{unknown}}$. When this is the case, it will favor low outcomes by associating them higher utilities.
@@ -103,7 +102,7 @@ Utility or preference elicitation is a process of assessing preferences and the 
 
 | Point-wise techniques | Analytics techniques |
 |:-----------------------------:|:--------------------------------------------------------------:|
-| 50/50 lottery technique | $u(x) = (\frac{x-x^{*}}{x^{*}-x^{**}})^{\alpha},\alpha > 0$ |
+| 50/50 lottery technique | $u(x) = (\frac{x-x^{ * }}{x^{ * }-x^{ ** }})^{\alpha},\alpha > 0$ |
 | Probability lottery technique | $u(x)=1-e^{-\frac{x}{p}},p>0$ |
 
 ### Point-wise techniques
@@ -112,7 +111,7 @@ In order to derive a utility function to represent the decision maker's attitude
 
 Point wise techniques leverage this by producing sequentially points on the utility functions.
 
-#### 50/50 lottery technique
+<b>50/50 lottery technique</b>
 
 <b>TL; DR:</b> Specify a point of the utility function by asking a 50/50 question to the decision model.
 
@@ -140,7 +139,7 @@ However, instead of asking the decision model to return $y$, we use the fact tha
 
 To find <b>more points to $u$</b>, we repeat this with different values for question $(a, b)$.
 
-#### Variable probability techniques
+<b>Variable probability techniques</b>
 
 The framework is identical to the one above except that this time, $y$ is fixed and $p$ is to determine where $L = (\{a, b\}, \{1-p, p\})$. To find $p$, we proceed similarly than above.
 
@@ -149,7 +148,7 @@ The framework is identical to the one above except that this time, $y$ is fixed 
 The basic principle of analytical techniques is the following:
 1. Postulate a parametric form for the utility function. The two must common are listed in the table below:
 
-| Parametric function 	| $u_{\alpha}(x)=(\frac{x-x^{*}}{x^{**}-x^{*}})^{\alpha}$ 	| $u_{p}(x)=1-e^{-\frac{x}{p}}$ 	|
+| Parametric function 	| $u_{\alpha}(x)=(\frac{x-x^{ * }}{x^{ ** }-x^{ * }})^{\alpha}$ 	| $u_{p}(x)=1-e^{-\frac{x}{p}}$ 	|
 |:-------------------:	|:-------------------------------------------------------:	|:-----------------------------:	|
 | Models 	| Risk prone and averse 	| Risk averse 	|
 | Parameters 	| $\alpha>0$ 	| $p>0$ 	|
