@@ -36,7 +36,7 @@ Once this matrix is computed, we make use of the following criterions:
 
 | Laplace criterion | Wald criterion | Savage criterion |
 |:--------------------------------------------------------------------------:|------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| $\text{Max}_{d_{i} \in \mathcal{D}}\sum_{j=1}^{n}r(d_{i}\mid \theta_{j})$ | $\text{Max}_{d_{i}\in \mathcal{D}}\text{ Min}_{\theta_{j}} r(d_{i}\mid\theta_{j})$ | $\text{Max}_{d_{i}\in \mathcal{D}}\text{ Min}_{\theta_{j}} \text{regret}(d_{i},\theta_{j})$ |
+| $\text{Max}_{d_{i}\in\mathcal{D}}\sum_{j=1}^{n}r(d_{i}\mid \theta_{j})$ | $\text{Max}_{d_{i}\in \mathcal{D}}\text{ Min}_{\theta_{j}}r(d_{i}\mid\theta_{j})$ | $\text{Max}_{d_{i}\in \mathcal{D}}\text{Min}_{\theta_{j}}\text{regret}(d_{i},\theta_{j})$ |
 | Equiprobability of states | Max Min prudence | Min Max regret |
 
 where $regret(d_{i}, \theta_{j})$ is the regret of decision $d_{i}$ for the state of nature $\theta_{j}$, i.e. the difference of outcome between the best decision for $\theta_{j}$ and $r(d_{i}, \theta_{j})$.
