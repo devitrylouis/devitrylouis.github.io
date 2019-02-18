@@ -139,8 +139,84 @@ We call this additional piece of information preference inforation and for the D
 
 The comparison of two alternatives $a_{i}\in A$ and $a_{j}\in A$ does not depend on the presence/absence of a third alternative $b$. This means that if $a_{i} \succeq a_{j}$ in $A$, then $a_{i} \succeq a_{j}$ in $A\cup \{ b \}$
 
-## Multiple Criteria Aggregation Procedure (MCAP)
+## Multiple Criteria Aggregation Procedure
 
+The general framework in decision modeling is the following:
+
+![framework](/images/dm_mcap.png)
+
+The point of MCAP is to provide aggregate the results of all criterions into one real-valued number. To this end, several aggregators exhist and we describe the most common in this section.
+
+### Weighted sum
+
+This method is based on a weighted account of each criterion.
+
+$$
+\begin{cases}
+a\succeq_{P} b \Leftrightarrow \sum_{i \in F} w_{i}g_{i}(a) > \sum_{i \in F} w_{i}g_{i}(b)\\
+a\succeq_{I} b \Leftrightarrow \sum_{i \in F} w_{i}g_{i}(a) = \sum_{i \in F} w_{i}g_{i}(b)\\
+\end{cases}
+$$
+
+Though it is basic of use, it requires to be able to compare units of criterion (i.e. what does one unit of $g_{1}$ mean in terms of $g_{2}$ units).
+
+### Lexicographic aggregation
+
+The basic principle of this aggregator is to add an importance order $>>$ on the family $F$ so that if the $k$ first criterias discriminate two alternatives then the remaining one can be neglected. Formally:
+
+$$
+\begin{cases}
+a\succeq_{P} b \Leftrightarrow \begin{cases}
+\exists j \in F \text{ s.t. } g_{j}(a) > g_{j}(b)\\
+g_{i}(a) = g_{i}(b), \forall i \text{ such that } g_{i}>>g_{j}
+\end{cases}\\
+a\succeq_{I}b \Leftrightarrow g_{i}(a) = g_{i}(b), \forall i \in F
+\end{cases}
+$$
+
+Contrary to the weighted sum, this aggregator is non-compensoratory.
+
+### Majority rule (condorcet)
+
+Each criterion $g_{i}$ is doted a "voting power" $w_{i}$ and it is the sum of all these votes that discriminate two alternatives:
+
+$$
+\begin{cases}
+a \succeq_{P}b \Leftrightarrow \sum_{j \in p(a, b)} w_{i} > \sum_{j \in p(b, a)} w_{i}\\
+a \succeq_{I}b \Leftrightarrow a \not\succeq_{P}b \text{ and }b \not\succeq_{P}a
+\end{cases}
+$$
+
+where $p(a, b) = \{ j \in F \text{ s.t. } a\succeq_{P}b \}$
+
+Although powerful and suited to reflect on potentially real voting problems, this aggregator is [intransitive](https://en.wikipedia.org/wiki/Intransitivity) because of Condorcet paradox.
+
+### Sum of ranks
+
+The basic principle is to rank alternatives independently on each criterion and consider their sum:
+
+$$
+\begin{cases}
+a \succeq_{P}b \Leftrightarrow \sum_{j \in F} r_{j}(a) > \sum_{j \in F} r_{j}(a)\\
+a \succeq_{I}b \Leftrightarrow \sum_{j \in F} r_{j}(a) = \sum_{j \in F} r_{j}(a)\\
+\end{cases}
+$$
+
+Much like the wieghted sum, possibilities of compensation among criteria do exist.
+
+<i>Note:</i> $r$ is not the actual ranking (the better is ranked first) but the other way around.
+
+### Compensatoriness
+
+The compensatoriness of an aggregation procedure refers to the extend by which a disadvantage on a criterion can be balanced by an advantage on another criterion (lexicography, weighted sum).
+
+Mathematically, an aggregation procedure is <u>fully non-compensatory</u> if and only if:
+
+$$
+\forall a, b, c, d \text{ s.t. }p(a, b) = p(c, d) \text{ and } p(b, a)=p(d, c)
+$$
+
+The more an aggregation procedure violated this property, the more it allows for compensation.
 
 ## Sources
 
