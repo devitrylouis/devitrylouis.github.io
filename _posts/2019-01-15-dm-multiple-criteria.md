@@ -50,21 +50,20 @@ a \succeq c \Rightarrow b \succeq c\\
 \end{cases}, \forall c \in A $$
 > 2. <u>Cohesion:</u> Ensures that there are some kind of local and consistent order. Specifically, if $a^{+}$ and $a^{-}$ are alternatives derived from $a\in A$, then:
 > $$ \textbf{g}(a^{+}) \geq \textbf{g}(a) \geq \textbf{g}(a^{-}) $$
-> 3. <u>Non-redundancy:</u> $F$ is the minimal family for chich the first two axioms hold (i.e. delete at least one criterion break axioms validity).
+> 3. <u>Non-redundancy:</u> $F$ is the minimal family for which the first two axioms hold (i.e. delete at least one criterion and axiom 1 or 2 is invalidated).
 
 In practice, checking the validity of these three axioms is a delicate matter.
 
 ### How to build ones?
 
-From his heavy use in critical parts of businesses, there are important exigences that must be met. Specifically, we require:
-1. Readability of the family $F$ (low dimension)
-2. The more operational (simple, efficient...) a criterion is, the better.
-3. The concerned audience should aggree on the family $F$.
+From his heavy use in critical parts of businesses, there are important requirements that must be met:
+1. <u>Readability:</u> The family $F$ is of low dimension
+2. <u>Operational:</u> The more operational (simple, efficient...) a criterion is, the better.
+3. <u>Accepted:</u> The concerned audience should aggree on the family $F$.
 
 Just like Machine Learning operational case demands heavy preprocessing and validation, constructing family comes with its own set of challenges. While there are no go-to methods, heuristics exhist. The two more common ones are:
-
-- Top-down: Divide and conquer
-- Bottom-up: Agglomerative proceeding
+- <u>Top-down:</u> Divide and conquer
+- <u>Bottom-up:</u> Agglomerative proceeding
 
 One should nonetheless keep in mind that the problem is more generally described by:
 
@@ -73,29 +72,28 @@ One should nonetheless keep in mind that the problem is more generally described
 3. <u>Ranking:</u> Rank alternatives in terms of desirability (from best to worst).
 
 As for the types of criteria, the most encountered are:
-1. Most often, business problems aim to reduce overall costs and increase efficiency. Using the costs or the duration of a process as criterions are ideal in this settings.
-2. When the variable is intractable, a proxy attribute proves to be useful (measure [Velib](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) use over months to quantify greener mode of transportations)
-3. Custom criteria, generally made by aggregation of simpler criteria.
+1. <u>Natural criterias:</u> Most often, business problems aim to reduce overall costs and increase efficiency. Using the costs or the duration of a process as criterions are ideal in this settings.
+2. <u>Proxy:</u> When the variable is intractable, a proxy attribute proves to be useful (measure [Velib](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) use over months to quantify greener mode of transportations)
+3. <u>Custom criteria</u>, generally made by aggregation of simpler criteria.
 
-## Dominance and efficient alternatives
+## Dominance, efficience and preferential independence
 
-Now that multiple criteria families have been defined and structured, we are interested in using them to discriminate good alternatives from bad one. To this aim, we define a basic measure, called the dominance.
+### Dominance and efficience
+
+Now that multiple criteria families have been defined and structured, we are interested in using them to discriminate good alternatives from bad one. To this aim, we define a basic measure, called the <u>dominance</u>.
 
 We say that $a$ dominates $b$ - and write $a\Delta b$ - if
+$$ \textbf{g}(a) \geq \textbf{g}(b), \text{ with one strict inequality} $$
 
-$$
-\textbf{g}(a) \geq \textbf{g}(b), \text{ with one strict inequality}
-$$
+Despite being unable to compare all pairs of alternatives, the dominance relation $\Delta$ expresses uninamity toward one of the two alternatives. Furthermore, it can be used more globally by finding efficient alternatives.
 
-Despite being unable to compare all pairs of alternatives, the dominance relation $\Delta$ expresses uninamity toward one of the two alternatives. Nonetheless, it can be used more globally by finding efficient alternatives.
-
-An efficient alternative $a\in A$ is one that verify:
+An <u>efficient alternative</u> $a\in A$ is one that verify:
 
 $$
 \not\exists b \in A \text{ such that }b\Delta a
 $$
 
-Given the low dimensionaliy of most DMs (refer to the readability condition above), one can compute the efficient frontier, that offers the maximum expected returns for a given level of risk.
+Given the low dimensionaliy of most Decision Models (refer to the readability condition above), one can compute the efficient frontier, that offers the maximum expected returns for a given level of risk.
 
 ![Efficient grontier](https://cdn-images-1.medium.com/max/1280/1*4Ke6NhIUYPR12Sa2nrIpxw.jpeg)
 
@@ -105,9 +103,9 @@ The efficient frontier concept was introduced by Nobel Laureate Harry Markowitz 
 $$
 (z_{1}, ..., z_{n})\text{ with } z_{j} = \text{max}_{a}g_{j}(a).
 $$
-Bust most of the times, it does not correspond to an existing alternative.
+Bust most of the times, it does not match an existing alternative.
 
-## Preferential independence
+### Preferential independence
 
 In multiattribute utility theory, it is simpler to provide a simple form (additive / multiplicative) for the utility function.  However, certain conditions must hold in order to use these two forms and the main one is definitely preferential independence.
 
@@ -128,14 +126,11 @@ For example, let's say the two attributes for a car are color (red/black) and st
 
 ### Notion of preference information
 
-To discriminate among efficient alternatives, the dominance
-relation ∆ is useless,
-
 As stated above, the dominance relation $\Delta$ is by definition limited. Preferential independance however is a natural extension as it helps reduce the number of constraints.
 
-We call this additional piece of information preference inforation and for the Decision Model, it refers to his/her value system opinions and convictions. And one can distinguish:
-- Intra-criterion preference information,
-- Inter-criteria preference information.
+We call this additional piece of information <u>preference information</u> and for the Decision Model, it refers to its value system opinions and convictions. And one can distinguish:
+- Intra-criterion preference information
+- Inter-criteria preference information
 
 ### Invariance w.r.t. a third alternative
 
