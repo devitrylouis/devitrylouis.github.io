@@ -57,7 +57,7 @@ In practice, checking the validity of these three axioms is a delicate matter.
 ### How to build ones?
 
 From his heavy use in critical parts of businesses, there are important requirements that must be met:
-1. <u>Readability:</u> The family $F$ is of low dimension
+1. <u>Readability:</u> The family $F$ is of low dimension (see interpretable)
 2. <u>Operational:</u> The more operational (simple, efficient...) a criterion is, the better.
 3. <u>Accepted:</u> The concerned audience should aggree on the family $F$.
 
@@ -82,10 +82,9 @@ As for the types of criteria, the most encountered are:
 
 Now that multiple criteria families have been defined and structured, we are interested in using them to discriminate good alternatives from bad one. To this aim, we define a basic measure, called the <u>dominance</u>.
 
-We say that $a$ dominates $b$ - and write $a\Delta b$ - if
-$$ \textbf{g}(a) \geq \textbf{g}(b), \text{ with one strict inequality} $$
+We say that $a$ dominates $b$ - and write $a\Delta b$ - if $ \textbf{g}(a) \geq \textbf{g}(b)$, with one strict inequality.
 
-Despite being unable to compare all pairs of alternatives, the dominance relation $\Delta$ expresses uninamity toward one of the two alternatives. Furthermore, it can be used more globally by finding efficient alternatives.
+Despite being unable to compare all pairs of alternatives, the dominance relation $\Delta$ expresses uninamity toward one of the two alternatives and this can be used more globally by finding efficient alternatives.
 
 An <u>efficient alternative</u> $a\in A$ is one that verify:
 
@@ -99,15 +98,15 @@ Given the low dimensionaliy of most Decision Models (refer to the readability co
 
 The efficient frontier concept was introduced by Nobel Laureate Harry Markowitz in 1952 and is a cornerstone of modern portfolio theory.
 
-<i>Note:</i> Because of the non-surjectivity of the family criterion $\textbf{g}$, there exists an ideal point that maximizes the criterion:
-$$
-(z_{1}, ..., z_{n})\text{ with } z_{j} = \text{max}_{a}g_{j}(a).
-$$
+<i>Note:</i> Because of the non-surjectivity of the family criterion $\textbf{g}$, there exists an ideal point $(z_{1}, ..., z_{n})$ that maximizes the criterion $\textbf{g}$:
+
+$$ z_{j} = \text{max}_{a}g_{j}(a)$$
+
 Bust most of the times, it does not match an existing alternative.
 
 ### Preferential independence
 
-In multiattribute utility theory, it is simpler to provide a simple form (additive / multiplicative) for the utility function.  However, certain conditions must hold in order to use these two forms and the main one is definitely preferential independence.
+In multiattribute utility theory, it is simpler to provide a simple form (additive / multiplicative) for the utility function.  However, certain conditions must hold in order to use these two forms and the main one is definitely <u>preferential independence</u>.
 
 An attribute is preferentially independent from all other attributes when changes in the rank ordering of preferences of other attributes does not change the preference order of the attribute.
 
