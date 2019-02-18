@@ -170,7 +170,7 @@ Some techniques exist to mitigate this issues. They will be presented in the upc
 
 # Sources
 
-This blogpost is heavily inspired from [Vincent Mousseau](https://www.researchgate.net/profile/Vincent_Mousseau) lectures, my professor at Centrale-Supélec. 
+This blogpost is heavily inspired from [Vincent Mousseau](https://www.researchgate.net/profile/Vincent_Mousseau) lectures, my professor at Centrale-Supélec.
 
 Beside, the following ressources proved useful:
 

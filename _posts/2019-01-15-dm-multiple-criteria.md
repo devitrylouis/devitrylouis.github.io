@@ -222,4 +222,5 @@ This blogpost is heavily inspired from [Vincent Mousseau](https://www.researchga
 [Top down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design)
 - [Investopedia - Efficient frontier](https://www.investopedia.com/terms/e/efficientfrontier.asp)
 - [Medium - Efficient frontier](https://medium.com/python-data/effient-frontier-in-python-34b0c3043314)
+
 ------
