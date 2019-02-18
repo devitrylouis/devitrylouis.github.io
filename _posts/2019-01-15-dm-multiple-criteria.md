@@ -33,14 +33,14 @@ Mathematically, this is defined as building $n ≥ 2$ criterion functions $(g_{1
 
 $$
 \begin{align}
-g:A &\mapsto \mathbb{R}^{n}\\
-a& \rightarrow (g_{1}(a), g_{2}(a), . . . , g_{n}(a))\\
+g:A & \mapsto \mathbb{R}^{n}\\
+a & \rightarrow (g_{1}(a), g_{2}(a), . . . , g_{n}(a))\\
 \end{align}
 $$
 
 ### What is a consistant family of criteria?
 
-It is now time to put some structure on the codomain of $g$ (see a sound basis). Specifically, we aim to construct a consistent family $F$ of criterion. As to what are the conditions of such families, there are three axioms that shouuld be verified:
+It is now time to put some structure on the codomain of $g$ (see a sound basis). Our aim to construct a consistent family $F$ of criterion and as for what are the conditions of such families, there are three axioms that must hold:
 
 > <b>Consistent axioms:</b>
 > 1. <u>Exhausitivity:</u> Any distinct pair of alternatives $a$ and $b$ are different in the codomain fo $F$, and can thus be evaluated without loss of signification. Mathematically, if $\succeq$ is any of the operations  preference, indifference, incomparability, then:
