@@ -12,7 +12,7 @@ For instance, in purchasing a car, cost, comfort, safety, and fuel economy may b
 
 Intuitively, we can think of the criterias as different point of views on the consequences of a decision. With this in mind, our goal is to encode this and structure it.
 
-## Notion of criterion
+## 1. Notion of criterion
 
 These alternative viewpoints are typically compared with a criterion $g:A\mapsto \mathbb{R}$ which satisfy:
 
@@ -25,7 +25,7 @@ Now that the definition of a criterion has been given, we will address the follo
 2. What is a consistant family of criteria?
 3. How to build ones?
 
-### What is the difference between Mono-Criterion and Multi-Criteria framework?
+### 1.1. What is the difference between Mono-Criterion and Multi-Criteria framework?
 
 A majority of operational research problems are addressed using a mono-criterion approach, but this is rather restrictive by definition. To solve this, a multiple criteria approach proves useful. The <b>key idea</b> is to construct a <u>family of criterion</u>, with each criterion representing a “homogenous class of consequences".
 
@@ -38,7 +38,7 @@ a & \rightarrow (g_{1}(a), g_{2}(a), . . . , g_{n}(a))\\
 \end{align}
 $$
 
-### What is a consistant family of criteria?
+### 1.2. What is a consistant family of criteria?
 
 It is now time to put some structure on the codomain of $g$ (see a sound basis). Our aim to construct a consistent family $F$ of criterion and as for what are the conditions of such families, there are three axioms that must hold:
 
@@ -54,7 +54,7 @@ a \succeq c \Rightarrow b \succeq c\\
 
 In practice, checking the validity of these three axioms is a delicate matter.
 
-### How to build ones?
+### 1.3. How to build ones?
 
 From his heavy use in critical parts of businesses, there are important requirements that must be met:
 1. <u>Readability:</u> The family $F$ is of low dimension (see interpretable)
@@ -76,9 +76,9 @@ As for the types of criteria, the most encountered are:
 2. <u>Proxy:</u> When the variable is intractable, a proxy attribute proves to be useful (measure [Velib](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design) use over months to quantify greener mode of transportations)
 3. <u>Custom criteria</u>, generally made by aggregation of simpler criteria.
 
-## Dominance, efficience and preferential independence
+## 2. Dominance, efficience and preferential independence
 
-### Dominance and efficience
+### 2.1. Dominance and efficience
 
 Now that multiple criteria families have been defined and structured, we are interested in using them to discriminate good alternatives from bad one. To this aim, we define a basic measure, called the <u>dominance</u>.
 
@@ -104,7 +104,7 @@ $$ z_{j} = \text{max}_{a}g_{j}(a)$$
 
 Bust most of the times, it does not match an existing alternative.
 
-### Preferential independence
+### 2.2. Preferential independence
 
 In multiattribute utility theory, it is simpler to provide a simple form (additive / multiplicative) for the utility function. However, certain conditions must hold in order to use these two forms and the main one is definitely <u>preferential independence</u>.
 
@@ -123,7 +123,7 @@ For example, let's say the two attributes for a car are color (red/black) and st
 
 <i>Note:</i> In practice, one should group the subset of concerned criteria into a single criterion which is formally equivalent.
 
-### Notion of preference information
+### 2.3. Notion of preference information
 
 As stated above, the dominance relation $\Delta$ is by definition limited, but preferential independance bring a new piece of information and thus constitute a natural extension; it helps reduce the dimensionality of our problem.
 
@@ -131,11 +131,11 @@ We call this additional piece of information <u>preference information</u> and f
 - <u>Intra-criterion</u> which is bound to a unique criterion.
 - <u>Inter-criteria</u> which span over several criterions.
 
-### Invariance w.r.t. a third alternative
+### 2.4. Invariance w.r.t. a third alternative
 
 The comparison of two alternatives $a_{i}\in A$ and $a_{j}\in A$ does not depend on the presence/absence of a third alternative $b$. This means that if $a_{i} \succeq a_{j}$ in $A$, then $a_{i} \succeq a_{j}$ in $A\cup \{ b \}$
 
-## Multiple Criteria Aggregation Procedure
+## 3. Multiple Criteria Aggregation Procedure
 
 The general framework in decision modeling is the following:
 
@@ -143,7 +143,7 @@ The general framework in decision modeling is the following:
 
 There are several forms of MCAP, each with its pros and cons. We list commonly used ones in this section.
 
-### Weighted sum
+### 3.1. Weighted sum
 
 This method is based on a weighted account of each criterion.
 
@@ -156,7 +156,7 @@ $$
 
 Though it is basic of use, it requires to be able to compare units of criterion (i.e. what does one unit of $g_{1}$ mean in terms of $g_{2}$ units).
 
-### Lexicographic aggregation
+### 3.2. Lexicographic aggregation
 
 The basic principle of this aggregator is to add an importance order $>>$ on the family $F$ so that if the $k$ first criterias discriminate two alternatives then the remaining one can be neglected. Formally:
 
@@ -172,7 +172,7 @@ $$
 
 And contrary to the weighted sum, this aggregator is non-compensoratory (see below for the definition of non-compensoratory).
 
-### Majority rule (condorcet)
+### 3.3. Majority rule (condorcet)
 
 Each criterion $g_{i}$ is given a "voting power" $w_{i}$ and its sum over all criteria discriminate two alternatives:
 
@@ -187,7 +187,7 @@ where $p(a, b) = \{ j \in F \text{ s.t. } a \succeq_{P} b \}$
 
 Although powerful and suited to reflect on potentially real voting problems, this aggregator is [intransitive](https://en.wikipedia.org/wiki/Intransitivity) because of Condorcet paradox.
 
-### Sum of ranks
+### 3.4. Sum of ranks (Borda rule)
 
 The basic principle is to rank alternatives independently on each criterion and consider their sum:
 
@@ -202,7 +202,7 @@ Much like the weighted sum, possibilities of compensation among criteria do exis
 
 <i>Note:</i> $r$ is not the actual ranking (the better is ranked first) but the other way around.
 
-### Compensatoriness
+### 3.5. Compensatoriness
 
 The compensatoriness of an aggregation procedure refers to the extend by which a disadvantage on a criterion can be balanced by an advantage on another criterion (lexicography, weighted sum).
 
