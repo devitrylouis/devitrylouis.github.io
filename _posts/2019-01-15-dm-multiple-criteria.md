@@ -106,11 +106,11 @@ Bust most of the times, it does not match an existing alternative.
 
 ### Preferential independence
 
-In multiattribute utility theory, it is simpler to provide a simple form (additive / multiplicative) for the utility function.  However, certain conditions must hold in order to use these two forms and the main one is definitely <u>preferential independence</u>.
+In multiattribute utility theory, it is simpler to provide a simple form (additive / multiplicative) for the utility function. However, certain conditions must hold in order to use these two forms and the main one is definitely <u>preferential independence</u>.
 
 An attribute is preferentially independent from all other attributes when changes in the rank ordering of preferences of other attributes does not change the preference order of the attribute.
 
-Suppose we have 4 alternatives $a, b, c, d$ and a subset of criteria $J\subset F$ such that $a\succeq b \Leftrightarrow c \succeq d$:
+Suppose we have 4 alternatives $a, b, c, d$ and a subset of criteria $J\subset F$ such that $a\succeq b \Leftrightarrow c \succeq d$ with:
 
 - $g_{i}(a)=g_{i}(b),\forall i\not\in J$
 - $g_{i}(c)=g_{i}(d),\forall i\not\in J$
@@ -125,11 +125,11 @@ For example, let's say the two attributes for a car are color (red/black) and st
 
 ### Notion of preference information
 
-As stated above, the dominance relation $\Delta$ is by definition limited. Preferential independance however is a natural extension as it helps reduce the number of constraints.
+As stated above, the dominance relation $\Delta$ is by definition limited, but preferential independance bring a new piece of information and thus constitute a natural extension; it helps reduce the dimensionality of our problem.
 
-We call this additional piece of information <u>preference information</u> and for the Decision Model, it refers to its value system opinions and convictions. And one can distinguish:
-- Intra-criterion preference information
-- Inter-criteria preference information
+We call this additional piece of information <u>preference information</u> and for the Decision Model, it refers to its value system opinions and convictions. Among those informations, one can distinguish:
+- <u>Intra-criterion</u> which is bound to a unique criterion.
+- <u>Inter-criteria</u> which span over several criterions.
 
 ### Invariance w.r.t. a third alternative
 
@@ -141,7 +141,7 @@ The general framework in decision modeling is the following:
 
 ![framework](/images/dm_mcap.png)
 
-The point of MCAP is to provide aggregate the results of all criterions into one real-valued number. To this end, several aggregators exhist and we describe the most common in this section.
+There are several forms of MCAP, each with its pros and cons. We list commonly used ones in this section.
 
 ### Weighted sum
 
@@ -170,11 +170,11 @@ a\succeq_{I}b \Leftrightarrow g_{i}(a) = g_{i}(b), \forall i \in F
 \end{cases}
 $$
 
-Contrary to the weighted sum, this aggregator is non-compensoratory.
+And contrary to the weighted sum, this aggregator is non-compensoratory (see below for the definition of non-compensoratory).
 
 ### Majority rule (condorcet)
 
-Each criterion $g_{i}$ is doted a "voting power" $w_{i}$ and it is the sum of all these votes that discriminate two alternatives:
+Each criterion $g_{i}$ is given a "voting power" $w_{i}$ and its sum over all criteria discriminate two alternatives:
 
 $$
 \begin{cases}
@@ -183,7 +183,7 @@ a \succeq_{I}b \Leftrightarrow a \not\succeq_{P}b \text{ and }b \not\succeq_{P}a
 \end{cases}
 $$
 
-where $p(a, b) = \{ j \in F \text{ s.t. } a\succeq_{P}b \}$
+where $p(a, b) = \{ j \in F \text{ s.t. } a \succeq_{P} b \}$
 
 Although powerful and suited to reflect on potentially real voting problems, this aggregator is [intransitive](https://en.wikipedia.org/wiki/Intransitivity) because of Condorcet paradox.
 
@@ -198,7 +198,7 @@ a \succeq_{I}b \Leftrightarrow \sum_{j \in F} r_{j}(a) = \sum_{j \in F} r_{j}(a)
 \end{cases}
 $$
 
-Much like the wieghted sum, possibilities of compensation among criteria do exist.
+Much like the weighted sum, possibilities of compensation among criteria do exist.
 
 <i>Note:</i> $r$ is not the actual ranking (the better is ranked first) but the other way around.
 
@@ -206,18 +206,20 @@ Much like the wieghted sum, possibilities of compensation among criteria do exis
 
 The compensatoriness of an aggregation procedure refers to the extend by which a disadvantage on a criterion can be balanced by an advantage on another criterion (lexicography, weighted sum).
 
-Mathematically, an aggregation procedure is <u>fully non-compensatory</u> if and only if:
+Mathematically, an aggregation procedure is said to be <u>fully non-compensatory</u> if and only if:
 
 $$
 \forall a, b, c, d \text{ s.t. }p(a, b) = p(c, d) \text{ and } p(b, a)=p(d, c)
 $$
 
-The more an aggregation procedure violated this property, the more it allows for compensation.
+The more an aggregation procedure breaks this property, the more it allows for compensation.
 
 ## Sources
 
-[Wikipedia MCDA](https://en.wikipedia.org/wiki/Multiple-criteria_decision_analysis)
+This blogpost is heavily inspired from [Vincent Mousseau](https://www.researchgate.net/profile/Vincent_Mousseau) lectures, my professor at Centrale-Supélec. In particular, the image of the general MCAP framework is his.
+
+- [Wikipedia MCDA](https://en.wikipedia.org/wiki/Multiple-criteria_decision_analysis)
 [Top down](https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design)
-[](https://www.investopedia.com/terms/e/efficientfrontier.asp)
-[](https://medium.com/python-data/effient-frontier-in-python-34b0c3043314)
+- [Investopedia - Efficient frontier](https://www.investopedia.com/terms/e/efficientfrontier.asp)
+- [Medium - Efficient frontier](https://medium.com/python-data/effient-frontier-in-python-34b0c3043314)
 ------
