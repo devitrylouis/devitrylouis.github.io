@@ -20,23 +20,25 @@ $$g(a) > g(b) \Rightarrow a \succeq_{g} b, \forall a, b \in A$$
 
 where the relation $\succeq_{g}$ means “at least as good as”.
 
-In this section, wee are interested in the following:
+Now that the definition of a criterion has been given, we will address the following in this section:
 1. What is the difference between Mono-Criterion and Multi-Criteria framework?
-2. How to encode these criterias properly into a vector?
-3. What is a consistant family of criteria?
-4. How to build ones?
+2. What is a consistant family of criteria?
+3. How to build ones?
 
-### Multiple criterion?
+### What is the difference between Mono-Criterion and Multi-Criteria framework?
 
-A majority of operational research problems are addressed using a mono-criterion approach, which can possibly aggregate different aspects (i.e. weighted mean for instance). This approach is however constrained by definition. To solve this, we a multiple criteria approach proves useful. The main principle is to construct a family of criterion, with each criterion representing a “homogenous class of consequences.
+A majority of operational research problems are addressed using a mono-criterion approach, but this is rather restrictive by definition. To solve this, a multiple criteria approach proves useful. The <b>key idea</b> is to construct a <u>family of criterion</u>, with each criterion representing a “homogenous class of consequences".
 
 Mathematically, this is defined as building $n ≥ 2$ criterion functions $(g_{1}, g_{2}, . . . , g_{n})$, with each $g_{i}$ accounting for a certain dimension of the problem. The evaluation of this criterion is straightforward for a given alternative $a \in A$:
-$$ \begin{align}
-g:A &\mapsto \mathbb{R}^{n}\\
-a& \rightarrow (g_{1}(a), g_{2}(a), . . . , g_{n}(a))
-\end{align} $$
 
-### Consistent family of criteria
+$$
+\begin{align}
+g:A &\mapsto \mathbb{R}^{n}\\
+a& \rightarrow (g_{1}(a), g_{2}(a), . . . , g_{n}(a))\\
+\end{align}
+$$
+
+### What is a consistant family of criteria?
 
 It is now time to put some structure on the codomain of $g$ (see a sound basis). Specifically, we aim to construct a consistent family $F$ of criterion. As to what are the conditions of such families, there are three axioms that shouuld be verified:
 
@@ -52,7 +54,7 @@ a \succeq c \Rightarrow b \succeq c\\
 
 In practice, checking the validity of these three axioms is a delicate matter.
 
-### How to build a family of criteria?
+### How to build ones?
 
 From his heavy use in critical parts of businesses, there are important exigences that must be met. Specifically, we require:
 1. Readability of the family $F$ (low dimension)
