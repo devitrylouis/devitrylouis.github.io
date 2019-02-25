@@ -24,11 +24,11 @@ Some of them are very much of a work in progress (marked with *). They are updat
 | [Probabilistic classifiers](https://devitrylouis.github.io/posts/2018/10/probabilistic) 🔮 | Useful tricks and layers ➿ | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) 💠 |
 | [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | [Word embeddings](https://devitrylouis.github.io/posts/2019/01/embeddings/) ✒️ | Anomaly detection ❗️ |
 | Dimension Reduction 🔎 | [Bag-of-Words](https://devitrylouis.github.io/posts/2019/01/bag-of-words/) ✒️ | Anomaly detection time series 🕜❗️|
-| [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) 🔠 | CNN 🌄 | Feature engineering for music 🎼 |
+| [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) 🔠 | [CNN](https://github.com/devitrylouis/image_denoising) 🌄 | Feature engineering for music 🎼 |
 | * [Decision trees](https://devitrylouis.github.io/posts/2018/11/decision-trees/) 🌲 | * [Auto-Encoder](https://devitrylouis.github.io/posts/Deep-Learning/autoencoder) ⏳ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) 💈 |
 | Ensemble methods 🌲🌳 | RNN/LSTM 🕧 |  |
 | Support Vector Machine ↗️ | Avanced RNNs 📘 |  |
-| Clustering 👫 | Generative Adversial Networks 🎭 |  |
+| Clustering 👫 | [GAN & VAE](https://github.com/devitrylouis/gan_vs_vae_pytorch) 🎭 |  |
 
 
 | Network science | Big data |
@@ -38,7 +38,7 @@ Some of them are very much of a work in progress (marked with *). They are updat
 | [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) ❤️| [Spark introduction](/posts/2019/01/spark-introduction/) 🚅|
 | [Barabási-Albert Model](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) 🌌 |  |
 | [Community detection](https://devitrylouis.github.io/posts/2019/01/community-detection/) 👪 |  |
-| * [Link prediction](https://devitrylouis.github.io/posts/2019/01/link-prediction/) 🌿 |  |
+| * [Link prediction](https://devitrylouis.github.io/posts/2019/01/link-prediction/) + [Code](https://github.com/devitrylouis/link_prediction)🌿 |  |
 
 | Artificial Intelligence | Reinforcement Learning | Decision Modelling |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
