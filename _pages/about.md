@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Artificial Intelligence engineer and aspiring entrepreneur"
+title: "Artificial Intelligence reasearcher"
 excerpt: "About me"
 author_profile: true
 redirect_from:
@@ -10,56 +10,44 @@ redirect_from:
 
 My research interests lie in the Mathematical foundations that accounts for the booming success of Deep Learning techniques, and most generally AI. I am about to finish my master and my aim is to pursue research endeavors in Computer Vision, NLP, Network science and Reinforcement Learning.
 
-<b>Internship opportunity:</b> To get my master, I need to do a 6 months internship. I would very much like to spend these 6 months to do solid AI research within a team of talented individuals. Shoot me an email!
+<b>Internship opportunity:</b> To get my master, I need to do a 6 months internship. I would very much like to spend this time doing solid AI research within a team of talented individuals. Shoot me an email!
 
-In this blog, you will find my publications (most of them are course projects) and blogposts I wrote to myself and others. Most of these posts are inspired from my AI master and personal research. Altogether, it is a summary of personal projects, research, lecture notes and online content.
+In this blog, you will find some publications and blogposts I wrote for myself and others. Most of these posts are inspired from my AI master and personal research. Altogether, it is a summary of personal projects, research, lecture notes and online content.
 
 Some of them are very much of a work in progress (marked with *). They are updated on a daily basis, so stay tuned 📣
+
+| Vision | Natural Language Processing | Networks science |
+|:---------------------------:|:-------------------------------:|:-------------------------------:|
+| [Image-formation model](/posts/2019/01/vic-low-level/) 🌠 | Language model | [Graph theory](/posts/2018/11/graph_theory/) ♻️ |
+| [Filtering](/posts/2019/01/vic-filters/) 📷 | Words Representation | [Random Network](https://devitrylouis.github.io/posts/2018/11/random_network/) 🌐 |
+| Feature selection / matching + [code]() | Tagging and NER | [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) ❤️ |
+| Optical Flow | Parsing | [Barabási-Albert Model](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) 🌌 |
+| 3D Modeling | Mining User Generated Content | [Community detection](https://devitrylouis.github.io/posts/2019/01/community-detection/) 👪 |
+| Segmentation & Grouping | Machine Translation and Natural Language Generation  | *[Link prediction](https://devitrylouis.github.io/posts/2019/01/link-prediction/) + [Code](https://github.com/devitrylouis/link_prediction) 🌿 |
+| Object Detection/ Recognition | Machine Reading |
+| Tracking | Dialogue |
 
 | Machine Learning | Deep Learning | Tools |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | * [Expected risk minimization](https://devitrylouis.github.io/posts/2018/11/basics-ml/) 🎯  | [Multi-Layer Perceptron](https://devitrylouis.github.io/posts/2018/11/mlp/) 💻| [Optimization basics](https://devitrylouis.github.io/posts/2018/11/basics-optimization/) ✅ |
 | [Linear regression](https://devitrylouis.github.io/posts/2018/11/linear-regression/) 📈 | [Optimizing DL Models](https://devitrylouis.github.io/posts/2018/11/optimize-dl/) ⭐️ | [Unconstrained optimization](https://devitrylouis.github.io/posts/2018/11/unconstrained-optimization/) 🌀 |
 | [Logistic Regression](https://devitrylouis.github.io/posts/2018/11/logistic-regression/) 📊 | [Basics](https://devitrylouis.github.io/posts/2018/11/basics-dl/) ✅ | [Constrained optimization](https://devitrylouis.github.io/posts/2018/11/constrained-optimization/) 📐 |
-| [Probabilistic classifiers](https://devitrylouis.github.io/posts/2018/10/probabilistic) 🔮 | Useful tricks and layers ➿ | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) 💠 |
-| [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | [Word embeddings](https://devitrylouis.github.io/posts/2019/01/embeddings/) ✒️ | Anomaly detection ❗️ |
+| [Probabilistic classifiers](https://devitrylouis.github.io/posts/2018/10/probabilistic) 🔮 | * [Auto-Encoder](https://devitrylouis.github.io/posts/Deep-Learning/autoencoder) ⏳ | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) 💠 |
+| [LDA](https://devitrylouis.github.io/posts/2018/10/lda) 📏 | [Word embeddings](https://devitrylouis.github.io/posts/2019/01/embeddings/) ✒️ + [code](https://github.com/devitrylouis/word2vec_negative_sampling) | Anomaly detection ❗️ |
 | Dimension Reduction 🔎 | [Bag-of-Words](https://devitrylouis.github.io/posts/2019/01/bag-of-words/) ✒️ | Anomaly detection time series 🕜❗️|
 | [Naïve Bayes](https://devitrylouis.github.io/posts/2018/11/naive-bayes/) 🔠 | [CNN](https://github.com/devitrylouis/image_denoising) 🌄 | Feature engineering for music 🎼 |
-| * [Decision trees](https://devitrylouis.github.io/posts/2018/11/decision-trees/) 🌲 | * [Auto-Encoder](https://devitrylouis.github.io/posts/Deep-Learning/autoencoder) ⏳ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) 💈 |
-| Ensemble methods 🌲🌳 | RNN/LSTM 🕧 |  |
-| Support Vector Machine ↗️ | Avanced RNNs 📘 |  |
-| Clustering 👫 | [GAN & VAE](https://github.com/devitrylouis/gan_vs_vae_pytorch) 🎭 |  |
+| * [Decision trees](https://devitrylouis.github.io/posts/2018/11/decision-trees/) 🌲 | * Useful tricks and layers ➿ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) 💈 |
+| Ensemble methods 🌲🌳 | RNN/LSTM 🕧 | [Map Reduce](https://devitrylouis.github.io/posts/2018/11/map-reduce/) ✅  |
+| Support Vector Machine ↗️ | Avanced RNNs 📘 | [Hadoop](/posts/2019/01/hadoop/) 🚈 |
+| Clustering 👫 | [GAN & VAE](https://github.com/devitrylouis/gan_vs_vae_pytorch) 🎭 | [Spark](/posts/2019/01/spark-introduction/) 🚅 + [notebook](https://github.com/devitrylouis/spark_basics)|
 
-
-| Network science | Big data |
-|:---------------------------:|:-------------------------------:|
-| [Graph theory](https://devitrylouis.github.io/posts/2018/11/graph_theory/) ♻️| [Map Reduce](https://devitrylouis.github.io/posts/2018/11/map-reduce/) ✅ |
-| [Random Network](https://devitrylouis.github.io/posts/2018/11/random_network/) 🌐| [Hadoop](/posts/2019/01/hadoop/) 🚈 |
-| [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) ❤️| [Spark introduction](/posts/2019/01/spark-introduction/) 🚅|
-| [Barabási-Albert Model](https://devitrylouis.github.io/posts/2018/11/barabasi-albert-model/) 🌌 |  |
-| [Community detection](https://devitrylouis.github.io/posts/2019/01/community-detection/) 👪 |  |
-| * [Link prediction](https://devitrylouis.github.io/posts/2019/01/link-prediction/) + [Code](https://github.com/devitrylouis/link_prediction)🌿 |  |
 
 | Artificial Intelligence | Reinforcement Learning | Decision Modelling |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
-| [Problem solving](https://devitrylouis.github.io/posts/2018/11/problem-solving-ai/) | [Introduction ✅](/posts/2019/01/rl-introduction/) | [Utility theory](/posts/2019/01/utility-theory/) 👌 |
-| [Agents](https://devitrylouis.github.io/posts/2018/11/problem-solving-ai/) | [Dynamic Programming 💻](/posts/2019/01/rl-dynamic-programming/)  | Chance trees |
-| [Agents](https://devitrylouis.github.io/posts/2018/11/problem-solving-ai/) | MDP and bandits ➿ | Voting and social choice theory |
-| Adversial search | Dynamic Programming 💻 | Aggregations functions |
-| Constrained search | Prediction | Aggregations procedures |
-| Expert systems | Control | Preference elicitation |
-| Game implementation | Deep Reinforcement Learning | Portfolio decision analysis |
-
-| Vision | Natural Language Processing |
-|:---------------------------:|:-------------------------------:|:-------------------------------:|
-| [Image-formation model](/posts/2019/01/vic-low-level/)  | Language model |
-| [Filtering](/posts/2019/01/vic-filters/) | Words Representation |
-| Computational Photography | Tagging and NER |
-| Optical Flow | Parsing |
-| 3D Modeling | Mining User Generated Content |
-| Segmentation & Grouping | Machine Translation and Natural Language Generation  |
-| Object Detection/ Recognition | Machine Reading |
-| Tracking | Dialogue |
+| Problem solving | [Introduction ✅](/posts/2019/01/rl-introduction/) | [Utility theory](/posts/2019/01/utility-theory/) 👌 |
+| Adversial search | [Dynamic Programming](/posts/2019/01/rl-dynamic-programming/) 💻 | [MCDA](/posts/2019/01/dm-multiple-criteria/) 📑 |
+| Constraint Satisfaction Problems | Predictions | Voting and social choice theory |
+| Expert systems| Control | Aggregations functions |
 
 My projects in a nutshell
 ------
