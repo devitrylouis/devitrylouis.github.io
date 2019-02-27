@@ -14,8 +14,10 @@ Gentle introduction to the convexity, derivatives and the taxonomy of problems i
 ### 1.1. Minimizers
 
 - $x^{\text{*}} \in \mathcal{D}$ is a global minimizer of $f$ over $\mathcal{D}$ if $\forall x \in \mathcal{D}, f(x)\geq f(x^{\text{*}})$
-- $x \in \mathcal{D}$ is a local minimizer of $f$ over $\mathcal{D}$ if  there exists a Neighborhood $\mathcal{N}(x)$ of $x$ such that
-$$\forall y \in \mathcal{N}(x) \cap \mathcal{D}, f(y) \geq f(x)$$
+- $x \in \mathcal{D}$ is a local minimizer of $f$ over $\mathcal{D}$ if  there exists a Neighborhood $\mathcal{N}(x)$ of $x$ such that:
+
+$$ \forall y \in \mathcal{N}(x) \cap \mathcal{D}, f(y) \geq f(x) $$
+
 - The minimum of $f$ over $\mathcal{D}$ is the value $min_{x\in \mathcal{D}} f(x)$
 
 ### 1.2. Unimodality / multimodality
