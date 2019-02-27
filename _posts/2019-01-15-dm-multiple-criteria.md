@@ -1,7 +1,7 @@
 ---
 title: 'Multiple criteria decision'
 date: 2018-12-01
-permalink: /posts/2019/01/multiple-criteria/
+permalink: /posts/2019/01/dm-multiple-criteria/
 tags:
   - Decision Modeling
 ---

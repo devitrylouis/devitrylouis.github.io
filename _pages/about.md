@@ -20,8 +20,8 @@ Some of them are very much of a work in progress (marked with *). They are updat
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | [Image-formation model](/posts/2019/01/vic-low-level/) 🌠 | Language model | [Graph theory](/posts/2018/11/graph_theory/) ♻️ |
 | [Filtering](/posts/2019/01/vic-filters/) 📷 | Words Representation | [Random Network](/posts/2018/11/random_network/) 🌐 |
-| [Canny edge detection](https://gist.github.com/devitrylouis/1c00f4530ac729ec20aa7826fd040aac) | Tagging and NER | [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) ❤️ |
-| [Feature selection](/posts/2019/01/vic_features) + [stitch images](https://gist.github.com/devitrylouis/a7f19c6713e41a525309407b44334a7d) | Parsing | [Barabási-Albert Model](/posts/2018/11/barabasi-albert-model/) 🌌 |
+| [Canny edge detection](https://gist.github.com/devitrylouis/1c00f4530ac729ec20aa7826fd040aac) ✏️ | Tagging and NER | [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) ❤️ |
+| [Feature selection](/posts/2019/01/vic_features) + [stitch images](https://gist.github.com/devitrylouis/a7f19c6713e41a525309407b44334a7d) 💠 | Parsing | [Barabási-Albert Model](/posts/2018/11/barabasi-albert-model/) 🌌 |
 | Optical flow | Mining User Generated Content | [Community detection](https://devitrylouis.github.io/posts/2019/01/community-detection/) 👪 |
 | Segmentation & Grouping | Machine Translation and Natural Language Generation  | *[Link prediction](/posts/2019/01/link-prediction/) + [Code](https://github.com/devitrylouis/link_prediction) 🌿 |
 | Object Detection/ Recognition | Machine Reading |
@@ -46,7 +46,7 @@ Some of them are very much of a work in progress (marked with *). They are updat
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | Problem solving | [Introduction ✅](/posts/2019/01/rl-introduction/) | [Utility theory](/posts/2019/01/utility-theory/) 👌 |
 | Adversial search | [Dynamic Programming](/posts/2019/01/rl-dynamic-programming/) 💻 | [MCDA](/posts/2019/01/dm-multiple-criteria/) 📑 |
-| Constraint Satisfaction Problems | Predictions | Voting and social choice theory |
+| Constraint Satisfaction Problems | Predictions | [Voting and social choice theory](/posts/2019/01/dm-social-choice-theory/) |
 | Expert systems| Control | Aggregations functions |
 
 My projects in a nutshell
