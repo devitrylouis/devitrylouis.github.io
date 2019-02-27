@@ -13,7 +13,7 @@ Gentle introduction to the convexity, derivatives and the taxonomy of problems i
 
 ### 1.1. Minimizers
 
-- $x^{text{*}} \in \mathcal{D}$ is a global minimizer of $f$ over $\mathcal{D}$ if $\forall x \in \mathcal{D}, f(x)\geq f(x^{text{*}})$
+- $x^{\text{*}} \in \mathcal{D}$ is a global minimizer of $f$ over $\mathcal{D}$ if $\forall x \in \mathcal{D}, f(x)\geq f(x^{\text{*}})$
 - $x \in \mathcal{D}$ is a local minimizer of $f$ over $\mathcal{D}$ if  there exists a Neighborhood $\mathcal{N}(x)$ of $x$ such that
 $$\forall y \in \mathcal{N}(x) \cap \mathcal{D}, f(y) \geq f(x)$$
 - The minimum of $f$ over $\mathcal{D}$ is the value $min_{x\in \mathcal{D}} f(x)$
@@ -134,13 +134,13 @@ $$
 Given $y \in \mathbb{R}^{m}$ and $A \in \mathbb{R}$ find:
 
 $$
-x^{text{*}} \in argmin_{x} \mid\mid y-Ax \mid\mid_{2}^{2}
+x^{\text{*}} \in argmin_{x} \mid\mid y-Ax \mid\mid_{2}^{2}
 $$
 
 Solution, is $m \geq n$ and $A$ is full column rank, then A is the full column rank:
 
 $$
-x^{text{*}} = (A^{T}A)^{-1}A^{T}y
+x^{\text{*}} = (A^{T}A)^{-1}A^{T}y
 $$
 
 Otherwise:
@@ -169,10 +169,10 @@ $$f(x^{k})<f(x^{k-1})<...<f(x^{0})$$
 
 ### 3.6. Convergence
 
-The sequence of iterates $x_{n}$ converges to the solution $x^{text{*}}$ of the
+The sequence of iterates $x_{n}$ converges to the solution $x^{\text{*}}$ of the
 minimization problem.
 - Global convergence: valid for all $x_{0} ∈ \mathcal{D}$.
-- Local convergence: valid for $x_{0}$ in a neighborhood of $x^{text{*}}$
+- Local convergence: valid for $x_{0}$ in a neighborhood of $x^{\text{*}}$
 - Rates of convergence
 
 
