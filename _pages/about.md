@@ -33,9 +33,9 @@ Some of them are very much of a work in progress (marked with *). They are updat
 | [Linear regression](/posts/2018/11/linear-regression/) 📈 | [Optimizing DL Models](/posts/2018/11/optimize-dl/) ⭐️ | [Unconstrained optimization](/posts/2018/11/unconstrained-optimization/) 🌀 |
 | [Logistic Regression](/posts/2018/11/logistic-regression/) 📊 | [Basics](/posts/2018/11/basics-dl/) ✅ | [Constrained optimization](/posts/2018/11/constrained-optimization/) 📐 |
 | [Probabilistic classifiers](/posts/2018/10/ml-probabilistic-classifiers/) 🔮 | * [Auto-Encoder](/posts/Deep-Learning/autoencoder) ⏳ | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) 💠 |
-| [LDA](/posts/2018/10/lda) 📏 | [Word embeddings](/posts/2019/01/embeddings/) ✒️ + [code](/devitrylouis/word2vec_negative_sampling) | Anomaly detection ❗️ |
+| [LDA](/posts/2018/10/ml-lda/) 📏 | [Word embeddings](/posts/2019/01/embeddings/) ✒️ + [code](/devitrylouis/word2vec_negative_sampling) | Anomaly detection ❗️ |
 | Dimension Reduction 🔎 | [Bag-of-Words](/posts/2019/01/bag-of-words/) ✒️ | Anomaly detection time series 🕜❗️|
-| [Naïve Bayes](/posts/2018/11/naive-bayes/) 🔠 | [CNN](https://github.com/devitrylouis/image_denoising) 🌄 | Feature engineering for music 🎼 |
+| [Naïve Bayes](/posts/2019/02/ml-naive-bayes/) 🔠 | [CNN](https://github.com/devitrylouis/image_denoising) 🌄 | Feature engineering for music 🎼 |
 | * [Decision trees](/posts/2018/11/decision-trees/) 🌲 | * Useful tricks and layers ➿ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) 💈 |
 | Ensemble methods 🌲🌳 | RNN/LSTM 🕧 | [Map Reduce](/posts/2018/11/map-reduce/) ✅  |
 | Support Vector Machine ↗️ | Avanced RNNs 📘 | [Hadoop](/posts/2019/01/hadoop/) 🚈 |

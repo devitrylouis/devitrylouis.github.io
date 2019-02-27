@@ -1,13 +1,15 @@
 ---
 title: 'Naive Bayes'
 date: 2018-10-16
-permalink: /posts/2018/11/naive-bayes/
+permalink: /posts/2019/02/ml-naive-bayes/
 tags:
   - Machine Learning
 ---
-<b>TL; DR:</b> Generative Learning Algorithm for discrete valued input.
+Naïve Bayes is a [generative learning algorithm](/posts/2018/10/ml-lda/) for discrete valued input. In particular, it is known to work great on texts classification tasks like spam detection.
 
-<b>Example (text classification):</b> We represent an email via a feature vector whose length is equal to the number of words in the dictionary. Specifically, if an email contains the $i$-th word of the dictionary, then we will set $x_{i} = 1$; otherwise, we let $x_{i} = 0$
+## 1. Model
+
+We represent an email via a feature vector whose length is equal to the number of words in the dictionary. Specifically, if an email contains the $i$-th word of the dictionary, then we will set $x_{i} = 1$; otherwise, we let $x_{i} = 0$
 
 <b>Naive Bayes assumption:</b> The $x_{i}$’s are conditionally independent given $y$.
 
@@ -64,7 +66,7 @@ $$
 
 <b>Simple hack:</b> Discretize values to use this algorithm.
 
-# Laplace smoothing
+## 2. Laplace smoothing
 
 <b>TL; DR:</b> Naive Bayes algorithm works well for many problems, but there is a simple change that makes it work much better, especially for text classification.
 
