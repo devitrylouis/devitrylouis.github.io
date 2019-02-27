@@ -1,11 +1,12 @@
 ---
 title: 'Probabilistic classifiers'
 date: 2018-10-16
-permalink: /posts/2018/11/probabilistic/
+permalink: /posts/2018/10/ml-probabilistic-classifiers/
 tags:
   - Machine Learning
 ---
-<b>Discriminative learning algorithms</b> Algorithms that try to learn $p(y|x)$ directly (such as logistic regression), or algorithms that try to learn mappings directly from the space of inputs X to the labels {0, 1}, (such as the perceptron algorithm).
+
+<b>Discriminative learning algorithms</b> are algorithms that try to learn $p(y|x)$ directly (such as logistic regression), or algorithms that try to learn mappings directly from the space of inputs $X$ to the labels ${0, 1}$, (such as the perceptron algorithm).
 
 <b>Generative learning algorithms:</b> Algorithms that instead try to model $p(x|y)$ (and $p(y)$).
 
@@ -25,11 +26,11 @@ $$
 \end{align}
 $$
 
-# Gaussian Discriminant Analysis
+# 1. Gaussian Discriminant Analysis
 
 <b>Context:</b> $p(x|y)$ is distributed according to a multivariate normal distribution.
 
-## The multivariate normal distribution
+## 1.1. The multivariate normal distribution
 
 <b>Multivariate normal distribution</b> in $n$-dimensions is parameterized by a mean vector $\mu ∈ \mathbb{R}^{n}$ and a covariance matrix $\Sigma ∈ \mathbb{R}^{n\times n}$, where $\Sigma \geq 0$ is symmetric and positive semi-definite:
 
@@ -43,7 +44,7 @@ $$
 
 <b>Takeway:</b> $X ∼ N (\mu, \Sigma) \Rightarrow Cov(X) = \Sigma$
 
-## The Gaussian Discriminant Analysis model
+## 1.2. The Gaussian Discriminant Analysis model
 
 Assume our data obey to the following:
 
@@ -66,7 +67,7 @@ $$
 \end{align}
 $$
 
-## Discussion: GDA and logistic regression
+## 2. Discussion: GDA and logistic regression
 
 <b>Link to logistic regression</b> If we view the quantity $p(y = 1|x; \phi, \mu_{0}, \mu_{1}, \Sigma)$ as a function of x, then we find that:
 
