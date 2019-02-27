@@ -46,7 +46,7 @@ Some of them are very much of a work in progress (marked with *). They are updat
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | Problem solving | [Introduction ✅](/posts/2019/01/rl-introduction/) | [Utility theory](/posts/2019/01/utility-theory/) 👌 |
 | Adversial search | [Dynamic Programming](/posts/2019/01/rl-dynamic-programming/) 💻 | [MCDA](/posts/2019/01/dm-multiple-criteria/) 📑 |
-| Constraint Satisfaction Problems | Predictions | [Voting and social choice theory](/posts/2019/01/dm-social-choice-theory/) |
+| Constraint Satisfaction Problems | Predictions | [Voting and social choice theory](/posts/2019/01/dm-social-choice-theory/) 🗳️ |
 | Expert systems| Control | Aggregations functions |
 
 My projects in a nutshell
