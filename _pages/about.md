@@ -29,7 +29,7 @@ Some of them are very much of a work in progress (marked with *). They are updat
 
 | Machine Learning | Deep Learning | Tools |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
-| * [Expected risk minimization](/posts/2018/11/basics-ml/) 🎯  | [Multi-Layer Perceptron](/posts/2018/11/mlp/) 💻| [Optimization basics](/posts/2018/11/basics-optimization/) ✅ |
+| [Machine Learning basics](/posts/2018/11/ml-basics/) 🎯  | [Multi-Layer Perceptron](/posts/2018/11/mlp/) 💻| [Optimization basics](/posts/2018/11/basics-optimization/) ✅ |
 | [Linear regression](/posts/2018/11/linear-regression/) 📈 | [Optimizing DL Models](/posts/2018/11/optimize-dl/) ⭐️ | [Unconstrained optimization](/posts/2018/11/unconstrained-optimization/) 🌀 |
 | [Logistic Regression](/posts/2018/11/logistic-regression/) 📊 | [Basics](/posts/2018/11/basics-dl/) ✅ | [Constrained optimization](/posts/2018/11/constrained-optimization/) 📐 |
 | [Probabilistic classifiers](/posts/2018/10/probabilistic) 🔮 | * [Auto-Encoder](/posts/Deep-Learning/autoencoder) ⏳ | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) 💠 |
