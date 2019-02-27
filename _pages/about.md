@@ -18,7 +18,7 @@ Some of them are very much of a work in progress (marked with *). They are updat
 
 | Vision | Natural Language Processing | Networks science |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
-| [Image-formation model](/posts/2019/01/vic-low-level/) 🌠 | Language model | [Graph theory](/posts/2018/11/graph_theory/) ♻️ |
+| [Image-formation model](/posts/2019/01/vic-low-level/) 🌠 | Language model | [Graph theory](/posts/2018/11/ns_graph_theory/) ♻️ |
 | [Filtering](/posts/2019/01/vic-filters/) 📷 | Words Representation | [Random Network](/posts/2018/11/random_network/) 🌐 |
 | [Canny edge detection](https://gist.github.com/devitrylouis/1c00f4530ac729ec20aa7826fd040aac) ✏️ | Tagging and NER | [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) ❤️ |
 | [Feature selection](/posts/2019/01/vic_features) + [stitch images](https://gist.github.com/devitrylouis/a7f19c6713e41a525309407b44334a7d) 💠 | Parsing | [Barabási-Albert Model](/posts/2018/11/barabasi-albert-model/) 🌌 |

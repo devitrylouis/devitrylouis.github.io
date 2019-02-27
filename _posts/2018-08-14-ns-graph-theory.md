@@ -1,7 +1,7 @@
 ---
 title: 'Graph theory'
 date: 2018-08-14
-permalink: /posts/2018/11/graph_theory/
+permalink: /posts/2018/11/ns_graph_theory/
 tags:
   - Network science
   - Basics
@@ -11,9 +11,9 @@ Networks greatly impact the properties of a system in many forms. Graph theory -
 
 <b>Goal:</b> Introduce a graph-theoretic formalism to map the networks wiring diagram.
 
-## Networks and graphs
+## 1. Networks and graphs
 
-<b>TL; DR:</b> Network is a Catalog of nodes/vertices with the links/edges that describe the direct interactions between them.
+<b>TL; DR:</b> Network is a catalog of nodes/vertices with the links/edges that describe the direct interactions between them.
 
 <i>Note:</i> The number of nodes / edges are key informations about a graph.
 
@@ -29,9 +29,9 @@ Networks greatly impact the properties of a system in many forms. Graph theory -
 
 <i>Remark:</i> Choice of representation must be done with care regarding the significance of nodes and links.
 
-## Key metrics: Degree, Average Degree and Degree Distribution
+## 2. Key metrics: Degree, Average Degree and Degree Distribution
 
-### Undirected
+### 2.1. Undirected
 
 <b>Degree:</b> number of links it has to other nodes
 
@@ -46,7 +46,7 @@ $$
 \langle k \rangle = \frac{1}{N}\sum_{i=1}^{N}k_{i}
 $$
 
-### Directed
+### 2.2. Directed
 
 <b>Incoming / outcoming:</b> In directed networks we distinguish between:
   - $k_{i}^{in}$ : Incoming degree (number of links that point to node $i$)
@@ -75,7 +75,7 @@ $$p_{k} = N_{k}/N$$
 
 <i>Advice:</i> The degree distribution is often shown on a log-log plot
 
-## Adjacency Matrix
+### 2.3. Adjacency Matrix
 
 <b>Adjacency matrix:</b>
 $$
@@ -100,13 +100,13 @@ $$\langle k_{i} \rangle = \sum_{j=1}^{N} A_{ij} = \sum_{j=1}^{N} A_{ji}$$
 
 <b>Definition:</b> $L_{max}$ is the maximum number of links.
 
-## Real Networks are Sparse
+### 2.3. Real Networks are Sparse
 
 <b>Definition (Network sparse):</b> if $L ‹‹ L_{max}$
 
 <b>Storage:</b> Lighter in memory to store a sparse matrix with a list rather than the full adjacent matrix.
 
-## Weighted Networks
+### 2.4. Weighted Networks
 
 <b>Definition:</b> A network is weighted if
 $$
@@ -121,7 +121,7 @@ It translates to network externality in economics.
 - Most real networks are sparse. Hence the value of the network increases only linearly with N.
 - As the links have weights, not all links are of equal value.
 
-## Bipartite Networks
+### 2.5. Bipartite Networks
 
 <b>Definition (bipartite graph)</b>: network whose nodes can be divided into two disjoint sets $U$ and $V$ such that each link connects a $U$-node to a $V$-node.
 
@@ -129,13 +129,13 @@ It translates to network externality in economics.
 1. Connects two U- nodes by a link if they are linked to the same V-node.
 2. Connects the V-nodes by a link if they connect to the same U-node
 
-## Paths and Distances
+## 3. Paths and Distances
 
 <b>Physical distance</b> plays a <b>key</b> role in determining the interactions between the <b>components of physical systems</b>.
 
 <b>Definition (Path):</b> is a route that runs along the links of the network. A path’s length represents the number of links the path contains.
 
-### Shortest Path and distance
+### 3.1. Shortest Path and distance
 
 The shortest path between nodes $i$ and $j$ is the path with the fewest number of links.
 
@@ -149,7 +149,7 @@ The shortest path between nodes $i$ and $j$ is the path with the fewest number o
 
 <b>Goal:</b> Find the shortest path.
 
-### How to find the shortest path?
+### 3.2. How to find the shortest path?
 
 <b>Adjacency matrix</b> find the shortest path and their numbers for points $i$ and $j$.
   - $d_{ij} = 1$ if a direct link exists
@@ -181,7 +181,7 @@ If $j$ does not have a label, then $d_{ij} = \infty$.
 
 <i>Computational complexity</i> $\mathcal{0}(N + L)$ because each node needs to be entered and removed from the queue at most once, and each link has to be tested only once.
 
-<b>Diameter d_{max}</b> The longest shortest path in a graph / distance between the two furthest nodes.
+<b>Diameter d_${max}$</b> The longest shortest path in a graph / distance between the two furthest nodes.
 
 <b>Compute the diameter:</b>
 
@@ -189,7 +189,7 @@ If $j$ does not have a label, then $d_{ij} = \infty$.
 2. Compute all the outgoing distances from that point (but the first one if the network is undirected)
 3. Repeat with another node for all nodes
 
-# Some definitions
+## 4. Edge topology
 
 <b>Average Path Length:</b> $\langle d \rangle = \frac{1}{N^{2}}\sum_{j=1}^{N}\sum_{i=1}^{N} d_{i, j}$
 
@@ -199,7 +199,7 @@ If $j$ does not have a label, then $d_{ij} = \infty$.
 
 <b>Hamiltonian Path:</b> A path that visits each node exactly once. We show two Hamiltonian paths in orange and in blue.
 
-## Connectedness
+### 4.1. Connectedness
 
 <b>Goal:</b> Quantify how well are nodes connected to each other (with paths).
 
@@ -223,7 +223,6 @@ $$
     * Rearange the adjacency matrix so as to have a block diagonal form.
     * The blocks are the clusters.
 
-
 - Large networks $\rightarrow$ BFS algorithm:
   * <b>Step 1:</b> Choose node $i$ randomly and perform a BFS. Label all nodes reached this way with $n=1$.
   * <b>Step 2:</b> If all nodes are labeled $\Rightarrow$ network connected.
@@ -233,7 +232,7 @@ $$
     * Use BFS on unmarked node $j$ and label them all with $n$.
     * Return to <b>Step 2</b>.
 
-## Clustering Coefficient
+### 4.2. Clustering Coefficient
 
 <b>TL;DR:</b> The clustering coefficient captures the degree to which the neighbors of a given node link to each other.
 
