@@ -1,7 +1,7 @@
 ---
 title: 'Introduction to optimization'
 date: 2018-10-01
-permalink: /posts/2018/11/optimization-basics/
+permalink: /posts/2019/02/optimization-basics/
 tags:
   - Optimization
   - Basics
