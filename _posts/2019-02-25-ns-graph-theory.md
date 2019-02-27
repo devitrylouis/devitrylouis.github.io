@@ -1,17 +1,31 @@
 ---
 title: 'Graph theory'
 date: 2018-08-14
-permalink: /posts/2018/11/ns_graph_theory/
+permalink: /posts/2019/02/ns_graph_theory/
 tags:
   - Network science
   - Basics
 ---
 
-Networks greatly impact the properties of a system in many forms. Graph theory - a branch of Mathematics - is fundamental to grasp and represent networks. From degrees to degree distributions, from paths to distances and learn to distinguish weighted, directed and bipartite networks.
+Networks are a central aspect of any systems, and Graph theory - a branch of Mathematics - is fundamental to grasp and represent those networks. From degrees to degree distributions, from paths to distances and learn to distinguish weighted, directed and bipartite networks.
 
 <b>Goal:</b> Introduce a graph-theoretic formalism to map the networks wiring diagram.
 
-## 1. Networks and graphs
+1. [Networks and graphs](#networks)
+2. [Key metrics](#metrics)
+    1. [Directed vs. undirected](#direction)
+    2. [Adjacency Matrix](#adjacency)
+    3. [Real networks are sparse](#sparsity)
+    4. [Weighted Networks](#weighted)
+    5. [Bipartite Networks](#bipartite)
+3. [Paths and distance](#path)
+    1. [Shortest Path and distance](#shortest)
+    2. [How to find the shortest path?](#method_shortest)
+4. [Edge topology](#edge)
+  1. [Edge topology](#connectedness)
+  2. [Clustering coefficient](#clustering)
+
+## 1. Networks and graphs <a name="networks"></a>
 
 <b>TL; DR:</b> Network is a catalog of nodes/vertices with the links/edges that describe the direct interactions between them.
 
@@ -29,9 +43,9 @@ Networks greatly impact the properties of a system in many forms. Graph theory -
 
 <i>Remark:</i> Choice of representation must be done with care regarding the significance of nodes and links.
 
-## 2. Key metrics: Degree, Average Degree and Degree Distribution
+## 2. Key metrics: Degree, Average Degree and Degree Distribution <a name="introduction"></a>
 
-### 2.1. Undirected
+### 2.1. Directed vs. Undirected <a name="direction"></a>
 
 <b>Degree:</b> number of links it has to other nodes
 
@@ -45,8 +59,6 @@ Note: We introduce the $\frac{1}{2}$ factor as each link is counted twice.
 $$
 \langle k \rangle = \frac{1}{N}\sum_{i=1}^{N}k_{i}
 $$
-
-### 2.2. Directed
 
 <b>Incoming / outcoming:</b> In directed networks we distinguish between:
   - $k_{i}^{in}$ : Incoming degree (number of links that point to node $i$)
@@ -75,7 +87,7 @@ $$p_{k} = N_{k}/N$$
 
 <i>Advice:</i> The degree distribution is often shown on a log-log plot
 
-### 2.3. Adjacency Matrix
+### 2.2. Adjacency Matrix <a name="adjacency"></a>
 
 <b>Adjacency matrix:</b>
 $$
@@ -100,13 +112,13 @@ $$\langle k_{i} \rangle = \sum_{j=1}^{N} A_{ij} = \sum_{j=1}^{N} A_{ji}$$
 
 <b>Definition:</b> $L_{max}$ is the maximum number of links.
 
-### 2.3. Real Networks are Sparse
+### 2.3. Real Networks are Sparse <a name="sparsity"></a>
 
 <b>Definition (Network sparse):</b> if $L ‹‹ L_{max}$
 
 <b>Storage:</b> Lighter in memory to store a sparse matrix with a list rather than the full adjacent matrix.
 
-### 2.4. Weighted Networks
+### 2.4. Weighted Networks <a name="weighted"></a>
 
 <b>Definition:</b> A network is weighted if
 $$
@@ -121,7 +133,7 @@ It translates to network externality in economics.
 - Most real networks are sparse. Hence the value of the network increases only linearly with N.
 - As the links have weights, not all links are of equal value.
 
-### 2.5. Bipartite Networks
+### 2.5. Bipartite Networks <a name="bipartite"></a>
 
 <b>Definition (bipartite graph)</b>: network whose nodes can be divided into two disjoint sets $U$ and $V$ such that each link connects a $U$-node to a $V$-node.
 
@@ -129,13 +141,13 @@ It translates to network externality in economics.
 1. Connects two U- nodes by a link if they are linked to the same V-node.
 2. Connects the V-nodes by a link if they connect to the same U-node
 
-## 3. Paths and Distances
+## 3. Paths and Distances <a name="path"></a>
 
 <b>Physical distance</b> plays a <b>key</b> role in determining the interactions between the <b>components of physical systems</b>.
 
 <b>Definition (Path):</b> is a route that runs along the links of the network. A path’s length represents the number of links the path contains.
 
-### 3.1. Shortest Path and distance
+### 3.1. Shortest Path and distance <a name="shortest"></a>
 
 The shortest path between nodes $i$ and $j$ is the path with the fewest number of links.
 
@@ -149,7 +161,7 @@ The shortest path between nodes $i$ and $j$ is the path with the fewest number o
 
 <b>Goal:</b> Find the shortest path.
 
-### 3.2. How to find the shortest path?
+### 3.2. How to find the shortest path? <a name="method_shortest"></a>
 
 <b>Adjacency matrix</b> find the shortest path and their numbers for points $i$ and $j$.
   - $d_{ij} = 1$ if a direct link exists
@@ -189,7 +201,7 @@ If $j$ does not have a label, then $d_{ij} = \infty$.
 2. Compute all the outgoing distances from that point (but the first one if the network is undirected)
 3. Repeat with another node for all nodes
 
-## 4. Edge topology
+## 4. Edge topology <a name="edge"></a>
 
 <b>Average Path Length:</b> $\langle d \rangle = \frac{1}{N^{2}}\sum_{j=1}^{N}\sum_{i=1}^{N} d_{i, j}$
 
@@ -199,7 +211,7 @@ If $j$ does not have a label, then $d_{ij} = \infty$.
 
 <b>Hamiltonian Path:</b> A path that visits each node exactly once. We show two Hamiltonian paths in orange and in blue.
 
-### 4.1. Connectedness
+### 4.1. Connectedness <a name="connectedness"></a>
 
 <b>Goal:</b> Quantify how well are nodes connected to each other (with paths).
 
@@ -232,7 +244,7 @@ $$
     * Use BFS on unmarked node $j$ and label them all with $n$.
     * Return to <b>Step 2</b>.
 
-### 4.2. Clustering Coefficient
+### 4.2. Clustering Coefficient <a name="clustering"></a>
 
 <b>TL;DR:</b> The clustering coefficient captures the degree to which the neighbors of a given node link to each other.
 
