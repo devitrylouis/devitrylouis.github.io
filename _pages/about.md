@@ -40,13 +40,14 @@ Some of them are very much of a work in progress (marked with *). They are updat
 | Ensemble methods 🌲🌳 | RNN/LSTM 🕧 | [Map Reduce](/posts/2018/11/big-data-map-reduce/) ✅  |
 | Support Vector Machine ↗️ | Avanced RNNs 📘 | [Hadoop](/posts/2019/01/hadoop/) 🚈 |
 | Clustering 👫 | [GAN & VAE](https://github.com/devitrylouis/gan_vs_vae_pytorch) 🎭 | [Spark](/posts/2019/01/spark-introduction/) 🚅 + [notebook](https://github.com/devitrylouis/spark_basics)|
+| Clustering 👫 | | [Statistics](/posts/2019/01/statistics-basics/)|
 
 
 | Artificial Intelligence | Reinforcement Learning | Decision Modelling |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | Problem solving | [Introduction](/posts/2019/01/rl-introduction/)✅ | [Utility theory](/posts/2019/01/utility-theory/) 👌 |
 | Adversial search | [Dynamic Programming](/posts/2019/01/rl-dynamic-programming/) 💻 | [MCDA](/posts/2019/01/dm-multiple-criteria/) 📑 |
-| Constraint Satisfaction Problems | Predictions | [Voting and social choice theory](/posts/2019/01/dm-social-choice-theory/) 🗳️ |
+| Constraint Satisfaction Problems | [Predictions](/posts/2019/01/rl-prediction/) | [Voting and social choice theory](/posts/2019/01/dm-social-choice-theory/) 🗳️ |
 | Constraint Satisfaction Problems | Control | [Synthetis criterion](/posts/2019/01/dm-synthesis-criterion/) 🆕 |
 | |  | [Outranking methods](/posts/2019/01/dm-outranking-method/) 🏆 |
 

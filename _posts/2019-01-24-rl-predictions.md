@@ -6,45 +6,39 @@ tags:
   - Reinforcement learning
 ---
 
-<b>Setting:</b> No access to the transition probabilities and on-policy.
+In a model-free setting, the transition probabilities are unknown and the agent must interact with the environment. An additional challenge is the possibility that the control policy is different to the one to estimate. This is called off-policy but we will focus on on-policy in this blogpost. We will leverage a simulator and a policy $\pi$ - coupled with our knowledge of $S, A, \gamma$ to run episodes and improve the latter from sampled data.
 
-<b>Goal:</b> Find estimates of the value function:
-1. Monte Carlo based
-  - Stochastic approximations:
-  - MC Learning
-2. Temporal differences: quite useful in dealin with non Markovian processes
-  - $TD(0)$
-  - $TD(\lambda)$
+There are mainly four techniques, in increasing order of performance:
+1. MC methods
+    * Stochastic approximations
+    * Monte Carlo learning
+3. Temporal differences: quite useful in dealing with non Markovian processes
+    * $TD(0)$
+    * $TD(\lambda)$
 
-Necessarily need to interact to get some sense of the environment.
+In the previous blogposts, we went though the following topics:
+- Dynamic Programming
+- Solving explicitly MDPs via Tpi , T*
 
-<b>On policy / off policy?</b>
-- <u>On policy:</u> the control policy is the same as the one to preduct
-- <u>Off policy:</u> the control policy can be different to the one to estimate
+## 1. MC methods
 
-Today: on policy
+The main principle behind MC method is to take simulations, record the value functions along the way and average estimates afterwards. Mathematically, we sample the samples $X_{1}, ..., X_{n}$ (those are our value functions) and we compute the expectancy over all samples:
 
-Input: No p yet a simulator and a policy \pi
-Output: a prediction. How can we estimate $v^{\pi}$
+$$ \mathbb{E}(X) \approx \frac{1}{n}\sum_{i=1}^{n}X_{i} $$
 
-We allow to play as much episodes as necessary
+This is most valid when the assumptions that $X_{1}, ..., X_{n}$ are i.i.d. strong, as we obtain:
 
-Large lookup tables.
+$$ \frac{1}{n}\sum_{i=1}^{n} X_{i} \rightarrow \mathbb{E}(X_{1}) \text{ a.s.} $$
 
-## Stochastic aproximation
+where we used the notion of almost sure convergence:
 
-Convergence almost surely:
 $$\mathbb{P}(lim_{n\rightarrow \infty} X_{n} = X) = 1$$
 
+I refer you to this [statistics blogpost](/posts/2019/01/statistics-basics/) for more details.
 
+## 1.1. Stochastic approximation
 
-where we note $X$
-
-Monte Carlo methods: Sample some random variables to get an estimate of some expectation. Using MC variations, we will estimate the Q-funtion.
-
-Goal of stochastic approximations:
-
-$$f(\theta^{*}) = 0$$
+Goal of stochastic approximations: $$f(\theta^{*}) = 0$$
 
 But we only have an estimate of $f: \mathbb{E}[F(\theta)] = f(\theta)$
 
@@ -66,11 +60,9 @@ A step size $\mu_{n} \geq 0$ is said to satisfy the RobbinsMonro conditions if:
 
 $$
 \sum_{n=0}^{\infty}
-
-
 $$
 
-### Stochastic approximations of fixed points
+### 1.1. Stochastic approximations of fixed points
 
 Let /mathcal{T} be a contraction with fixed point V^{*}
 
@@ -84,7 +76,7 @@ Three assumptions: \Rightarrow V_{n} \rightarrow_{n \rightarrow \infty} V
 
 Goal: Design of the sequences.
 
-### Monte-Carlo Learning
+## 2. Monte-Carlo Learning
 
 Works in sequential and finite episode setting. An episode is said to be finite when a terminal state is reached? It's possible to have $\gamma = 1$
 
@@ -101,9 +93,9 @@ N is a counter that helps average the expected score
 
 Every visit MC
 
-### Temporal difference learning
+## 3. Temporal difference learning
 
-### TD(0)
+### 3.1. TD(0)
 
 From epiosde $N$ to $N+1$
 
@@ -124,7 +116,7 @@ V_{n} \rightarrow v^{\pi}
 $$
 
 
-### $TD(\lambda)$
+### 3.1. $TD(\lambda)$
 
 MC TD(0) TABLE
 
@@ -138,7 +130,5 @@ Stochastic approximation theorem
 This algorithm converges to a fixed point (DEMO)
 
 Implementation with trace:
-
-##### Useful inequality
 
 ------
