@@ -1,7 +1,7 @@
 ---
 title: 'Map Reduce'
 date: 2018-10-01
-permalink: /posts/2018/11/map-reduce/
+permalink: /posts/2018/11/big-data-map-reduce/
 tags:
   - Big Data
 ---

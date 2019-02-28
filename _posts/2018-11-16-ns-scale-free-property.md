@@ -1,7 +1,7 @@
 ---
 title: 'The scale free property'
 date: 2018-11-16
-permalink: /posts/2018/11/scale-free-property/
+permalink: /posts/2018/11/ns-scale-free-property/
 tags:
   - Network science
 ---

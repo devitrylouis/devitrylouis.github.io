@@ -1,7 +1,7 @@
 ---
 title: 'Constrained optimization'
 date: 2018-10-01
-permalink: /posts/2018/11/constrained-optimization/
+permalink: /posts/2018/11/optimization-constrained/
 tags:
   - Optimization
 ---

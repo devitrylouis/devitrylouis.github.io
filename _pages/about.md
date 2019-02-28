@@ -20,8 +20,8 @@ Some of them are very much of a work in progress (marked with *). They are updat
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | [Image-formation model](/posts/2019/01/vic-low-level/) 🌠 | Language model | [Graph theory](/posts/2019/02/ns_graph_theory/) ♻️ |
 | [Filtering](/posts/2019/01/vic-filters/) 📷 | Words Representation | [Random Network](/posts/2018/11/random_network/) 🌐 |
-| [Canny edge detection](https://gist.github.com/devitrylouis/1c00f4530ac729ec20aa7826fd040aac) ✏️ | Tagging and NER | [Scale-free property](https://devitrylouis.github.io/posts/2018/11/scale-free-property/) ❤️ |
-| [Feature selection](/posts/2019/01/vic_features) + [stitch images](https://gist.github.com/devitrylouis/a7f19c6713e41a525309407b44334a7d) 💠 | Parsing | [Barabási-Albert Model](/posts/2018/11/barabasi-albert-model/) 🌌 |
+| [Canny edge detection](https://gist.github.com/devitrylouis/1c00f4530ac729ec20aa7826fd040aac) ✏️ | Tagging and NER | [Scale-free property](/posts/2018/11/ns-scale-free-property/) ❤️ |
+| [Feature selection](/posts/2019/01/vic_features) + [stitch images](https://gist.github.com/devitrylouis/a7f19c6713e41a525309407b44334a7d) 💠 | Parsing | [Barabási-Albert Model](/posts/2018/11/ns-barabasi-albert-model/) 🌌 |
 | Optical flow | Mining User Generated Content | [Community detection](https://devitrylouis.github.io/posts/2019/01/community-detection/) 👪 |
 | Segmentation & Grouping | Machine Translation and Natural Language Generation  | *[Link prediction](/posts/2019/01/link-prediction/) + [Code](https://github.com/devitrylouis/link_prediction) 🌿 |
 | Object Detection/ Recognition | Machine Reading |
@@ -30,14 +30,14 @@ Some of them are very much of a work in progress (marked with *). They are updat
 | Machine Learning | Deep Learning | Tools |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | [Machine Learning basics](/posts/2018/11/ml-basics/) 🎯  | [Multi-Layer Perceptron](/posts/2018/11/dl-mlp/) 💻| [Optimization basics](/posts/2019/02/optimization-basics/) ✅ |
-| [Linear regression](/posts/2018/11/linear-regression/) 📈 | [Optimizing DL Models](/posts/2018/11/optimize-dl/) ⭐️ | [Unconstrained optimization](/posts/2018/11/unconstrained-optimization/) 🌀 |
-| [Logistic Regression](/posts/2018/11/logistic-regression/) 📊 | [Basics](/posts/2018/11/basics-dl/) ✅ | [Constrained optimization](/posts/2018/11/constrained-optimization/) 📐 |
+| [Linear regression](/posts/2018/11/ml-linear-regression/) 📈 | [Optimizing DL Models](/posts/2018/11/optimize-dl/) ⭐️ | [Unconstrained optimization](/posts/2018/11/optimization-unconstrained/) 🌀 |
+| [Logistic Regression](/posts/2018/11/logistic-regression/) 📊 | [Basics](/posts/2018/11/basics-dl/) ✅ | [Constrained optimization](/posts/2018/11/optimization-constrained/) 📐 |
 | [Probabilistic classifiers](/posts/2018/10/ml-probabilistic-classifiers/) 🔮 | * [Auto-Encoder](/posts/Deep-Learning/autoencoder) ⏳ | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) 💠 |
 | [LDA](/posts/2018/10/ml-lda/) 📏 | [Word embeddings](/posts/2019/01/embeddings/) ✒️ + [code](/devitrylouis/word2vec_negative_sampling) | Anomaly detection ❗️ |
 | Dimension Reduction 🔎 | [Bag-of-Words](/posts/2019/01/bag-of-words/) ✒️ | Anomaly detection time series 🕜❗️|
 | [Naïve Bayes](/posts/2019/02/ml-naive-bayes/) 🔠 | [CNN](https://github.com/devitrylouis/image_denoising) 🌄 | Feature engineering for music 🎼 |
 | * [Decision trees](/posts/2018/11/decision-trees/) 🌲 | * Useful tricks and layers ➿ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) 💈 |
-| Ensemble methods 🌲🌳 | RNN/LSTM 🕧 | [Map Reduce](/posts/2018/11/map-reduce/) ✅  |
+| Ensemble methods 🌲🌳 | RNN/LSTM 🕧 | [Map Reduce](/posts/2018/11/big-data-map-reduce/) ✅  |
 | Support Vector Machine ↗️ | Avanced RNNs 📘 | [Hadoop](/posts/2019/01/hadoop/) 🚈 |
 | Clustering 👫 | [GAN & VAE](https://github.com/devitrylouis/gan_vs_vae_pytorch) 🎭 | [Spark](/posts/2019/01/spark-introduction/) 🚅 + [notebook](https://github.com/devitrylouis/spark_basics)|
 
@@ -47,7 +47,7 @@ Some of them are very much of a work in progress (marked with *). They are updat
 | Problem solving | [Introduction ✅](/posts/2019/01/rl-introduction/) | [Utility theory](/posts/2019/01/utility-theory/) 👌 |
 | Adversial search | [Dynamic Programming](/posts/2019/01/rl-dynamic-programming/) 💻 | [MCDA](/posts/2019/01/dm-multiple-criteria/) 📑 |
 | Constraint Satisfaction Problems | Predictions | [Voting and social choice theory](/posts/2019/01/dm-social-choice-theory/) 🗳️ |
-| Expert systems| Control | Aggregations functions |
+| Expert systems| Control | [Outranking methods](/posts/2019/01/dm-outranking-method/) 🏆 |
 
 My projects in a nutshell
 ------

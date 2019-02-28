@@ -1,7 +1,7 @@
 ---
 title: 'Barabási-Albert Model'
 date: 2018-11-16
-permalink: /posts/2018/11/barabasi-albert-model/
+permalink: /posts/2018/11/ns-barabasi-albert-model/
 tags:
   - Network science
 ---

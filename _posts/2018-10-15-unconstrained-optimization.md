@@ -1,7 +1,7 @@
 ---
 title: 'Unconstrained optimization'
 date: 2018-10-01
-permalink: /posts/2018/11/unconstrained-optimization/
+permalink: /posts/2018/11/optimization-unconstrained/
 tags:
   - Optimization
 ---

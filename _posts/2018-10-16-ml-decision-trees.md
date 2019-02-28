@@ -1,7 +1,7 @@
 ---
 title: 'Decision trees'
 date: 2018-10-16
-permalink: /posts/2018/11/decision-trees/
+permalink: /posts/2018/11/ml-decision-trees/
 tags:
   - Machine Learning
 ---
