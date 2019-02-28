@@ -26,6 +26,7 @@ Some of them are very much of a work in progress (marked with *). They are updat
 | Segmentation & Grouping | Machine Translation and Natural Language Generation  | *[Link prediction](/posts/2019/01/link-prediction/) + [Code](https://github.com/devitrylouis/link_prediction) 🌿 |
 | Object Detection/ Recognition | Machine Reading |
 | Tracking | Dialogue |
+| [First order scattering transform](/posts/2019/02/vic-first-order-scattering/) | Dialogue |
 
 | Machine Learning | Deep Learning | Tools |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
