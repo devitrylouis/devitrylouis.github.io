@@ -167,18 +167,74 @@ Among criteria which disagree with $a \succeq b$, some can express a strong oppo
 
 On each criterion $g_{j}$, we define a veto threshold $v_{j}$ such that if $g_{j}(a)<g_{j}(b)−v_{j}$ for a given $j$, then $a \succeq b$ is invalidated (whatever the importance of the concordant coalition)
 
-We define, on each criterion, a partial discordance index $dj (a, b) ∈ [0, 1]$ such that:
+We define, on each criterion, a partial discordance index $d_{j} (a, b) \in [0, 1]$ such that:
 - $d_{j}(a,b) = 0$ if $g_{j}$ does not oppose to $a \succeq b$.
 - $d_{j}(a,b) = 1$ if $g_{j}$ fully opposes to $a \succeq b$.
-- $d_{j}(a,b)∈]0,1[$ if $g_{j}$ partly opooses to $a \succeq b$.
+- $d_{j}(a,b)\in]0,1[$ if $g_{j}$ partly opooses to $a \succeq b$.
 
 <b>Outranking relation (integrating concordance and non-discordance)</b>
+
+- In the Electre III method, a fuzzy outranking relation is defined: valued outranking $\sigma(a, b) \in [0, 1]$,
+- If no discordant criterion exist $\sigma(a, b) = C (a, b)$,
+- If one/several criteria is/are discordant $\sigma(a, b) < C (a, b)$,
+- If $d_{j}(a,b) = 1$ for one criterion $\sigma(a,b) = 0$
+
+We pose
+
+$$
+\simga(a, b) = C(a, b) \Pi_{j\in\overline{F}}\frac{1-d_{j}(a,b)}{1- C(a, b)} \in [0, 1]
+$$
+
+with $\overline{F} = \{ j \in F: d_{j}(a, b) > C(a, b) \}$
+
+> TODO:
+> - Taxonomy of ELECTRE algorithms
+> - Outranking relation in Electre IS
+
 <b>One/several outranking relation(s)</b>
+
+According to the considered method, one can construct:
+- A unique outranking relation grounded on a requirement level fixed a priori, (Electre I, Electre IS)
+- A fuzzy outranking relation $\succeq^{\sigma}$ defined by a a fuzzy membership function $\sigma$ (Electre III, Electre Tri),
+- A set of embedded outranking relations  $\succeq_{1}\subset \succeq_{2} \subset . . . \subset \succeq_{k}$ grounded on $k$ requirement levels fixed a priori (Electre II, Electre IV).
+
+> TODO: Give intuition
+
 <b>Representation of binary relations</b>
+
+A binary outranking relation $\succeq$ represented by an outranking graph $G = (X,U)$ avec :
+
+- $X = A = {a_{1},a_{2},...,a_{n}}$
+- $U={(a_{i},a_{j})\in X\times X$ such that $a_{i}\succeq a_{j}}$.
+
 <b>Valued outranking relation</b>
+
+Valued (fuzzy) outranking relation $\succeq^{\sigma}$ represented by a graph $G_{\sigma} = (A,U)$ valued by $\sigma(a_{i},a_{j})$.
+
+> TODO: Give intuition
+
 <b>Nested outranking relations</b>
-<b>Nested relations  1⊂ 2⊂ 3</b>
+
+Several nested outranking relations $\succeq_{1},  \succeq_{2}, . . . ,  \succeq_{k}$ with $k$ graphs $G_{i} =(A, \succeq_{i})$, i =1,...,k:
+
+- $\succeq_{1}\subseteq \succeq_{2}\subseteq ... \subseteq \succeq_{k}$
+- The weaker the requirement level, the richer the relation.
+
+<b>Nested relations $\succeq_{1}\subset \succeq_{2}\subset \succeq_{3}$</b>
+
+> TODO: Add image
+
 <b>Exploiting outranking relations</b>
+
+According to the problem, we are looking to:
+1. Select the smallest subset $A^{\text{*}} \subset A$ of best alternatives → Choice set $A^{\text{*}}$
+2. Assign each alternative to a category by partitioning A:
+
+$$ A_{1} ,A_{2} ,...,A_{k} A=\cup_{i=1}^{k} A_{i} \text{ and } A_{i}\neq A_{j},\forall i \neq j $$
+
+3. Rank order the alternatives according to preferences on A pre-order (possibly partial) on A.
+
+> TODO: What is a preorder?
 
 ## 3. Exploitation - building recommandations
 

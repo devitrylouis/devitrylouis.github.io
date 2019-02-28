@@ -6,27 +6,11 @@ tags:
   - Statistics
 ---
 
+## 1. Convergence of random variables
 
+### 1. What is a random variable?
 
-**Math basics:**
-> 1. Random Variables / Vectors
-> 2. Convergences
-> 3. Essential theorems
->  - SLLN and CLT
->  - Slutsky theorem and the Delta-method
-> 4. Gaussian-related distributions
->  - Gamma and Beta distributions χ2,
->  - Student-t and F- distributions
->  - Student Theorem
-
-
-## Convergence of random variables
-
-### What is a random variable?
-
-Random variables are central objects in statistics and probabilities.
-
-<b>Formal definition RV:</b> A random variable is basically an application $X \Omega \to E$ whose codomain $\Omega$ is the set of eventualities and whose codomain $E$ is a measurable space $E$. Usually $X$ is real-valued (i.e. $E=\mathbb{R}$).
+Random variables are central objects in statistics and probabilities because they are applications $X: \Omega \to E$, where the codomain $\Omega$ is the set of eventualities and the codomain $E$ is a measurable space. Usually $X$ is real-valued (i.e. $E=\mathbb{R}$).
 
 <b>Probability / distribution of a RV:</b> Depending on the type of $X$, wa can equip it with a probability distribution:
 - <u>Discrete:</u> $P(X = x)$ or $P_{\theta}(X =x)$
@@ -40,9 +24,7 @@ $$ \mathbb{E}[g(X)h(Y)]=\mathbb{E}[g(X)]\mathbb{E}[h(Y)] $$
 
 <i>Additional terminology</i> PDF, CDF and iff resp. means Probability Density Function, Cumulative Distribution Function and “if and only if’’
 
-## 2. Convergences of the multivariate case
-
-### 2.1. Some definitions
+### 1.2. Convergences of the multivariate case
 
 Let $(x_{n})_{n\in\mathbb{N}} \in \mathbb{R}^{d}$ a sequence of r.V. and $\textbf{x} \in \mathbb{R}^{d}$:
 
@@ -60,8 +42,7 @@ $$
 x_{n} \xrightarrow[]{P} x \Leftrightarrow \forall \epsilon > 0 \text{lim}_{n\rightarrow \infty} \mathbb{P}(|| x_{n} - x || \geq \epsilon)
 $$
 
-
-<b>Convergence in $L^{p}$:</b> if the expectation of the $L^{p}$ norm converges towa\mathbb{R}^{d} 0.
+<b>Convergence in $L^{p}$:</b> if the expectation of the $L^{p}$ norm converges towards 0.
 
 $$
 x_{n} \xrightarrow[]{\mathcal{L}^{p}} x \Leftrightarrow \mathbb{E}\big[ || x_{n} - x ||^{p} \big] \rightarrow 0
@@ -75,13 +56,15 @@ $$
 
 <i>Note:</i> The CV in distribution of a sequence of r.V. is stronger than the CV of each component!
 
-### 2.2. First results
+## 2. Cornerstone results
+
+### 2.1. Convergence characterization
 
 How to characterise the CV in distribution?
 
-<u>Characteristic fonction:</u>
+> TODO: <u>Characteristic fonction:</u>
 
-<b>Theorem (Levy continuity Theorem)</b> Let $\phi_{n}(u) = \mathbb{E}(\text{exp(iu^{t)x_{n}})$ and $\phi(u) = \mathbb{E}(\text{exp(iu^{t)x)$ the characteristic functions of $x_{n}$ and $x$. Then:
+<b>Theorem (Levy continuity Theorem)</b> Let $\phi_{n}(u) = \mathbb{E}(\text{exp}(iu^{t}x_{n}))$ and $\phi(u) = \mathbb{E}(\text{exp}(iu^{t}x)$ the characteristic functions of $x_{n}$ and $x$. Then:
 
 $$
 x_{n} \xrightarrow[dist]{} x \Leftrightarrow \phi_{n}(u) \rightarrow \phi(u) \forall u \in \mathbb{R}^{d}
@@ -89,9 +72,7 @@ $$
 
 <b>Proposition (a.s., P, dist. convergences)</b> If $x_{n} \rightarrow x$ then $h(x_{n})\rightarrow h(x)$ if $h$ is a continuous function.
 
-## 3. Essential theorems
-
-### 3.1. SLLN and CLT
+### 3.2. SLLN and CLT
 
 <b>Theorem</b> Let $(x_{n})$ a sequence of iid rV in $\mathbb{R}^{d}$ such that $\mathbb{E}[|x_{1}|] < +\infty$. Let $\mu = \mathbb{E}[X_{1}]$ the expectation of $x_{1}$. Then:
 
@@ -121,27 +102,24 @@ $$ (x_{n},y_{n})\xrightarrow[]{dist}(x,a)$$
 - <u>Product:</u> $x_{n} \cdot y_{n} \xrightarrow[]{dist} x \cdot a \text{ if } m=1$
 - <u>Division:</u> $x_{n}/y_{n} \xrightarrow[]{dist} x/a \text{ if } m=1 \text{ and } a \neq 0$
 
-<b>Delta method:</b> Let (x_{n}) a sequence of r.V.in Rd and theta a deterministic vector of Rd. Let h:Rd -> Rm a function that is differentiable (at least) at point theta.
+### 3.4. Delta method
 
-Let us denote $\frac{\partial h}{\partial \theta^{t}}$ the m x d matrix such that:
+<b>Delta method:</b> The delta method is a general method for deriving the variance of a function of asymptotically normal random variables with known variance.
 
-$$
-(\frac{\partial h_{i}}{\partial \theta_{j}}(\theta))
-$$
+Let $(x_{n})_{n\in \mathbb{N}^{\text{*}}}$ a sequence of r.V. in $\mathbb{R}^{d}$ and $\theta$ a deterministic vector of $\mathbb{R}^{d}$. Let $h:\mathbb{R}^{d} \mapsto \mathbb{R}^{m}$ a function that is differentiable (at least) at point $\theta$.
 
-and
+Let us denote $\frac{\partial h}{\partial \theta^{t}}$ the $m \times d$ matrix such that:
 
 $$
+\big(\frac{\partial h_{i}}{\partial \theta_{j}}(\theta)\Big)_{1 \leq i \leq m\, \ 1 \leq j \leq d}
+\text{ and }
 \frac{\partial h^{t}}{\partial\theta} = (\frac{\partial h}{\partial\theta^{t} })^{t}
 $$
 
-its transpose. Assume that:
+<u>Assumption:</u>
+$$ \sqrt{n}(x_{n} - \theta) \xrightarrow[]{dist}x $$
 
-$$
-\sqrt{n}(x_{n} - \theta) \xrightarrow[]{dist}x
-$$
-
-Then:
+<b>Result:</b>
 
 $$
 \sqrt{n}(h(x_{n}) - h(\theta)) \xrightarrow[]{dist}\frac{\partial h}{\partial \theta^{t}}(\theta)x
@@ -151,5 +129,9 @@ $$
 $$
 \sqrt{n}(h(x_{n}) - h(\theta)) \xrightarrow[]{dist} N(0, \frac{\partial h}{\partial \theta^{t}} \Sigma \frac{\partial h^{t}}{\partial \theta})
 $$
+
+## 4. Gaussian related distributions
+
+### 4.1. Gamma and Beta distribution
 
 ------
