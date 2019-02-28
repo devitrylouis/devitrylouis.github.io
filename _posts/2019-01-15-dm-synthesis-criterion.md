@@ -6,7 +6,6 @@ tags:
   - Decision Modeling
 ---
 
-
 ## 1. Introduction
 
 The multicriteria principle of synthesis criterion aims at building a function $g$ synthesizing all criteria:
