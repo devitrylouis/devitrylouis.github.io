@@ -2,6 +2,8 @@
 title: 'Language modelling'
 date: 2018-12-01
 permalink: /posts/2019/01/nlp-language-modelling/
+layout: default
+comments: true
 tags:
   - NLP
 ---
