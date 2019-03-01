@@ -38,43 +38,59 @@ I refer you to this [statistics blogpost](/posts/2019/01/statistics-basics/) for
 
 ## 1.1. Stochastic approximation
 
-Goal of stochastic approximations: $$f(\theta^{*}) = 0$$
+> TODO: Goal of stochastic approximations: $$f(\theta^{*}) = 0$$
 
-But we only have an estimate of $f: \mathbb{E}[F(\theta)] = f(\theta)$
+Some common methods used are incremental means and Stochastic Gradient Descent.
 
-Stochstic approximation consists in finding $G$:
+- <b>Incremental means:</b> is simply a running averaging on the i.i.d. sampled values $X_{1}, ..., X_{n}$:
 
+$$ \mu_{n+1} = \big( 1 - \frac{1}{n+1} \big)\mu_{n} + \frac{1}{n+1}X_{n} $$
+
+By assuming the stationarity and taking the expectation:
+$$ \mathbb{E}[\mu_{n}] = \mathbb{E}[X_{n}]$$
+
+- <b>SGD</b> is performed as such:
 $$
-\theta_{n+1} = G(\theta_{n}) \Rightarrow \theta_{n} \rightarrow \theta^{*}
-$$
-
-with $\theta_{n}$ being a random variables.
-
-Examples:
-- Incremental means
-- Stochastic gradient descent
-
-Robbins Monro conditions:
-
-A step size $\mu_{n} \geq 0$ is said to satisfy the RobbinsMonro conditions if:
-
-$$
-\sum_{n=0}^{\infty}
+\begin{align}
+\theta_{n+1} &= \theta_{n} - \frac{1}{n} \nabla f(\theta_{n})\\
+\theta_{n+1} &= (1- 1/n)\theta_{n} + \frac{1}{n} (\theta_{n} - \nabla f(\theta_{n}))\\
+\end{align}
 $$
 
-### 1.1. Stochastic approximations of fixed points
+And once again, stationarity is assumed and we obtain:
 
-Let /mathcal{T} be a contraction with fixed point V^{*}
+$$ f: \mathbb{E}[F(\theta)] = f(\theta) $$
 
-Assume we have access to a noisy estimates of \mathcal{T}V = \mathcal{T}V + b
+### 1.2. Robbins Monro conditions
 
-and let \mathcal{F}_{n} = {V0, ..., b0, ...bn}
+A step size $\eta_{n} \geq 0$ is said to satisfy the Robbins-Monro conditions if:
 
-Consider V_{n+1} = (1-\mu_{n})V_{n}
+$$
+\sum_{n=0}^{\infty} \eta_{n} = \infty \text{ but }\sum_{n=0}^{\infty} \eta_{n}^{2} < \infty
+$$
 
-Three assumptions: \Rightarrow V_{n} \rightarrow_{n \rightarrow \infty} V
+which just means "large but not too large". In practice, the following ones are used:
 
-Goal: Design of the sequences.
+- $\frac{1}{n^{\alpha}}$
+- $\frac{1}{2}\leq \alpha \leq 1$
+
+### 1.3. Stochastic approximations of fixed points
+
+In our setting, we want to find the fixed point $V^{\text{*}}$ of the Bellman operator $\mathcal{T}$ (refer to past blogpost) using a noisy estimate $\hat{\mathcal{T}}V = \mathcal{T}V + b$. More precisely, we want to solve:
+
+$$ V_{n+1} = (1-\eta_{n})V_{n} + \eta_{n}\hat{\mathcal{T}}V_{n} $$
+
+To do so, let's consider the [filtration](https://en.wikipedia.org/wiki/Filtration_(mathematics)) $\mathcal{F} = \{ V_{0}, ..., V_{n}, b_{0}, b_{n} \}$ and the following assumptions:
+
+1. <b>Noise is ok!</b> $\mathbb{E}[b_{n}| \mathcal{F}_{n}] = 0$
+2. <b>Large noise is $\mathcal{O}(V_{n})$</b> $\exists K: \forall n, \mathbb{E}[||b_{n}||^{2} | \mathcal{F}_{n} ] < K(1+||V_{n}||)$
+3. <b>Large but not too large:</b> $\{ \eta_{n} \}_{n\in \mathbb{N}}$ satisfies the Robbins-Monro conditions
+
+With all of the above holding, we have our desired convergence:
+
+$$
+V_{n} \rightarrow V^{*} \text{ a.s. }
+$$
 
 ## 2. Monte-Carlo Learning
 
