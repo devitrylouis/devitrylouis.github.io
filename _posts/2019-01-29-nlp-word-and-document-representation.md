@@ -1,5 +1,5 @@
 ---
-title: 'Language modelling'
+title: 'Words representation'
 date: 2018-12-01
 permalink: /posts/2019/01/nlp-representation/
 comments: true
@@ -10,9 +10,9 @@ tags:
 Word2Vec rocks!
 
 1. [Historical perspective](#historical)
-    1. [Bag of Word](#bow)
-    1. [Pre deep learning era](#machinelarning)
-    1. [The promises of deep learning](#promises)
+    * [Bag of Word](#bow)
+    * [Pre deep learning era](#machinelarning)
+    * [The promises of deep learning](#promises)
 
 2. [What is skipgram?](#skipgram)
     * [What is learnt?](#embeddings)
@@ -336,7 +336,7 @@ w0 = np.random.uniform(-1, 1, size = (self.vocab_size, self.embedding_dimension)
 w1 = np.random.uniform(-1, 1, size = (self.embedding_dimension, self.vocab_size))
 ```
 
-4. <b>In-contexts:</b> We use python `map` operator instead of `for` loop. The in-contexts are computed using list comprehension (see previous section for more details).
+<b>In-contexts:</b> We use python `map` operator instead of `for` loop. The in-contexts are computed using list comprehension (see previous section for more details).
 
 ```python
 # Context creation
@@ -345,7 +345,7 @@ contexts_corpus = map(lambda x: contexts_sentence(x, self.window_size, self.dyna
 contexts_corpus = [item for sublist in contexts_corpus for item in sublist]
 ```
 
-5. <b>Out-contexts:</b> The Negative sampling works by generating $k$ negative samples for each `context_word`. As for sampling, it is standard to proceed with `np.random.choice`. At first, they were drawn within each batch. This slow down the learning process immensely. Therefore, we draw all negative samples at once before the first epoch (with `replace = True`). In python, this translates to:
+<b>Out-contexts:</b> The Negative sampling works by generating $k$ negative samples for each `context_word`. As for sampling, it is standard to proceed with `np.random.choice`. At first, they were drawn within each batch. This slow down the learning process immensely. Therefore, we draw all negative samples at once before the first epoch (with `replace = True`). In python, this translates to:
 
 ```python
 negative_samples = np.random.choice(list(self.word2idx.values()),
