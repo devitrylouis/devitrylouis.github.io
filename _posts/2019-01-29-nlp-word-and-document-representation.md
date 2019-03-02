@@ -7,6 +7,8 @@ tags:
   - NLP
 ---
 
+Word2Vec rocks!
+
 1. [Historical perspective](#historical)
     1. [Bag of Word](#bow)
     1. [Pre deep learning era](#machinelarning)
