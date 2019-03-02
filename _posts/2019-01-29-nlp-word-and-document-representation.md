@@ -59,7 +59,7 @@ $$
 \theta = \text{argmin}_{\theta}\frac{1}{N} \sum_{i=1}^{N} L(f_{\theta}(\phi(x_{i})), y_{i}) + \lambda \cdot R(\theta)
 $$
 
-where $\phi$ is some feature extraction function and $R$ some regularization. Altogether, it simply means that the model parameters $\theta$ are learnt to map at best a representation $\phi$ of the data $(x_{i})_{i=1}^{N}$ to our targets $(y_{i})_{i=1}^{N}$!
+where $\phi$ is some feature extraction function and $R$ some regularization. Altogether, it simply means that the model parameters $\theta$ are learnt to map at best a representation $\phi$ of the data $\{x_{i}\}_{i=1}^{N}$  to our targets $\{y_{i}\}_{i=1}^{N}$!
 
 <b>The missing piece:</b> In NLP, the first major feature representation $\phi$ is is the Bag-of-word (BOW), which is credited to Gerard Salton (see this [The Most Influential Paper Gerard Salton Never Wrote](https://www.ideals.illinois.edu/bitstream/handle/2142/1697/Dubin748764.pdf?sequence=2) for more details).
 
@@ -326,8 +326,8 @@ def retrieve_context(w, window_size, encoded_sentence, dynamic_window = False):
 The `train` method incorporates the three tasks of SkipGram coupled with Negative sampling:
 
 1. Retrieve the  <u>in-context</u>(i.e. surrounding words)
-1. Draw the <u>out-contexts</u> with negative sampling distribution
-1. <u>Run batch</u> with target words labeled $1$ and their negative samples labeled $0$.
+2. Draw the <u>out-contexts</u> with negative sampling distribution
+3. <u>Run batch</u> with target words labeled $1$ and their negative samples labeled $0$.
 
 And because tasks like context retrieval and drawing negative samples can be done once at the beginning, we do it before the epochs, to lower computations time. Let's initialize uniformly the weights:
 
@@ -336,7 +336,7 @@ w0 = np.random.uniform(-1, 1, size = (self.vocab_size, self.embedding_dimension)
 w1 = np.random.uniform(-1, 1, size = (self.embedding_dimension, self.vocab_size))
 ```
 
-1. <b>In-contexts:</b> We use python `map` operator instead of `for` loop. The in-contexts are computed using list comprehension (see previous section for more details).
+4. <b>In-contexts:</b> We use python `map` operator instead of `for` loop. The in-contexts are computed using list comprehension (see previous section for more details).
 
 ```python
 # Context creation
@@ -345,7 +345,7 @@ contexts_corpus = map(lambda x: contexts_sentence(x, self.window_size, self.dyna
 contexts_corpus = [item for sublist in contexts_corpus for item in sublist]
 ```
 
-2. <b>Out-contexts:</b> The Negative sampling works by generating $k$ negative samples for each `context_word`. As for sampling, it is standard to proceed with `np.random.choice`. At first, they were drawn within each batch. This slow down the learning process immensely. Therefore, we draw all negative samples at once before the first epoch (with `replace = True`). In python, this translates to:
+5. <b>Out-contexts:</b> The Negative sampling works by generating $k$ negative samples for each `context_word`. As for sampling, it is standard to proceed with `np.random.choice`. At first, they were drawn within each batch. This slow down the learning process immensely. Therefore, we draw all negative samples at once before the first epoch (with `replace = True`). In python, this translates to:
 
 ```python
 negative_samples = np.random.choice(list(self.word2idx.values()),
@@ -457,8 +457,6 @@ gradient_loss = gradients_custom(target, output, current_word, context_words)
 w0[current,:] -= sg.stepsize * gradient_loss[0]
 w1[:, batch_contexts] -= sg.stepsize * gradient_loss[1]
 ```
-
-
 
 ## 4. Improve Word2Vec <a class="anchor" id="improve"></a>
 
