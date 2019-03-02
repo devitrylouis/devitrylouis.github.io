@@ -101,7 +101,7 @@ Before the first successes of Deep Learning in NLP, the common procedure to buil
 
 3. <b>Compress the sparse features</b> with [Latent Semantic Analysis](https://en.wikipedia.org/wiki/Latent_semantic_analysis). The basic idea is to use the eigenvectors obtained by a SVD to map term to documents.
 
-Afterwards, the encoded data $\{\phi(x_{i}), x_{i}\}_{i=1}^{N}$ is fed to a Machine Learning algorithm (usually a Support Vector Machine).
+Afterwards, the encoded data $\phi(X)$ is fed to a Machine Learning algorithm (usually a Support Vector Machine).
 
 <i>Note:</i>
 - In some cases, the results of the LSA is the finality.
@@ -182,6 +182,7 @@ $$
 $$
 
 We negate the above quantity and have our loss:
+
 $$
 \underset{\theta}{\text{arg max}} - \sum_{(w, c) \in D} \text{log} \  \sigma(-v_{c}\cdot v_{w}) + \sum_{(w, c) \in D'} \text{log} \ \sigma(v_{c}\cdot v_{w})
 $$
@@ -378,9 +379,10 @@ $$ \frac{\partial E}{\partial y_{j\in J}^{T}h}=\sigma(y_{j\in J}^{T}h)-y_{j} $$
 
 This is easy to compute because it is simply the error on the algorithm's output for our batch.
 
-1. <b>Embeddings gradient</b>
+<b>Embeddings gradient</b>
 
-The next step is the derivative of the loss regarding the output vector of the word $w_{j}$
+The next step is the derivative of the loss regarding the output vector of the word $w_{j}$:
+
 $$
 \frac{\partial E}{\partial y_{j\in J}}=\frac{\partial E}{\partial y_{j\in J}^{T}h}*\frac{\partial y_{j\in J}^{T} h}{\partial y_{j\in J}}
 $$
@@ -390,7 +392,7 @@ $$v^{\prime (new)}_{w_{j}}=v^{\prime(old)}_{w_{j}}-\eta\frac{\partial E}{\partia
 
 Compared to the update equation given on the simple skipgram version, this update equation is much computationally efficient as it only has to be applied on the set of negative samples and the positive sample.
 
-2. Input $\rightarrow$ Hidden weights
+<b>Input $\rightarrow$ Hidden weights</b>
 
 To backpropagate the error to the hidden layer and thus update the input vectors of words, we need to take the derivative of $E$ with regard to the hidden layer’s output.
 
