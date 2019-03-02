@@ -19,7 +19,7 @@ Some of them are very much of a work in progress (marked with *). They are updat
 | Vision | Natural Language Processing | Networks science |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
 | [Image-formation model](/posts/2019/01/vic-low-level/) 🌠 | [Language model](/posts/2019/01/nlp-language-modelling/) 📕  | [Graph theory](/posts/2019/02/ns_graph_theory/) ♻️ |
-| [Filtering](/posts/2019/01/vic-filters/) 📷 | [Words Representation](/posts/2019/01/nlp-language-modelling/) ✒️ + [code](https://github.com/devitrylouis/word2vec_negative_sampling)| [Random Network](/posts/2018/11/random_network/) 🌐 |
+| [Filtering](/posts/2019/01/vic-filters/) 📷 | [Words Representation](/posts/2019/01/nlp-representation/) ✒️ + [code](https://github.com/devitrylouis/word2vec_negative_sampling)| [Random Network](/posts/2018/11/random_network/) 🌐 |
 | [Canny edge detection](https://gist.github.com/devitrylouis/1c00f4530ac729ec20aa7826fd040aac) ✏️ | Tagging and NER | [Scale-free property](/posts/2018/11/ns-scale-free-property/) ❤️ |
 | [Feature selection](/posts/2019/01/vic_features) + [stitch images](https://gist.github.com/devitrylouis/a7f19c6713e41a525309407b44334a7d) 💠 | Parsing | [Barabási-Albert Model](/posts/2018/11/ns-barabasi-albert-model/) 🌌 |
 | Optical flow | Mining User Generated Content | [Community detection](https://devitrylouis.github.io/posts/2019/01/community-detection/) 👪 |
