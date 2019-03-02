@@ -53,13 +53,13 @@ Word2Vec rocks!
 
 ### 1.1. Bag of Word
 
-When it comes to supervised learning in general, the goal can most often than not be boiled down to finding a parametrized model $f_{\theta}$ that explains best some annotated data $\{(x_{i}, y_{i})\}_{i=1}^{N}$. And usually, the parameters $\theta$ are learnt to satisfy:
+When it comes to supervised learning in general, the goal can most often than not be boiled down to finding a parametrized model $f_{\theta}$ that explains best some annotated data $(X, Y) = \{(x_{i}, y_{i})\}_{i=1}^{N}$. And usually, the parameters $\theta$ are learnt to satisfy:
 
 $$
 \theta = \text{argmin}_{\theta}\frac{1}{N} \sum_{i=1}^{N} L(f_{\theta}(\phi(x_{i})), y_{i}) + \lambda \cdot R(\theta)
 $$
 
-where $\phi$ is some feature extraction function and $R$ some regularization. Altogether, it simply means that the model parameters $\theta$ are learnt to map at best a representation $\phi$ of the data $\{x_{i}\}_{i=1}^{N}$  to our targets $\{y_{i}\}_{i=1}^{N}$!
+where $\phi$ is some feature extraction function and $R$ some regularization. Altogether, it simply means that the model parameters $\theta$ are learnt to map at best a representation $\phi$ of the data $X$ to our targets $Y$!
 
 <b>The missing piece:</b> In NLP, the first major feature representation $\phi$ is is the Bag-of-word (BOW), which is credited to Gerard Salton (see this [The Most Influential Paper Gerard Salton Never Wrote](https://www.ideals.illinois.edu/bitstream/handle/2142/1697/Dubin748764.pdf?sequence=2) for more details).
 
