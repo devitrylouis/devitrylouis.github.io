@@ -20,21 +20,13 @@ Word2Vec rocks!
     * [Learn faster with Negative sampling](#negative_sampling)
     * [Select the Negative samples](#back_propagation)
 
-2. [word2vec in python!](#init)
+3. [word2vec in python!](#init)
     * [The class `SkipGram`](#text-preprocessing)
     * [Preprocessing is done in `__init__`](#hyperparameters)
     * [Retrieve the contexts](#encoding)
     * [The `train` method](#train)
     * [The gradients](#gradient)
     * [Construct and run a batch](#gradient)
-
-3. [The full `train` procedure](#train)
-    * [The gradients in python](#gradients)
-    * [A naïve learning procedure](#naive)
-    * [Retrieve the contexts](#contexts)
-    * [How to construct and learn a batch? - TODO](#batch)
-    * [Negative sampling in practice](#practical_ng)
-    * [Optimizing context and learning computations](#optimizing)
 
 4. [Improve word2vec](#improve)
     * [Dynamic window size](#dynamic_window)
@@ -45,9 +37,10 @@ Word2Vec rocks!
     * [Post-processing embeddings with PCA](#pca)
     * [Cross-linguality](#translation)
 
-6. [Future work](#future)
-    * [Character n-grams](#ngrams)
+6. [Recent breakthroughs in litterature](#future)
+    * [Integrate character n-grams](#ngrams)
     * [Algebraic properties of the embeddings](#algebraic)
+    * [Fine tuning](#fine_tuning)
 
 ## 1. Historical prespective
 
