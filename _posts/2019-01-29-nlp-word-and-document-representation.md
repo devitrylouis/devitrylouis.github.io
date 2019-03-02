@@ -53,7 +53,7 @@ Word2Vec rocks!
 
 ### 1.1. Bag of Word
 
-When it comes to supervised learning in general, the goal can most often than not be boiled down to finding a parametrized model $f_{\theta}$ that explains best some annotated data $\{ (x_{i}, y_{i}) \}_{i=1}^{N}$. And usually, the parameters $\theta$ are learnt to satisfy:
+When it comes to supervised learning in general, the goal can most often than not be boiled down to finding a parametrized model $f_{\theta}$ that explains best some annotated data $\{(x_{i}, y_{i})\}_{i=1}^{N}$. And usually, the parameters $\theta$ are learnt to satisfy:
 
 $$
 \theta = \text{argmin}_{\theta}\frac{1}{N} \sum_{i=1}^{N} L(f_{\theta}(\phi(x_{i})), y_{i}) + \lambda \cdot R(\theta)
@@ -140,11 +140,11 @@ $$
 \underset{\theta}{\text{arg max}} \prod_{w \in corpus} \Big[ \prod_{c\in C(w)}\ p(c|w; \theta) \Big]
 $$
 
-where $p(c|w; \theta)$ is the probability that the context word $c$ was near $w$.
+where $p(c \mid w; \theta)$ is the probability that the context word $c$ was near $w$.
 
 ### 2.2. How does it learn? <a class="anchor" id="neural_net"></a>
 
-The <b>most successfull parametrized model</b> for SkipGram to date is a <b>neural network with one hidden layer</b> $h$. The neural network can adequately model the conditional probability $p(c| x: \theta)$ using the softmax:
+The <b>most successfull parametrized model</b> for SkipGram to date is a <b>neural network with one hidden layer</b> $h$. The neural network can adequately model the conditional probability $p(c \mid x: \theta)$ using the softmax:
 
 $$
 p(c \mid w; \theta) \propto e^{v_{c}\cdot v_{w}}
@@ -495,13 +495,17 @@ self.corpus_idx = [[self.word2idx[w] for w in sent if w in self.train_words.keys
 
 ## 5. Experiments <a class="anchor" id="experiments"></a>
 
-### 5.1. Evaluation <a class="anchor" id="evaluation"></a>
+### 5.1. Word similarity <a class="anchor" id="evaluation"></a>
 
 [Example of evaluation](https://github.com/mfaruqui/eval-word-vectors/blob/master/data/word-sim/EN-SIMLEX-999.txt)
 
 ### 5.2. Post-processing embeddings <a class="anchor" id="pca"></a>
 
 [Post-processing = PCA](https://arxiv.org/pdf/1702.01417.pdf)
+
+### 5.3. Sentence similarity with BoW vectors
+
+### 5.4. Cross-linguality <a class="anchor" id="translation"></a>
 
 ## 6. Future work <a class="anchor" id="future"></a>
 
@@ -516,11 +520,6 @@ This is motivated by [these answers](https://www.quora.com/What-is-the-main-diff
 - [README example of w2v](http://www.telesens.co/2018/02/08/word2vec-experiments/#3_Text_Sub-Sampling_Techniques)
 - [Word2vec and backpropagation](http://www.claudiobellei.com/2018/01/06/backprop-word2vec/)
 - [Word2vec and backpropagation 2](https://arxiv.org/pdf/1411.2738.pdf?fbclid=IwAR1CsTlSXrZYhCeh6nM8ohUSSh2tWRgBEjkgdCAvRKXVtB16sFbt5XPeIis)
-
-## 5. Practical Hints
-
-## 6. Sources
-
 - [Lecture notes of Naver Labs](http://www.europe.naverlabs.com/Research/Natural-Language-Processing)
 - [Wikipedia](en.wikipedia.org)
 - [Columbia blogpost](http://www.ee.columbia.edu/~stanchen/e6884/labs/lab3/x207.html)
