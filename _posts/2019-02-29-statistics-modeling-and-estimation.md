@@ -8,18 +8,19 @@ tags:
 
 ## 1. Statistical modelling
 
-<b>TL; DR:</b>
-1. <u>Identifiability</u> = Injectivity of $\theta \mapsto P(\theta)$ + statistic = measure
-2. <u>Sufficiency</u> $\Rightarrow L(x; \theta) = \psi(S(x); \theta) \lambda(x)$
-3. Exponential family
-    * <u>Complete statistics</u> = exist only one unique unbiased estimator of $\theta$ based on $T$. (close to the Lehmann–Scheffé theorem)
-    * <u>Exponential family</u> = nice framework because canonical statistic is sufficient and complete + some sort of bijectivity of $Q$
+<b>TL; DR:</b> We deal with identifiable models (different parameters lead to different distributions) with statistics (measure). In particular, we are interested in sufficient statistics, those that explain well the data. They verify the factorization theorem:
+
+$$\Rightarrow L(x; \theta) = \psi(S(x); \theta) \lambda(x)$$
+
+Another characteristic is completeness: whether there is a unique unbiased estimator of $\theta$ based on the statstic (close to the Lehmann–Scheffé theorem)
+
+Then we define exponential family which constitutes a nice framework as its canonical statistic is sufficient and complete, among others.
 
 ### 1.1. Generalities
 
 In statistics, <u>identifiability</u> is a property which a model must satisfy in order for <b>precise inference to be possible</b>. It basically means that it is <b>theoretically possible to learn the true values of this model's underlying parameters after obtaining an infinite number of observations from it</b>. Mathematically, it translates to:
 
-<b>Definition (Identifiability conditions):</b> A model $(X, A , \{P_{\theta} : \theta \in \Theta \})$ is said identifiable if the mapping from $\Theta$ onto the probabilities space $(H, A)$, which to $\theta$ gives $P_{\theta}$ is injective.
+<b>Definition (Identifiability conditions):</b> A model $(X, A , \{P_{\theta} : \theta \in \Theta \})$ is said identifiable if the mapping from $\Theta$ onto the probabilities space $(X, A)$, which to $\theta$ gives $P_{\theta}$ is injective.
 
 This is equivalent to saying that different values of the parameters must generate different probability distributions of the observable variables.
 
@@ -27,9 +28,9 @@ This is equivalent to saying that different values of the parameters must genera
 
 ### 1.2. Sufficiency
 
-<b>TL;DR:</b> Where is contain the information of interest (i.e. related to the unknowns) in the data?
+<b>TL;DR:</b> Where is contained the information of interest (i.e. related to the unknowns) in the data?
 
-<b>Definition (Sufficient statistic)</b> A statistic $S$ is said to be sufficient iff the conditional distribution $L_{\theta}(X|S(X))$ does not depend on $\theta$.
+<b>Definition (Sufficient statistic)</b> A statistic $S$ is said to be sufficient if and only if the conditional distribution $L_{\theta}(X\mid S(X))$ does not depend on $\theta$.
 
 > “…no other statistic that can be calculated from the same sample provides any additional information as to the value of the parameter.”
 
@@ -51,23 +52,23 @@ $$
 
 In essence, it ensures that the distributions corresponding to different values of the parameters are distinct.
 
-<b>Definition (Exponential family)</b> A model is said to be exponential iff its LF can be written as:
+<b>Definition (Exponential family)</b> A model is said to be exponential if and only if its likelihood function can be written as:
 
 $$
-L(x; \theta) = h(x) \phi(\theta) exp\big[ \sum_{i=1}^{r}Q_{i}(\theta)S_{i}(x) \big]
+L(x; \theta) = h(x) \phi(\theta) \text{exp}\big[ \sum_{i=1}^{r}Q_{i}(\theta)S_{i}(x) \big]
 $$
 
 where $S(.) = (S_{1}(.), ..., S_{r}(.))$ is the canonical statistic.
 
 <b>Proposition:</b> The canonical statistic is sufficient.
 
-<b>Proposition:</b> For exponential family, if the $S_{i}(.)$ are linearly independent (affine sense), then $P_{\theta_{1}} = P_{\theta_{2}} \Leftrightarrow Q_{j}(\theta_{1}) = Q_{j}(\theta_{2})$
+<b>Proposition:</b> For exponential family, if the $S_{i}(.)$ are linearly independent (affine sense), then
 
-<b>Corollary:</b> For exponential family, if the $S_{i}(.)$ are linearly independent: $\theta$ is identifiable $\Leftrightarrow \theta \mapsto Q(\theta)$ is injective.
+$$P_{\theta_{1}} = P_{\theta_{2}} \Leftrightarrow Q_{j}(\theta_{1}) = Q_{j}(\theta_{2})$$
 
-<b>Theorem:</b> If $Q(\Theta)$ contains a non-empty set of $\mathbb{R}^{r}$, the canonical statistic is complete.
+<b>Corollary:</b> For exponential family, if the $S_{i}(.)$ are linearly independent then $\theta$ is identifiable.
 
-<b>Proposition:</b> Of course, the canonical statistic follows an exponential model.
+<b>Theorem:</b> If $\emptyset \neq Q(\Theta) \subset \mathbb{R}^{r}$ then the canonical statistic is complete.
 
 ## 2. Unbiased estimation
 
