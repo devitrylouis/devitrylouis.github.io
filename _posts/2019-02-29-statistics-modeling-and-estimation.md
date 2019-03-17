@@ -72,68 +72,54 @@ $$P_{\theta_{1}} = P_{\theta_{2}} \Leftrightarrow Q_{j}(\theta_{1}) = Q_{j}(\the
 
 ## 2. Unbiased estimation
 
-<b>TL; DR:</b>
-1. <b>Generalities:</b>
-    * There are regularity conditions on $L(x: \theta) \in C^{2}\cap L^{2}$
-    * Support of L independent of $\theta$
-2. <b>Fisher information</b> = amount of info in the samples:
-    * The <u>score function</u> $l'(x; theta)$ is the score and have zero mean. The FIM $I(\theta)$ is the variance of the score. Under the assumptions: $I(\theta) = - E_{\theta}[l''(x; \theta)]$
-3. <b>Estimator</b> = a statistic $\delta(x)$ mapping $X$ into $g(\Theta)$ + MSE
-    * $R_{δ}(\theta)=var_{\theta}(δ(x))+b_{δ}(\theta)^{2}$
-    * The Rao–Blackwell theorem states that if $g(X)$ is any kind of estimator of a parameter $\theta$, then the conditional expectation of $g(X)$ given $T(X)$, where $T$ is a sufficient statistic, is typically a better estimator of $\theta$, and is never worse. At least as high as inverse of FIM
-    * <b>Leman scheffé:</b> $T$ sufficient + complete, estimator unbiased => Efficient estimator (best variance of unbiased estimator)
+In this section, we define regularity conditions ($C^{2}\cap L^{2}$ and support independent of $\theta$) on the likelihood function, and use them to build the Fisher Information Matrix (FIM), which measure of the amount of informations in the samples. This will be our basis to build bounds on the variance of an unbiased estimator (CRB) and optimal estimators for the parameters (Lemman-Scheffé). In particular, we will show that if $g(X)$ is any kind of estimator of a parameter $\theta$, then the conditional expectation of $g(X)$ given $T(X)$, where $T$ is a sufficient statistic, is typically a better estimator of $\theta$, and is never worse.
 
 ### 2.1. Generalities
 
 <b>Definition (Regular model)</b> If $\Theta$ is an open set and if (A1),(A2),(A3),(A4) are verified, the model is regular.
 
-(A1) The model is dominated
-
-(A2) The dist. domain $P_{\theta}: \Delta =\{x\in H|L(x;\theta)>0\}$ does not depend on $\theta \in \Theta$.
-
-(A3) $L(x; \theta)$ is twice differentiable
-
-(A4) $L'$ and $L''$ are integrable and we can permute integral and derivative.
+> <i>(A1)</i> The model is dominated
+> <i>(A2)</i> The dist. domain $P_{\theta}: \Delta =\{x\in H\mid L(x;\theta)>0\}$ does not depend on $\theta \in \Theta$.
+> <i>(A3)</i> $L(x; \theta)$ is twice differentiable
+> <i>(A4)</i> $L'$ and $L''$ are integrable and we can permute integral and derivative.
 
 ### 2.2. Fisher Information
 
-<b>Definition (Score)</b> The score function is the r.V. s_{\theta}(x) defined by:
+<b>Definition (Score)</b> The score function is the r.V. $s_{\theta}(x)$ defined by:
 
 $$
 s_{\theta}(x) = \frac{\partial}{\partial \theta} l(x; \theta)
 $$
 
-where $l(x; \theta) = log(L(x; \theta))$
+where $l(x; \theta) = \text{log}(L(x; \theta))$. The score is zero-mean (i.e. $E[s_{\theta}(x)]=0$) and if one has:
 
-<b>Proposition:</b> The score is zero-mean, i.e. $E[s_{\theta}(x)]=0$.
+> <i>(A5)</i> the score is square-integrable
 
-<b>Definition (FIM)</b> If one has (A5) the score is square-integrable, the FIM is the variance (covariance matrix in multidimensional case) of the score:
+we can define the <u>FIM</u> as the variance (covariance matrix in multidimensional case) of the score:
 
 $$
 I(\theta) = var_{\theta}(s_{\theta}(x)) = E_{\theta}[s_{\theta}(x)s_{\theta}(x)^{T}]
 $$
 
-In case of a $n$-sample, $(x_{1},...,x_{n})$ we have $I_{n}(\theta) = nI(\theta)$
+In case of a $n$-sample, $(x_{1},...,x_{n})$ we have $I_{n}(\theta) = n\cdot I(\theta)$
 
-<b>Proposition FIM:</b> Let’s assume a regular model, plus (A5), then for a real $\theta$, one has:
+<b>Proposition (FIM):</b> Let’s assume a regular model, plus (A5), then for a real $\theta$, one has:
 
 $$I(\theta) = - E_{\theta}\big[ \frac{\partial^{2}}{\partial \theta \partial \theta ^{T}} l(x; \theta) \big]$$
 
-<b>Intuition:</b> the Fisher information is a way of measuring the amount of information that an observable random variable $X$ carries about an unknown parameter $\theta$ of a distribution that models $X$.
+The intuition behind the Fisher information is a way of measuring the amount of information that an observable random variable $X$ carries about an unknown parameter $\theta$ of a distribution that models $X$.
 
 ### 2.3. Optimality
 
-<b>Main idea:</b> give an answer $d$ regarding the data...
+<b>Main idea:</b> give an answer $d$ regarding the data by using a loss function $\rho(d,\theta)$ between $d$ and the (true) value of the unknowns $\theta$ or $g(\theta)$.
 
-Define a loss function $Ω(d,\theta)$ between $d$ and the (true) value of the unknowns $\theta$ or $g(\theta)$. Generally,
-
-<b>Definition (quadratic loss)</b>
+<b>Definition (quadratic loss):</b>
 
 $$\rho(d,\theta)=(d-g(\theta))A^{t}(\theta)(d-g(\theta))$$
 
 where $A(.)$ is positive-definite
 
-<b>Definition (Estimator):<b> An estimator of g(\theta) is a statistic \delta(x) mapping X into D = g(\Theta).
+<b>Definition (Estimator):</b> An estimator of $g(\theta)$ is a statistic $\delta(x)$ mapping $X$ into $D = g(\Theta)$.
 
 <b>Definition (Mean Square Error (MSE))</b>
 
@@ -143,15 +129,20 @@ $$
 
 ### 2.4. Cramer Rao bound
 
-<b>Goal:</b> minimize the MSE but...
+The <b>goal</b> is to minimize the MSE but reformulate it with the [bias-variance dilemma](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
 
-<b>Proposition:</b> $$R_{\delta}(\theta) = var_{\theta}(\delta(x)) + b_{\delta}(\theta)^{2}$$
+$$R_{\delta}(\theta) = var_{\theta}(\delta(x)) + b_{\delta}(\theta)^{2}$$
 
-where $b_{\delta}(\theta)$ is the bias of $\delta(x)$ (i.e. $b_{\delta(x) - g(\theta)}$)
+where $b_{\delta}(\theta)$ is the bias of $\delta(\textbf{x})$ (i.e. $b_{\delta}(\theta) = E_{\theta}[\delta(\textbf{x}) - g(\theta)]$).
 
-<b>Theorem (Rao-Blackwell estimator)</b> Let $\delta$ an estimator and $S$ a sufficient statistic. Let's define
+In this subsection, we will give the following results:
+1. <u>Rao-Blackwell estimator:</u> An estimator with a sufficient statistic is always better than the same without (w.r.t. MSE).
+2. <u>Lehman-Scheffé:</u> If the statistic is additionally complete, it is the best of all unbiased estimators in terms of variance.
+3. <u>Cramer-Rao lower Bound</u>
+
+<b>Theorem (Rao-Blackwell estimator)</b> Let $\delta$ an estimator and $S$ a sufficient statistic. Let's define an estimator with the knowledge of this statistic:
 $$
-\delta_{s} : x \mapsto E_{\theta}[\delta(x) \mid S(\textbf{x}) = S(x)]
+\delta_{s} : x \mapsto E_{\theta}[\delta(\textbf{x}) \mid S(\textbf{x}) = S(x)]
 $$
 
 Thus:
@@ -160,11 +151,9 @@ $$
 \forall \theta \in \Theta, R_{\delta_{s}}(\theta) \leq R_{\delta}(\theta)
 $$
 
-$\delta_{S}$ is Rao-Blackwell estimator (or the Rao-Blackwellization of $\delta$). It is unbiased if $\delta$ is unbiased.
+$\delta_{S}$ is Rao-Blackwell estimator (or the Rao-Blackwellization of $\delta$). As it turns out, it is unbiased if $\delta$ is unbiased.
 
-<b>Optimality: Lehman-Scheffé (LS) theorem</b>
-
-If $\delta$ is unbiased and if $S$ is a sufficient and complete statistic, thus the Rao-Blackwell estimator $\delta_{S}$ is optimal in the class of unbiased estimators, i.e. its variance is minimal for all $\theta \in \Theta$
+<b>Optimality: Lehman-Scheffé (LS) theorem</b> If $\delta$ is unbiased and if $S$ is a sufficient and complete statistic, thus the Rao-Blackwell estimator $\delta_{S}$ is optimal in the class of unbiased estimators, i.e. its variance is minimal for all $\theta \in \Theta$.
 
 <b>Definition (Regular estimator)</b> Let a regular model, and let an estimator $\delta$ of $g(\theta)$ s.t.
 
