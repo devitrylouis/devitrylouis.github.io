@@ -10,7 +10,7 @@ tags:
 
 <b>TL; DR:</b> We deal with identifiable models (different parameters lead to different distributions) with statistics (measure). In particular, we are interested in sufficient statistics, those that explain well the data. They verify the factorization theorem:
 
-$$\Rightarrow L(x; \theta) = \psi(S(x); \theta) \lambda(x)$$
+$$L(x; \theta) = \psi(S(x); \theta) \lambda(x)$$
 
 Another characteristic is completeness: whether there is a unique unbiased estimator of $\theta$ based on the statstic (close to the Lehmann–Scheffé theorem)
 
@@ -138,43 +138,36 @@ where $b_{\delta}(\theta)$ is the bias of $\delta(\textbf{x})$ (i.e. $b_{\delta}
 In this subsection, we will give the following results:
 1. <u>Rao-Blackwell estimator:</u> An estimator with a sufficient statistic is always better than the same without (w.r.t. MSE).
 2. <u>Lehman-Scheffé:</u> If the statistic is additionally complete, it is the best of all unbiased estimators in terms of variance.
-3. <u>Cramer-Rao lower Bound</u>
+3. <u>Cramer-Rao lower Bound</u> For a unbiased and regular estimator $\delta$ of $g \in C^{1}$, its variance is lower-bounded.
 
-<b>Theorem (Rao-Blackwell estimator)</b> Let $\delta$ an estimator and $S$ a sufficient statistic. Let's define an estimator with the knowledge of this statistic:
-$$
-\delta_{s} : x \mapsto E_{\theta}[\delta(\textbf{x}) \mid S(\textbf{x}) = S(x)]
-$$
-
-Thus:
+<b>Theorem (Rao-Blackwell estimator)</b> Let $\delta$ an estimator and $S$ a sufficient statistic. Let's define an estimator with the knowledge of this statistic $\delta_{s} : x \mapsto E_{\theta}[\delta(\textbf{x}) \mid S(\textbf{x}) = S(x)]$. Then:
 
 $$
-\forall \theta \in \Theta, R_{\delta_{s}}(\theta) \leq R_{\delta}(\theta)
+\boxed{\forall \theta \in \Theta, R_{\delta_{s}}(\theta) \leq R_{\delta}(\theta)}
 $$
 
-$\delta_{S}$ is Rao-Blackwell estimator (or the Rao-Blackwellization of $\delta$). As it turns out, it is unbiased if $\delta$ is unbiased.
+$\delta_{s}$ is Rao-Blackwell estimator (or the Rao-Blackwellization of $\delta$). As it turns out, it is unbiased if $\delta$ is unbiased.
 
-<b>Optimality: Lehman-Scheffé (LS) theorem</b> If $\delta$ is unbiased and if $S$ is a sufficient and complete statistic, thus the Rao-Blackwell estimator $\delta_{S}$ is optimal in the class of unbiased estimators, i.e. its variance is minimal for all $\theta \in \Theta$.
+<b>Theorem: (Lehman-Scheffé optimality)</b> If $\delta$ is unbiased and if $S$ is a sufficient and complete statistic, then the Rao-Blackwell estimator $\delta_{S}$ is optimal in the class of unbiased estimators, i.e. its variance is minimal for all $\theta \in \Theta$.
 
-<b>Definition (Regular estimator)</b> Let a regular model, and let an estimator $\delta$ of $g(\theta)$ s.t.
+<b>Definition (Regular estimator)</b> $\delta$ is a regular estimator of the regular model $g(\theta)$ if:
 
-$$
-E_{\theta}[|\delta |^{2}] < \infty \forall \theta \in \Theta \ \text{ and } \frac{\partial}{\partial\theta}\int_{X}\delta(x)l(x; \theta) dx= \int_{X}\delta(x)\frac{\partial}{\partial\theta}l(x; \theta) dx
-$$
+1. $E_{\theta}[|\delta |^{2}] < \infty\ \forall \theta \in \Theta$
 
-Then $\delta$ is a regular estimator of $g(\theta)$
+2. $\frac{\partial}{\partial\theta}\int_{X}\delta(x)l(x; \theta) dx= \int_{X}\delta(x)\frac{\partial}{\partial\theta}l(x; \theta) dx$
 
-<b>Theorem (Cramer-Rao lower Bound (CRB) - FDCR inequality</b>
-Let $\delta$ an unbiased regular eestimator of $g \in C^{1}(\mathbb{R}^{k})$ where $\theta \in \Theta \subset \mathbb{R}^{p}$. Let’s also assume that $I(\theta)$ is positive-definite. Thus, for a $n$-sample, and for all $\theta \in \Theta$ , one has:
+<b>Theorem (Cramer-Rao lower Bound)</b>
+Let $\delta$ an unbiased regular estimator of $g \in C^{1}(\mathbb{R}^{k})$ where $\theta \in \Theta \subset \mathbb{R}^{p}$. Let’s also assume that $I(\theta)$ be positive-definite. Then, for $n$-samples, and for all $\theta \in \Theta$, one has:
 
 $$
-R_{\delta}(\theta) = var_{\theta}(\delta) \geq \frac{1}{n}\frac{\partial g}{\partial \theta^{t}}(\theta)I(\theta)^{-1} \frac{\partial g^{t}}{\partial \theta}(\theta)
+\boxed{R_{\delta}(\theta) = var_{\theta}(\delta) \geq \frac{1}{n}\frac{\partial g}{\partial \theta^{t}}(\theta)I(\theta)^{-1} \frac{\partial g^{t}}{\partial \theta}(\theta)}
 $$
 
-with $\frac{\partial g}{\partial \theta^{t}}(\theta)$ is the $p\times k$ matrix defined by: $(\frac{\partial g_{i}}{\partial \theta_{j}}(\theta))_{ij}$ and $\frac{\partial g^{t}}{\partial \theta}(\theta)$ its tranpose.
+where $\frac{\partial g}{\partial \theta^{t}}(\theta)$ is the $p\times k$ matrix defined by: $(\frac{\partial g_{i}}{\partial \theta_{j}}(\theta))_{ij}$ and $\frac{\partial g^{t}}{\partial \theta}(\theta)$ its tranpose.
 
-<i>Note:</i>In its simplest form, the bound states that the variance of any unbiased estimator is at least as high as the inverse of the Fisher information.
+<i>Note:</i> In its simplest form, the bound states that the variance of any unbiased estimator is at least as high as the inverse of the Fisher information.
 
-<b>Definition Efficiency:</b> An unbiased estimator is said to be efficient iff its variance is the CRB.
+<b>Definition (Efficiency):</b> An unbiased estimator is said to be efficient if and only if its variance is the CRB.
 
 <b>Proposition:</b> If $T$ is an efficient estimator of $g(\theta)$, then the affine transform $AT +b$ is an efficient estimator of $Ag(\theta)+b$ (for $A$ and $b$ with appropriate dimensions)
 
@@ -182,23 +175,21 @@ with $\frac{\partial g}{\partial \theta^{t}}(\theta)$ is the $p\times k$ matrix 
 
 ### 2.5. Link with Exponential family
 
-<b>Definition (Exponential model under a natural form...)</b>
+The exponential model can be re-written in its natural form by making the change of variable $\lambda_{j} = Q_{h}(\theta)$:
 
-Consider an exponential model $L(x; \theta) = h(x)\phi(\theta)\text{exp}(\sum_{i=1}^{r}Q_{i}(\theta)S_{i}(x))$  and make the change of variable $\lambda_{j} = Q_{h}(\theta)$. Then one obtains:
+$$ L(x; \theta) = \text{K}(\lambda)\text{h}(x)\text{exp}\Big(\sum_{j=1}^{r}\lambda_{j}S_{j}(x)\Big) $$
 
-$$ L(x; \theta) = K(\lambda)h(x)\text{exp}(\sum_{j=1}^{r}\lambda_{j}S_{j}(x)) $$
+where the new parameters are given by $(\lambda_{1},··· ,\lambda_{r}) \in \Lambda = Q(\Theta)\subset \mathbb{R}^{r}$
 
-The new parameters $(\lambda_{1},··· ,\lambda_{r}) \in \Lambda = Q(\Theta)\subset \mathbb{R}^{r}$
-
-<b>Theorem (Regularity)</b> Let an exponentiel model. If $\Lambda$ is a non-empty open set of $\mathbb{R}^{r}$, then the model is regular and (A5) is verified $\Rightarrow I(\lambda)$ exists. Furthermore
+<b>Theorem (Regularity)</b> For an exponential and regular model with $\emptyset \neq \Lambda\subset \mathbb{R}^{r}$ that satisfy (A5) one obtain that $I(\lambda)$ and equals to:
 
 $$
-I(\lambda) = - \mathbb{E}_{\lambda}\big[ \frac{\partial^{2}\text{log}(L(x;\lambda))}{\partial\lambda\partial \lambda^{t}} \big]
+\boxed{I(\lambda) = - \mathbb{E}_{\lambda}\Big[ \frac{\partial^{2}\text{log}(L(x;\lambda))}{\partial\lambda\partial \lambda^{t}} \Big]}
 $$
 
-<b>Theorem (Identifiability)</b> Let us consider the exponential model (2) where $\Delta$ is a (non-empty) open set of Rr. Then, the model is identifiable, i.e., $(P_{\lambda_{1}} =P_{\lambda_{2}} \Rightarrow \lambda_{1} =\lambda_{2})$ iff the FIM $I (\lambda)$ is invertible $\forall\lambda \in \Lambda$
+<b>Theorem (Identifiability):</b> An exponential model with $\emptyset \neq \Lambda \subset \mathbb{R}^{r}$ is <b>identifiable</b> if and only if the <b>FIM</b> $I (\lambda)$ is <b>invertible</b> $\forall\lambda \in \Lambda$
 
-<b>Theorem (Necessary condition)</b> Let's consider a regular exponential model and let $\delta$ an unbiased regular estimator $\delta$ of $g(\theta) \in C^{1}$. Moreover, let $I(\theta)$ be invertible $\forall \theta \in \Theta$. Thus, if $\delta$ is efficient, it is necessary an affine function of $S(x)=(S_{1}(x),···,S_{r}(x))t$.
+<b>Theorem (Necessary condition):</b> Let's consider a regular exponential model and $\delta$ an unbiased regular estimator $\delta$ of $g(\theta) \in C^{1}$. Moreover, let $I(\theta)$ be invertible $\forall \theta \in \Theta$. Thus, if $\delta$ is efficient, it is necessary an affine function of $S(x)=(S_{1}(x),···,S_{r}(x))$.
 
 <b>Theorem (Converse of CRB - equality)</b> Given a regular model $g: \emptyset \neq \Theta \subset \mathbb{R}^{d} \mapsto \mathbb{R}^{p}$ of class $C^{1}$ such that
 
@@ -217,7 +208,7 @@ where functions $Q$ and $C$ are s.t.
 - $\frac{\partial Q}{\partial\theta^{t}}(\theta)$ is invertible $\forall \theta \in \Theta$
 - $g(\theta) = -\big( \frac{\partial Q}{\partial\theta^{t}}(\theta) \big)^{-1}\frac{\partial ln(C)}{\partial\theta^{t}}(\theta$)
 
-<b>Corollary:</b> In an exponential model of the natural form where $\emptyset \neq \Delta \subset \mathbb{R}^{r}$ and where $I(\lambda)$ is invertible $\forall \lambda \in \Lambda$.
+<b>Corollary:</b> In an exponential model of the natural form where $\emptyset \neq \Lambda \subset \mathbb{R}^{r}$ and where $I(\lambda)$ is invertible $\forall \lambda \in \Lambda$.
 Thus, each statistic $S_{j}(x)$ is an efficient estimator of $E_{\lambda}[S_{j}(X)]$ which is defined as:
 
 $$
@@ -233,35 +224,178 @@ $$
 
 $$
 \exists c_{n} \rightarrow \infty s.t. c_{n}(\hat{\theta_{n}} - g_{\theta_{0}})
- \rightarrow^{dist} z ÷text{ with } E_{\theta_{0}}[z]=0$$
+ \rightarrow^{dist} z \text{ with } E_{\theta_{0}}[z]=0$$
 
 <i>Remark:</i> Different from "unbiased at the limit:" $E_{\theta_{0}}[\hat{\theta}_{n}]\rightarrow g(\theta_{0})$
 
-Definition (Asymptotically normal)
+<b>Definition (Asymptotically normal)</b> $\hat{\theta}_{n}$ os asymptotically normal if
 
-Definition (Asymptotically efficient)
+$$
+\sqrt{n}(\hat{\theta}_{n} - g(\theta_{0})) \rightarrow^{dist} \mathcal{N}(\textbf{0}, \Sigma(\theta_{0}))
+$$
 
-### 3.1. Method of moment
+where $\Sigma(\theta_{0})$ is the asymptotic CM of $\hat{\theta}_{n}$
 
-Theorem
+<i>Remark:</i> This implies that $\hat{\theta}_{n}$ is asymptotically unbiased.
 
-Theorem (Asymptotics of the MM estimator)
+<b>Definition (Asymptotically efficient):</b> An estimator is asymptotically efficient if it is asymptotically normal and if:
 
-### 3.1. Method of Maximum Likelihood
+$$
+\Sigma(\theta_{0}) = \frac{\partial g}{\partial \theta^{t}}(\theta_{0})I(\theta_{0})^{-1} \frac{\partial g^{t}}{\partial \theta}(\theta_{0})
+$$
 
-Definition (Maximum Likelihood Estimator (MLE))
+### 3.2. Method of moment
 
-Definition
+<b>Theorem</b>
 
-Theorem:
+$$
+\begin{align}
+U_{p} = \frac{1}{n}\sum_{i=1}^{n}x_{i}^{p} &\rightarrow^{a.s.} m_{p} = E_{\theta}[\textbf{x}^{k}]\\
+\sqrt{n}(\textbf{U}-\textbf{m}) &\rightarrow ^{dist}\mathcal{N}(\textbf{0}, \textbf{Z})
+\end{align}
+$$
 
-Theorem (Classical asymptotics)
-Theorem (Classical asymptotics)
+where $\textbf{U} = (U_{1}, ..., U_{p})$ and $\textbf{m} = (m_{1}, ..., m_{p})$
 
-CCL
+<b>Theorem (Asymptotics of the MM estimator)</b> If the function $\psi(\textbf{U}) = \theta_{n}$ is differentiable then:
 
-Come back on exponential models + Theorem
+$$
+\begin{align}
+\hat{\theta}_{n} &\rightarrow^{a.s.} \theta\\
+\sqrt{n}(\hat{\theta}_{n} - \theta) &\rightarrow^{dist}\mathcal{N}(\textbf{0}, \textbf{A}(\theta))
+\end{align}
+$$
 
-### 3.1. Bayesian estimation
+where $\textbf{A}(\theta) = \frac{\partial\psi}{\partial\theta^{t}}(m) \Sigma(\theta) \frac{\partial\psi^{t}}{\partial\theta}(m)$
+
+MME strongly consistant, asymptotically normal BUT generally NOT asymptotically efficient!
+
+### 3.3. Method of Maximum Likelihood
+
+<b>Definition (Maximum Likelihood Estimator (MLE))</b>
+
+Assume a regular model + (A5) +
+
+> (A6) $\forall x \in \Delta$, for $\theta$ close to $\theta_{0}$, $\text{log}(f(x;\theta))$ is three times differentiable w.r.t. $\theta$ and
+> $$ \lvert\frac{\partial^{3}}{\partial \theta_{j}\partial \theta_{k}\partial \theta_{l}}\text{log}(f(x; \theta))\rvert \leq M(x) $$
+> with $E_{\theta_{0}}[M(x)] < + \infty$
+
+<b>Proposition:</b> Assume that the model is identifiable then $\forall \theta \neq \theta_{0}$, one has:
+
+$$
+P_{\theta_{0}}(L(\textbf{x}, \theta_{0} > L(\textbf{x}, \theta )) \rightarrow 1
+$$
+
+<b>Definition (MLE)</b> The MLE is defined by
+
+$$
+T:(\textbf{x}_{1}, ..., \textbf{x}_{n}) \mapsto \hat{\theta}_{n}\in \text{argmax}_{\theta\in \Theta} L(\textbf{x}_{1}, ..., \textbf{x}_{n}; \theta)
+$$
+
+The MLE has to verified the following likelihood equations!
+
+1. $\frac{\partial}{\partial\theta}l(\theta) = 0$
+2. $\frac{\partial^{2}}{\partial\theta\partial\theta^{t}}l(\theta) \leq 0$
+
+<b>Proposition:</b> Let $g:\Theta\mapsto\mathbb{R}^{p}$. If $\hat{\theta}_{n}$ is the MLE of $\theta$ then $g(\hat{\theta}_{n})$ is also a MLE of $g(\theta)$
+
+<i>Note:</i> The MLE is not necessary unique..
+
+<b>Theorem:</b> Assume that the model is identifiable, that (A1) and (A2) hold and that $\theta_{0} \in \Theta \neq \emptyset$ compact and:
+- $x_{1} \mapsto L(x_{1}, \theta)$ is bounded $\forall \theta \in \Theta$
+- $\theta \mapsto L(x_{1}, \theta)$ is continuous $\forall x_{1} \in \Delta$
+
+$$
+\boxed{\hat{\theta}_{n}^{ML} \rightarrow^{a.s.} \theta_{0}}
+$$
+
+<b>Theorem (Classical asymptotics)</b>
+
+Assume that the model is identifiable and that $\Theta$ is an open set of $\mathbb{R}^{d}$ and (A1)-(A6) hold. Then, it exists $\hat{\theta}_{n}^{ML}$ (from a given $n_{0}$) solution to the likelihood equations such that:
+
+$$
+\begin{cases}
+\hat{\theta}_{n}^{ML} \rightarrow^{a.s.} \theta_{0}\\
+\sqrt{n}(\hat{\theta}_{n}^{ML} - \theta_{0}) \rightarrow^{dist} \mathcal{N}(\textbf{0}, I_{1}(\theta_{0})^{-1})
+\end{cases}
+$$
+
+If furthermore we have that $g$ is differentiable then it exists $\hat{\theta}_{n}^{ML}$ (from a given $n_{0}$) solution to the likelihood equations such that:
+
+$$
+\begin{cases}
+\hat{\theta}_{n}^{ML} \rightarrow^{a.s.} \theta_{0}\\
+\sqrt{n}(\hat{\theta}_{n}^{ML} - \theta_{0}) \rightarrow^{dist} \mathcal{N}(\textbf{0}, \frac{\partial g}{\partial\theta^{t}}(\theta_{0})I_{1}(\theta_{0})^{-1}\frac{\partial g^{t}}{\partial\theta}(\theta_{0}))
+\end{cases}
+$$
+
+<b>Conclusions:</b> The MLE is strongly consistant, asymptotically normal and asymptotically efficient.
+
+<b>Come back on exponential models</b> Let an exponential model with $\lambda \in \Lambda \neq \emptyset$ and $I(\lambda)$ invertible $\forall \lambda in \Lambda$ (identifiable model). Thus, the MLE exists (from a given n_{0}), is unique, strongly consistant and asymptotically efficient (which includes asymptotically normal).
+
+### 3.4. Bayesian estimation
+
+<u>Principles:</u> Philosophy is different from previous MM/ML estimation approaches (frequentist methods). The purpose is the same: estimating an unknown parameter $\theta \in \mathbb{R}$ or $\mathbb{R}^{p}$ thanks to the sample $(x_{1},...,x_{n})$ likelihood (parameterized by $\theta$) and an a priori distribution $p(\theta)$. So, $\theta$ is assumed to random.
+
+<u>Ideas:</u> To that end, one has to minimize a cost function $c(\theta,\hat{\theta})$ that
+represents the error between $\theta$ and its estimator $\hat{\theta}$.
+
+<u>Reminders:</u> A posteriori distribution / posterior distribution
+
+$$
+\boxed{p(\theta \mid \textbf{x}_{1}, ..., \textbf{x}_{1}) \propto L(\textbf{x}_{1}, ..., \textbf{x}_{1} ; \theta)\cdot p(\theta)}
+$$
+
+<b>MMSE estimator (mean of the posterior PDF)</b> is the estimator that minimizes the MSE as the cost function:
+
+$$
+c(\theta, \hat{\theta}) = E[(\theta - \hat{\theta})^{2}]
+$$
+There are two cases:
+
+1. $\theta \in \mathbb{R}$
+
+$$
+E[(\theta - \hat{\theta}_{MMSE})^{2}] = \text{min}_{\pi}E[(\theta - \pi(x))^{2}]
+$$
+
+so
+
+$$
+\hat{\theta}_{MMSE}(x) = E[\theta \mid \textbf{x}]
+$$
+
+2. $\theta \in \mathbb{R}^{p}$.
+The MMSE estimator $\hat{\theta}_{MMSE}(x) = E[\theta \mid x]$ minimizes the quadratic cost:
+
+$$
+E[(\theta - \pi(x))^{t} Q (\theta - \pi(x))]
+$$
+
+for any symmetric definite positive matrix $Q$ (and in particular for $Q = I_{p}$ the identity matrix).
+
+<b>MAP estimator:</b> Once again there are two cases:
+
+1. $\theta \in \mathbb{R}$
+
+The MAP estimator $\hat{\theta}_{MAP}(\textbf{x})$ minimizes the average of a uniform cost function:
+
+$$c((\theta - \pi(x))) = \begin{cases}
+0 \text{ if } \mid \theta - \pi(x) \mid \leq \Lambda / 2\\
+1 \text{ if } \mid \theta - \pi(x) \mid > \Lambda / 2
+\end{cases}
+$$
+
+and is defined by:
+
+$$
+c((\theta - \hat{\theta}_{MAP}(\textbf{x}))) = min_{\pi} c((\theta - \pi(x)))
+$$
+
+If $\Lambda$ is arbitrarily small, $\hat{\theta}_{MAP}(\textbf{x})$ is the value of $\pi(x)$ which maximizes the posterior $p(\theta\mid x)$ hence its name MAP estimator. It is computed by setting to zero the derivative of $p(\theta \mid x)$ or its log with respect to $\theta$.
+
+2. $\theta \in \mathbb{R}^{d}$
+
+Determine the values of $\theta_{j}$ which make the partial derivatives of $p(\theta \mid \textbf{x})$ (or its logarithm) with respect to $\theta_{i}$ equal to zero.
 
 ------
