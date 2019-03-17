@@ -8,13 +8,12 @@ tags:
 
 Much like Fourier transform expresses periodic functions as a sum of sinus and cosinus, the Wavelet transform expresses signals as a weighted sum of a special kind of functions, wavelets. Both use some inner product (scalar product and convolution) of an input signal and a given kernel / mask. The difference lies in the kernel the kernel of the transformation.
 
-Once the weights are obtained, they can be used for any purpose: denoise it, compress it, etc. A wavelet is a mathematical function useful in digital signal processing and image compression. It is suitable to perform frequency analysis of stationary functions. In particular, they make it possible to recover weak signals from noise. What's even more interesting is that this clean up is done without blurrying kernels or muddling the details. Here are some applications:
+Once the weights are obtained for a given image, they can be used for any purpose: denoise it, compress it, etc. A wavelet is a mathematical function useful in digital signal processing and image compression. It is suitable to perform frequency analysis of stationary functions. In particular, they make it possible to recover weak signals from noise. What's even more interesting is that this clean up is done without blurrying kernels or muddling the details. Here are some applications:
 
 - <b>Medical image analysis</b> Processing of X-ray and magnetic-resonance images
 - <b>Internet communications:</b> Compressing images to a greater extent than is generally possible with other methods (25% of the size with JPEG quality).
 
 > Quand je formatte comme ça c'est que c'est pas clair / pas bien formulé
-
 > Its principle is simple: Analyze an image and convert it into a set of mathematical expressions that can then be decoded by a receiver (see [modulation](https://en.wikipedia.org/wiki/Modulation)).
 
 It should be noted that there are two types of wavelets transform, serving different applications:
