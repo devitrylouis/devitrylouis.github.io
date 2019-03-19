@@ -68,54 +68,53 @@ $$ \text{Identifiability } \Leftrightarrow Q \text{ injective} $$
 
 In this section, we define regularity conditions ($C^{2}\cap L^{2}$ and support independent of $\theta$) on the likelihood function, and use them to build the Fisher Information Matrix (FIM), which measure of the amount of informations in the samples. This will be our basis to build bounds on the variance of an unbiased estimator (CRB) and optimal estimators for the parameters (Lemman-Scheffé). In particular, we will show that if $g(X)$ is any kind of estimator of a parameter $\theta$, then the conditional expectation of $g(X)$ given $T(X)$, where $T$ is a sufficient statistic, is typically a better estimator of $\theta$, and is never worse.
 
-### 2.1. Generalities
+### 2.1. Regular model assumptions
 
-<b>Definition (Regular model)</b> If $\Theta$ is an open set and if (A1),(A2),(A3),(A4) are verified, the model is regular.
-
-> <i>(A1)</i> The model is dominated<br>
-> <i>(A2)</i> The dist. domain $P_{\theta}: \Delta =\{x\in H\mid L(x;\theta)>0\}$ does not depend on $\theta \in \Theta$.<br>
-> <i>(A3)</i> $L(x; \theta)$ is twice differentiable<br>
-> <i>(A4)</i> $L'$ and $L''$ are integrable and we can permute integral and derivative.
+0. $\Theta$ is a an open set.
+1. The model is dominated by some measure
+2. The support $\Delta =\{x\in H\mid L(x;\theta)>0\}$ of the likelihood function is independend of $\theta$
+3. $L(x; \theta)$ is twice differentiable
+4. $L'$ and $L''$ are integrable and we can permute the integral and the derivative.
 
 ### 2.2. Fisher Information
 
-<b>Definition (Score)</b> The score function is the r.V. $s_{\theta}(x)$ defined by:
+The <u>score function</u> $s_{\theta}(x)$ is simply the gradient of the log likelihood function defined by:
 
 $$
 s_{\theta}(x) = \frac{\partial}{\partial \theta} l(x; \theta)
 $$
 
-where $l(x; \theta) = \text{log}(L(x; \theta))$. The score is zero-mean (i.e. $E[s_{\theta}(x)]=0$) and if one has:
-
-> <i>(A5)</i> the score is square-integrable
-
-we can define the <u>FIM</u> as the variance (covariance matrix in multidimensional case) of the score:
+The score is zero-mean (i.e. $E[s_{\theta}(x)]=0$) and if it is square-integrable then we can define the <u>FIM</u> as the variance (covariance matrix in multidimensional case) of the score:
 
 $$
-I(\theta) = var_{\theta}(s_{\theta}(x)) = E_{\theta}[s_{\theta}(x)s_{\theta}(x)^{T}]
+I(\theta) = \text{var}_{\theta}(s_{\theta}(x)) = \mathbb{E}_{\theta}[s_{\theta}(x)s_{\theta}(x)^{T}]
 $$
 
-In case of a $n$-sample, $(x_{1},...,x_{n})$ we have $I_{n}(\theta) = n\cdot I(\theta)$
+If we futhermore assume that the model is regular, then for any $\theta$:
 
-<b>Proposition (FIM):</b> Let’s assume a regular model, plus (A5), then for a real $\theta$, one has:
-
-$$I(\theta) = - E_{\theta}\big[ \frac{\partial^{2}}{\partial \theta \partial \theta ^{T}} l(x; \theta) \big]$$
+$$I(\theta) = - E_{\theta}\Bigg[ \frac{\partial^{2}}{\partial \theta\ \partial \theta ^{T}} l(x; \theta) \Bigg]$$
 
 The intuition behind the Fisher information is a way of measuring the amount of information that an observable random variable $X$ carries about an unknown parameter $\theta$ of a distribution that models $X$.
 
+<i>Practical note:</i> In case of a $n$-sample, $(x_{1},...,x_{n})$ we have:
+
+$$I_{n}(\theta) = n\cdot I(\theta)$$
+
 ### 2.3. Optimality
 
-<b>Main idea:</b> give an answer $d$ regarding the data by using a loss function $\rho(d,\theta)$ between $d$ and the (true) value of the unknowns $\theta$ or $g(\theta)$.
-
-<b>Definition (quadratic loss):</b>
+The <b>main idea</b> is to give an answer $d$ regarding the data by using a loss function $\rho(d,\theta)$ between $d$ and the (true) value of the unknowns $\theta$ or $g(\theta)$. The <u>loss function</u> is usually quadratic;
 
 $$\rho(d,\theta)=(d-g(\theta))A^{t}(\theta)(d-g(\theta))$$
 
-where $A(.)$ is positive-definite
+with $A(.)$ is positive-definite. In this context, we define an <u>estimator</u> $g(\theta)$ as being a statistic $\delta(\textbf{x})$:
 
-<b>Definition (Estimator):</b> An estimator of $g(\theta)$ is a statistic $\delta(x)$ mapping $X$ into $D = g(\Theta)$.
+$$
+\begin{align}
+\delta &: X \mapsto D = g(\Theta)
+\end{align}
+$$
 
-<b>Definition (Mean Square Error (MSE))</b>
+Finally, we can measure the error produced by the estimator using the <u>Mean Squared Error</u>:
 
 $$
 R_{\delta}(\theta) = E_{\theta}\big[ \rho(\theta, \delta(x)) \big] = E_{\theta}\big[ (g(\theta) - \delta(x))^{2} \big]
@@ -123,7 +122,7 @@ $$
 
 ### 2.4. Cramer Rao bound
 
-The <b>goal</b> is to minimize the MSE but reformulate it with the [bias-variance dilemma](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
+The <b>goal</b> is to minimize the MSE but reformulated by the [bias-variance dilemma](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
 
 $$R_{\delta}(\theta) = var_{\theta}(\delta(x)) + b_{\delta}(\theta)^{2}$$
 
