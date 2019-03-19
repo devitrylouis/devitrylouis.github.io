@@ -11,45 +11,54 @@ tags:
 
 ## 1.1. Principles
 
-Let a $n$-sample $(x_{1}, ..., x_{n})$ i.i.d $\sim P_{\theta}, \theta \in \Theta$ and $H_{0}, H_{1}$ be two non empty and disjoint subsets of $\Theta$ s.t. $H_{0} \cup H_{1} = \Theta$.
+<b>TL; DR:</b> Define a test to see whether the parameter $\theta$ belongs to some set $H_{0}$!
 
-$H_{0}$ is the <u>null hypothesis</u> and $H_{1}$ is called the <u>alternative hypothesis</u>.
+For $n$-sample $(x_{1}, ..., x_{n}) \overset{i.i.d}{\sim} P_{\theta}$ with $\theta \in \Theta$, we consider the <u>null hypothesis</u> $H_{0}$ and the <u>alternative hypothesis</u> $H_{1}$. They are a partition of $\Theta$ (i.e. $H_{0} \cup H_{1} = \Theta$ and $H_{0} \cap H_{1} = \emptyset$).
 
-The <b>goal</b> is to test wether $\theta$ belongs to $H_{0}$ or not, regarding the datasets $X$.
+<b>Definition (Simple hypothesis):</b> The hypothesis is reduced to a single element. Else, it is called composite.
 
-<b>Definition:</b> An <u>hypothesis</u> is said <u>simple</u> if it is reduced to a single element. Else, it is called composite.
+<b>Definition (Pure test):</b> It is a mapping $\delta$ from $X^{n}$ onto $\{0, 1 \}$ define so that:
 
-<b>Definition:</b> A <u>pure test</u> is a mapping $\delta$ from $X^{n}$ onto $\{0, 1 \}$ s.t. if $\delta(x) = 0$, one decides $H_{0}$, while if $\delta(x) = 1$, one rejects $H_{0}$.
+<center>
 
-The region $X = \{ x \in X^{n} \mid \delta(x) = 1 \}$ is called the rejection region or the critical region. Its complement is called the acceptance region.
+|  Decide $H_{0}$  |   Reject $H_{0}$  |
+|:----------------:|:-----------------:|
+|  $\delta(x) = 0$ |  $\delta(x) = 1$  |
+| Acceptance region | Rejection region |
 
-## 1.2. Errors, power and level of a test
+</center>
 
 <i>Remark</i> A test is characterized (and will be identified) by its rejection region $W$.
 
-<b>Definition (Different errors)<b> For a test, there are two possible error/s:
-- Rejecting $H_{0}$ when it is true: type-I error or error of 1st kind.
-- Accepting $H_{0}$ when it is false: type-II error or error of 2nd kind
+## 1.2. Errors, power and level of a test
 
-<b>Definition (Type-I and Type-II errors)<b> For a test $\delta$ with critical regi/on $W$, one has:
+For a test, there are <u>two possible errors</u>:
 
-1. <u>Type I error:</u>
-$$\alpha_{W}:
+<center>
+
+|   | Decide $H_{0}$ | Reject $H_{0}$ |
+|:------------:|:--------------:|:--------------:|
+| $H_{0}$ true | Good! | Type I error |
+| $H_{1}$ true | Type II error | Good! |
+
+</center>
+
+Mathematically, for a pure test $\delta$ along its critical region $W=\{x\in X^{n}: \delta(x) = 1 \}$, the error types are defined respectively by:
+
+$$
+\alpha_{W}:
 \begin{cases}
 H_{0} \rightarrow [0, 1]\\
 \theta \rightarrow P_{\theta}(W)\\
-\end{cases}
-$$
-
-2. <u>Type II error:</u>
-$$\beta_{W}:
+\end{cases} \text{ and }
+\beta_{W}:
 \begin{cases}
 H_{1} \rightarrow [0, 1]\\
 \theta \rightarrow P_{\theta}(W^{C}) = 1 - P_{\theta}(W)\\
 \end{cases}
 $$
 
-<b>Definition (Power of a test):</b> The power of a test is defined as:
+- The [power of a test](https://apcentral.collegeboard.org/courses/ap-statistics/classroom-resources/power-in-tests-of-significance) is is the probability of correctly rejecting the null hypothesis:
 
 $$
 \rho_{W}:\begin{cases}
@@ -58,22 +67,16 @@ H_{1} \rightarrow [0, 1]\\
 \end{cases}
 $$
 
-<b>Definition (Randomized test)</b> A random test is a mapping $\phi$ form $X^{n}$ in to $[0, 1]$ where $\phi(x)$ is the probability of rejecting $H_{0}$ for the dataset $x = (x_{1}, ..., x_{n}) \in X^{n}$
+- Pure tests are [not enough](https://www.quora.com/What-are-randomized-and-non-randomized-tests) for applications. In consequence, we define a <b>randomized test</b> $\phi: X^{n}\mapsto [0, 1]$, that is the probability of rejecting $H_{0}$ for our dataset $X^{n}$. We can retrieve the simple test for $\phi = 1_{W}$. But the errors definition and the power are different than in the pure test:
 
-<i>Remark:</i> For $\phi = 1_{W}$, one retrieves the simple test.
-
-<b>Definition (Type I and type II errors, power for a test $\phi$)</b>
-
-1. <u>Type I error:</u>
-$$\alpha_{\phi}:
+$$
+\alpha_{\phi}:
 \begin{cases}
 H_{0} \rightarrow [0, 1]\\
 \theta \rightarrow E_{\theta}[\phi(\textbf{x})]\\
 \end{cases}
-$$
-
-2. <u>Type II error:</u>
-$$\beta_{\phi}:
+\text{ and }
+\beta_{\phi}:
 \begin{cases}
 H_{1} \rightarrow [0, 1]\\
 \theta \rightarrow 1 - E_{\theta}[\phi(\textbf{x})]\\
@@ -82,27 +85,28 @@ $$
 
 $$ \rho_{\phi} = 1 - \beta_{\phi} = E_{H_{1}}[\phi(\textbf{x})] $$
 
-<b>Definition (Level of significance (ls))</b> The level of significance $\alpha$ for a test $\phi$ is:
+- As for assessing the performance of such test $\phi$, one typically use the <b>level of significance</b> $\alpha$, which verify:
 
 $$
-\alpha = \sup_{\theta \in H_{0}} \alpha_{\phi}(\theta) = sup_{\theta \in H_{0}} E_{\theta}[\phi(\textbf{x})]
+\alpha = \sup_{\theta \in H_{0}} \alpha_{\phi}(\theta) = \text{sup}_{\theta \in H_{0}} E_{\theta}[\phi(\textbf{x})]
 $$
+
+<b>Question:</b>
+- Definition of $p$-value
+
+<b>Notes:</b>
+- [Difference between power and p-value](https://www.quora.com/What-is-the-relationship-between-statistical-power-and-the-p-value)
 
 ## 1.3. Neyman approach
 
-<b>Goal:</b> One wants to control / fix the type-I error (i.e. the probability of rejecting $H_{0}$ when it is true).
-
-The <u>Neyman principle</u> consists in considering all tests with $ls \leq$ to a fixed $\alpha$ anf then, in finding (among those tests), the one with the smallest type-II error.
-
-Since $\rho_{\phi} = 1 - \beta_{\phi}$, such test will be said to be UMP.
-
-<b>Definition (Uniformlu Most Powerful)</b>
-
-$\phi$ is UMP at the threshold $\alpha$ it its $ls \leq \alpha$ and if $\forall \phi'$ which has $ls \leq \alpha$, one has:
-
+The <u>Neyman principle</u> consists in fixing the type I error (i.e. the probability of rejecting $H_{0}$ when it is true) at signigicance level $\alpha$ and compute the tests with the minimal type II error. As it turns out, the randomized test $\phi$ is <b>Uniformly Most Powerful</b>: it has the highest power among all tests with $ls \leq \alpha$
 $$
 \forall \theta \in H_{1}, E_{\theta}[\phi(\textbf{x})] \geq E_{\theta}[\phi'(\textbf{x})]
 $$
+
+> <b>Question:</b>
+> - Why "Since $\rho_{\phi} = 1 - \beta_{\phi}$, such test will be said to be UMP"?
+> Because $\rho_{\phi}$ is the power.
 
 ## 2. UMP tests
 
@@ -146,7 +150,48 @@ The value of $\phi$ is specified for $\{ x \in X^{n} \mid L_{1}(x) = k L_{0}(x)�
 
 ### 2.2. Composite tests - One-sided hypotheses
 
+Now let us consider a model with only one parameter and where $\Theta$ is an interval of $\mathbb{R}$. One assume $L(x; \theta) > 0, \forall x \in X^{n}, \forall \theta \in \Theta$.
+
+<b>Goal:</b> test $H_{0}: \{ \theta \leq \theta_{0} \} versus H_{1}:\{ \theta > \theta_{0} \}$
+
+Let us consider the family having monotonous likelihood ratio:
+
+<b>Definition (Monotone LR)</b> The family $\{ P_{\theta}^{\symb}, \theta \in\Theta \}$ is said to have monotone likelihood ratio if it exists a real valued statistic $U(x)$ such that $\forall \theta ' < \theta'', \frac{L(x; \theta '')}{L(x; \theta ')}$ is a strictly increasing (or decreasing) function of $U$.
+
+<i>Remark:</i> By changing $U$ into $-U$, one can always assume strictly increasing in previous definition.
+
+<b>Theorem: (Lehman theorem)</b>
+
+Let $\alpha \in (0, 1)$. If the family $(P_{\theta}, \theta \in \Theta)$ has monotone increasing likelihood ratio, there exists a UMP test at level $\alpha$ for testing $H_{0}: \{ \theta \leq \theta_{0} \}$ versus $H_{1}:\{ \theta > \theta_{0} \}$. This test is defined by:
+
+$$
+\begin{cases}
+\phi(x) = 1 \text{ if } U(x) > c \\
+\phi(x) = \gamma \text{ if } U(x) = c \\
+\phi(x) = 0 \text{ if } U(x) < c
+\end{cases}
+$$
+
+where $c$ and $\gamma$ are obtained with $E_{\theta_{0}}[\phi] = \alpha$. The same test is UMP at level $\alpha$ for testing:
+1. $H_{0}: \{ \theta = \theta_{0} \} versus H_{1}:\{ \theta > \theta_{0} \}$
+2. $H_{0}: \{ \theta = \theta_{0} \} versus H_{1}:\{ \theta = \theta_{1} \}$
+where $\theta_{1} > \theta_{0}$
+
+<i>Remark:</i> If the inequalities are reversed in the test, then the UMP test is obtained by reversing the inequalities (in the test).
+
+<i>Remark (important)</i> In general, it does not exist a UMP test for testing $H_{0}: \{ \theta = \theta_{0} \} versus H_{1}:\{ \theta \neq \theta_{0} \}$
+
 ## 3. Student-t test
+
+Let $(X_{1}, ..., X_{n}) \sim^{iid} \mathcal{N}(\mu, \sigma^{2})$ with $\mu$ and $\sigma^{2}$ unknown. The goal is to test $H_{0}: \{ \mu = \mu_{0} \}$ versus $H_{0}: \{ \mu = \mu_{1} \}$ at level $\alpha\in (0, 1)$.
+
+The general methodology is:
+1. From the student theorem, one has
+$$ T_{n} = \frac{\sqrt{n}(\overline{X}_{n} - \mu)}{S_{n}} \sim t(n-1) $$
+2. Under H_{0}:
+$$ T_{n} = \frac{\sqrt{n}(\overline{X}_{n} - \mu_{0})}{S_{n}} \sim t(n-1) $$
+3. Under $H_{1}$: From the SLLN, $\overline{X}_{n} - \mu_{0} \rightarrow^{a.s.}\mu- \mu_{0}$ ans $S_{n} \rightarrow^{a.s.} \sigma$. Thus $\eta \rightarrow^{a.s.} \infty$ if $\mu > \mu_{0}$ and $\eta \rightarrow^{a.s.} -\infty$ if $\mu < \mu_{0}$$
+4. Critical region: $W_{n} = \{ \mid \eta_{n} \mid > a \}$
 
 ## 4. Asymptotic Tests
 

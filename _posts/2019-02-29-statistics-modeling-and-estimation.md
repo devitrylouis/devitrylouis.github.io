@@ -8,11 +8,11 @@ tags:
 
 ## 1. Statistical modelling
 
-<b>TL; DR:</b> We deal with identifiable models (different parameters lead to different distributions) with statistics (measure). In particular, we are interested in sufficient statistics, those that explain well the data. They verify the factorization theorem:
+<b>TL; DR:</b> We deal with <u>identifiable models</u> (i.e. different parameters lead to different distributions) with statistics (measure). In particular, we are interested in <u>sufficient statistics</u>, those that explain well the data. They verify have the advantage to statisfy the factorization theorem:
 
 $$L(x; \theta) = \psi(S(x); \theta) \lambda(x)$$
 
-Another characteristic is completeness: whether there is a unique unbiased estimator of $\theta$ based on the statstic (close to the Lehmann–Scheffé theorem)
+Another important characteristic is <u>completeness</u>: whether there is a unique unbiased estimator of $\theta$ based on the statistic (close to the Lehmann–Scheffé theorem)
 
 Then we define exponential family which constitutes a nice framework as its canonical statistic is sufficient and complete, among others.
 
@@ -28,47 +28,41 @@ This is equivalent to saying that different values of the parameters must genera
 
 ### 1.2. Sufficiency
 
-<b>TL;DR:</b> Where is contained the information of interest (i.e. related to the unknowns) in the data?
-
-<b>Definition (Sufficient statistic)</b> A statistic $S$ is said to be sufficient if and only if the conditional distribution $L_{\theta}(X\mid S(X))$ does not depend on $\theta$.
-
 > “…no other statistic that can be calculated from the same sample provides any additional information as to the value of the parameter.”
 
-<b>Remark (Pros and cons)</b>
-- Difficulty to use the definition
-- Dimension of $S$ has to be minimal!
+The formal definition of a <u>sufficient statistic</u> is a bit hard to grasp and can be difficult to use in practice:
 
-<b>Theorem (Factorisation Criterion (FC))</b> A statistic $S$ is sufficient iff the likelihood function can be written as:
+$$L_{\theta}(X\mid S(X)) \text{ independent of } \theta$$
+
+where $L_{\theta}(X\mid S(X))$ is the conditional distribution of $X$ knowing $S(X)$. In consequence, one commonly refer to the <b>Factorisation Criterion</b>, which states that the statistic is sufficient it its likelihood functions is of the form:
 
 $$ L(x; \theta) = \psi(S(x); \theta) \lambda(x) $$
 
+<i>Note:</i> One could choose $S(X) = S$ of course, but the point is to find $S$ of minimal dimension.
+
 ### 1.3. Exponential family
 
-<b>Definition (Complete statistics)</b> A statistic $S$ is said to be complete if for any measurable real-valued function $\phi$, one has:
+A statistic $S$ is said to be <u>complete</u> if for any measurable real-valued function $\phi$, one has:
 
 $$
-\{\forall \theta \in \Theta E_{\theta}[\phi \circ S(X)] = 0\} \Rightarrow \{\forall \theta \in \Theta \phi \circ S(X) = 0 a.s. [P_{\theta}]\}
+\{\forall \theta \in \Theta: \ E_{\theta}[\phi \circ S(X)] = 0\} \Rightarrow \{\forall \theta \in \Theta: \ \phi \circ S(X) = 0 \text{ a.s.} [P_{\theta}]\}
 $$
 
-In essence, it ensures that the distributions corresponding to different values of the parameters are distinct.
-
-<b>Definition (Exponential family)</b> A model is said to be exponential if and only if its likelihood function can be written as:
+In essence, it ensures that the distributions corresponding to different values of the parameters are distinct. But once again, its hard to use in practice. Therefore, we will define family of models that is large enough to have expressive power and simple enough for theoretical manipulations. This family is the <b>Exponential family</b> and the condition for a model to belong to this family is that one can re-write its likelihood function as:
 
 $$
-L(x; \theta) = h(x) \phi(\theta) \text{exp}\big[ \sum_{i=1}^{r}Q_{i}(\theta)S_{i}(x) \big]
+L(x; \theta) = h(x) \phi(\theta) \text{exp}\Bigg[ \sum_{i=1}^{r}Q_{i}(\theta)S_{i}(x) \Bigg]
 $$
 
-where $S(.) = (S_{1}(.), ..., S_{r}(.))$ is the canonical statistic.
+where $S(.) = (S_{1}(.), ..., S_{r}(.))$ is the canonical statistic. The big advantage is that the canonical statistic is always sufficient and it is furthermore complete if $Q(\Theta)\neq\emptyset$.
 
-<b>Proposition:</b> The canonical statistic is sufficient.
-
-<b>Proposition:</b> For exponential family, if the $S_{i}(.)$ are linearly independent (affine sense), then
+For a given exponential model with $S_{i}$ are linearly independent in the affine sense, then:
 
 $$P_{\theta_{1}} = P_{\theta_{2}} \Leftrightarrow Q_{j}(\theta_{1}) = Q_{j}(\theta_{2})$$
 
-<b>Corollary:</b> For exponential family, if the $S_{i}(.)$ are linearly independent then $\theta$ is identifiable.
+This is quite powerful because it means that there is some sort of basis and that for two distributions to be equal, each of the component of the basis must be equal. The corollary is that under these conditions:
 
-<b>Theorem:</b> If $\emptyset \neq Q(\Theta) \subset \mathbb{R}^{r}$ then the canonical statistic is complete.
+$$ \text{Identifiability } \Leftrightarrow Q \text{ injective} $$
 
 ## 2. Unbiased estimation
 
@@ -78,9 +72,9 @@ In this section, we define regularity conditions ($C^{2}\cap L^{2}$ and support 
 
 <b>Definition (Regular model)</b> If $\Theta$ is an open set and if (A1),(A2),(A3),(A4) are verified, the model is regular.
 
-> <i>(A1)</i> The model is dominated
-> <i>(A2)</i> The dist. domain $P_{\theta}: \Delta =\{x\in H\mid L(x;\theta)>0\}$ does not depend on $\theta \in \Theta$.
-> <i>(A3)</i> $L(x; \theta)$ is twice differentiable
+> <i>(A1)</i> The model is dominated<br>
+> <i>(A2)</i> The dist. domain $P_{\theta}: \Delta =\{x\in H\mid L(x;\theta)>0\}$ does not depend on $\theta \in \Theta$.<br>
+> <i>(A3)</i> $L(x; \theta)$ is twice differentiable<br>
 > <i>(A4)</i> $L'$ and $L''$ are integrable and we can permute integral and derivative.
 
 ### 2.2. Fisher Information
@@ -274,16 +268,18 @@ MME strongly consistant, asymptotically normal BUT generally NOT asymptotically 
 
 <b>Definition (Maximum Likelihood Estimator (MLE))</b>
 
-Assume a regular model + (A5) +
+Consider a regular model that satisfy (A5) and (A6)
 
 > (A6) $\forall x \in \Delta$, for $\theta$ close to $\theta_{0}$, $\text{log}(f(x;\theta))$ is three times differentiable w.r.t. $\theta$ and
+>
 > $$ \lvert\frac{\partial^{3}}{\partial \theta_{j}\partial \theta_{k}\partial \theta_{l}}\text{log}(f(x; \theta))\rvert \leq M(x) $$
+>
 > with $E_{\theta_{0}}[M(x)] < + \infty$
 
 <b>Proposition:</b> Assume that the model is identifiable then $\forall \theta \neq \theta_{0}$, one has:
 
 $$
-P_{\theta_{0}}(L(\textbf{x}, \theta_{0} > L(\textbf{x}, \theta )) \rightarrow 1
+P_{\theta_{0}}(L(\textbf{x}, \theta_{0}) > L(\textbf{x}, \theta )) \rightarrow 1
 $$
 
 <b>Definition (MLE)</b> The MLE is defined by
@@ -294,8 +290,12 @@ $$
 
 The MLE has to verified the following likelihood equations!
 
-1. $\frac{\partial}{\partial\theta}l(\theta) = 0$
-2. $\frac{\partial^{2}}{\partial\theta\partial\theta^{t}}l(\theta) \leq 0$
+$$
+\begin{cases}
+\frac{\partial}{\partial\theta}l(\theta) = 0\\
+\frac{\partial^{2}}{\partial\theta\partial\theta^{t}}l(\theta) \leq 0
+\end{cases}
+$$
 
 <b>Proposition:</b> Let $g:\Theta\mapsto\mathbb{R}^{p}$. If $\hat{\theta}_{n}$ is the MLE of $\theta$ then $g(\hat{\theta}_{n})$ is also a MLE of $g(\theta)$
 
