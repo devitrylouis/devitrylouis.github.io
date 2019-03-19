@@ -145,7 +145,7 @@ $\delta_{s}$ is Rao-Blackwell estimator (or the Rao-Blackwellization of $\delta$
 
 <b>Definition (Regular estimator)</b> $\delta$ is a regular estimator of the regular model $g(\theta)$ if:
 
-1. $E_{\theta}[|\delta |^{2}] < \infty\ \forall \theta \in \Theta$
+1. $E_{\theta}[\mid\delta \mid^{2}] < \infty\ \forall \theta \in \Theta$
 
 2. $\frac{\partial}{\partial\theta}\int_{X}\delta(x)l(x; \theta) dx= \int_{X}\delta(x)\frac{\partial}{\partial\theta}l(x; \theta) dx$
 
