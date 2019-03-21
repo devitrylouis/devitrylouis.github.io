@@ -6,7 +6,6 @@ tags:
   - Statistics
 ---
 
-
 ## 1. Generalities
 
 ## 1.1. Principles
@@ -110,19 +109,33 @@ $$
 
 ## 2. UMP tests
 
+In this section, we explore two kinds of tests:
+
+- <b>Simple hypothesis testing:</b> We compare the likelihood using a simple ratio and depending on the difference (we use a threshold $k$), one decides wether to accept / reject $H_{0}$. The cool thing is Neyman Pearson lemma tells us that there must exists a Neyman test for all $\alpha$ and that it is the UMP. Finally, it proves the converse: a UMP test must be a Neyman test.
+
+But this work only for one simple hypothesis testing... So we use composite tests instead.
+
+- <b>Composite tests:</b> Basically, we say that there is some sort of monotonicity of the ratio (intuition below). Much like Neyman Pearson lemman, Lehman theorem indicates the existence of a UMP tests for all $\alpha$. But it is limited to a narrower family of distributions than its counterpart.
+
+> The monotone likelihood ratio (MLR) represents a useful data generating process; one where there’s a clear relationship between the magnitude of observed variables and the probability distribution they are drawn from. This clear relationship makes many statistical processes possible, including identifying uniformly most powerful processes.
+
+<i>Notes:</i>
+- UMP is roughly the same as the type II errors.
+
+<i>Sources:</i>
+- [Work hard or slack off](https://en.wikipedia.org/wiki/Monotone_likelihood_ratio#Example:_Working_hard_or_slacking_off)
+
 ### 2.1. Simple hypothesis testing
 
 In this part, for the $n$ sample $(\textbf{x}_{1}, ..., \textbf{x}_{n})$, one considers:
 
 $$
-H_{0}:\{ \theta = \theta_{0} \} versus H_{1}:\{ \theta = \theta_{1} \}
+H_{0}:\{ \theta = \theta_{0} \} \text{ versus } H_{1}:\{ \theta = \theta_{1} \}
 $$
 
-which means that $\Theta = \{ \theta_{0}, \theta_{1} \}$
+which means that $\Theta = \{ \theta_{0}, \theta_{1} \}$. Let's name the two probabilities $P_{0}:=P_{\theta_{0}}$ and $P_{1}:=P_{\theta_{1}}$ and their corresponding likelihood functions $L_{0}(x) := L(x; \theta_{0})$ and $L_{1}(x) := L(x; \theta_{1})$, for $x= (x_{1}, ..., x_{n}) \in X^{n}$
 
-So two probabilities $P_{\theta_{0}}$ ($P_{0}$) and $P_{\theta_{1}}$ ($P_{1}$), that implies two Likelihodd functions $L_{0}(x) = L(x; \theta_{0})$ and $L_{1}(x) = L(x; \theta_{1})$, for $x= (x_{1}, ..., x_{n}) \in X^{n}$
-
-<b>Definition (Neyman test or Likelihood Ratio Test):</b> A <u>Neyman test</u> is a test $\phi$ such that $\exists k \in \mathbb{R}_{+}^{ \text{*} }$, and
+<b>Definition (Neyman test or Likelihood Ratio Test):</b> A <u>Neyman test</u> is a test $\phi$ such that $\exists k > 0$, and
 
 $$\phi(x) = \begin{cases}
 1 \text{ if } L_{1}(x) > k L_{0}(x)\\
@@ -148,11 +161,14 @@ The value of $\phi$ is specified for $\{ x \in X^{n} \mid L_{1}(x) = k L_{0}(x)�
 2. If the LR CDF under $H0$ is continuous, one obtains the test of critical region $W = \{x \in X^{n} \mid L_{1}(x) > kL_{0}(x) \}$ where $k$ is defined by $P_{0}(L_{1}(X)>kL_{0}(X)) = \alpha$
 3. The power $E_{1}[\phi]$ of a UMP test at level $\alpha$ is necessarily $\geq \alpha$. Indeed $\phi$ is prefereable to the constant test $\psi = \alpha$ (which is of ls $\alpha$), thus $E_{1}(\phi) \geq E_{1}(\psi) = \alpha$
 
+<b>Exercices:</b>
+- [Ex 1](http://math.univ-lyon1.fr/~gannaz/Cours/DS_stat_2015_corrige.pdf)
+
 ### 2.2. Composite tests - One-sided hypotheses
 
 Now let us consider a model with only one parameter and where $\Theta$ is an interval of $\mathbb{R}$. One assume $L(x; \theta) > 0, \forall x \in X^{n}, \forall \theta \in \Theta$.
 
-<b>Goal:</b> test $H_{0}: \{ \theta \leq \theta_{0} \} versus H_{1}:\{ \theta > \theta_{0} \}$
+<b>Goal:</b> test $H_{0}: \{ \theta \leq \theta_{0} \} \text{ versus } H_{1}:\{ \theta > \theta_{0} \}$
 
 Let us consider the family having monotonous likelihood ratio:
 
@@ -183,6 +199,8 @@ where $\theta_{1} > \theta_{0}$
 
 ## 3. Student-t test
 
+<b>TL; DR:</b> Student $t$-test provide a good
+
 Let $(X_{1}, ..., X_{n}) \sim^{iid} \mathcal{N}(\mu, \sigma^{2})$ with $\mu$ and $\sigma^{2}$ unknown. The goal is to test $H_{0}: \{ \mu = \mu_{0} \}$ versus $H_{0}: \{ \mu = \mu_{1} \}$ at level $\alpha\in (0, 1)$.
 
 The general methodology is:
@@ -196,8 +214,21 @@ $$ T_{n} = \frac{\sqrt{n}(\overline{X}_{n} - \mu_{0})}{S_{n}} \sim t(n-1) $$
 ## 4. Asymptotic Tests
 
 ### 4.1. Generalities
+
+As for estimators, in many situations, one CANNOT find the distribution of the LR (or the statistic of the monotone LR). As a consequence, one cannot set the parameters k and γ for the test.
+A solution (like in point estimation theory) is to rely on asymptotic properties!
+Now, instead of considering a test W, we will consider a sequence of tests (Wn)n∈N∗ .
+
 ### 4.2. Wald test
+
 ### 4.3. Rao (score) test and  LRT
+
+Rao's score test, also known as the score test or the Lagrange multiplier test (LM test) in econometrics, is a statistical test of a simple null hypothesis that a parameter of interest $\theta$ is equal to some particular value $\theta _{0}$. It is the most powerful test when the true value of $\theta$  is close to $\theta _{0}$. The main advantage of the score test is that it does not require an estimate of the information under the alternative hypothesis or unconstrained maximum likelihood. This constitutes a potential advantage in comparison to other tests, such as the Wald test and the generalized likelihood ratio test (GLRT). This makes testing feasible when the unconstrained maximum likelihood estimate is a boundary point in the parameter space.
+
 ### 4.4. $\chi^{2}$ tests
+
+Pearson's chi-squared test $\chi^{2}$ is a statistical test applied to sets of categorical data to evaluate how likely it is that any observed difference between the sets arose by chance.
+
+It tests a null hypothesis stating that the frequency distribution of certain events observed in a sample is consistent with a particular theoretical distribution. The events considered must be mutually exclusive and have total probability 1. A common case for this is where the events each cover an outcome of a categorical variable. A simple example is the hypothesis that an ordinary six-sided die is "fair" (i. e., all six outcomes are equally likely to occur.)
 
 ------
