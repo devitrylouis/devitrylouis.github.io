@@ -1,7 +1,7 @@
 ---
 title: 'Statistics basics'
 date: 2018-12-01
-permalink: /posts/2019/01/hypothesis-techniques/
+permalink: /posts/2019/01/robust/
 tags:
   - Statistics
 ---
