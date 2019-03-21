@@ -41,7 +41,9 @@ Some of them are very much of a work in progress (marked with *). They are updat
 | Ensemble methods 🌲🌳 | RNN/LSTM 🕧 | [Map Reduce](/posts/2018/11/big-data-map-reduce/) ✅  |
 | Support Vector Machine ↗️ | Avanced RNNs 📘 | [Hadoop](/posts/2019/01/hadoop/) 🚈 |
 | Clustering 👫 | [GAN & VAE](https://github.com/devitrylouis/gan_vs_vae_pytorch) 🎭 | [Spark](/posts/2019/01/spark-introduction/) 🚅 + [notebook](https://github.com/devitrylouis/spark_basics)|
-| Clustering 👫 | | [Statistics](/posts/2019/01/statistics-basics/)|
+| Clustering 👫 | | [Statistics - Basics](/posts/2019/01/statistics-basics/)|
+| Clustering 👫 | | [Statistics - Parameter estimation](/posts/2019/01/modeling-and-estimation/)|
+| Clustering 👫 | | [Statistics - Hypothesis testing](/posts/2019/01/hypothesis-techniques/)|
 
 
 | Artificial Intelligence | Reinforcement Learning | Decision Modelling |
