@@ -6,13 +6,13 @@ tags:
   - Machine Learning
 ---
 
-In layman terms, a Linear Regression consists in predicting the output of a continuous dependent variable (Y) when there are any changes in the values of independent variables (X). More formally, it consists of creating a parametrized model whose output (Y) is a linear combination of its inputs (X), i.e.:
+In layman terms, a Linear Regression consists in predicting a continuous dependent variable $Y$ as a linear combination of the independent variables $X = \{x_{1}, ..., x_{n} \}$. The contribution of each variable $x_{i}$ is expressed by a parameter $\beta_{i}$. Altogether, it is a simple weighted sum:
 
 $$
 h(x) = \sum_{i=0}^{n} \beta_{i}x_{i} = \beta^{t} x
 $$
 
-where $\theta$ are the parameters, also called weights. It should be noted that in the above formula, the sum begins at $i = 0$ to incorporate the intercept (constant term). As for the parameters, they are learned to minimize the Ordinary Least Square loss function:
+where $\beta$ are the parameters, also called weights. It should be noted that in the above formula, the sum begins at $i = 0$ to incorporate the intercept (i.e. the constant term). As for the parameters, they are learned to minimize the quadratic loss function:
 
 $$
 \begin{align}
@@ -21,9 +21,9 @@ J(\beta) &= \frac{1}{2} \sum_{i=1}^{n} (y_{i} - \beta_{i} x_{i})^{2}\\
 \end{align}
 $$
 
-<b>Goal:</b> Find good $\beta$
+The parameters we consider best are the one that minimizes this error.
 
-## Least Mean Squares
+## 1. Least Mean Squares
 
 <b>TL; DR:</b> We use gradient descent:
 
@@ -65,8 +65,7 @@ $$
 - The magnitude of the update is proportional to the error term.
 - J is a convex quadratic function $\Rightarrow$ gradient descent always converges.
 
-## Closed form solution
-## Normal equations
+## 2. Closed form solution - Normal equations
 
 There is a way to solve this with Linear Algebra by reformulating the loss:
 
@@ -84,9 +83,9 @@ $$
 \theta = (X^{T}X)^{-1}X^{T}y
 $$
 
-## Regularization
+## 3. Regularization
 
-### Least Absolute Shrinkage and Selection Operator
+### 3.1. Least Absolute Shrinkage and Selection Operator (LASSO)
 
 To enhance both the prediction accuracy model and the interpretabiliy of the produced model, LASSO alters the fitting process by selecting a subset of the provided covariates for use in the final model. To this effect, it shrinks the OLS coffcient toward zero (with some exactly set to zero).
 
@@ -95,7 +94,7 @@ $$
 \hat{\beta}_{lambda} = \text{argmin}_{\beta} J(\beta) + \lambda \sum_{j=1}^{p}\mid \beta_{j} \mid
 $$
 
-<b>Terminology (\mathcal{l}_{1} penalty):</b> This is the righmost term of the above equation.
+<b>Terminology ($\mathcal{l}_{1}$ penalty):</b> This is the righmost term of the above equation.
 
 <b>Note:</b> One can proove that this is equivalent to:
 
@@ -114,11 +113,10 @@ $$
 
 is a bijective application.
 
-### Ridge Regression
+### 3.2. Ridge Regression
 
 Ridge Regression is also a regularization technique, with however possess a different penalty term, that
 prevents it to perform variable selection in most cases.
-
 
 <b>Definition (Ridge Regression estimate):</b>
 $$
@@ -134,7 +132,7 @@ $$
 \hat{\beta}_{lambda} = \text{argmin}_{\beta} J(\beta) \text{ subject to } \sum_{j=1}^{m} \beta_{j}^{2} \leq s_{\lambda}
 $$
 
-### Geometric intuition (p = 2)
+### 3.3. Geometric intuition (p = 2)
 
 The optimization problems defined for both the LASSO and the Ridge Regression shrinkages yield an geometric explanation of those two shrinkage methods:
 
@@ -144,7 +142,7 @@ where the blue areas are the constraint region and the red lines the contours of
 
 Both LASSO and Ridge Regression estimates are defined by the intersecion ot the RSS lines and the constraint region. It is why variable selection is induced by the LASSO as the sharp corners of the constraint area are more likely to intersect the RSS lines. When $p > 2$, the variable selection holds due to the constraint polytope sharp corners.
 
-### Extensions to Elastic Nets
+### 3.4. Extensions to Elastic Nets
 
 The LASSO penalty is somewhat indifferent to the choice among a set of strong but correlated variables. The ridge penalty, on the other hand, tends to shrink the coefficients of correlated variables toward each other.
 
@@ -162,14 +160,11 @@ Comparing to LASSO and Ridge Regression, an instance of elastic net yields the f
 
 <i>Note:</i> LASSO tends to select noisy predictors with a high probability, leading to an inconsistent variable selection.
 
-## Locally weighted Linear Regression
+## 4. Locally weighted Linear Regression
 
 <b>TL; DR:</b> The idea is to weight every training sample sample error according to their distance to the point $x$ we wish to predict. Precisely:
 
-$$
-\sum_{i}w^{(i)}(y^{(i)}-\beta^{T}x^{(i)})
-
-$$
+$$ \sum_{i}w^{(i)}(y^{(i)}-\beta^{T}x^{(i)}) $$
 
 <b>Weights choice (Gaussian kernel)</b>
 $$
@@ -183,7 +178,7 @@ Algorithms described above are <b>parametric</b> (have fixed, finite number of p
 
 For locally weighted linear regression, we need to keep the entire training set around. The term “non-parametric” (roughly) refers to the fact that the amount of stuff we need to keep in order to represent the hypothesis h grows linearly with the size of the training set.
 
-## Good practices
+## 5. Good practices
 
 1. Make a significance test ($t$-test)
 $$
