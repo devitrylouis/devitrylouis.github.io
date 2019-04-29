@@ -5,20 +5,20 @@ permalink: /posts/2018/11/ml-linear-regression/
 tags:
   - Machine Learning
 ---
-<b>TL; DR:</b> Create a parametrized model whose output is a linear combination of its outputs, i.e.:
+
+In layman terms, a Linear Regression consists in predicting the output of a continuous dependent variable (Y) when there are any changes in the values of independent variables (X). More formally, it consists of creating a parametrized model whose output (Y) is a linear combination of its inputs (X), i.e.:
 
 $$
 h(x) = \sum_{i=0}^{n} \beta_{i}x_{i} = \beta^{t} x
 $$
 
-where $\theta$ are the parameters, also called weights.
-
-<i>Note:</i> In the above formula, we begin at $i = 0$ to incorporate the intercept (constant term).
-
-<b>Definition (Loss function):</b> The Linear regression loss function is:
+where $\theta$ are the parameters, also called weights. It should be noted that in the above formula, the sum begins at $i = 0$ to incorporate the intercept (constant term). As for the parameters, they are learned to minimize the Ordinary Least Square loss function:
 
 $$
-J(\beta) = \frac{1}{2} \sum_{i=1}^{n} (y_{i} - \beta^{t} x_{i})^{2}
+\begin{align}
+J(\beta) &= \frac{1}{2} \sum_{i=1}^{n} (y_{i} - \beta_{i} x_{i})^{2}\\
+& = \frac{1}{2} (y-\beta^{T}x)^{T}(y-\beta^{T}x)\\
+\end{align}
 $$
 
 <b>Goal:</b> Find good $\beta$
@@ -207,5 +207,6 @@ $$
 $$CovRatio > 1+\frac{3(m-1)}{n} \text{ or } CovRatio < 1-\frac{3(m-1)}{n}$$
 
 https://math.stackexchange.com/questions/2624986/the-meaning-behind-xtx-1
+https://www.quora.com/How-would-linear-regression-be-described-and-explained-in-laymans-terms
 
 ------
