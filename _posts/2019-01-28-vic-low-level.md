@@ -6,23 +6,46 @@ tags:
   - Visual computing
 ---
 
-These notes provide a Mathematical framework for the model of images. Specifically, we will review the use of some operators (convolutions, correlation and cross-correlation) in signal processing.
+The problem of image analysis and understanding has gained high prominence over the last decade, and has emerged at forefront of signal and image processing research (read more [here](https://www.sciencedirect.com/topics/engineering/image-understanding)). In consequence, my first post on computer vision will deal with the basics of image understand.
 
-Then, we will define two approaches for expressing our image into a desirable signal:
-- <u>Spatial basis</u> which is suited for pixel like input and is built upon the Dirac Delta delta function.
-- <u>Frequency basis</u> brought by the 2D Fourier transform, this basis has several advantages (frequency instead of space).
+These notes aim to provide a Mathematical framework for the model of images. Specifically, they review the use of basic operators such as convolutions, correlation and cross-correlation in signal processing.
+
+Then, we will define two approaches for expressing an image into a desirable signal:
+
+- <u>Spatial basis</u> is suited for pixel like input and is built upon the Dirac Delta delta function.
+- <u>Frequency basis</u> is based on the 2D Fourier transform.
 
 This framework is motivated by the fact that images are finite and with compact support, so they behave well mathematically and most properties hold for them.
 
-## Mathematical reminder - the 1D case
+1. [Mathematical reminder - the 1D case](#reminder)
+
+    * [Convolution, correlation, autocorrelation](#terminology)
+
+    * [Fourier transform and the convolution theorem](#convolution)
+
+    * [A frequency basis](#frequency_basis)
+
+    * [From continuous to discrete](#discrete)
+
+2. [Fourier transform of an image](#fourier_transform)
+
+    * [Spatial basis: Dirac delta](#dirac)
+
+    * [2D Fourier transforms](#2D_fourier)
+
+    * [Frequency basis](#frequency_basis_2)
+
+3. [Sources](#sources)
+
+## 1. Mathematical reminder - the 1D case
 
 In this section, we will review some mathematical concepts (convolution-like operations, $L_{2}$ space) and we will see why we can restrict ourselves to a discrete context.
 
-### Convolution, correlation, autocorrelation
+### 1.1. Convolution, correlation, autocorrelation
 
 Three common problems in signal processing are important enough to motivate this reminder:
 
-<b>1. For an input signal $f$, what is the output of a filter with impulse response $g(t)$? </b>
+<b>1.1.1. For an input signal $f$, what is the output of a filter with impulse response $g(t)$? </b>
 
 The answer is given by the convolution $f(t) * g(t)$. Mathematically, the <u>convolution</u> is an <u>operation</u> on two functions $f$ and $g$ which produce a third function $f * g$ that <u>expresses how the shape of one is modified by the other</u>.
 
@@ -30,7 +53,7 @@ $$
 (f * g)(x) = \int_{-\infty}^{\infty} f(u)g(x-u)du
 $$
 
-<b>2. Given a noisy signal $f(t)$, is the signal $g(t)$ somehow present in $f(t)$? </b>
+<b>1.1.2. Given a noisy signal $f(t)$, is the signal $g(t)$ somehow present in $f(t)$? </b>
 
 In other words, is $f(t)$ of the form $g(t)+n(t)$, with $n(t)$ is noise? The answer can be found by the <u>correlation</u> of $f(t)$ and $g(t)$. If the <u>correlation is large</u>, then we may be confident in saying that <u>the answer is yes</u>.
 
@@ -38,7 +61,7 @@ $$
 (f\otimes g)(x) = \int_{-\infty}^{\infty} f(u)g(x+u)du
 $$
 
-<b>3. Is there any periodicity / repeating patterns in a noisy signal $f(t)$?</b>
+<b>1.1.3. Is there any periodicity / repeating patterns in a noisy signal $f(t)$?</b>
 
 <u>Autocorrelation</u>, also known as serial correlation, is the <u>correlation of a signal</u> with a <u>delayed copy of itself</u> as a <u>function of the delay</u>. Informally, it is the similarity between observations as a function of the time lag $x$ between them. The analysis of autocorrelation is a mathematical tool for <u>finding repeating patterns</u>, such as the <u>presence of a periodic signal obscured by noise</u>.
 
@@ -68,13 +91,13 @@ $$
 \langle f ,\ g\rangle = \int_{-\infty}^{-\infty} f(x)g(x)dx
 $$
 
-### Fourier transform and the convolution theorem
+### 1.2. Fourier transform and the convolution theorem
 
-The [Fourier transform](https://en.wikipedia.org/wiki/Fourier_transform) is very popular when it comes to dealing with signal because it provides a "bridge" <u>between time</u> and <u>frequency domain</u>.
+The [Fourier transform](https://en.wikipedia.org/wiki/Fourier_transform) is very popular tool when dealing with signal as it provides a "bridge" <u>between time</u> and <u>frequency domain</u>.
 
 ![Image](/images/time_freq.png)
 
-It is furthermore empowered by the <b>convolution theorem</b>, which states that this "bridge" <b>preserves the convolution operation</b>:
+This connection  is furthermore empowered by the <b>convolution theorem</b>, which states that this "bridge" <b>preserves the convolution operation</b>:
 
 $$\mathcal{F}(f*g)(\omega) = \hat{f}(\omega)\hat{g}(\omega), \text{ for } f, g \in L_{2}(\mathbb{R}) $$
 
@@ -84,7 +107,7 @@ $$
 \mathcal{F}(f)(\omega) = \hat{f}(\omega) = \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx \text{ , with }e^{ix} = cos(x) + i\cdot sin(x)
 $$
 
-### A frequency basis
+### 1.3. A frequency basis
 
 Notice that the <b>eigenvectors</b> of the <b>convolution operator</b> are the functions $e_{\omega}:x\mapsto e^{i\omega x}$ since:
 
@@ -121,7 +144,7 @@ $$
 f = \sum_{n=0}^{N}\hat{f}(k)e_{k}(n), \ \text{with } e_{k}(n) = e^{\frac{2\pi i}{N}kn}
 $$
 
-### From continuous to discrete
+### 1.4. From continuous to discrete
 
 As <u>computers</u> are fundamentally <u>limited to discrete representation</u>, we <u>sample</u> real life <u>continuous signals</u> with a certain time period $T$ (the frequency is $1/T$):
 
@@ -137,7 +160,7 @@ This discrete representation is actually rather convenient, because <b>images ar
 
 Without loss of generality, we consider $T=1$ to lighten the equations.
 
-## Fourier transform of an image
+## 2. Fourier transform of an image
 
 The Fourier Transform is an <b>important image processing tool</b> which is used to <u>decompose an image into its sine and cosine components</u>.
 
@@ -147,7 +170,7 @@ The <u>output</u> of the transformation represents the <u>image in the frequency
 
 The Fourier Transform is used in a wide range of applications, such as <b>image analysis</b>, <b>image filtering</b>, <b>image reconstruction</b> and <b>image compression</b>.
 
-### Spatial basis: Dirac delta
+### 2.1. Spatial basis: Dirac delta
 
 In vision computing, <u>Dirac delta</u> helps <u>measure</u> the device's response to <u>as simple an input as possible</u> (i.e. a pixel):
 
@@ -163,7 +186,6 @@ $$
 $$
 
 Although it can be rigorously defined as a measure (thereby satisfying $\sum_{-\infty}^{\infty}\delta(x)dx=1$), no such function exists. It is nonetheless very useful for approximating functions whose graphical representation is in the shape of a narrow spear:
-
 
 ![Dirac distribution](https://upload.wikimedia.org/wikipedia/commons/b/b4/Dirac_function_approximation.gif)
 
@@ -181,7 +203,7 @@ $$f\approx \sum_{x}f(x)\delta_{x}$$
 
 (NOT CLEAR YET FOR THE BASIS - SEE TRANSLATION ALSO)
 
-### 2D Fourier transforms
+### 2.2. 2D Fourier transforms
 
 The <u>2D Fourier transform</u> is very similar than in the 1D case, excepts there are now two distinct axes on which the integral / sum operate. We define the FT pairs $(F, f)$ as:
 
@@ -190,6 +212,7 @@ F(u, v) = \sum_{x = -\infty}^{\infty}\sum_{y = -\infty}^{\infty} f(x, y) e^{-2\p
 $$
 
 and
+
 $$
 f(x, y) = \sum_{u = -\infty}^{\infty}\sum_{v = -\infty}^{\infty} F(u, v) e^{2\pi i(ux+vy)}
 $$
@@ -202,7 +225,7 @@ with:
 - <u>Magnitude spectrum:</u> $\mid F(u,v)\mid$ tells you how strong are the harmonics in an image
 - <u>Phase angle spectrum: </u> $arctan(\frac{F_{I}}{F_{R}})$ phase spectrum tells where this harmonic lies in space.
 
-### Frequency basis
+### 2.3. Frequency basis
 
 Just like in the 1D discrete case, we can construct a true frequency basis, composed of "sinusoidal waves" (each with fixed $u, v$):
 
@@ -218,7 +241,7 @@ $$
 
 ![Image](/images/fourier_2D_basis.png)
 
-## Sources
+## 3. Sources
 
 - [Lecture notes of Maria Vakalopoulou](http://cvn.centralesupelec.fr/~mariavak/) who is doing fantastic research in computer vision at the CVN.
 - [Difference convolution correlation](https://dsp.stackexchange.com/questions/27451/the-difference-between-convolution-and-cross-correlation-from-a-signal-analysis)
