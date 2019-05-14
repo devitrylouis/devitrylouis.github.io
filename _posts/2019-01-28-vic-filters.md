@@ -89,7 +89,7 @@ where $\sigma$ is the variance of the Gaussian and determines extent of smoothin
 
 In the plot below, we can witness the effects of these filters on the image and their corresponding frequencies.
 
-<div style="text-align:center"> <img src="/images/vic_gaussian_vs_linear.png" alt="drawing" width="250" class="center"/> </div>
+<div style="text-align:center"> <img src="/images/vic_gaussian_vs_linear.png" alt="drawing" width="500" class="center"/> </div>
 
 ### 1.2. Filtering and edge detection <a name="edge"></a>
 
