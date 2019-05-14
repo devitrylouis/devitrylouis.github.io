@@ -75,13 +75,7 @@ Among kernels designed for smoothing, the most basics one are the linear and the
 
 <b>Average filter:</b> This filter gives equal importance to the neighbors of a particular point:
 
-$$
-\frac{1}{9} \left( \begin{array}{ccc}
-1 & 1 & 1 \\
-1 & 1 & 1 \\
-1 & 1 & 1
-\end{array} \right)
-$$
+$$ \frac{1}{9} \left( \begin{array}{ccc} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{array} \right) $$
 
 so?
 
