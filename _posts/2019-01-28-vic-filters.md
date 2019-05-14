@@ -75,21 +75,21 @@ Among kernels designed for smoothing, the most basics one are the linear and the
 
 <b>Average filter:</b> This filter gives equal importance to the neighbors of a particular point:
 
-$$\frac{1}{9}
+$$ \frac{1}{9}
 \begin{pmatrix}
 1 & 1 & 1\\
 1 & 1 & 1\\
 1 & 1 & 1
-\end{pmatrix}$$
+\end{pmatrix} $$
 
 <b>Gaussian filter:</b> This filter removes high-frequency components from the image by assigning larger weights to closer pixel neighbors:
 
-$$\frac{1}{16}
+$$ \frac{1}{16}
 \begin{pmatrix}
 1 & 2 & 1\\
 2 & 4 & 2\\
 1 & 2 & 1
-\end{pmatrix}$$
+\end{pmatrix} $$
 
 More precisely, the elements of the Gaussian kernel $H_{\sigma}$ are given by:
 
@@ -121,13 +121,11 @@ The <u>Sobel fitler</u> is a popular technique in computer vision which is heavi
 
 At each point in the image, the result of the Sobel–Feldman operator is either the corresponding gradient vector or the norm of this vector.
 
-$$
-S_{1} = \begin{pmatrix}
+$$ S_{1} = \begin{pmatrix}
 -1 & -2 & -1\\
 0 & 0 & 0\\
 1 & 2 & 1
-\end{pmatrix}
-$$
+\end{pmatrix} $$
 
 The gradient approximation that it produces is relatively crude, in particular for high-frequency variations in the image. Then the magnitude and the direction are given by:
 
