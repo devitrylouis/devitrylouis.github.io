@@ -79,8 +79,6 @@ Among kernels designed for smoothing, the most basics one are the linear and the
 
 <b>Gaussian filter:</b> This filter removes high-frequency components from the image by assigning larger weights to closer pixel neighbors:
 
-nice
-
 <div style="text-align:center"> <img src="/images/gaussian_filter.png" alt="drawing" width="100" class="center"/></div>
 
 More precisely, the elements of the Gaussian kernel $H_{\sigma}$ are given by:
@@ -91,7 +89,7 @@ where $\sigma$ is the variance of the Gaussian and determines extent of smoothin
 
 In the plot below, we can witness the effects of these filters on the image and their corresponding frequencies.
 
-![Gaussian vs linear](/images/vic_gaussian_vs_linear.png)
+<div style="text-align:center">  ![Gaussian vs linear](/images/vic_gaussian_vs_linear.png) </div>
 
 ### 1.2. Filtering and edge detection <a name="edge"></a>
 
