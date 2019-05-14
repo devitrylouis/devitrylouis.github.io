@@ -75,11 +75,11 @@ Among kernels designed for smoothing, the most basics one are the linear and the
 
 <b>Average filter:</b> This filter gives equal importance to the neighbors of a particular point:
 
-<img src="/images/average_filter.png" alt="drawing" width="50"/>
+<img src="/images/average_filter.png" alt="drawing" width="100" class="center"/>
 
 <b>Gaussian filter:</b> This filter removes high-frequency components from the image by assigning larger weights to closer pixel neighbors:
 
-<img src="/images/gaussian_filter.png" alt="drawing" width="50"/>
+<img src="/images/gaussian_filter.png" alt="drawing" width="100" class="center"/>
 
 More precisely, the elements of the Gaussian kernel $H_{\sigma}$ are given by:
 
