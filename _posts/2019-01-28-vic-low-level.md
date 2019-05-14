@@ -37,11 +37,11 @@ This framework is motivated by the fact that images are finite and with compact 
 
 3. [Sources](#sources)
 
-## 1. Mathematical reminder - the 1D case
+## 1. Mathematical reminder - the 1D case <a name="reminder"></a>
 
 In this section, we will review some mathematical concepts (convolution-like operations, $L_{2}$ space) and we will see why we can restrict ourselves to a discrete context.
 
-### 1.1. Convolution, correlation, autocorrelation
+### 1.1. Convolution, correlation, autocorrelation <a name="terminology"></a>
 
 Three common problems in signal processing are important enough to motivate this reminder:
 
@@ -91,7 +91,7 @@ $$
 \langle f ,\ g\rangle = \int_{-\infty}^{-\infty} f(x)g(x)dx
 $$
 
-### 1.2. Fourier transform and the convolution theorem
+### 1.2. Fourier transform and the convolution theorem <a name="convolution"></a>
 
 The [Fourier transform](https://en.wikipedia.org/wiki/Fourier_transform) is very popular tool when dealing with signal as it provides a "bridge" <u>between time</u> and <u>frequency domain</u>.
 
@@ -107,7 +107,7 @@ $$
 \mathcal{F}(f)(\omega) = \hat{f}(\omega) = \int_{-\infty}^{\infty}f(x)e^{-i\omega x}dx \text{ , with }e^{ix} = cos(x) + i\cdot sin(x)
 $$
 
-### 1.3. A frequency basis
+### 1.3. A frequency basis <a name="frequency_basis"></a>
 
 Notice that the <b>eigenvectors</b> of the <b>convolution operator</b> are the functions $e_{\omega}:x\mapsto e^{i\omega x}$ since:
 
@@ -144,7 +144,7 @@ $$
 f = \sum_{n=0}^{N}\hat{f}(k)e_{k}(n), \ \text{with } e_{k}(n) = e^{\frac{2\pi i}{N}kn}
 $$
 
-### 1.4. From continuous to discrete
+### 1.4. From continuous to discrete <a name="discrete"></a>
 
 As <u>computers</u> are fundamentally <u>limited to discrete representation</u>, we <u>sample</u> real life <u>continuous signals</u> with a certain time period $T$ (the frequency is $1/T$):
 
@@ -160,7 +160,7 @@ This discrete representation is actually rather convenient, because <b>images ar
 
 Without loss of generality, we consider $T=1$ to lighten the equations.
 
-## 2. Fourier transform of an image
+## 2. Fourier transform of an image <a name="fourier_transform"></a>
 
 The Fourier Transform is an <b>important image processing tool</b> which is used to <u>decompose an image into its sine and cosine components</u>.
 
@@ -170,7 +170,7 @@ The <u>output</u> of the transformation represents the <u>image in the frequency
 
 The Fourier Transform is used in a wide range of applications, such as <b>image analysis</b>, <b>image filtering</b>, <b>image reconstruction</b> and <b>image compression</b>.
 
-### 2.1. Spatial basis: Dirac delta
+### 2.1. Spatial basis: Dirac delta <a name="dirac"></a>
 
 In vision computing, <u>Dirac delta</u> helps <u>measure</u> the device's response to <u>as simple an input as possible</u> (i.e. a pixel):
 
@@ -203,7 +203,7 @@ $$f\approx \sum_{x}f(x)\delta_{x}$$
 
 (NOT CLEAR YET FOR THE BASIS - SEE TRANSLATION ALSO)
 
-### 2.2. 2D Fourier transforms
+### 2.2. 2D Fourier transforms <a name="2D_fourier"></a>
 
 The <u>2D Fourier transform</u> is very similar than in the 1D case, excepts there are now two distinct axes on which the integral / sum operate. We define the FT pairs $(F, f)$ as:
 
@@ -225,7 +225,7 @@ with:
 - <u>Magnitude spectrum:</u> $\mid F(u,v)\mid$ tells you how strong are the harmonics in an image
 - <u>Phase angle spectrum: </u> $arctan(\frac{F_{I}}{F_{R}})$ phase spectrum tells where this harmonic lies in space.
 
-### 2.3. Frequency basis
+### 2.3. Frequency basis <a name="frequency_basis_2"></a>
 
 Just like in the 1D discrete case, we can construct a true frequency basis, composed of "sinusoidal waves" (each with fixed $u, v$):
 
@@ -241,7 +241,7 @@ $$
 
 ![Image](/images/fourier_2D_basis.png)
 
-## 3. Sources
+## 3. Sources <a name="sources"></a>
 
 - [Lecture notes of Maria Vakalopoulou](http://cvn.centralesupelec.fr/~mariavak/) who is doing fantastic research in computer vision at the CVN.
 - [Difference convolution correlation](https://dsp.stackexchange.com/questions/27451/the-difference-between-convolution-and-cross-correlation-from-a-signal-analysis)

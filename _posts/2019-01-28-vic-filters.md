@@ -9,6 +9,7 @@ tags:
 Given a camera and a still scene, how would you proceed to reduce noise in an image? Well, taking lots of pictures and averaging them should do the trick! But most of the time in computer vision, we don't have access to several images but one. And because the image formation process that produced a particular image largely depends on several factors (lighting conditions, scene geometry, surface properties, camera optics) perturbations arise in the image and need to be adressed.
 
 More generally, we use filters in computer vision to handle key tasks such as:
+
 - Enhance an image (denoise, resize.)
 - Extract information (texture, edges.)
 - Detect patterns (template matching.)
@@ -23,7 +24,34 @@ In this blogpost, we will cover the three categories below:
 | Gaussian | Bilateral | Binary closing |
 |  | Non-local mean | Region Filling |
 
-## Linear Filtering
+More specifically, here is the outline of this review:
+
+1. [Linear Filtering](#linear)
+
+    * [Smoothing](#smoothing)
+
+    * [Filtering and edge detection](#edge)
+
+        - [Sobel filter](#sobel)
+        - [Laplacian Filter](#laplacian)
+
+    * [Practical implementation](#practical)
+
+        - [Spatial and frequency domain](#spatial)
+        - [Separability](#separability)
+
+2. [Non-Linear Filtering](#non_linear)
+
+    * [Median filtering](#median)
+    * [Bilateral filtering](#bilateral)
+    * [Equations](#equations)
+    * [Non-local mean](#non_local_mean)
+
+3. [Morphological filtering](#morphological)
+
+4. [Sources](#sources)
+
+## 1. Linear Filtering <a name="linear"></a>
 
 For a given image $F$, obtaining its linearly filtered image $G$ actually boils down to plain and simple convolution with a kernel $H$:
 
@@ -41,7 +69,7 @@ There are [several types of kernel](https://en.wikipedia.org/wiki/Kernel_(image_
 
 <i>Note:</i> For a fixed type of kernel, one can adjust its size.
 
-### Smoothing
+### 1.1. Smoothing <a name="smoothing"></a>
 
 Among kernels designed for smoothing, the most basics one are the linear and the gaussian filter, defined below.
 
@@ -64,7 +92,8 @@ $$\frac{1}{16}
 \end{pmatrix}$$
 
 More precisely, the elements of the Gaussian kernel $H_{\sigma}$ are given by:
-$$h_{\sigma}(u, v) = \frac{1}{2\pi \sigma^{2}} e^{-\frac{u^{2} + v^{2}}{\sigma^{2}}}$$
+
+$$ h_{\sigma}(u, v) = \frac{1}{2\pi \sigma^{2}} e^{-\frac{u^{2} + v^{2}}{\sigma^{2}}} $$
 
 where $\sigma$ is the variance of the Gaussian and determines extent of smoothing and the amount of smoothing is proportional to the mask size: the higher the variance, the more blurred is the image.
 
@@ -72,7 +101,7 @@ In the plot below, we can witness the effects of these filters on the image and 
 
 ![Gaussian vs linear](/images/vic_gaussian_vs_linear.png)
 
-### Filtering and edge detection
+### 1.2. Filtering and edge detection <a name="edge"></a>
 
 High pass filters are the basis for most sharpening and edge detection methods. The end result is an image for which the contrast is enhanced between adjoining areas with little variation in brightness or darkness. To measure those variations, we use image "derivatives":
 
@@ -86,7 +115,7 @@ which work as depicted in the diagram below:
 
 When it comes to find edges, the derivatives can actually be modelled by specific kernels, therefore being linear filters. The most popular kernels are the <u>Sobel kernel</u> and the <u>Laplacian kernel</u>.
 
-#### Sobel filter
+#### 1.2.1. Sobel filter <a name="sobel"></a>
 
 The <u>Sobel fitler</u> is a popular technique in computer vision which is heavily used within edge detection algorithms, where <u>it creates an image emphasising edges</u>.
 
@@ -108,7 +137,7 @@ The gradient approximation that it produces is relatively crude, in particular f
 
 ![Sobel](/images/vic_sobel.png)
 
-#### Laplacian Filter
+#### 1.2.2. Laplacian Filter <a name="laplacian"></a>
 
 The Laplacian of an image highlights regions of rapid intensity change and is therefore often used for edge detection (see [zero crossing edge detectors](https://homepages.inf.ed.ac.uk/rbf/HIPR2/zeros.htm)). However, the raw image is often noisy and this is problematic for the sensitive second derivatives. To solve this issue, the Laplacian is often computed on top of the Gaussian blurred image.
 
@@ -132,9 +161,9 @@ $$
 
 ![Laplacian](/images/vic_laplacian.png)
 
-### Practical implementation
+### 1.3. Practical implementation <a name="practical"></a>
 
-#### Spatial and frequency domain
+#### 1.3.1. Spatial and frequency domain <a name="spatial"></a>
 
 They have the advantage can be applied to both spatial and frequency domain:
 
@@ -142,7 +171,7 @@ They have the advantage can be applied to both spatial and frequency domain:
 |:--------------:|:-------------------------------------------------------:|
 | $G = H * F$ | $G = \mathcal{F}^{—1}(\mathcal{F}(H) * \mathcal{F}(F))$ |
 
-####  Separability
+#### 1.3.2. Separability <a name="separability"></a>
 
 The process of performing a convolution requires $K^{2}$ operations per pixel, where $K$ is the size (width or height) of the convolution kernel. In many cases, this operation can be significantly speed up by first performing a $1D$ horizontal convolution followed by a $1D$ vertical convolution, requiring $2K$ operations. If this is possible, then the <u>convolution kernel is called separable</u>. And it is the outer product of two kernels
 
@@ -150,9 +179,9 @@ $$K = v\cdot h^{T}$$
 
 <b>Theorem:</b> If $H$ has a unique non-zero eigenvalue, then its corresponding kernel is separable.
 
-## Non-Linear Filtering
+## 2. Non-Linear Filtering <a name="non_linear"></a>
 
-### Median filtering
+### 2.1. Median filtering <a name="median"></a>
 
 A <u>median filter</u> operates over a window by selecting the median intensity in the window.
 
@@ -161,11 +190,11 @@ fraction that are the smallest and the largest.
 
 <i>Implementation note:</i> Both versions gets slower with large windows.
 
-### Bilateral filtering
+### 2.2. Bilateral filtering <a name="bilateral"></a>
 
 While Gaussian smoothing is good when it comes to remove details, it also remove edges. To tackle this issue, we use bilateral filtering which only average with similar intensity values.
 
-### Equations
+### 2.3. Equations <a name="equations"></a>
 
 - Gaussian smoothing:
 $$
@@ -183,7 +212,7 @@ where the middlemost term takes time to compute:
 
 Bilateral filter for denoising: BF suppresses high frequency low contrast texture but preserve edges
 
-### Non-local mean
+### 2.4. Non-local mean <a name="non_local_mean"></a>
 
 Images textures are self repetitive
 Filters using pixems that have a similar intensity value and which neighbors also have a similar value: can be seen as an extension of the Bilateral Filter:
@@ -194,10 +223,15 @@ $$
 
 Basis for state of the art denoising
 
-## Sources
+## 3. Morphological filtering <a name="morphological"></a>
+
+To be written soon; stay tuned!
+
+## 4. Sources <a name="frequency_basis_2"></a>
 
 - [Sobel operator](https://en.wikipedia.org/wiki/Sobel_operator)
 - [Lecture notes of Raquel Urtasun](https://www.cs.toronto.edu/~urtasun/courses/CV/lecture02.pdf)
 - [What does the kernel size mean?](https://stats.stackexchange.com/questions/296679/what-does-kernel-size-mean)
 - [Laplacian](https://homepages.inf.ed.ac.uk/rbf/HIPR2/log.htm)
+
 ------
