@@ -10,8 +10,6 @@ redirect_from:
 
 My research interests lie in the Mathematical foundations that accounts for the booming success of Deep Learning techniques, and most generally AI. I am about to finish my master and my aim is to pursue research endeavors in Computer Vision, NLP, Network science and Reinforcement Learning.
 
-<b>Internship opportunity:</b> To get my master, I need to do a 6 months internship. I would very much like to spend this time doing solid AI research within a team of talented individuals. Shoot me an email!
-
 In this blog, you will find some publications and blogposts I wrote for myself and others. Most of these posts are inspired from my AI master and personal research. Altogether, it is a summary of personal projects, research, lecture notes and online content.
 
 Some of them are very much of a work in progress (marked with *). They are updated on a daily basis, so stay tuned 📣
