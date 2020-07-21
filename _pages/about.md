@@ -64,9 +64,10 @@ Who I am?
 I have been learning AI hands on for more than four years now. If I am to rewind this journey, the highlight would be:
 
 - :switzerland: **Mathematics at EPFL (DATE):** During this years, the academic emphasis was put on broad science (Maths, Physics, Computer science, chemistry, social sciences...) and advanced mathematics (Analysis, Algebra, Geometry, Probabilies, Statistics Topology). I mostly worked on of a pluri-disciplinal approach on science  forge strong Mathematics background from EPFL. 
+
 - :sweden: **Statistics at KTH (DATE):**  During this Erasmus, I choosed all courses attached to statistics and what I heard was learning. I followed introductory courses to Statistical Learning and Data Science.
 
-- :france: **Gap year:** After my Bachelor, I chose to have a gap year to put my learnings into practice and get familiar with the business environment. I learnt to build sound Machine Learning pipelines, from raw data to performant and scalable models. However, when it came to develop and implement state of the art methods in various domains, my theoretical background was lacking. I thus decided to go back to school to learn advance AI at Centrale Paris (graduation in 2019). 
+- :fr: **Gap year:** After my Bachelor, I chose to have a gap year to put my learnings into practice and get familiar with the business environment. I learnt to build sound Machine Learning pipelines, from raw data to performant and scalable models. However, when it came to develop and implement state of the art methods in various domains, my theoretical background was lacking. I thus decided to go back to school to learn advance AI at Centrale Paris (graduation in 2019). 
 
 - :france: **Centrale Paris (DATE):** I compiled notes from courses / projects / research. Except some posts, most of it were in a work in progress situation. - TheraPanacea: After a 6 months internship and joined as a permanent member TheraPanacea. I devoted most of my Math / CS learning journey there: industry research and development, production environment, 
 - As of July 2020, I decided to go back to this website and share it. After some thorough cleaning of past posts, I will add new ones more specific to what I learn since my Master.
