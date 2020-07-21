@@ -12,7 +12,10 @@ My research interests lie in the Mathematical foundations that accounts for the 
 
 In this blog, you will find some publications and blogposts I wrote for myself and others. Most of these posts are inspired from my AI master and personal research. Altogether, it is a summary of personal projects, research, lecture notes and online content.
 
-Some of them are very much of a work in progress (marked with *). They are updated on a daily basis, so stay tuned 📣
+Current status of this blog: 
+- I spent most of my master working on it to compile notes from courses / projects / research. Some of them are very much of a work in progress (marked with *). They are updated on a daily basis, so stay tuned 📣 
+- In the following year, I did a 6 months internship and joined as a permanent member TheraPanacea. I devoted most of my Math / CS learning journey there: industry research and development, production environment, 
+- As of July 2020, I decided to go back to this website and share it. After some thorough cleaning of past posts, I will add new ones more specific to what I learn since my Master.
 
 | Vision | Natural Language Processing | Networks science |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
@@ -63,10 +66,10 @@ Hire me for your research project!
 ------
 If you are doing great work on a project needing Artificial Intelligence to move forward, shoot me an e-mail. I would gladly discuss it with you. From startups to pure research, I am interested in a wide range of opportunities.
 
-My story
+Who I am?
 ------
 I have been learning AI hands on for more than two years. I began my journey with a strong Mathematics background to from EPFL. At KTH in Sweden, I followed introductory courses to Statistical Learning and Data Science.
 
-After my Bachelor, I chose to have a gap year to put my learnings into practice and get familiar with the business environment. I learnt to build sound Macine Learning pipelines, from raw data to performant and scalable models.
+After my Bachelor, I chose to have a gap year to put my learnings into practice and get familiar with the business environment. I learnt to build sound Machine Learning pipelines, from raw data to performant and scalable models.
 
 However, when it came to develop and implement state of the art methods in various domains, my theoretical background was lacking. I thus decided to go back to school to learn advance AI at Centrale Paris (graduation in 2019). I am furthermore very interested in entrepreneurship.
