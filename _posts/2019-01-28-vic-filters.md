@@ -6,17 +6,17 @@ tags:
   - Visual computing
 ---
 
-This post deals with the basics of a family of methods extremely useful in computer vision: filtering. 
+This post deals with the basics of Filtering (see a family of methods) which is extremely useful in computer vision. 
 
 > **Intuition:** Given a camera and a still scene, how would you proceed to reduce noise in the image you just captured? Well, taking lots of pictures and averaging them should do the trick! But most of the time in computer vision, we don't have access to several images but one. And because the image formation process that produced a particular image largely depends on several factors (lighting conditions, scene geometry, surface properties, camera optics) perturbations arise in the image and need to be adressed.
 
-To this end and more broadly, we use filters in computer vision to handle key tasks such as:
+To this end and more broadly, filters are used in computer vision to handle key tasks such as:
 
-- Image enhancement: Common examples include denoising, resizing.
-- Information Extraction: Particular textures, edges and blobs can be retreived with filters.
-- Pattern detection:  (template matching)
+- **Image enhancement:** Common examples include denoising, resizing.
+- **Information Extraction:** Particular textures, edges and blobs can be retreived with filters.
+- **Pattern detection:**  (template matching)
 
-Although the <b>key principle of filters</b> is to <u>modify the pixels</u> in an image based on <u>some function of a local neighborhood</u> of each pixel, their structural properties vary stronly.
+Although the **key principle of filters** is to <u>modify the pixels</u> in an image based on <u>some function of a local neighborhood</u> of each pixel, their structural properties vary stronly.
 
 In this blogpost, we will cover the three categories below:
 
