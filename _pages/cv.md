@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "About me"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,56 +9,15 @@ redirect_from:
 
 {% include base_path %}
 
-Education
+Who I am?
 ======
-* <b>MSc in Artificial Intelligence</b>
-  * Centrale Paris
-  * October 2018 / June 2019
-  * <i>Relevant coursework:</i> Machine Learning, Optimization, Artificial Intelligence, Deep Learning (part of ENS MVA), Natural Language Processing, Visual Computing, Reinforcement Learning, Network Science Analytics and Statistics.
 
-* <b>Bachelor exchange program</b>
-  * Royal Institute of Technology
-  * September 2016 / June 2017, Stockholm
-  * <i>Relevant coursework:</i> Data science, Statistical learning, Bachelor thesis.
+- 🇨🇭🇸🇪 **Mathematics at EPFL and KTH (Bachelor):** At EPFL, I received a broad and rigorous engineering education with a strong emphasis on Mathematics. I then went to KTH for an Erasmus program at which I picked all courses relating to Statistics, Processes and Learning. At the end of the Bachelor, I have written a thesis under Henrik Hult (25% of the credit) whose aim was to use Elastic Nets to find relevant renovation to increase real estate value.
 
-* <b>BSc in Mathematics</b>
-  * Ecole Polytechnique Fédérale de Lausanne
-  * September 2013 - June 2016
-  * <i>Relevant coursework:</i> Analysis, Algebra, Probability, Optimisation, Algorithms and Programmation.
+- 🇫🇷 **Gap year (Internships):** In between my Bachelor and my Master, I choose to confront what I learnt to industry. I helped Shippeo leverage untapped GPS data to predict Estimated Time Arrivals of trucks ross Europe. As the first data member, I was lucky to work closely with clients and diverse departments of the company. I then joined Lucky Cart for a two fold mission; improve rare event prediction and build deep learning / auto ML internal packages for other data scientists. These experiences were full of insights on how data science teams operate alongside business and internally.
 
-Work experience
-======
-* Machine Learning Engineer at Lucky Cart
-  * March 2018 - Sep 2018, Paris
-  * Leveraged both artificial intelligence and retail data to strengthen promotional strategy. To this end, I build predictive models that discriminate in real time the desirable factors of a promotion, in a world where 59% of them have a negative return on investment.
+- 🇫🇷 **Centrale Paris (Master):** When it came to develop and implement state of the art methods in various domains, my theoretical background was lacking. I thus decided to go back to school and learn advanced AI at Centrale Paris. This master was dedicated to the theory and practice of both the fundamentals and state of the art. With applied and research projects on various fields (Computer Vision, NLP, Network Science, Reinforcement Learning and pre Machine Learning), I can assert it was an eye opening experience.
 
-* Data Scientist at Shippeo
-  * July 2017 - March 2018, Paris
-  * Increased the supply chain performance, by predicting trucks arrival times and delays. To do so, I handled the full data-stack, from querying the database to building deep learning models with 98% accuracy. In the « just in time » setting of the supply chain, this research brought sizeable profits for clients.
+- 🇫🇷 **TheraPanacea:** After a 6 months internship, I joined as a permanent member TheraPanacea. There, most of my work consists in improving Medical Image Registration / Segmentation state of the art and push the methods to production. With scientific guidance from Nikos Paragios, our team is a pioneer in the use of AI and cutting-edge research to optimize diagnostics, prognostics and therapies for cancer and other complex diseases.
 
-* Operational Research Engineer at Shippeo
-  * June 2016 - July 2016
-  * Researched on diverse optimisation strategies to mutualise capacity in road transportation. The objective was to provide cost-reducing and eco-friendly solutions to our customers, as 15% of trucks are driving empty in France.
-
-* Community Manager at Innovation Time
-  * 2015, Lausanne
-  * Handled the online presence of the student association Innovation Time, whose goal is to promote entrepreneurship among students. Our followers grew from 200 to 800 students on the main social networks.
-
-Skills
-======
-* Programming languages
-  * Python, R
-  * Tensorflow, Keras, Pythorch
-  * C++
-  * Spark
-  * SQL
-* Languages
-  * French (native language)
-  * English (fluent)
-  * Spanish (conversant)
-
-Publications
-======
-<ul>{% for post in site.publications %}
-  {% include archive-single-cv.html %}
-{% endfor %}</ul>
+Altogether, these experiences forged me. I can now work on a variety of complex projects autonomously and convey the essentials to every kind of collaborators. In addition to these key skills, I have a deep desire to make the world a better place and impact people lives for the better.
