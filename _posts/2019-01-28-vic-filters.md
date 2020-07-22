@@ -191,7 +191,7 @@ $$
 
 - Bilateral filter:
 $$
-BF[I]_{p} = \frac{1}{W_{p}}\sum_{q}G_{\sigma_{S}}(p-q) \times G_\sigma_{R}(I_{p} - I_{q})\times I_{q}
+BF[I]_{p} = \frac{1}{W_{p}}\sum_{q}G_{\sigma_{S}}(p-q) \times G_{\sigma_{R}}(I_{p} - I_{q})\times I_{q}
 $$
 
 where the middlemost term takes time to compute:
