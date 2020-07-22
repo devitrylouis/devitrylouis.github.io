@@ -206,7 +206,7 @@ Images textures are self repetitive
 Filters using pixems that have a similar intensity value and which neighbors also have a similar value: can be seen as an extension of the Bilateral Filter:
 
 $$
-NLM[I]_{p} = \frac{1}{W_{p}} \sum_{q} G_{\sigma_{R}} \big( \sum_{r}G_{\sigma_{P}}(r)(I_{p+r} - I_{q+r})^{2} /big)
+NLM[I]_{p} = \frac{1}{W_{p}} \sum_{q} G_{\sigma_{R}} \big( \sum_{r}G_{\sigma_{P}}(r)(I_{p+r} - I_{q+r})^{2} \big)
 $$
 
 Basis for state of the art denoising
