@@ -215,11 +215,11 @@ Basis for state of the art denoising
 
 ## 3. Morphological filtering <a name="morphological"></a>
 
-While effective, the aforementioned techniques have an important downside: small structures, single line, and dot are removed and small size holes are filled. The core idea of the morphological process is to use a combination of grow and shrink operations that preserves the topology of the patterns but also remove noise.
+While effective, the aforementioned techniques have an important downside: small structures, single line, and dot are removed and small size holes are filled. The core idea of the morphological process is to use a combination of grow and shrink operations that preserves the topology of the image yet remove noise at the same time. There are three key questions here:
 
-
-
-To be written soon; stay tuned!
+> 1. **What does it mean to shrink or grow?**
+> 2. **What object shrink / grow the patterns?**
+> 3. **How to combine these operations appropriately?**
 
 ## 4. Sources <a name="frequency_basis_2"></a>
 
