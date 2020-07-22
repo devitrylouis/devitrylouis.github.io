@@ -8,10 +8,11 @@ redirect_from:
   - /about.html
 ---
 
-My research interests lie in the Mathematical foundations that accounts for the booming success of Deep Learning techniques, and most generally AI. I am about to finish my master and my aim is to pursue research endeavors in Computer Vision, NLP, Network science and Reinforcement Learning.
+My research interests lie in the Mathematical foundations that accounts for the booming success of Deep Learning techniques, and most generally AI. My recent work has taken a shift towards Computer Vision and Medical Imaging: Medical Image Segmentation and Registration.
 
-In this blog, you will find some publications and blogposts I wrote for myself and others. Most of these posts are inspired from my AI master and personal research. Altogether, it is a summary of personal projects, research, lecture notes and online content.
+In this blog, you will find some posts that I began writing during my master. Although it was mostly focused aroung documenting what I learnt, I am now thinking I would like this to be more open. If you have any ideas, shoot me an e-mail.
 
+**Note:** Some links are still very much a work of progress but those annotated with an asterisk * are done.
 
 | Vision | Natural Language Processing | Networks science |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
@@ -50,6 +51,7 @@ In this blog, you will find some publications and blogposts I wrote for myself a
 | Constraint Satisfaction Problems | [Predictions](/posts/2019/01/rl-prediction/) | [Voting and social choice theory](/posts/2019/01/dm-social-choice-theory/) 🗳️ |
 | Constraint Satisfaction Problems | Control | [Synthetis criterion](/posts/2019/01/dm-synthesis-criterion/) 🆕 |
 | |  | [Outranking methods](/posts/2019/01/dm-outranking-method/) 🏆 |
+
 
 My projects in a nutshell
 ------
