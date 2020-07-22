@@ -6,13 +6,15 @@ tags:
   - Visual computing
 ---
 
-Given a camera and a still scene, how would you proceed to reduce noise in an image? Well, taking lots of pictures and averaging them should do the trick! But most of the time in computer vision, we don't have access to several images but one. And because the image formation process that produced a particular image largely depends on several factors (lighting conditions, scene geometry, surface properties, camera optics) perturbations arise in the image and need to be adressed.
+This post deals with the basics of a family of methods extremely useful in computer vision: filtering. 
 
-More generally, we use filters in computer vision to handle key tasks such as:
+> **Intuition:** Given a camera and a still scene, how would you proceed to reduce noise in the image you just captured? Well, taking lots of pictures and averaging them should do the trick! But most of the time in computer vision, we don't have access to several images but one. And because the image formation process that produced a particular image largely depends on several factors (lighting conditions, scene geometry, surface properties, camera optics) perturbations arise in the image and need to be adressed.
 
-- Enhance an image (denoise, resize.)
-- Extract information (texture, edges.)
-- Detect patterns (template matching.)
+To this end and more broadly, we use filters in computer vision to handle key tasks such as:
+
+- Image enhancement: Common examples include denoising, resizing.
+- Information Extraction: Particular textures, edges and blobs can be retreived with filters.
+- Pattern detection:  (template matching)
 
 Although the <b>key principle of filters</b> is to <u>modify the pixels</u> in an image based on <u>some function of a local neighborhood</u> of each pixel, their structural properties vary stronly.
 
@@ -213,6 +215,10 @@ Basis for state of the art denoising
 
 ## 3. Morphological filtering <a name="morphological"></a>
 
+While effective, the aforementioned techniques have an important downside: small structures, single line, and dot are removed and small size holes are filled. The core idea of the morphological process is to use a combination of grow and shrink operations that preserves the topology of the patterns but also remove noise.
+
+
+
 To be written soon; stay tuned!
 
 ## 4. Sources <a name="frequency_basis_2"></a>
@@ -221,5 +227,6 @@ To be written soon; stay tuned!
 - [Lecture notes of Raquel Urtasun](https://www.cs.toronto.edu/~urtasun/courses/CV/lecture02.pdf)
 - [What does the kernel size mean?](https://stats.stackexchange.com/questions/296679/what-does-kernel-size-mean)
 - [Laplacian](https://homepages.inf.ed.ac.uk/rbf/HIPR2/log.htm)
+- [Sources](https://towardsdatascience.com/image-processing-class-egbe443-6-morphological-filter-e952c1ec886e)
 
 ------
