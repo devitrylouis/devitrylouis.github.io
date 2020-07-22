@@ -24,7 +24,7 @@ In this blog, you will find some posts that I began writing during my master. Al
 | Segmentation & Grouping | Machine Translation and Natural Language Generation  | *[Link prediction](/posts/2019/01/link-prediction/) + [Code](https://github.com/devitrylouis/link_prediction) 🌿 |
 | Object Detection/ Recognition | Machine Reading |
 | Tracking | Dialogue |
-| * [First order scattering transform](/posts/2019/02/vic-first-order-scattering/) | Dialogue |
+| * [First order scattering transform](/posts/2019/02/vic-first-order-scattering/) | ... |
 
 | Machine Learning | Deep Learning | Tools |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|
@@ -33,15 +33,15 @@ In this blog, you will find some posts that I began writing during my master. Al
 | [Logistic Regression](/posts/2018/11/logistic-regression/) 📊 | [Basics](/posts/2018/11/basics-dl/) ✅ | [Constrained optimization](/posts/2018/11/optimization-constrained/) 📐 |
 | [Probabilistic classifiers](/posts/2018/10/ml-probabilistic-classifiers/) 🔮 | * [Auto-Encoder](/posts/Deep-Learning/autoencoder) ⏳ | [Eigenvalue decomposition](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) 💠 |
 | [LDA](/posts/2018/10/ml-lda/) 📏 | * [Word embeddings](/posts/2019/01/embeddings/) ✒️ + [code](/devitrylouis/word2vec_negative_sampling) | Anomaly detection ❗️ |
-| Dimension Reduction 🔎 | [Bag-of-Words](/posts/2019/01/bag-of-words/) ✒️ | Anomaly detection time series 🕜❗️|
+| [PCA basics](https://medium.com/@louisdevitry/intuitive-tutorial-on-eigenvalue-decomposition-in-numpy-af0062a4929b) 🔎 | [Bag-of-Words](/posts/2019/01/bag-of-words/) ✒️ | Anomaly detection time series 🕜❗️|
 | [Naïve Bayes](/posts/2019/02/ml-naive-bayes/) 🔠 | [CNN](https://github.com/devitrylouis/image_denoising) 🌄 | Feature engineering for music 🎼 |
 | * [Decision trees](/posts/2018/11/decision-trees/) 🌲 | * Useful tricks and layers ➿ | [Imaging time series](https://medium.com/analytics-vidhya/encoding-time-series-as-images-b043becbdbf3) 💈 |
 | Ensemble methods 🌲🌳 | RNN/LSTM 🕧 | [Map Reduce](/posts/2018/11/big-data-map-reduce/) ✅  |
 | Support Vector Machine ↗️ | Avanced RNNs 📘 | [Hadoop](/posts/2019/01/hadoop/) 🚈 |
 | Clustering 👫 | [GAN & VAE](https://github.com/devitrylouis/gan_vs_vae_pytorch) 🎭 | [Spark](/posts/2019/01/spark-introduction/) 🚅 + [notebook](https://github.com/devitrylouis/spark_basics)|
-| Clustering 👫 | | [Statistics - Basics](/posts/2019/01/statistics-basics/)|
-| Clustering 👫 | | [Statistics - Parameter estimation](/posts/2019/01/modeling-and-estimation/)|
-| Clustering 👫 | | [Statistics - Hypothesis testing](/posts/2019/01/hypothesis-techniques/)|
+| ... | | [Statistics - Basics](/posts/2019/01/statistics-basics/)|
+| ... | | [Statistics - Parameter estimation](/posts/2019/01/modeling-and-estimation/)|
+| ... | | [Statistics - Hypothesis testing](/posts/2019/01/hypothesis-techniques/)|
 
 
 | Artificial Intelligence | Reinforcement Learning | Decision Modelling |
@@ -49,7 +49,7 @@ In this blog, you will find some posts that I began writing during my master. Al
 | Problem solving | [Introduction](/posts/2019/01/rl-introduction/)✅ | [Utility theory](/posts/2019/01/utility-theory/) 👌 |
 | Adversial search | [Dynamic Programming](/posts/2019/01/rl-dynamic-programming/) 💻 | [MCDA](/posts/2019/01/dm-multiple-criteria/) 📑 |
 | Constraint Satisfaction Problems | [Predictions](/posts/2019/01/rl-prediction/) | [Voting and social choice theory](/posts/2019/01/dm-social-choice-theory/) 🗳️ |
-| Constraint Satisfaction Problems | Control | [Synthetis criterion](/posts/2019/01/dm-synthesis-criterion/) 🆕 |
+| ... | Control | [Synthetis criterion](/posts/2019/01/dm-synthesis-criterion/) 🆕 |
 | |  | [Outranking methods](/posts/2019/01/dm-outranking-method/) 🏆 |
 
 
