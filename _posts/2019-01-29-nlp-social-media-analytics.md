@@ -1,7 +1,7 @@
 ---
 title: 'Language modelling'
 date: 2018-12-01
-permalink: /posts/2019/01/nlp-language-modelling/
+permalink: /posts/2019/01/nlp-social-media-analytics/
 layout: default
 comments: true
 tags:
