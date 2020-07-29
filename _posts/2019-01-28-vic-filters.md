@@ -63,7 +63,7 @@ Below is an animated illustration of this principle with a sharpen kernel $H$.
 
 ![GIF kernel](https://i.stack.imgur.com/9OZKF.gif)
 
-<b>Edge handling:</b> As one can see above, $0$s were added on the border of the image. This technique called <u>padding</u> and is meant to solve a basic shortcoming: kernel convolution usually requires values from pixels outside of the image boundaries. While there is a variety of methods to handle edges, the [most common](https://en.wikipedia.org/wiki/Kernel_(image_processing)#Edge_Handling) are extend, wrap, mirror and crop.
+**Edge handling:** As one can see above, $0$s were added on the border of the image. This technique called <u>padding</u> and is meant to solve a basic shortcoming: kernel convolution usually requires values from pixels outside of the image boundaries. While there is a variety of methods to handle edges, the [most common](https://en.wikipedia.org/wiki/Kernel_(image_processing)#Edge_Handling) are extend, wrap, mirror and crop.
 
 To ensure the average pixel in the processed image is as bright as the average pixel in the original image, the kernel is typically normalized: the sum of the elements of a kernel is one.
 
@@ -75,11 +75,11 @@ There are [several types of kernel](https://en.wikipedia.org/wiki/Kernel_(image_
 
 Among kernels designed for smoothing, the most basics one are the linear and the gaussian filter, defined below.
 
-<b>Average filter:</b> This filter gives equal importance to the neighbors of a particular point:
+**Average filter:** This filter gives equal importance to the neighbors of a particular point:
 
 <div style="text-align:center"> <img src="/images/average_filter.png" alt="drawing" width="100" class="center"/></div>
 
-<b>Gaussian filter:</b> This filter removes high-frequency components from the image by assigning larger weights to closer pixel neighbors:
+**Gaussian filter:** This filter removes high-frequency components from the image by assigning larger weights to closer pixel neighbors:
 
 <div style="text-align:center"> <img src="/images/gaussian_filter.png" alt="drawing" width="100" class="center"/></div> <br/>
 
@@ -167,7 +167,7 @@ The process of performing a convolution requires $K^{2}$ operations per pixel, w
 
 $$K = v\cdot h^{T}$$
 
-<b>Theorem:</b> If $H$ has a unique non-zero eigenvalue, then its corresponding kernel is separable.
+**Theorem:** If $H$ has a unique non-zero eigenvalue, then its corresponding kernel is separable.
 
 ## 2. Non-Linear Filtering <a name="non_linear"></a>
 

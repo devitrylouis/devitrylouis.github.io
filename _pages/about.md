@@ -12,7 +12,7 @@ My research interests lie in the Mathematical foundations that accounts for the 
 
 In this blog, you will find some posts that I began writing during my master. Although it was mostly focused aroung documenting what I learnt, I am now thinking I would like this to be more open. If you have any ideas, shoot me an e-mail.
 
-**Note:** Some links are still very much a work of progress but those annotated with an asterisk * are done.
+**Note:** Some links are still very much a work of progress. They are annotated with an asterisk *.
 
 | Vision | Natural Language Processing | Networks science |
 |:---------------------------:|:-------------------------------:|:-------------------------------:|

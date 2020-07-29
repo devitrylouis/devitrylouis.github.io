@@ -9,9 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-Who I am?
-======
-
 - 🇨🇭🇸🇪 **Mathematics at EPFL and KTH (Bachelor):** At EPFL, I received a broad and rigorous engineering education with a strong emphasis on Mathematics. I then went to KTH for an Erasmus program at which I picked all courses relating to Statistics, Processes and Learning. At the end of the Bachelor, I have written a thesis under Henrik Hult (25% of the credit) whose aim was to use Elastic Nets to find relevant renovation to increase real estate value.
 
 - 🇫🇷 **Gap year (Internships):** In between my Bachelor and my Master, I choose to confront what I learnt to industry. I helped Shippeo leverage untapped GPS data to predict Estimated Time Arrivals of trucks ross Europe. As the first data member, I was lucky to work closely with clients and diverse departments of the company. I then joined Lucky Cart for a two fold mission; improve rare event prediction and build deep learning / auto ML internal packages for other data scientists. These experiences were full of insights on how data science teams operate alongside business and internally.
