@@ -1,9 +1,9 @@
 ---
 title: 'Statistical Modeling and Parameter estimation'
 date: 2018-12-01
-permalink: /posts/2019/01/nlp-language-modelling/
+permalink: /posts/2019/01/stats-parameter-estimation/
 tags:
-  - NLP
+  - Stats
 ---
 
 ## 1. Introduction
